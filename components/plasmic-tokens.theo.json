@@ -1,0 +1,79 @@
+{
+  "props": [
+    {
+      "name": "art",
+      "type": "color",
+      "value": "rgb(237,182,46)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "Ab_kcq5-K"
+      }
+    },
+    {
+      "name": "black",
+      "type": "color",
+      "value": "rgb(83,83,83)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "4creIjO1T"
+      }
+    },
+    {
+      "name": "culture",
+      "type": "color",
+      "value": "rgb(37,200,204)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "-TDQpFL4P"
+      }
+    },
+    {
+      "name": "other",
+      "type": "color",
+      "value": "rgb(189,189,189)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "P6COEcurd"
+      }
+    },
+    {
+      "name": "sports",
+      "type": "color",
+      "value": "rgb(234,110,137)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "E4AV8Sb0R"
+      }
+    },
+    {
+      "name": "tsukuba-light-purple",
+      "type": "color",
+      "value": "rgba(73,32,110,0.42)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "2CTAtOo0u"
+      }
+    },
+    {
+      "name": "tsukuba-purple",
+      "type": "color",
+      "value": "rgb(73,32,110)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "Kftb_9z5u"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}

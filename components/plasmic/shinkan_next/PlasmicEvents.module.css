@@ -1,0 +1,200 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: #ffffff;
+}
+.page:global(.__wab_instance) {
+  position: relative;
+}
+.box__h057B {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  padding: 19px 8px;
+  border-bottom: 4px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__fyiow {
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 22px;
+  font-weight: 700;
+}
+.searchBox {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 23px;
+  margin-bottom: 23px;
+  min-width: 0;
+  padding: 0px;
+  background: #ffffff;
+}
+.box__s3Ufq {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+.box___0P6Py {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 12px;
+}
+.box__myI5B {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  flex-grow: 1;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.textbox__h17Zg {
+  position: relative;
+  width: 100px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: rgb(245, 245, 245);
+  border-width: 0px;
+  border-style: none;
+}
+.box__blOde {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  margin: 2px 8px;
+}
+.textbox___3Ngi3 {
+  position: relative;
+  width: 100px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: rgb(245, 245, 245);
+  border-width: 0px;
+  border-style: none;
+}
+.box__yeUuy {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 12px;
+}
+.box__vQh62 {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.textbox__m1Aer {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-weight: 700;
+  flex-grow: 1;
+  background: rgb(245, 245, 245);
+  border-width: 0px;
+  border-style: none;
+}
+.box__ygJNo {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  align-self: auto;
+  min-height: 0;
+  background: rgb(181, 181, 181);
+}
+.svg {
+  object-fit: cover;
+  width: 71px;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  flex-shrink: 0;
+  min-height: 0;
+}
+.box__ymDwU {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.box__dOAhW {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+}
+.box__vKghT {
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 22px;
+  font-weight: 700;
+}
+.box__xOcYl {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: auto;
+  flex-wrap: nowrap;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  flex-grow: 1;
+}
+.box___4690 {
+  position: relative;
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__tInj {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  height: auto;
+}
+.eventListItem2__eMU1:global(.__wab_instance) {
+  position: relative;
+  margin: 0px;
+}
+.eventListItem2__gwpIg:global(.__wab_instance) {
+  position: relative;
+  margin: 0px;
+}
+.eventListItem2__scLsl:global(.__wab_instance) {
+  position: relative;
+  margin: 0px;
+}
+.eventListItem2__zc5Ak:global(.__wab_instance) {
+  position: relative;
+  margin: 0px;
+}
+.eventListItem2__nAqkf:global(.__wab_instance) {
+  position: relative;
+  margin: 0px;
+}

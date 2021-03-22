@@ -1,0 +1,74 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  border-radius: 61px;
+  padding: 7px 13px;
+  border: 2px solid rgb(156, 156, 156);
+}
+.root__selected_other {
+  background: rgb(189, 189, 189);
+  border-style: none;
+}
+.root__selected_all {
+  background: rgb(73, 32, 110);
+  border-style: none;
+}
+.root__selected_sports {
+  background: rgb(234, 110, 137);
+  border-style: none;
+}
+.root__selected_art {
+  background: rgb(237, 182, 46);
+  border-style: none;
+}
+.root__selected_culture {
+  background: rgb(37, 200, 204);
+  border-style: none;
+}
+.box {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-weight: 700;
+  width: auto;
+  height: auto;
+  display: inline-block;
+}
+.box__selected_other {
+  color: rgb(255, 255, 255);
+}
+.box__unselected_sports {
+  height: auto;
+  color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
+}
+.box__unselected_art {
+  color: rgb(237, 182, 46) /* plasmic-token: Ab_kcq5-K */;
+}
+.box__unselected_culture {
+  color: rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
+  height: auto;
+}
+.box__unselected_other {
+  color: rgb(189, 189, 189) /* plasmic-token: P6COEcurd */;
+}
+.box__selected_all {
+  color: rgb(255, 255, 255);
+  height: auto;
+}
+.box__selected_sports {
+  height: auto;
+  color: rgb(255, 255, 255);
+}
+.box__selected_art {
+  color: rgb(255, 255, 255);
+  height: auto;
+}
+.box__selected_culture {
+  height: auto;
+  width: auto;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+}

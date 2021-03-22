@@ -1,0 +1,269 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+      "projectName": " shinkan-next",
+      "version": "latest",
+      "cssFilePath": "plasmic/shinkan_next/plasmic_shinkan_next.module.css",
+      "components": [
+        {
+          "id": "AkxEYTA_hZWI",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "hH2h_5Dtgs",
+          "name": "OrgCard",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrgCard.tsx",
+          "importSpec": {
+            "modulePath": "OrgCard.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOrgCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "gugJhCOlow",
+          "name": "HeaderLink",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicHeaderLink.tsx",
+          "importSpec": {
+            "modulePath": "HeaderLink.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicHeaderLink.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "GMIuDj3rjM",
+          "name": "EventListItem",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicEventListItem.tsx",
+          "importSpec": {
+            "modulePath": "EventListItem.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicEventListItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "s14nWegQm7",
+          "name": "CategoryRadio",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicCategoryRadio.tsx",
+          "importSpec": {
+            "modulePath": "CategoryRadio.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicCategoryRadio.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "mfIEP8VL9n",
+          "name": "FooterLink",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicFooterLink.tsx",
+          "importSpec": {
+            "modulePath": "FooterLink.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicFooterLink.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "eUF7R_7Fga",
+          "name": "Home",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicHome.tsx",
+          "importSpec": {
+            "modulePath": "../pages/home.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicHome.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "tdmoFHXXat7",
+          "name": "Page",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicPage.tsx",
+          "importSpec": {
+            "modulePath": "Page.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "BVU0MRRo9W",
+          "name": "Org",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrg.tsx",
+          "importSpec": {
+            "modulePath": "../pages/org.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOrg.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "oqvYWNjt53",
+          "name": "Orgs",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrgs.tsx",
+          "importSpec": {
+            "modulePath": "../pages/orgs.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOrgs.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "22CMj1wbxr",
+          "name": "Events",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicEvents.tsx",
+          "importSpec": {
+            "modulePath": "../pages/events.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicEvents.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "g0BBn2-YWf",
+          "name": "EventListItem2",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicEventListItem2.tsx",
+          "importSpec": {
+            "modulePath": "EventListItem2.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicEventListItem2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "ErjPU3ASyU",
+          "name": "Announcement",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicAnnouncement.tsx",
+          "importSpec": {
+            "modulePath": "../pages/announcement.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicAnnouncement.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "8Na-IOV-bC",
+          "name": "About",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "../pages/about.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        }
+      ],
+      "icons": [
+        {
+          "id": "C2oaTY0g2i",
+          "name": "SearchBlack24DpsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__SearchBlack24Dpsvg.tsx"
+        },
+        {
+          "id": "nktDh0ThKG",
+          "name": "ExpandMoreBlack24DpsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__ExpandMoreBlack24Dpsvg.tsx"
+        },
+        {
+          "id": "PYIjxKxUq0",
+          "name": "ExpandLess24PxsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__ExpandLess24Pxsvg.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "zTQr8uQbJ",
+          "name": "image",
+          "filePath": "../public/plasmic/shinkan_next/images/image.png"
+        },
+        {
+          "id": "kRFjCDxZc",
+          "name": "image 2",
+          "filePath": "../public/plasmic/shinkan_next/images/image2.png"
+        },
+        {
+          "id": "_tbtgm-5i",
+          "name": "schoollogo.png",
+          "filePath": "../public/plasmic/shinkan_next/images/schoollogopng.png"
+        },
+        {
+          "id": "TEi4DHxtD",
+          "name": "MicrosoftTeams-image.png",
+          "filePath": "../public/plasmic/shinkan_next/images/microsoftTeamsImagepng.png"
+        }
+      ],
+      "jsBundleThemes": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "rGlYl5prqxJP",
+        "name": "Screen",
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "contextFilePath": "plasmic/shinkan_next/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "1.0.0",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@1.0.0/dist/plasmic.schema.json"
+}

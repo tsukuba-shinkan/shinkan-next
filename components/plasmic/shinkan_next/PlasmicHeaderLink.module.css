@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.link {
+  display: flex;
+  flex-direction: row;
+  padding: 1px 14px;
+  margin: 5px;
+  border-right: 3px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  border-left: 3px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.slotChildren {
+  font-size: 22px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}

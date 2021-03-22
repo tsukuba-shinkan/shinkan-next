@@ -1,0 +1,110 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+  padding: 5px;
+}
+.box__luIu {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  min-width: 0;
+  background: rgb(255, 255, 255);
+  border-left: 9px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__category_sports__luIuVLebt {
+  border-left-color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
+}
+.box__category_art__luIuBzkut {
+  border-left-color: rgb(237, 182, 46) /* plasmic-token: Ab_kcq5-K */;
+}
+.box__category_culture__luIuBcQjz {
+  border-left-color: rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
+}
+.box__category_other__luIu3V2CT {
+  border-left-color: rgb(189, 189, 189) /* plasmic-token: P6COEcurd */;
+}
+.box__cAelG {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-left-color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
+  width: 100%;
+  min-width: 0;
+  border-style: none;
+}
+.box__wkg {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 15px;
+  width: 15%;
+  padding: 5px;
+  margin: 0px;
+}
+.box__aTUjn {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 15px;
+  width: 30%;
+  padding: 4px;
+  margin: 0px;
+}
+.box__epzFf {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 15px;
+  width: 15%;
+  padding: 4px;
+  margin: 0px;
+}
+.box___46Hq2 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 35%;
+  margin: 0px;
+}
+.box___2DfeI {
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 2px 0px;
+}
+.box__keKdP {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 11px;
+  margin: 2px 0px;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  width: 5%;
+  height: 30px;
+  cursor: pointer;
+}
+.box__n0Ou2 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.box___3Kcnf {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 14px;
+  padding: 8px;
+}
