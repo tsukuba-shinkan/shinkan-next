@@ -35,31 +35,31 @@ import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicAnnouncement.module.css"; // plasmic-import: ErjPU3ASyU/css
+import * as sty from "./PlasmicNewsid.module.css"; // plasmic-import: ErjPU3ASyU/css
 
-export type PlasmicAnnouncement__VariantMembers = {};
+export type PlasmicNewsid__VariantMembers = {};
 
-export type PlasmicAnnouncement__VariantsArgs = {};
-type VariantPropType = keyof PlasmicAnnouncement__VariantsArgs;
-export const PlasmicAnnouncement__VariantProps = new Array<VariantPropType>();
+export type PlasmicNewsid__VariantsArgs = {};
+type VariantPropType = keyof PlasmicNewsid__VariantsArgs;
+export const PlasmicNewsid__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAnnouncement__ArgsType = {};
-type ArgPropType = keyof PlasmicAnnouncement__ArgsType;
-export const PlasmicAnnouncement__ArgProps = new Array<ArgPropType>();
+export type PlasmicNewsid__ArgsType = {};
+type ArgPropType = keyof PlasmicNewsid__ArgsType;
+export const PlasmicNewsid__ArgProps = new Array<ArgPropType>();
 
-export type PlasmicAnnouncement__OverridesType = {
+export type PlasmicNewsid__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
 };
 
-export interface DefaultAnnouncementProps {
+export interface DefaultNewsidProps {
   className?: string;
 }
 
-function PlasmicAnnouncement__RenderFunc(props: {
-  variants: PlasmicAnnouncement__VariantsArgs;
-  args: PlasmicAnnouncement__ArgsType;
-  overrides: PlasmicAnnouncement__OverridesType;
+function PlasmicNewsid__RenderFunc(props: {
+  variants: PlasmicNewsid__VariantsArgs;
+  args: PlasmicNewsid__ArgsType;
+  overrides: PlasmicNewsid__OverridesType;
   forNode?: string;
 }) {
   const { variants, args, overrides, forNode } = props;
@@ -151,16 +151,16 @@ type NodeDefaultElementType = {
 
 type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicAnnouncement__OverridesType,
+  PlasmicNewsid__OverridesType,
   DescendantsType<T>
 >;
 type NodeComponentProps<T extends NodeNameType> = { // Explicitly specify variants, args, and overrides as objects
-  variants?: PlasmicAnnouncement__VariantsArgs;
-  args?: PlasmicAnnouncement__ArgsType;
+  variants?: PlasmicNewsid__VariantsArgs;
+  args?: PlasmicNewsid__ArgsType;
   overrides?: NodeOverridesType<T>;
-} & Omit<PlasmicAnnouncement__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+} & Omit<PlasmicNewsid__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
   // Specify args directly as props
-  Omit<PlasmicAnnouncement__ArgsType, ReservedPropsType> &
+  Omit<PlasmicNewsid__ArgsType, ReservedPropsType> &
   // Specify overrides for each element directly as props
   Omit<
     NodeOverridesType<T>,
@@ -180,11 +180,11 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     const { variants, args, overrides } = deriveRenderOpts(props, {
       name: nodeName,
       descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicAnnouncement__ArgProps,
-      internalVariantPropNames: PlasmicAnnouncement__VariantProps
+      internalArgPropNames: PlasmicNewsid__ArgProps,
+      internalVariantPropNames: PlasmicNewsid__VariantProps
     });
 
-    return PlasmicAnnouncement__RenderFunc({
+    return PlasmicNewsid__RenderFunc({
       variants,
       args,
       overrides,
@@ -192,25 +192,25 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicAnnouncement";
+    func.displayName = "PlasmicNewsid";
   } else {
-    func.displayName = `PlasmicAnnouncement.${nodeName}`;
+    func.displayName = `PlasmicNewsid.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicAnnouncement = Object.assign(
-  // Top-level PlasmicAnnouncement renders the root element
+export const PlasmicNewsid = Object.assign(
+  // Top-level PlasmicNewsid renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
     page: makeNodeComponent("page"),
 
-    // Metadata about props expected for PlasmicAnnouncement
-    internalVariantProps: PlasmicAnnouncement__VariantProps,
-    internalArgProps: PlasmicAnnouncement__ArgProps
+    // Metadata about props expected for PlasmicNewsid
+    internalVariantProps: PlasmicNewsid__VariantProps,
+    internalArgProps: PlasmicNewsid__ArgProps
   }
 );
 
-export default PlasmicAnnouncement;
+export default PlasmicNewsid;
 /* prettier-ignore-end */

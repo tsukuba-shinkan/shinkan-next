@@ -386,7 +386,7 @@ function PlasmicHome__RenderFunc(props: {
                         sty.link__xXnx
                       )}
                       component={__PlatformLink}
-                      href={"/orgs" as const}
+                      href={"/org" as const}
                       platform={"nextjs"}
                     >
                       {"団体を検索する"}

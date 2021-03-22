@@ -152,7 +152,7 @@ function PlasmicPage__RenderFunc(props: {
 
           <HeaderLink
             className={classNames("__wab_instance", sty.headerLink__lle4C)}
-            to={"/orgs" as const}
+            to={"/org" as const}
           >
             <div
               className={classNames(

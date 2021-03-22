@@ -3,22 +3,22 @@
 import React, { useState, useEffect } from "react";
 import OrgCard from "../components/OrgCard";
 import { ScreenVariantProvider } from "../components/plasmic/shinkan_next/PlasmicGlobalVariant__Screen";
-import { PlasmicOrgs } from "../components/plasmic/shinkan_next/PlasmicOrgs";
+import { PlasmicOrg } from "../components/plasmic/shinkan_next/PlasmicOrg";
 
-function Orgs() {
-  // Use PlasmicOrgs to render this component as it was
+function Org() {
+  // Use PlasmicOrg to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicOrgs are:
+  // Props you can pass into PlasmicOrg are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicOrgs is wrapped by your project's global
+  // By default, PlasmicOrg is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
@@ -45,7 +45,7 @@ function Orgs() {
     ]);
   }, [keyword]);
   return (
-    <PlasmicOrgs
+    <PlasmicOrg
       orgs={
         <>
           {orgs.map((o) => (
@@ -63,4 +63,4 @@ function Orgs() {
   );
 }
 
-export default Orgs;
+export default Org;

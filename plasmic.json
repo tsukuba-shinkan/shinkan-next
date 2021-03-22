@@ -131,32 +131,6 @@
           "componentType": "component"
         },
         {
-          "id": "BVU0MRRo9W",
-          "name": "Org",
-          "type": "managed",
-          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
-          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrg.tsx",
-          "importSpec": {
-            "modulePath": "../pages/org.tsx"
-          },
-          "cssFilePath": "plasmic/shinkan_next/PlasmicOrg.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
-          "id": "oqvYWNjt53",
-          "name": "Orgs",
-          "type": "managed",
-          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
-          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrgs.tsx",
-          "importSpec": {
-            "modulePath": "../pages/orgs.tsx"
-          },
-          "cssFilePath": "plasmic/shinkan_next/PlasmicOrgs.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "22CMj1wbxr",
           "name": "Events",
           "type": "managed",
@@ -184,14 +158,14 @@
         },
         {
           "id": "ErjPU3ASyU",
-          "name": "Announcement",
+          "name": "Newsid",
           "type": "managed",
           "projectId": "4oWAtwkSeL4ciDYEekjxG9",
-          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicAnnouncement.tsx",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicNewsid.tsx",
           "importSpec": {
-            "modulePath": "../pages/announcement.tsx"
+            "modulePath": "../pages/news/[id].tsx"
           },
-          "cssFilePath": "plasmic/shinkan_next/PlasmicAnnouncement.module.css",
+          "cssFilePath": "plasmic/shinkan_next/PlasmicNewsid.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         },
@@ -205,6 +179,32 @@
             "modulePath": "../pages/about.tsx"
           },
           "cssFilePath": "plasmic/shinkan_next/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "BVU0MRRo9W",
+          "name": "Orgid",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrgid.tsx",
+          "importSpec": {
+            "modulePath": "../pages/org/[id].tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOrgid.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "oqvYWNjt53",
+          "name": "Org",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrg.tsx",
+          "importSpec": {
+            "modulePath": "../pages/org.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOrg.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
