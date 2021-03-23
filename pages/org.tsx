@@ -2,7 +2,6 @@
 // This file is owned by you, feel free to edit as you see fit.
 import React, { useState, useEffect } from "react";
 import OrgCard from "../components/OrgCard";
-import { ScreenVariantProvider } from "../components/plasmic/shinkan_next/PlasmicGlobalVariant__Screen";
 import { PlasmicOrg } from "../components/plasmic/shinkan_next/PlasmicOrg";
 
 function Org() {

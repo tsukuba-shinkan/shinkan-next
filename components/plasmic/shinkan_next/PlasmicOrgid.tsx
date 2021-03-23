@@ -50,7 +50,8 @@ export type PlasmicOrgid__ArgsType = {
   id?: string;
   title?: React.ReactNode;
   events?: React.ReactNode;
-  text?: React.ReactNode;
+  children?: React.ReactNode;
+  image?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicOrgid__ArgsType;
@@ -58,7 +59,8 @@ export const PlasmicOrgid__ArgProps = new Array<ArgPropType>(
   "id",
   "title",
   "events",
-  "text"
+  "children",
+  "image"
 );
 
 export type PlasmicOrgid__OverridesType = {
@@ -73,7 +75,8 @@ export interface DefaultOrgidProps {
   id?: string;
   title?: React.ReactNode;
   events?: React.ReactNode;
-  text?: React.ReactNode;
+  children?: React.ReactNode;
+  image?: React.ReactNode;
   className?: string;
 }
 
@@ -129,14 +132,19 @@ function PlasmicOrgid__RenderFunc(props: {
                   <div
                     className={classNames(defaultcss.all, sty.column__f8AlD)}
                   >
-                    <img
-                      data-plasmic-name={"img"}
-                      data-plasmic-override={overrides.img}
-                      alt={""}
-                      className={classNames(defaultcss.img, sty.img)}
-                      loading={"lazy" as const}
-                      role={"img"}
-                      src={"/plasmic/shinkan_next/images/image2.png"}
+                    <p.PlasmicSlot
+                      defaultContents={
+                        <img
+                          data-plasmic-name={"img"}
+                          data-plasmic-override={overrides.img}
+                          alt={""}
+                          className={classNames(defaultcss.img, sty.img)}
+                          loading={"lazy" as const}
+                          role={"img"}
+                          src={"/plasmic/shinkan_next/images/image2.png"}
+                        />
+                      }
+                      value={args.image}
                     />
 
                     <div
@@ -196,7 +204,7 @@ function PlasmicOrgid__RenderFunc(props: {
                           defaultContents={
                             "ルイズ！ルイズ！ルイズ！ルイズぅぅうううわぁああああああああああああああああああああああん！！！\nあぁああああ…ああ…あっあっー！あぁああああああ！！！ルイズルイズルイズぅううぁわぁああああ！！！\nあぁクンカクンカ！クンカクンカ！スーハースーハー！スーハースーハー！いい匂いだなぁ…くんくん\nんはぁっ！ルイズ・フランソワーズたんの桃色ブロンドの髪をクンカクンカしたいお！クンカクンカ！あぁあ！！\n間違えた！モフモフしたいお！モフモフ！モフモフ！髪髪モフモフ！カリカリモフモフ…きゅんきゅんきゅい！！\n小説12巻のルイズたんかわいかったよぅ！！あぁぁああ…あああ…あっあぁああああ！！ふぁぁあああんんっ！！\nアニメ2期放送されて良かったねルイズたん！あぁあああああ！かわいい！ルイズたん！かわいい！あっああぁああ！\nコミック2巻も発売されて嬉し…いやぁああああああ！！！にゃああああああああん！！ぎゃああああああああ！！\nぐあああああああああああ！！！コミックなんて現実じゃない！！！！あ…小説もアニメもよく考えたら…\nル イ ズ ち ゃ ん は 現実 じ ゃ な い？にゃあああああああああああああん！！うぁああああああああああ！！\nそんなぁああああああ！！いやぁぁぁあああああああああ！！はぁああああああん！！ハルケギニアぁああああ！！\nこの！ちきしょー！やめてやる！！現実なんかやめ…て…え！？見…てる？表紙絵のルイズちゃんが僕を見てる？\n表紙絵のルイズちゃんが僕を見てるぞ！ルイズちゃんが僕を見てるぞ！挿絵のルイズちゃんが僕を見てるぞ！！\nアニメのルイズちゃんが僕に話しかけてるぞ！！！よかった…世の中まだまだ捨てたモンじゃないんだねっ！\nいやっほぉおおおおおおお！！！僕にはルイズちゃんがいる！！やったよケティ！！ひとりでできるもん！！！\nあ、コミックのルイズちゃああああああああああああああん！！いやぁあああああああああああああああ！！！！\nあっあんああっああんあアン様ぁあ！！シ、シエスター！！アンリエッタぁああああああ！！！タバサｧぁあああ！！\nううっうぅうう！！俺の想いよルイズへ届け！！ハルケギニアのルイズへ届け！"
                           }
-                          value={args.text}
+                          value={args.children}
                         />
                       </div>
                     </div>

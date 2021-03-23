@@ -42,9 +42,14 @@ function OrgCard(props: OrgCardProps) {
   //
   // By default, we are just piping all OrgCardProps here, but feel free
   // to do whatever works for you.
-
+  const transProps = {
+    name: props.name,
+    category: props.category,
+    description: props.description,
+    src: props.src,
+  };
   return (
-    <PlasmicOrgCard {...props} to={`/org/${props.orgId}`}>
+    <PlasmicOrgCard {...transProps} to={`/org/${props.orgId}`}>
       <div
         style={{
           backgroundImage: `url(${props.src})`,

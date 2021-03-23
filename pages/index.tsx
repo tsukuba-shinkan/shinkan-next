@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import CategoryRadio from "../components/CategoryRadio";
 import EventListItem from "../components/EventListItem";
 import OrgCard from "../components/OrgCard";
-import { ScreenVariantProvider } from "../components/plasmic/shinkan_next/PlasmicGlobalVariant__Screen";
 import { PlasmicHome } from "../components/plasmic/shinkan_next/PlasmicHome";
 
 type CatUnion = "all" | "sports" | "art" | "culture" | "other";

@@ -3,7 +3,6 @@
 import * as React from "react";
 import {
   PlasmicCategoryRadio,
-  DefaultCategoryRadioProps,
   PlasmicCategoryRadio__ArgsType,
 } from "./plasmic/shinkan_next/PlasmicCategoryRadio";
 
