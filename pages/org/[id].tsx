@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { PlasmicOrgid } from "../../components/plasmic/shinkan_next/PlasmicOrgid";
 import EventListItem from "../../components/EventListItem";
@@ -66,23 +67,43 @@ function Orgid({ initialData }: Props) {
   }
 
   const [orgData] = useState<any>(initialData);
-
+  const title = orgData.title;
+  const description = "ここにexcerptが入ると思う";
+  const url = `/org/${router.query.id}`;
   return (
-    <PlasmicOrgid
-      image={<img src={orgData.images[0]} />}
-      events={orgData.events.map((e: any) => (
-        <EventListItem eventTitle={e.eventTitle} dateTime={e.dateTime}>
-          {e.detail}
-        </EventListItem>
-      ))}
-      title={orgData.name}
-    >
-      <div
-        dangerouslySetInnerHTML={{
-          __html: orgData.descriptionHtml, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
-        }}
-      />
-    </PlasmicOrgid>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="blog" />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={orgData.images[0]} />
+        <meta property="og:site_name" content={title} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@tsukuba_shinkan" />
+        <meta name="twitter:url" content={url} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={orgData.images[0]} />
+        <link rel="canonical" href={url} />
+      </Head>
+      <PlasmicOrgid
+        image={<img src={orgData.images[0]} />}
+        events={orgData.events.map((e: any) => (
+          <EventListItem eventTitle={e.eventTitle} dateTime={e.dateTime}>
+            {e.detail}
+          </EventListItem>
+        ))}
+        title={title}
+      >
+        <div
+          dangerouslySetInnerHTML={{
+            __html: orgData.descriptionHtml, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
+          }}
+        />
+      </PlasmicOrgid>
+    </>
   );
 }
 
