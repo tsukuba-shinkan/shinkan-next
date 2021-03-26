@@ -207,6 +207,19 @@
           "cssFilePath": "plasmic/shinkan_next/PlasmicOrg.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "3Ag6mdjdwk",
+          "name": "_404",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/Plasmic_404.tsx",
+          "importSpec": {
+            "modulePath": "../pages/404.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/Plasmic_404.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -248,7 +261,7 @@
           "filePath": "../public/plasmic/shinkan_next/images/microsoftTeamsImagepng.png"
         }
       ],
-      "jsBundleThemes": []
+      "projectApiToken": "j0utquL80KpwtAdsl0AXlZ6jOm3WUeDMkahIMeUoaiyC51SJZRxQ432Vjl5SCGw19w3LreVyBj2T6HL94hQ"
     }
   ],
   "globalVariants": {
@@ -264,6 +277,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.120",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.120/dist/plasmic.schema.json"
+  "cliVersion": "0.1.127",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.127/dist/plasmic.schema.json"
 }

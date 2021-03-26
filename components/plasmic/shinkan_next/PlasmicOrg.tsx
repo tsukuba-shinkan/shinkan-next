@@ -97,164 +97,154 @@ function PlasmicOrg__RenderFunc(props: {
             data-plasmic-name={"page"}
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
-            container={
-              <React.Fragment>
-                <div className={classNames(defaultcss.all, sty.box___41A8P)}>
+          >
+            <div className={classNames(defaultcss.all, sty.box___41A8P)}>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box___1Xgp3
+                )}
+              >
+                {"団体検索"}
+              </div>
+
+              <div
+                data-plasmic-name={"searchBox"}
+                data-plasmic-override={overrides.searchBox}
+                className={classNames(defaultcss.all, sty.searchBox)}
+              >
+                <input
+                  data-plasmic-name={"searchInput"}
+                  data-plasmic-override={overrides.searchInput}
+                  className={classNames(defaultcss.input, sty.searchInput)}
+                  placeholder={"検索キーワードを入力…" as const}
+                  size={1 as const}
+                  type={"text" as const}
+                  value={"" as const}
+                />
+
+                <div className={classNames(defaultcss.all, sty.box__raF0P)}>
+                  <SearchBlack24DpsvgIcon
+                    data-plasmic-name={"svg"}
+                    data-plasmic-override={overrides.svg}
+                    className={classNames(defaultcss.all, sty.svg)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-plasmic-name={"orgList"}
+              data-plasmic-override={overrides.orgList}
+              className={classNames(defaultcss.all, sty.orgList)}
+            >
+              <div className={classNames(defaultcss.all, sty.box__mxtRq)}>
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__jOdXl
+                  )}
+                >
+                  {"検索結果"}
+                </div>
+
+                <div className={classNames(defaultcss.all, sty.box__saii2)}>
                   <div
                     className={classNames(
                       defaultcss.all,
                       defaultcss.__wab_text,
-                      sty.box___1Xgp3
+                      sty.box___8Suts
                     )}
                   >
-                    {"団体検索"}
-                  </div>
-
-                  <div
-                    data-plasmic-name={"searchBox"}
-                    data-plasmic-override={overrides.searchBox}
-                    className={classNames(defaultcss.all, sty.searchBox)}
-                  >
-                    <input
-                      data-plasmic-name={"searchInput"}
-                      data-plasmic-override={overrides.searchInput}
-                      className={classNames(defaultcss.input, sty.searchInput)}
-                      placeholder={"検索キーワードを入力…" as const}
-                      size={1 as const}
-                      type={"text" as const}
-                      value={"" as const}
-                    />
-
-                    <div className={classNames(defaultcss.all, sty.box__raF0P)}>
-                      <SearchBlack24DpsvgIcon
-                        data-plasmic-name={"svg"}
-                        data-plasmic-override={overrides.svg}
-                        className={classNames(defaultcss.all, sty.svg)}
-                        role={"img"}
-                      />
-                    </div>
+                    {"4件"}
                   </div>
                 </div>
+              </div>
 
-                <div
-                  data-plasmic-name={"orgList"}
-                  data-plasmic-override={overrides.orgList}
-                  className={classNames(defaultcss.all, sty.orgList)}
-                >
-                  <div className={classNames(defaultcss.all, sty.box__mxtRq)}>
-                    <div
-                      className={classNames(
-                        defaultcss.all,
-                        defaultcss.__wab_text,
-                        sty.box__jOdXl
-                      )}
-                    >
-                      {"検索結果"}
-                    </div>
-
-                    <div className={classNames(defaultcss.all, sty.box__saii2)}>
-                      <div
+              <div className={classNames(defaultcss.all, sty.box__dzb5F)}>
+                <p.PlasmicSlot
+                  defaultContents={
+                    <React.Fragment>
+                      <OrgCard
                         className={classNames(
-                          defaultcss.all,
-                          defaultcss.__wab_text,
-                          sty.box___8Suts
+                          "__wab_instance",
+                          sty.orgCard__uw1Nc
                         )}
-                      >
-                        {"4件"}
-                      </div>
-                    </div>
-                  </div>
+                        name={"橋本環奈同好会"}
+                      />
 
-                  <div className={classNames(defaultcss.all, sty.box__dzb5F)}>
-                    <p.PlasmicSlot
-                      defaultContents={
-                        <React.Fragment>
-                          <OrgCard
-                            category={"体育系・一般学生団体"}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard__uw1Nc
-                            )}
-                            name={"橋本環奈同好会"}
-                          />
+                      <OrgCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.orgCard___0G7Mm
+                        )}
+                        description={"アクセスするたび変わります"}
+                        name={"女装同好会"}
+                      />
 
-                          <OrgCard
-                            category={"体育系・一般学生団体"}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard___0G7Mm
-                            )}
-                            description={"アクセスするたび変わります"}
-                            name={"女装同好会"}
-                          />
+                      <OrgCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.orgCard__kG7BQ
+                        )}
+                        description={"ランダムに変わります"}
+                        name={"橋本環奈同好会"}
+                      />
 
-                          <OrgCard
-                            category={"体育系・一般学生団体"}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard__kG7BQ
-                            )}
-                            description={"ランダムに変わります"}
-                            name={"橋本環奈同好会"}
-                          />
+                      <OrgCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.orgCard__v5JYk
+                        )}
+                        description={
+                          "ランダムに選ぶ機能はWordPressの機能を使いたいところですが"
+                        }
+                        name={"橋本環奈同好会"}
+                      />
 
-                          <OrgCard
-                            category={"体育系・一般学生団体"}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard__v5JYk
-                            )}
-                            description={
-                              "ランダムに選ぶ機能はWordPressの機能を使いたいところですが"
-                            }
-                            name={"橋本環奈同好会"}
-                          />
+                      <OrgCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.orgCard__pCwz9
+                        )}
+                        description={
+                          "おそらくフロントエンドでシャッフルしないといけない"
+                        }
+                        name={"橋本環奈同好会"}
+                      />
 
-                          <OrgCard
-                            category={"体育系・一般学生団体"}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard__pCwz9
-                            )}
-                            description={
-                              "おそらくフロントエンドでシャッフルしないといけない"
-                            }
-                            name={"橋本環奈同好会"}
-                          />
+                      <OrgCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.orgCard___8WgBq
+                        )}
+                        name={"橋本環奈同好会"}
+                      />
 
-                          <OrgCard
-                            category={"体育系・一般学生団体"}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard___8WgBq
-                            )}
-                            name={"橋本環奈同好会"}
-                          />
+                      <OrgCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.orgCard__af4Ij
+                        )}
+                        name={"橋本環奈同好会"}
+                      />
 
-                          <OrgCard
-                            category={"体育系・一般学生団体"}
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard__af4Ij
-                            )}
-                            name={"橋本環奈同好会"}
-                          />
-
-                          <OrgCard
-                            className={classNames(
-                              "__wab_instance",
-                              sty.orgCard__nsBjC
-                            )}
-                          />
-                        </React.Fragment>
-                      }
-                      value={args.orgs}
-                    />
-                  </div>
-                </div>
-              </React.Fragment>
-            }
-          />
+                      <OrgCard
+                        className={classNames(
+                          "__wab_instance",
+                          sty.orgCard__nsBjC
+                        )}
+                      />
+                    </React.Fragment>
+                  }
+                  value={args.orgs}
+                />
+              </div>
+            </div>
+          </Page>
         </div>
       </div>
     </React.Fragment>

@@ -18,7 +18,7 @@
   flex-shrink: 0;
   border-radius: 17px;
   margin: 7px;
-  border: 0px none rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
+  border: 0px none rgb(73, 32, 110);
 }
 .box__egDkZ {
   display: block;
@@ -54,7 +54,19 @@
   min-width: 0;
   padding: 8px;
   background: rgba(255, 255, 255, 0.71);
-  border-bottom: 5px solid rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
+  border-bottom: 5px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__category_sports___6WKxl6TPp1 {
+  border-bottom-color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
+}
+.box__category_art___6WKxlLhErp {
+  border-bottom-color: rgb(237, 182, 46) /* plasmic-token: Ab_kcq5-K */;
+}
+.box__category_culture___6WKxllHrU6 {
+  border-bottom-color: rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
+}
+.box__category_other___6WKxlpqEoh {
+  border-bottom-color: rgb(189, 189, 189) /* plasmic-token: P6COEcurd */;
 }
 .box___8In5T {
   display: flex;
@@ -96,7 +108,17 @@
   align-items: stretch;
   justify-content: flex-start;
 }
-.slotCategory {
-  font-size: 13px;
+.box__k4V {
+  position: relative;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 14px;
+}
+.box__category_sports__k4V6TPp1 {
+  height: auto;
+}
+.box__category_art__k4VLhErp {
+  height: auto;
+}
+.box__category_other__k4VPqEoh {
+  height: auto;
 }

@@ -156,11 +156,14 @@
   align-items: center;
   justify-content: flex-start;
   width: auto;
+  flex-wrap: wrap;
 }
 .box___7SGb5 {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   font-size: 22px;
   font-weight: 700;
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 .box__bkJeC {
   display: flex;
@@ -175,6 +178,7 @@
   right: auto;
   bottom: auto;
   flex-grow: 1;
+  flex-shrink: 0;
 }
 .categoryRadio__l6S0E:global(.__wab_instance) {
   position: relative;

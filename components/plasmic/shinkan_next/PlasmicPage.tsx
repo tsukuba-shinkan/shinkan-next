@@ -31,9 +31,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import HeaderLink from "../../HeaderLink"; // plasmic-import: gugJhCOlow/component
-import EventListItem from "../../EventListItem"; // plasmic-import: GMIuDj3rjM/component
-import CategoryRadio from "../../CategoryRadio"; // plasmic-import: s14nWegQm7/component
-import OrgCard from "../../OrgCard"; // plasmic-import: hH2h_5Dtgs/component
 
 import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: rGlYl5prqxJP/globalVariant
 
@@ -49,11 +46,11 @@ type VariantPropType = keyof PlasmicPage__VariantsArgs;
 export const PlasmicPage__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicPage__ArgsType = {
-  container?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicPage__ArgsType;
-export const PlasmicPage__ArgProps = new Array<ArgPropType>("container");
+export const PlasmicPage__ArgProps = new Array<ArgPropType>("children");
 
 export type PlasmicPage__OverridesType = {
   root?: p.Flex<"div">;
@@ -61,19 +58,12 @@ export type PlasmicPage__OverridesType = {
   title?: p.Flex<"a"> & Partial<__PlatformLinkProps>;
   links?: p.Flex<"div">;
   container?: p.Flex<"div">;
-  hero?: p.Flex<"div">;
-  events?: p.Flex<"div">;
-  button?: p.Flex<"div">;
-  eventList?: p.Flex<"div">;
-  orgs?: p.Flex<"div">;
-  announcements?: p.Flex<"div">;
-  eventList2?: p.Flex<"div">;
   footer?: p.Flex<"div">;
   columns?: p.Flex<"div">;
 };
 
 export interface DefaultPageProps {
-  container?: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 
@@ -133,22 +123,20 @@ function PlasmicPage__RenderFunc(props: {
           data-plasmic-override={overrides.links}
           className={classNames(defaultcss.all, sty.links)}
         >
-          <div className={classNames(defaultcss.all, sty.box__lmOKw)}>
-            <HeaderLink
-              className={classNames("__wab_instance", sty.headerLink___2GQ6)}
-              to={"/events" as const}
+          <HeaderLink
+            className={classNames("__wab_instance", sty.headerLink___2GQ6)}
+            to={"/events" as const}
+          >
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__wyzrt
+              )}
             >
-              <div
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__wyzrt
-                )}
-              >
-                {"イベントを探す"}
-              </div>
-            </HeaderLink>
-          </div>
+              {"イベントを探す"}
+            </div>
+          </HeaderLink>
 
           <HeaderLink
             className={classNames("__wab_instance", sty.headerLink__lle4C)}
@@ -172,266 +160,7 @@ function PlasmicPage__RenderFunc(props: {
         data-plasmic-override={overrides.container}
         className={classNames(defaultcss.all, sty.container)}
       >
-        <p.PlasmicSlot
-          defaultContents={
-            <React.Fragment>
-              <div
-                data-plasmic-name={"hero"}
-                data-plasmic-override={overrides.hero}
-                className={classNames(defaultcss.all, sty.hero)}
-              >
-                <div className={classNames(defaultcss.all, sty.box__ja5VR)} />
-
-                <div className={classNames(defaultcss.all, sty.box__yao8J)} />
-              </div>
-
-              <div
-                data-plasmic-name={"events"}
-                data-plasmic-override={overrides.events}
-                className={classNames(defaultcss.all, sty.events)}
-              >
-                <div className={classNames(defaultcss.all, sty.box__iqMa3)}>
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__wHyBl
-                    )}
-                  >
-                    {"本日のイベント"}
-                  </div>
-
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__kdnGa
-                    )}
-                  >
-                    {"4"}
-                  </div>
-
-                  <div className={classNames(defaultcss.all, sty.box___6MEz)} />
-
-                  <div
-                    data-plasmic-name={"button"}
-                    data-plasmic-override={overrides.button}
-                    className={classNames(defaultcss.all, sty.button)}
-                  >
-                    <div
-                      className={classNames(
-                        defaultcss.all,
-                        defaultcss.__wab_text,
-                        sty.box___2K8IC
-                      )}
-                    >
-                      {"イベント検索へ"}
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  data-plasmic-name={"eventList"}
-                  data-plasmic-override={overrides.eventList}
-                  className={classNames(defaultcss.all, sty.eventList)}
-                >
-                  <EventListItem
-                    className={classNames(
-                      "__wab_instance",
-                      sty.eventListItem___8B3Jx
-                    )}
-                    eventTitle={
-                      <div
-                        className={classNames(
-                          defaultcss.all,
-                          defaultcss.__wab_text,
-                          sty.box___3OYuB
-                        )}
-                      >
-                        {"桜を見る会 @ 反町の森公園"}
-                      </div>
-                    }
-                  />
-
-                  <EventListItem
-                    className={classNames(
-                      "__wab_instance",
-                      sty.eventListItem__toIua
-                    )}
-                    eventTitle={
-                      <div
-                        className={classNames(
-                          defaultcss.all,
-                          defaultcss.__wab_text,
-                          sty.box__hrTms
-                        )}
-                      >
-                        {"橋本環奈同好会オンライン説明会"}
-                      </div>
-                    }
-                  />
-
-                  <EventListItem
-                    className={classNames(
-                      "__wab_instance",
-                      sty.eventListItem__mhprB
-                    )}
-                    eventTitle={"女装同好会"}
-                  />
-
-                  <EventListItem
-                    className={classNames(
-                      "__wab_instance",
-                      sty.eventListItem__ecWZ
-                    )}
-                  />
-                </div>
-              </div>
-
-              <div
-                data-plasmic-name={"orgs"}
-                data-plasmic-override={overrides.orgs}
-                className={classNames(defaultcss.all, sty.orgs)}
-              >
-                <div className={classNames(defaultcss.all, sty.box__iqguu)}>
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__zZcjy
-                    )}
-                  >
-                    {"団体一覧"}
-                  </div>
-
-                  <div className={classNames(defaultcss.all, sty.box___5N1NQ)}>
-                    <CategoryRadio
-                      className={classNames(
-                        "__wab_instance",
-                        sty.categoryRadio__pnm9T
-                      )}
-                    />
-
-                    <CategoryRadio
-                      className={classNames(
-                        "__wab_instance",
-                        sty.categoryRadio__hnnyJ
-                      )}
-                    />
-
-                    <CategoryRadio
-                      className={classNames(
-                        "__wab_instance",
-                        sty.categoryRadio___1Mosy
-                      )}
-                    />
-                  </div>
-                </div>
-
-                <div className={classNames(defaultcss.all, sty.box__u8Hdl)}>
-                  <OrgCard
-                    category={"体育系・一般学生団体"}
-                    className={classNames("__wab_instance", sty.orgCard__aeuCu)}
-                    name={"橋本環奈同好会"}
-                  />
-
-                  <OrgCard
-                    category={"体育系・一般学生団体"}
-                    className={classNames("__wab_instance", sty.orgCard__ln17U)}
-                    description={"アクセスするたび変わります"}
-                    name={"女装同好会"}
-                  />
-
-                  <OrgCard
-                    category={"体育系・一般学生団体"}
-                    className={classNames("__wab_instance", sty.orgCard__iCOr)}
-                    description={"ランダムに変わります"}
-                    name={"橋本環奈同好会"}
-                  />
-
-                  <OrgCard
-                    category={"体育系・一般学生団体"}
-                    className={classNames("__wab_instance", sty.orgCard__fHleE)}
-                    description={
-                      "ランダムに選ぶ機能はWordPressの機能を使いたいところですが"
-                    }
-                    name={"橋本環奈同好会"}
-                  />
-
-                  <OrgCard
-                    category={"体育系・一般学生団体"}
-                    className={classNames("__wab_instance", sty.orgCard__riReg)}
-                    description={
-                      "おそらくフロントエンドでシャッフルしないといけない"
-                    }
-                    name={"橋本環奈同好会"}
-                  />
-
-                  <OrgCard
-                    category={"体育系・一般学生団体"}
-                    className={classNames("__wab_instance", sty.orgCard__t38N)}
-                    name={"橋本環奈同好会"}
-                  />
-
-                  <OrgCard
-                    category={"体育系・一般学生団体"}
-                    className={classNames("__wab_instance", sty.orgCard__gljhw)}
-                    name={"橋本環奈同好会"}
-                  />
-
-                  <OrgCard
-                    className={classNames("__wab_instance", sty.orgCard__sGmGo)}
-                  />
-                </div>
-
-                <div className={classNames(defaultcss.all, sty.box__nc1X6)}>
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__uPpXn
-                    )}
-                  >
-                    {"もっと見る"}
-                  </div>
-                </div>
-              </div>
-
-              <div
-                data-plasmic-name={"announcements"}
-                data-plasmic-override={overrides.announcements}
-                className={classNames(defaultcss.all, sty.announcements)}
-              >
-                <div className={classNames(defaultcss.all, sty.box__m5T)}>
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__do6W3
-                    )}
-                  >
-                    {"お知らせ"}
-                  </div>
-                </div>
-
-                <div
-                  data-plasmic-name={"eventList2"}
-                  data-plasmic-override={overrides.eventList2}
-                  className={classNames(defaultcss.all, sty.eventList2)}
-                >
-                  <EventListItem
-                    className={classNames(
-                      "__wab_instance",
-                      sty.eventListItem__sHhVr
-                    )}
-                    eventTitle={"2021/4/1 サイトを公開しました"}
-                  />
-                </div>
-              </div>
-            </React.Fragment>
-          }
-          value={args.container}
-        />
+        <p.PlasmicSlot defaultContents={null} value={args.children} />
       </div>
 
       <div
@@ -468,7 +197,7 @@ function PlasmicPage__RenderFunc(props: {
                   sty.link__ur8FT
                 )}
                 component={__PlatformLink}
-                href={"/" as const}
+                href={"/404" as const}
                 platform={"nextjs"}
               >
                 {"新歓祭について"}
@@ -481,7 +210,7 @@ function PlasmicPage__RenderFunc(props: {
                   sty.link___8Ay0F
                 )}
                 component={__PlatformLink}
-                href={"/" as const}
+                href={"/404" as const}
                 platform={"nextjs"}
               >
                 {"団体用システムログイン"}
@@ -555,42 +284,11 @@ function PlasmicPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "title",
-    "links",
-    "container",
-    "hero",
-    "events",
-    "button",
-    "eventList",
-    "orgs",
-    "announcements",
-    "eventList2",
-    "footer",
-    "columns"
-  ],
+  root: ["root", "header", "title", "links", "container", "footer", "columns"],
   header: ["header", "title", "links"],
   title: ["title"],
   links: ["links"],
-  container: [
-    "container",
-    "hero",
-    "events",
-    "button",
-    "eventList",
-    "orgs",
-    "announcements",
-    "eventList2"
-  ],
-  hero: ["hero"],
-  events: ["events", "button", "eventList"],
-  button: ["button"],
-  eventList: ["eventList"],
-  orgs: ["orgs"],
-  announcements: ["announcements", "eventList2"],
-  eventList2: ["eventList2"],
+  container: ["container"],
   footer: ["footer", "columns"],
   columns: ["columns"]
 } as const;
@@ -604,13 +302,6 @@ type NodeDefaultElementType = {
   title: "a";
   links: "div";
   container: "div";
-  hero: "div";
-  events: "div";
-  button: "div";
-  eventList: "div";
-  orgs: "div";
-  announcements: "div";
-  eventList2: "div";
   footer: "div";
   columns: "div";
 };
@@ -674,13 +365,6 @@ export const PlasmicPage = Object.assign(
     title: makeNodeComponent("title"),
     links: makeNodeComponent("links"),
     container: makeNodeComponent("container"),
-    hero: makeNodeComponent("hero"),
-    events: makeNodeComponent("events"),
-    button: makeNodeComponent("button"),
-    eventList: makeNodeComponent("eventList"),
-    orgs: makeNodeComponent("orgs"),
-    announcements: makeNodeComponent("announcements"),
-    eventList2: makeNodeComponent("eventList2"),
     footer: makeNodeComponent("footer"),
     columns: makeNodeComponent("columns"),
 

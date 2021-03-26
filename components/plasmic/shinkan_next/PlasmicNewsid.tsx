@@ -86,50 +86,47 @@ function PlasmicNewsid__RenderFunc(props: {
             data-plasmic-name={"page"}
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
-            container={
-              <React.Fragment>
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.box__gyFq8
-                  )}
-                >
-                  {"お知らせ"}
-                </div>
+          >
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__gyFq8
+              )}
+            >
+              {"お知らせ"}
+            </div>
 
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.box__fjhVu
-                  )}
-                >
-                  {"新歓Webを公開しました"}
-                </div>
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__fjhVu
+              )}
+            >
+              {"新歓Webを公開しました"}
+            </div>
 
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.box___97Osx
-                  )}
-                >
-                  {"2020/4/1"}
-                </div>
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box___97Osx
+              )}
+            >
+              {"2020/4/1"}
+            </div>
 
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.box__bKa9P
-                  )}
-                >
-                  {"テキストがWordPressから取得されると思います"}
-                </div>
-              </React.Fragment>
-            }
-          />
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__bKa9P
+              )}
+            >
+              {"テキストがWordPressから取得されると思います"}
+            </div>
+          </Page>
         </div>
       </div>
     </React.Fragment>

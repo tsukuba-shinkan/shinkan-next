@@ -114,105 +114,98 @@ function PlasmicOrgid__RenderFunc(props: {
             data-plasmic-name={"page"}
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
-            container={
-              <div className={classNames(defaultcss.all, sty.box__cnIo)}>
-                <p.PlasmicSlot
-                  defaultContents={"団体の名前が入る"}
-                  value={args.title}
-                  className={classNames(sty.slotTitle)}
-                />
+          >
+            <div className={classNames(defaultcss.all, sty.box__cnIo)}>
+              <p.PlasmicSlot
+                defaultContents={"団体の名前が入る"}
+                value={args.title}
+                className={classNames(sty.slotTitle)}
+              />
 
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"columns"}
-                  data-plasmic-override={overrides.columns}
-                  hasGap={true}
-                  className={classNames(defaultcss.all, sty.columns)}
-                >
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"columns"}
+                data-plasmic-override={overrides.columns}
+                hasGap={true}
+                className={classNames(defaultcss.all, sty.columns)}
+              >
+                <div className={classNames(defaultcss.all, sty.column__f8AlD)}>
+                  <p.PlasmicSlot
+                    defaultContents={
+                      <img
+                        data-plasmic-name={"img"}
+                        data-plasmic-override={overrides.img}
+                        alt={""}
+                        className={classNames(defaultcss.img, sty.img)}
+                        loading={"lazy" as const}
+                        role={"img"}
+                        src={"/plasmic/shinkan_next/images/image2.png"}
+                      />
+                    }
+                    value={args.image}
+                  />
+
                   <div
-                    className={classNames(defaultcss.all, sty.column__f8AlD)}
+                    data-plasmic-name={"eventList"}
+                    data-plasmic-override={overrides.eventList}
+                    className={classNames(defaultcss.all, sty.eventList)}
                   >
                     <p.PlasmicSlot
                       defaultContents={
-                        <img
-                          data-plasmic-name={"img"}
-                          data-plasmic-override={overrides.img}
-                          alt={""}
-                          className={classNames(defaultcss.img, sty.img)}
-                          loading={"lazy" as const}
-                          role={"img"}
-                          src={"/plasmic/shinkan_next/images/image2.png"}
-                        />
-                      }
-                      value={args.image}
-                    />
+                        <React.Fragment>
+                          <EventListItem
+                            className={classNames(
+                              "__wab_instance",
+                              sty.eventListItem__gqe6M
+                            )}
+                          />
 
-                    <div
-                      data-plasmic-name={"eventList"}
-                      data-plasmic-override={overrides.eventList}
-                      className={classNames(defaultcss.all, sty.eventList)}
-                    >
+                          <EventListItem
+                            className={classNames(
+                              "__wab_instance",
+                              sty.eventListItem__yd4Fs
+                            )}
+                          />
+
+                          <EventListItem
+                            className={classNames(
+                              "__wab_instance",
+                              sty.eventListItem__sqUwZ
+                            )}
+                            eventTitle={
+                              <div
+                                className={classNames(
+                                  defaultcss.all,
+                                  defaultcss.__wab_text,
+                                  sty.box__xOko3
+                                )}
+                              >
+                                {"橋本環奈を眺める会"}
+                              </div>
+                            }
+                          />
+                        </React.Fragment>
+                      }
+                      value={args.events}
+                    />
+                  </div>
+                </div>
+
+                <div className={classNames(defaultcss.all, sty.column__geaVn)}>
+                  <div className={classNames(defaultcss.all, sty.box__vZu7)}>
+                    <div className={classNames(defaultcss.all, sty.box__u6L2B)}>
                       <p.PlasmicSlot
                         defaultContents={
-                          <React.Fragment>
-                            <EventListItem
-                              className={classNames(
-                                "__wab_instance",
-                                sty.eventListItem__gqe6M
-                              )}
-                            />
-
-                            <EventListItem
-                              className={classNames(
-                                "__wab_instance",
-                                sty.eventListItem__yd4Fs
-                              )}
-                            />
-
-                            <EventListItem
-                              className={classNames(
-                                "__wab_instance",
-                                sty.eventListItem__sqUwZ
-                              )}
-                              eventTitle={
-                                <div
-                                  className={classNames(
-                                    defaultcss.all,
-                                    defaultcss.__wab_text,
-                                    sty.box__xOko3
-                                  )}
-                                >
-                                  {"橋本環奈を眺める会"}
-                                </div>
-                              }
-                            />
-                          </React.Fragment>
+                          "ルイズ！ルイズ！ルイズ！ルイズぅぅうううわぁああああああああああああああああああああああん！！！\nあぁああああ…ああ…あっあっー！あぁああああああ！！！ルイズルイズルイズぅううぁわぁああああ！！！\nあぁクンカクンカ！クンカクンカ！スーハースーハー！スーハースーハー！いい匂いだなぁ…くんくん\nんはぁっ！ルイズ・フランソワーズたんの桃色ブロンドの髪をクンカクンカしたいお！クンカクンカ！あぁあ！！\n間違えた！モフモフしたいお！モフモフ！モフモフ！髪髪モフモフ！カリカリモフモフ…きゅんきゅんきゅい！！\n小説12巻のルイズたんかわいかったよぅ！！あぁぁああ…あああ…あっあぁああああ！！ふぁぁあああんんっ！！\nアニメ2期放送されて良かったねルイズたん！あぁあああああ！かわいい！ルイズたん！かわいい！あっああぁああ！\nコミック2巻も発売されて嬉し…いやぁああああああ！！！にゃああああああああん！！ぎゃああああああああ！！\nぐあああああああああああ！！！コミックなんて現実じゃない！！！！あ…小説もアニメもよく考えたら…\nル イ ズ ち ゃ ん は 現実 じ ゃ な い？にゃあああああああああああああん！！うぁああああああああああ！！\nそんなぁああああああ！！いやぁぁぁあああああああああ！！はぁああああああん！！ハルケギニアぁああああ！！\nこの！ちきしょー！やめてやる！！現実なんかやめ…て…え！？見…てる？表紙絵のルイズちゃんが僕を見てる？\n表紙絵のルイズちゃんが僕を見てるぞ！ルイズちゃんが僕を見てるぞ！挿絵のルイズちゃんが僕を見てるぞ！！\nアニメのルイズちゃんが僕に話しかけてるぞ！！！よかった…世の中まだまだ捨てたモンじゃないんだねっ！\nいやっほぉおおおおおおお！！！僕にはルイズちゃんがいる！！やったよケティ！！ひとりでできるもん！！！\nあ、コミックのルイズちゃああああああああああああああん！！いやぁあああああああああああああああ！！！！\nあっあんああっああんあアン様ぁあ！！シ、シエスター！！アンリエッタぁああああああ！！！タバサｧぁあああ！！\nううっうぅうう！！俺の想いよルイズへ届け！！ハルケギニアのルイズへ届け！"
                         }
-                        value={args.events}
+                        value={args.children}
                       />
                     </div>
                   </div>
-
-                  <div
-                    className={classNames(defaultcss.all, sty.column__geaVn)}
-                  >
-                    <div className={classNames(defaultcss.all, sty.box__vZu7)}>
-                      <div
-                        className={classNames(defaultcss.all, sty.box__u6L2B)}
-                      >
-                        <p.PlasmicSlot
-                          defaultContents={
-                            "ルイズ！ルイズ！ルイズ！ルイズぅぅうううわぁああああああああああああああああああああああん！！！\nあぁああああ…ああ…あっあっー！あぁああああああ！！！ルイズルイズルイズぅううぁわぁああああ！！！\nあぁクンカクンカ！クンカクンカ！スーハースーハー！スーハースーハー！いい匂いだなぁ…くんくん\nんはぁっ！ルイズ・フランソワーズたんの桃色ブロンドの髪をクンカクンカしたいお！クンカクンカ！あぁあ！！\n間違えた！モフモフしたいお！モフモフ！モフモフ！髪髪モフモフ！カリカリモフモフ…きゅんきゅんきゅい！！\n小説12巻のルイズたんかわいかったよぅ！！あぁぁああ…あああ…あっあぁああああ！！ふぁぁあああんんっ！！\nアニメ2期放送されて良かったねルイズたん！あぁあああああ！かわいい！ルイズたん！かわいい！あっああぁああ！\nコミック2巻も発売されて嬉し…いやぁああああああ！！！にゃああああああああん！！ぎゃああああああああ！！\nぐあああああああああああ！！！コミックなんて現実じゃない！！！！あ…小説もアニメもよく考えたら…\nル イ ズ ち ゃ ん は 現実 じ ゃ な い？にゃあああああああああああああん！！うぁああああああああああ！！\nそんなぁああああああ！！いやぁぁぁあああああああああ！！はぁああああああん！！ハルケギニアぁああああ！！\nこの！ちきしょー！やめてやる！！現実なんかやめ…て…え！？見…てる？表紙絵のルイズちゃんが僕を見てる？\n表紙絵のルイズちゃんが僕を見てるぞ！ルイズちゃんが僕を見てるぞ！挿絵のルイズちゃんが僕を見てるぞ！！\nアニメのルイズちゃんが僕に話しかけてるぞ！！！よかった…世の中まだまだ捨てたモンじゃないんだねっ！\nいやっほぉおおおおおおお！！！僕にはルイズちゃんがいる！！やったよケティ！！ひとりでできるもん！！！\nあ、コミックのルイズちゃああああああああああああああん！！いやぁあああああああああああああああ！！！！\nあっあんああっああんあアン様ぁあ！！シ、シエスター！！アンリエッタぁああああああ！！！タバサｧぁあああ！！\nううっうぅうう！！俺の想いよルイズへ届け！！ハルケギニアのルイズへ届け！"
-                          }
-                          value={args.children}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </p.Stack>
-              </div>
-            }
-          />
+                </div>
+              </p.Stack>
+            </div>
+          </Page>
         </div>
       </div>
     </React.Fragment>

@@ -116,6 +116,16 @@ function PlasmicEventListItem2__RenderFunc(props: {
               variants,
               "category",
               "other"
+            ),
+            [sty.box__category_sports__cAelGvLebt]: hasVariant(
+              variants,
+              "category",
+              "sports"
+            ),
+            [sty.box__expand__cAelGveGt]: hasVariant(
+              variants,
+              "expand",
+              "expand"
             )
           })}
         >
@@ -123,7 +133,14 @@ function PlasmicEventListItem2__RenderFunc(props: {
             className={classNames(
               defaultcss.all,
               defaultcss.__wab_text,
-              sty.box__wkg
+              sty.box__wkg,
+              {
+                [sty.box__category_other__wkg3V2CT]: hasVariant(
+                  variants,
+                  "category",
+                  "other"
+                )
+              }
             )}
           >
             {"4/4 18:00"}

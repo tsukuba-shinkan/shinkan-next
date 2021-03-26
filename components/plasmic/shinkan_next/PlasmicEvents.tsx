@@ -91,173 +91,166 @@ function PlasmicEvents__RenderFunc(props: {
             data-plasmic-name={"page"}
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
-            container={
-              <React.Fragment>
-                <div className={classNames(defaultcss.all, sty.box__h057B)}>
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__fyiow
-                    )}
-                  >
-                    {"イベント検索"}
-                  </div>
+          >
+            <div className={classNames(defaultcss.all, sty.box__h057B)}>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__fyiow
+                )}
+              >
+                {"イベント検索"}
+              </div>
 
-                  <div
-                    data-plasmic-name={"searchBox"}
-                    data-plasmic-override={overrides.searchBox}
-                    className={classNames(defaultcss.all, sty.searchBox)}
-                  >
-                    <div className={classNames(defaultcss.all, sty.box__s3Ufq)}>
-                      <div
-                        className={classNames(defaultcss.all, sty.box___0P6Py)}
-                      >
-                        <div
-                          className={classNames(
-                            defaultcss.all,
-                            defaultcss.__wab_text,
-                            sty.box__myI5B
-                          )}
-                        >
-                          {"日時"}
-                        </div>
-
-                        <input
-                          className={classNames(
-                            defaultcss.input,
-                            sty.textbox__h17Zg
-                          )}
-                          placeholder={"2021/03/22" as const}
-                          size={1 as const}
-                          type={"text" as const}
-                          value={"2021/03/22" as const}
-                        />
-
-                        <div
-                          className={classNames(
-                            defaultcss.all,
-                            defaultcss.__wab_text,
-                            sty.box__blOde
-                          )}
-                        >
-                          {"〜"}
-                        </div>
-
-                        <input
-                          className={classNames(
-                            defaultcss.input,
-                            sty.textbox___3Ngi3
-                          )}
-                          placeholder={"2021/03/22" as const}
-                          size={1 as const}
-                          type={"text" as const}
-                          value={"2021/03/22" as const}
-                        />
-                      </div>
-
-                      <div
-                        className={classNames(defaultcss.all, sty.box__yeUuy)}
-                      >
-                        <div
-                          className={classNames(
-                            defaultcss.all,
-                            defaultcss.__wab_text,
-                            sty.box__vQh62
-                          )}
-                        >
-                          {"キーワード"}
-                        </div>
-
-                        <input
-                          className={classNames(
-                            defaultcss.input,
-                            sty.textbox__m1Aer
-                          )}
-                          placeholder={"2021/03/22" as const}
-                          size={1 as const}
-                          type={"text" as const}
-                          value={"2021/03/22" as const}
-                        />
-                      </div>
-                    </div>
-
-                    <div className={classNames(defaultcss.all, sty.box__ygJNo)}>
-                      <SearchBlack24DpsvgIcon
-                        data-plasmic-name={"svg"}
-                        data-plasmic-override={overrides.svg}
-                        className={classNames(defaultcss.all, sty.svg)}
-                        role={"img"}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className={classNames(defaultcss.all, sty.box__ymDwU)}>
-                  <div className={classNames(defaultcss.all, sty.box__dOAhW)}>
+              <div
+                data-plasmic-name={"searchBox"}
+                data-plasmic-override={overrides.searchBox}
+                className={classNames(defaultcss.all, sty.searchBox)}
+              >
+                <div className={classNames(defaultcss.all, sty.box__s3Ufq)}>
+                  <div className={classNames(defaultcss.all, sty.box___0P6Py)}>
                     <div
                       className={classNames(
                         defaultcss.all,
                         defaultcss.__wab_text,
-                        sty.box__vKghT
+                        sty.box__myI5B
                       )}
                     >
-                      {"検索結果"}
+                      {"日時"}
                     </div>
 
-                    <div className={classNames(defaultcss.all, sty.box__xOcYl)}>
-                      <div
-                        className={classNames(
-                          defaultcss.all,
-                          defaultcss.__wab_text,
-                          sty.box___4690
-                        )}
-                      >
-                        {"4件"}
-                      </div>
+                    <input
+                      className={classNames(
+                        defaultcss.input,
+                        sty.textbox__h17Zg
+                      )}
+                      placeholder={"2021/03/22" as const}
+                      size={1 as const}
+                      type={"text" as const}
+                      value={"2021/03/22" as const}
+                    />
+
+                    <div
+                      className={classNames(
+                        defaultcss.all,
+                        defaultcss.__wab_text,
+                        sty.box__blOde
+                      )}
+                    >
+                      {"〜"}
                     </div>
+
+                    <input
+                      className={classNames(
+                        defaultcss.input,
+                        sty.textbox___3Ngi3
+                      )}
+                      placeholder={"2021/03/22" as const}
+                      size={1 as const}
+                      type={"text" as const}
+                      value={"2021/03/22" as const}
+                    />
                   </div>
 
-                  <div className={classNames(defaultcss.all, sty.box__tInj)}>
-                    <EventListItem2
+                  <div className={classNames(defaultcss.all, sty.box__yeUuy)}>
+                    <div
                       className={classNames(
-                        "__wab_instance",
-                        sty.eventListItem2__eMU1
+                        defaultcss.all,
+                        defaultcss.__wab_text,
+                        sty.box__vQh62
                       )}
-                    />
+                    >
+                      {"キーワード"}
+                    </div>
 
-                    <EventListItem2
+                    <input
                       className={classNames(
-                        "__wab_instance",
-                        sty.eventListItem2__gwpIg
+                        defaultcss.input,
+                        sty.textbox__m1Aer
                       )}
-                    />
-
-                    <EventListItem2
-                      className={classNames(
-                        "__wab_instance",
-                        sty.eventListItem2__scLsl
-                      )}
-                    />
-
-                    <EventListItem2
-                      className={classNames(
-                        "__wab_instance",
-                        sty.eventListItem2__zc5Ak
-                      )}
-                    />
-
-                    <EventListItem2
-                      className={classNames(
-                        "__wab_instance",
-                        sty.eventListItem2__nAqkf
-                      )}
+                      placeholder={"2021/03/22" as const}
+                      size={1 as const}
+                      type={"text" as const}
+                      value={"2021/03/22" as const}
                     />
                   </div>
                 </div>
-              </React.Fragment>
-            }
-          />
+
+                <div className={classNames(defaultcss.all, sty.box__ygJNo)}>
+                  <SearchBlack24DpsvgIcon
+                    data-plasmic-name={"svg"}
+                    data-plasmic-override={overrides.svg}
+                    className={classNames(defaultcss.all, sty.svg)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className={classNames(defaultcss.all, sty.box__ymDwU)}>
+              <div className={classNames(defaultcss.all, sty.box__dOAhW)}>
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__vKghT
+                  )}
+                >
+                  {"検索結果"}
+                </div>
+
+                <div className={classNames(defaultcss.all, sty.box__xOcYl)}>
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.box___4690
+                    )}
+                  >
+                    {"4件"}
+                  </div>
+                </div>
+              </div>
+
+              <div className={classNames(defaultcss.all, sty.box__tInj)}>
+                <EventListItem2
+                  className={classNames(
+                    "__wab_instance",
+                    sty.eventListItem2__eMU1
+                  )}
+                />
+
+                <EventListItem2
+                  className={classNames(
+                    "__wab_instance",
+                    sty.eventListItem2__gwpIg
+                  )}
+                />
+
+                <EventListItem2
+                  className={classNames(
+                    "__wab_instance",
+                    sty.eventListItem2__scLsl
+                  )}
+                />
+
+                <EventListItem2
+                  className={classNames(
+                    "__wab_instance",
+                    sty.eventListItem2__zc5Ak
+                  )}
+                />
+
+                <EventListItem2
+                  className={classNames(
+                    "__wab_instance",
+                    sty.eventListItem2__nAqkf
+                  )}
+                />
+              </div>
+            </div>
+          </Page>
         </div>
       </div>
     </React.Fragment>

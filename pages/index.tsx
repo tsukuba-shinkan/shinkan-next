@@ -38,7 +38,7 @@ function Homepage() {
       src: string;
       description: string;
       name: string;
-      category: string;
+      category: "sports" | "art" | "culture" | "other";
       orgId: string;
     }[]
   >([]);
@@ -63,7 +63,7 @@ function Homepage() {
         description: "うんちまんこうんこ",
         name: "ファックファック",
         orgId: "5",
-        category: "文化系・一般なんとか団体",
+        category: "culture",
       },
     ]);
   }, []);

@@ -36,15 +36,21 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
 import * as sty from "./PlasmicOrgCard.module.css"; // plasmic-import: hH2h_5Dtgs/css
 
-export type PlasmicOrgCard__VariantMembers = {};
+export type PlasmicOrgCard__VariantMembers = {
+  category: "sports" | "art" | "culture" | "other";
+};
 
-export type PlasmicOrgCard__VariantsArgs = {};
+export type PlasmicOrgCard__VariantsArgs = {
+  category?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+};
+
 type VariantPropType = keyof PlasmicOrgCard__VariantsArgs;
-export const PlasmicOrgCard__VariantProps = new Array<VariantPropType>();
+export const PlasmicOrgCard__VariantProps = new Array<VariantPropType>(
+  "category"
+);
 
 export type PlasmicOrgCard__ArgsType = {
   name?: React.ReactNode;
-  category?: React.ReactNode;
   description?: React.ReactNode;
   children?: React.ReactNode;
   src?: string;
@@ -54,7 +60,6 @@ export type PlasmicOrgCard__ArgsType = {
 type ArgPropType = keyof PlasmicOrgCard__ArgsType;
 export const PlasmicOrgCard__ArgProps = new Array<ArgPropType>(
   "name",
-  "category",
   "description",
   "children",
   "src",
@@ -67,11 +72,11 @@ export type PlasmicOrgCard__OverridesType = {
 
 export interface DefaultOrgCardProps {
   name?: React.ReactNode;
-  category?: React.ReactNode;
   description?: React.ReactNode;
   children?: React.ReactNode;
   src?: string;
   to?: string | PageHref;
+  category?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
   className?: string;
 }
 
@@ -89,7 +94,16 @@ function PlasmicOrgCard__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__category_art]: hasVariant(variants, "category", "art"),
+        [sty.root__category_culture]: hasVariant(
+          variants,
+          "category",
+          "culture"
+        ),
+        [sty.root__category_other]: hasVariant(variants, "category", "other"),
+        [sty.root__category_sports]: hasVariant(variants, "category", "sports")
+      })}
       component={__PlatformLink}
       href={args.to}
       platform={"nextjs"}
@@ -104,8 +118,39 @@ function PlasmicOrgCard__RenderFunc(props: {
           />
         </div>
 
-        <div className={classNames(defaultcss.all, sty.box___6WKxl)}>
-          <div className={classNames(defaultcss.all, sty.box___8In5T)}>
+        <div
+          className={classNames(defaultcss.all, sty.box___6WKxl, {
+            [sty.box__category_art___6WKxlLhErp]: hasVariant(
+              variants,
+              "category",
+              "art"
+            ),
+            [sty.box__category_culture___6WKxllHrU6]: hasVariant(
+              variants,
+              "category",
+              "culture"
+            ),
+            [sty.box__category_other___6WKxlpqEoh]: hasVariant(
+              variants,
+              "category",
+              "other"
+            ),
+            [sty.box__category_sports___6WKxl6TPp1]: hasVariant(
+              variants,
+              "category",
+              "sports"
+            )
+          })}
+        >
+          <div
+            className={classNames(defaultcss.all, sty.box___8In5T, {
+              [sty.box__category_culture___8In5TlHrU6]: hasVariant(
+                variants,
+                "category",
+                "culture"
+              )
+            })}
+          >
             <p.PlasmicSlot
               defaultContents={
                 "ここには団体のdescriptionが多分入るんだと思います。多分。"
@@ -115,7 +160,15 @@ function PlasmicOrgCard__RenderFunc(props: {
             />
           </div>
 
-          <div className={classNames(defaultcss.all, sty.box__jSjep)}>
+          <div
+            className={classNames(defaultcss.all, sty.box__jSjep, {
+              [sty.box__category_other__jSjeppqEoh]: hasVariant(
+                variants,
+                "category",
+                "other"
+              )
+            })}
+          >
             <p.PlasmicSlot
               defaultContents={"橋本環奈同好会"}
               value={args.name}
@@ -124,11 +177,45 @@ function PlasmicOrgCard__RenderFunc(props: {
           </div>
 
           <div className={classNames(defaultcss.all, sty.box__ekacc)}>
-            <p.PlasmicSlot
-              defaultContents={"体育系・一般学生団体"}
-              value={args.category}
-              className={classNames(sty.slotCategory)}
-            />
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__k4V,
+                {
+                  [sty.box__category_art__k4VLhErp]: hasVariant(
+                    variants,
+                    "category",
+                    "art"
+                  ),
+                  [sty.box__category_culture__k4VLHrU6]: hasVariant(
+                    variants,
+                    "category",
+                    "culture"
+                  ),
+                  [sty.box__category_other__k4VPqEoh]: hasVariant(
+                    variants,
+                    "category",
+                    "other"
+                  ),
+                  [sty.box__category_sports__k4V6TPp1]: hasVariant(
+                    variants,
+                    "category",
+                    "sports"
+                  )
+                }
+              )}
+            >
+              {hasVariant(variants, "category", "other")
+                ? "その他"
+                : hasVariant(variants, "category", "culture")
+                ? "文化系"
+                : hasVariant(variants, "category", "art")
+                ? "芸術系"
+                : hasVariant(variants, "category", "sports")
+                ? "体育系"
+                : "なんとか学生団体"}
+            </div>
           </div>
         </div>
       </div>

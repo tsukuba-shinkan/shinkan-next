@@ -5,8 +5,6 @@
   justify-content: flex-start;
   position: relative;
   cursor: pointer;
-  transition-property: all, all;
-  transition-duration: 1s, 1s;
   height: auto;
   width: 100%;
   min-width: 0;

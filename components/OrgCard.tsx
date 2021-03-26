@@ -24,7 +24,7 @@ interface OrgCardProps extends DefaultOrgCardProps {
   src?: string;
   description: string;
   name: string;
-  category: string;
+  category: "sports" | "art" | "culture" | "other";
 }
 
 function OrgCard(props: OrgCardProps) {
