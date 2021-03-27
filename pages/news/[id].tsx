@@ -7,6 +7,7 @@ import useSWR from "swr";
 import Page from "../../components/Page";
 import { PlasmicNewsid } from "../../components/plasmic/shinkan_next/PlasmicNewsid";
 import Plasmic_404 from "../../components/plasmic/shinkan_next/Plasmic_404";
+import { fallback } from "../../utils/config";
 import { buildPathWithWPQuery, wpFetch } from "../../utils/wpFetch";
 export const getStaticPaths: GetStaticPaths = async () => {
   const pages = await wpFetch(
@@ -20,7 +21,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
   return {
     paths,
-    fallback: true,
+    fallback: fallback,
   };
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {

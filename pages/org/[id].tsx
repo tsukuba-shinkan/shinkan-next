@@ -14,6 +14,7 @@ import { Plasmic_404 } from "../../components/plasmic/shinkan_next/Plasmic_404";
 import SocialLink from "../../components/SocialLink";
 import { WPCarousel } from "../../components/WPCarousel";
 import { activityType, organizationType } from "../../utils/categoryTable";
+import { fallback } from "../../utils/config";
 export const getStaticPaths: GetStaticPaths = async () => {
   const pages = await wpFetch("/v2/pages");
 
@@ -24,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
   return {
     paths,
-    fallback: true,
+    fallback: fallback,
   };
 };
 

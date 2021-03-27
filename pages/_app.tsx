@@ -3,7 +3,7 @@ import { SWRConfig } from "swr";
 import "../styles/index.scss";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <SWRConfig value={{ revalidateOnFocus: false }}>
+    <SWRConfig value={{ revalidateOnFocus: false, revalidateOnMount: true }}>
       <Component {...pageProps} />
     </SWRConfig>
   );
