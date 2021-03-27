@@ -32,10 +32,12 @@ export function WPCarousel({ mainImage, otherImages, youtubeLinks }: Props) {
     {
       original: useWPImage(mainImage, "large"),
       thumbnail: useWPImage(mainImage, "thumbnail"),
+      fullscreen: useWPImage(mainImage, "full"),
     },
     ...otherImages.map((im) => ({
       original: useWPImage(im, "large"),
       thumbnail: useWPImage(im, "thumbnail"),
+      fullscreen: useWPImage(im, "full"),
     })),
     ...ytids.map((id) => ({
       thumbnail: `https://img.youtube.com/vi/${id}/0.jpg`,
