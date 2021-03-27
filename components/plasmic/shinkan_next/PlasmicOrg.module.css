@@ -46,7 +46,7 @@
   font-size: 18px;
   padding: 16px;
 }
-.box__raF0P {
+.searchButton {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -99,7 +99,12 @@
   bottom: auto;
   flex-grow: 1;
 }
-.box___8Suts {
+.slotResultLength {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__gjBqq {
   position: relative;
   font-size: 22px;
   font-weight: 700;
@@ -136,5 +141,15 @@
   position: relative;
 }
 .orgCard__nsBjC:global(.__wab_instance) {
+  position: relative;
+}
+.box__a7EEb {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.pager:global(.__wab_instance) {
   position: relative;
 }

@@ -220,6 +220,19 @@
           "cssFilePath": "plasmic/shinkan_next/Plasmic_404.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "v0V4QrK8UW",
+          "name": "Pager",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicPager.tsx",
+          "importSpec": {
+            "modulePath": "Pager.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicPager.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -237,6 +250,16 @@
           "id": "PYIjxKxUq0",
           "name": "ExpandLess24PxsvgIcon",
           "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__ExpandLess24Pxsvg.tsx"
+        },
+        {
+          "id": "r4LI--POIP",
+          "name": "NavigateBeforeBlack18DpsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__NavigateBeforeBlack18Dpsvg.tsx"
+        },
+        {
+          "id": "4ceokTvl9I",
+          "name": "NavigateNextBlack18DpsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__NavigateNextBlack18Dpsvg.tsx"
         }
       ],
       "images": [

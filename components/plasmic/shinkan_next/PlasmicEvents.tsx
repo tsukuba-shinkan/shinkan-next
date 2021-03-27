@@ -54,6 +54,7 @@ export type PlasmicEvents__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
   searchBox?: p.Flex<"div">;
+  searchButton?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
 };
 
@@ -177,7 +178,11 @@ function PlasmicEvents__RenderFunc(props: {
                   </div>
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.box__ygJNo)}>
+                <div
+                  data-plasmic-name={"searchButton"}
+                  data-plasmic-override={overrides.searchButton}
+                  className={classNames(defaultcss.all, sty.searchButton)}
+                >
                   <SearchBlack24DpsvgIcon
                     data-plasmic-name={"svg"}
                     data-plasmic-override={overrides.svg}
@@ -258,9 +263,10 @@ function PlasmicEvents__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "page", "searchBox", "svg"],
-  page: ["page", "searchBox", "svg"],
-  searchBox: ["searchBox", "svg"],
+  root: ["root", "page", "searchBox", "searchButton", "svg"],
+  page: ["page", "searchBox", "searchButton", "svg"],
+  searchBox: ["searchBox", "searchButton", "svg"],
+  searchButton: ["searchButton", "svg"],
   svg: ["svg"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -271,6 +277,7 @@ type NodeDefaultElementType = {
   root: "div";
   page: typeof Page;
   searchBox: "div";
+  searchButton: "div";
   svg: "svg";
 };
 
@@ -331,6 +338,7 @@ export const PlasmicEvents = Object.assign(
     // Helper components rendering sub-elements
     page: makeNodeComponent("page"),
     searchBox: makeNodeComponent("searchBox"),
+    searchButton: makeNodeComponent("searchButton"),
     svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicEvents

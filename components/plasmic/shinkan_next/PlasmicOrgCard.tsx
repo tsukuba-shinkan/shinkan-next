@@ -152,9 +152,7 @@ function PlasmicOrgCard__RenderFunc(props: {
             })}
           >
             <p.PlasmicSlot
-              defaultContents={
-                "ここには団体のdescriptionが多分入るんだと思います。多分。"
-              }
+              defaultContents={"文字"}
               value={args.description}
               className={classNames(sty.slotDescription)}
             />

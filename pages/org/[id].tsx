@@ -10,6 +10,7 @@ import { wpFetch } from "../../utils/wpFetch";
 import useSWR from "swr";
 import { useWPImage } from "../../hooks/useWPImage";
 import Page from "../../components/Page";
+import { Plasmic_404 } from "../../components/plasmic/shinkan_next/Plasmic_404";
 export const getStaticPaths: GetStaticPaths = async () => {
   const pages = await wpFetch("/v2/pages");
 
@@ -46,6 +47,9 @@ function Orgid({ initialData }: Props) {
   const { data, error } = useSWR(`/v2/pages/${pageId}`, wpFetch, {
     initialData,
   });
+  if (data?.data?.status === 404) {
+    return <Plasmic_404 />;
+  }
   if (error) {
     console.error("page error", error);
     return (
@@ -54,7 +58,7 @@ function Orgid({ initialData }: Props) {
       </Page>
     );
   }
-  if (!data) {
+  if (!data?.title) {
     return (
       <Page>
         <>読み込み中</>
