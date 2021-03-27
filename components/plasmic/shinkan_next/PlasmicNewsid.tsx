@@ -43,9 +43,18 @@ export type PlasmicNewsid__VariantsArgs = {};
 type VariantPropType = keyof PlasmicNewsid__VariantsArgs;
 export const PlasmicNewsid__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicNewsid__ArgsType = {};
+export type PlasmicNewsid__ArgsType = {
+  title?: React.ReactNode;
+  children?: React.ReactNode;
+  date?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicNewsid__ArgsType;
-export const PlasmicNewsid__ArgProps = new Array<ArgPropType>();
+export const PlasmicNewsid__ArgProps = new Array<ArgPropType>(
+  "title",
+  "children",
+  "date"
+);
 
 export type PlasmicNewsid__OverridesType = {
   root?: p.Flex<"div">;
@@ -53,6 +62,9 @@ export type PlasmicNewsid__OverridesType = {
 };
 
 export interface DefaultNewsidProps {
+  title?: React.ReactNode;
+  children?: React.ReactNode;
+  date?: React.ReactNode;
   className?: string;
 }
 
@@ -97,34 +109,28 @@ function PlasmicNewsid__RenderFunc(props: {
               {"お知らせ"}
             </div>
 
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__fjhVu
-              )}
-            >
-              {"新歓Webを公開しました"}
+            <div className={classNames(defaultcss.all, sty.box__fjhVu)}>
+              <p.PlasmicSlot
+                defaultContents={"新歓Webを公開しました"}
+                value={args.title}
+                className={classNames(sty.slotTitle)}
+              />
             </div>
 
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box___97Osx
-              )}
-            >
-              {"2020/4/1"}
+            <div className={classNames(defaultcss.all, sty.box___97Osx)}>
+              <p.PlasmicSlot
+                defaultContents={"2020/4/1"}
+                value={args.date}
+                className={classNames(sty.slotDate)}
+              />
             </div>
 
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__bKa9P
-              )}
-            >
-              {"テキストがWordPressから取得されると思います"}
+            <div className={classNames(defaultcss.all, sty.box__bKa9P)}>
+              <p.PlasmicSlot
+                defaultContents={"テキストがWordPressから取得されると思います"}
+                value={args.children}
+                className={classNames(sty.slotChildren)}
+              />
             </div>
           </Page>
         </div>

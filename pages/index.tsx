@@ -2,10 +2,12 @@
 // This file is owned by you, feel free to edit as you see fit.
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import useSWR from "swr";
 import CategoryRadio from "../components/CategoryRadio";
 import EventListItem from "../components/EventListItem";
 import OrgCard from "../components/OrgCard";
 import { PlasmicHome } from "../components/plasmic/shinkan_next/PlasmicHome";
+import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 
 type CatUnion = "all" | "sports" | "art" | "culture" | "other";
 function Homepage() {
@@ -42,9 +44,6 @@ function Homepage() {
       orgId: number;
     }[]
   >([]);
-  const [news, setNews] = useState<
-    { dateTime: string; title: string; newsId: string }[]
-  >([]);
   useEffect(() => {
     setEvents([
       {
@@ -53,8 +52,17 @@ function Homepage() {
         orgId: "unko_circle",
       },
     ]);
-    setNews([{ dateTime: "4/1", newsId: "4", title: "新歓Webを公開しました" }]);
   }, []);
+  const { data: newsData } = useSWR(
+    buildPathWithWPQuery("/v2/posts", { tags: /*news=2*/ "2" }),
+    wpFetch
+  );
+  const news: { date: string; title: string; newsId: string }[] =
+    newsData?.map((n: any) => ({
+      date: n.date.replace(/T.*$/, ""), // 汚い？ああそう
+      title: n.title.rendered,
+      newsId: n.id,
+    })) || [];
   useEffect(() => {
     setOrgs([
       {
@@ -101,7 +109,7 @@ function Homepage() {
       news={
         <>
           {news.map((ev) => (
-            <EventListItem eventTitle={ev.title} dateTime={ev.dateTime}>
+            <EventListItem eventTitle={ev.title} dateTime={ev.date}>
               <Link href={`/news/${ev.newsId}`}>詳細を表示</Link>
             </EventListItem>
           ))}

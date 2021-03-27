@@ -21,23 +21,35 @@
 }
 .box__fjhVu {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
-  font-size: 20px;
-  font-weight: 400;
   padding-top: 5px;
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+}
+.slotTitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
 .box___97Osx {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 0px;
+}
+.slotDate {
   font-size: 15px;
   font-weight: 400;
-  padding: 2px 0px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
 .box__bKa9P {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  display: flex;
+  flex-direction: row;
   padding: 15px;
   margin: 12px;
   background: #ffffff;
+}
+.slotChildren {
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
