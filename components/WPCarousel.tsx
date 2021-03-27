@@ -6,7 +6,7 @@ type Props = {
   otherImages: string[];
   youtubeLinks: string[];
 };
-function ytIframe({ id }: { id: string }) {
+function ytIframe({ id }: any) {
   return (
     <iframe
       src={`https://www.youtube.com/embed/${id}`}
