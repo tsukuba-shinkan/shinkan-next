@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import OrgCard from "../components/OrgCard";
 import Pager from "../components/Pager";
 import { PlasmicOrg } from "../components/plasmic/shinkan_next/PlasmicOrg";
+import { activityType, organizationType } from "../utils/categoryTable";
 import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 
 const PER_PAGE = 1;
@@ -30,7 +31,8 @@ function Org() {
       wpsrc: string;
       description: string;
       name: string;
-      category: "sports" | "art" | "culture" | "other";
+      activity: "sports" | "art" | "culture" | "other";
+      orgType: "ippan" | "kagai" | "other";
       orgId: number;
     }[]
   >([]);
@@ -59,7 +61,8 @@ function Org() {
         description: p.excerpt.rendered,
         name: p.title.rendered,
         orgId: p.id as number,
-        category: "art",
+        activity: activityType[p.activitytype[0]].name,
+        orgType: organizationType[p.organizationtype[0]].name,
         wpsrc: p.event.mainImage?.[0],
       }))
     );

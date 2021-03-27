@@ -40,7 +40,8 @@ function Homepage() {
       src: string;
       description: string;
       name: string;
-      category: "sports" | "art" | "culture" | "other";
+      activity: "sports" | "art" | "culture" | "other";
+      orgType: "ippan" | "kagai" | "other";
       orgId: number;
     }[]
   >([]);
@@ -71,7 +72,8 @@ function Homepage() {
         description: "うんちまんこうんこ",
         name: "ファックファック",
         orgId: 5,
-        category: "culture",
+        activity: "culture",
+        orgType: "ippan",
       },
     ]);
   }, []);
