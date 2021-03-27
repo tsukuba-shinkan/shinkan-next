@@ -41,11 +41,21 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
 import * as sty from "./PlasmicOrgid.module.css"; // plasmic-import: BVU0MRRo9W/css
 
-export type PlasmicOrgid__VariantMembers = {};
+export type PlasmicOrgid__VariantMembers = {
+  activity: "sports" | "culture" | "art" | "other";
+  orgType: "ippan" | "kagai" | "other";
+};
 
-export type PlasmicOrgid__VariantsArgs = {};
+export type PlasmicOrgid__VariantsArgs = {
+  activity?: SingleChoiceArg<"sports" | "culture" | "art" | "other">;
+  orgType?: SingleChoiceArg<"ippan" | "kagai" | "other">;
+};
+
 type VariantPropType = keyof PlasmicOrgid__VariantsArgs;
-export const PlasmicOrgid__VariantProps = new Array<VariantPropType>();
+export const PlasmicOrgid__VariantProps = new Array<VariantPropType>(
+  "activity",
+  "orgType"
+);
 
 export type PlasmicOrgid__ArgsType = {
   id?: string;
@@ -81,6 +91,8 @@ export interface DefaultOrgidProps {
   children?: React.ReactNode;
   image?: React.ReactNode;
   socialLinks?: React.ReactNode;
+  activity?: SingleChoiceArg<"sports" | "culture" | "art" | "other">;
+  orgType?: SingleChoiceArg<"ippan" | "kagai" | "other">;
   className?: string;
 }
 
@@ -111,7 +123,14 @@ function PlasmicOrgid__RenderFunc(props: {
           className={classNames(
             defaultcss.all,
             projectcss.root_reset,
-            sty.root
+            sty.root,
+            {
+              [sty.root__orgType_other]: hasVariant(
+                variants,
+                "orgType",
+                "other"
+              )
+            }
           )}
         >
           <Page
@@ -125,6 +144,126 @@ function PlasmicOrgid__RenderFunc(props: {
                 value={args.title}
                 className={classNames(sty.slotTitle)}
               />
+
+              <div className={classNames(defaultcss.all, sty.box__b7NZx)}>
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box___8DdUu,
+                    {
+                      [sty.box__activity_art___8DdUuyPZfK]: hasVariant(
+                        variants,
+                        "activity",
+                        "art"
+                      ),
+                      [sty.box__activity_culture___8DdUuM2QMg]: hasVariant(
+                        variants,
+                        "activity",
+                        "culture"
+                      ),
+                      [sty.box__activity_other___8DdUuicU8N]: hasVariant(
+                        variants,
+                        "activity",
+                        "other"
+                      ),
+                      [sty.box__activity_sports___8DdUuCQzR6]: hasVariant(
+                        variants,
+                        "activity",
+                        "sports"
+                      ),
+                      [sty.box__orgType_ippan___8DdUuVz8Uu]: hasVariant(
+                        variants,
+                        "orgType",
+                        "ippan"
+                      ),
+                      [sty.box__orgType_kagai___8DdUuTsuzY]: hasVariant(
+                        variants,
+                        "orgType",
+                        "kagai"
+                      ),
+                      [sty.box__orgType_other___8DdUuOkS11]: hasVariant(
+                        variants,
+                        "orgType",
+                        "other"
+                      )
+                    }
+                  )}
+                >
+                  {hasVariant(variants, "activity", "other")
+                    ? "その他"
+                    : hasVariant(variants, "activity", "art")
+                    ? "芸術系"
+                    : hasVariant(variants, "activity", "culture")
+                    ? "文化系"
+                    : hasVariant(variants, "activity", "sports")
+                    ? "体育系"
+                    : "なんとか系"}
+                </div>
+
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__yBxk1
+                  )}
+                >
+                  {"・"}
+                </div>
+
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__kDhS,
+                    {
+                      [sty.box__activity_art__kDhSyPZfK]: hasVariant(
+                        variants,
+                        "activity",
+                        "art"
+                      ),
+                      [sty.box__activity_culture__kDhSM2QMg]: hasVariant(
+                        variants,
+                        "activity",
+                        "culture"
+                      ),
+                      [sty.box__activity_other__kDhSicU8N]: hasVariant(
+                        variants,
+                        "activity",
+                        "other"
+                      ),
+                      [sty.box__activity_sports__kDhSCQzR6]: hasVariant(
+                        variants,
+                        "activity",
+                        "sports"
+                      ),
+                      [sty.box__orgType_ippan__kDhSVz8Uu]: hasVariant(
+                        variants,
+                        "orgType",
+                        "ippan"
+                      ),
+                      [sty.box__orgType_kagai__kDhSTsuzY]: hasVariant(
+                        variants,
+                        "orgType",
+                        "kagai"
+                      ),
+                      [sty.box__orgType_other__kDhSOkS11]: hasVariant(
+                        variants,
+                        "orgType",
+                        "other"
+                      )
+                    }
+                  )}
+                >
+                  {hasVariant(variants, "orgType", "other")
+                    ? "その他"
+                    : hasVariant(variants, "orgType", "kagai")
+                    ? "課外活動団体"
+                    : hasVariant(variants, "orgType", "ippan")
+                    ? "一般学生団体"
+                    : "なんとか学生団体"}
+                </div>
+              </div>
 
               <p.Stack
                 as={"div"}

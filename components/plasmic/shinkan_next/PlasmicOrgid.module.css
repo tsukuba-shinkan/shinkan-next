@@ -24,6 +24,28 @@
   font-size: 32px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
+.box__b7NZx {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.box___8DdUu {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__activity_other___8DdUuicU8N {
+  height: auto;
+}
+.box__yBxk1 {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__kDhS {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
 .columns {
   display: flex;
   flex-direction: row;

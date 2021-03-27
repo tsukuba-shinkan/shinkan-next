@@ -37,16 +37,19 @@ import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-impo
 import * as sty from "./PlasmicOrgCard.module.css"; // plasmic-import: hH2h_5Dtgs/css
 
 export type PlasmicOrgCard__VariantMembers = {
-  category: "sports" | "art" | "culture" | "other";
+  activity: "sports" | "art" | "culture" | "other";
+  orgType: "ippan" | "kagai" | "other";
 };
 
 export type PlasmicOrgCard__VariantsArgs = {
-  category?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  orgType?: SingleChoiceArg<"ippan" | "kagai" | "other">;
 };
 
 type VariantPropType = keyof PlasmicOrgCard__VariantsArgs;
 export const PlasmicOrgCard__VariantProps = new Array<VariantPropType>(
-  "category"
+  "activity",
+  "orgType"
 );
 
 export type PlasmicOrgCard__ArgsType = {
@@ -76,7 +79,8 @@ export interface DefaultOrgCardProps {
   children?: React.ReactNode;
   src?: string;
   to?: string | PageHref;
-  category?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  orgType?: SingleChoiceArg<"ippan" | "kagai" | "other">;
   className?: string;
 }
 
@@ -95,14 +99,14 @@ function PlasmicOrgCard__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
-        [sty.root__category_art]: hasVariant(variants, "category", "art"),
-        [sty.root__category_culture]: hasVariant(
+        [sty.root__activity_art]: hasVariant(variants, "activity", "art"),
+        [sty.root__activity_culture]: hasVariant(
           variants,
-          "category",
+          "activity",
           "culture"
         ),
-        [sty.root__category_other]: hasVariant(variants, "category", "other"),
-        [sty.root__category_sports]: hasVariant(variants, "category", "sports")
+        [sty.root__activity_other]: hasVariant(variants, "activity", "other"),
+        [sty.root__activity_sports]: hasVariant(variants, "activity", "sports")
       })}
       component={__PlatformLink}
       href={args.to}
@@ -120,33 +124,33 @@ function PlasmicOrgCard__RenderFunc(props: {
 
         <div
           className={classNames(defaultcss.all, sty.box___6WKxl, {
-            [sty.box__category_art___6WKxlLhErp]: hasVariant(
+            [sty.box__activity_art___6WKxlLhErp]: hasVariant(
               variants,
-              "category",
+              "activity",
               "art"
             ),
-            [sty.box__category_culture___6WKxllHrU6]: hasVariant(
+            [sty.box__activity_culture___6WKxllHrU6]: hasVariant(
               variants,
-              "category",
+              "activity",
               "culture"
             ),
-            [sty.box__category_other___6WKxlpqEoh]: hasVariant(
+            [sty.box__activity_other___6WKxlpqEoh]: hasVariant(
               variants,
-              "category",
+              "activity",
               "other"
             ),
-            [sty.box__category_sports___6WKxl6TPp1]: hasVariant(
+            [sty.box__activity_sports___6WKxl6TPp1]: hasVariant(
               variants,
-              "category",
+              "activity",
               "sports"
             )
           })}
         >
           <div
             className={classNames(defaultcss.all, sty.box___8In5T, {
-              [sty.box__category_culture___8In5TlHrU6]: hasVariant(
+              [sty.box__activity_culture___8In5TlHrU6]: hasVariant(
                 variants,
-                "category",
+                "activity",
                 "culture"
               )
             })}
@@ -160,9 +164,9 @@ function PlasmicOrgCard__RenderFunc(props: {
 
           <div
             className={classNames(defaultcss.all, sty.box__jSjep, {
-              [sty.box__category_other__jSjeppqEoh]: hasVariant(
+              [sty.box__activity_other__jSjeppqEoh]: hasVariant(
                 variants,
-                "category",
+                "activity",
                 "other"
               )
             })}
@@ -174,44 +178,115 @@ function PlasmicOrgCard__RenderFunc(props: {
             />
           </div>
 
-          <div className={classNames(defaultcss.all, sty.box__ekacc)}>
+          <div
+            className={classNames(defaultcss.all, sty.box__ekacc, {
+              [sty.box__activity_art__ekaccLhErp]: hasVariant(
+                variants,
+                "activity",
+                "art"
+              ),
+              [sty.box__activity_sports__ekacc6TPp1]: hasVariant(
+                variants,
+                "activity",
+                "sports"
+              )
+            })}
+          >
             <div
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
                 sty.box__k4V,
                 {
-                  [sty.box__category_art__k4VLhErp]: hasVariant(
+                  [sty.box__activity_art__k4VLhErp]: hasVariant(
                     variants,
-                    "category",
+                    "activity",
                     "art"
                   ),
-                  [sty.box__category_culture__k4VLHrU6]: hasVariant(
+                  [sty.box__activity_culture__k4VLHrU6]: hasVariant(
                     variants,
-                    "category",
+                    "activity",
                     "culture"
                   ),
-                  [sty.box__category_other__k4VPqEoh]: hasVariant(
+                  [sty.box__activity_other__k4VPqEoh]: hasVariant(
                     variants,
-                    "category",
+                    "activity",
                     "other"
                   ),
-                  [sty.box__category_sports__k4V6TPp1]: hasVariant(
+                  [sty.box__activity_sports__k4V6TPp1]: hasVariant(
                     variants,
-                    "category",
+                    "activity",
                     "sports"
                   )
                 }
               )}
             >
-              {hasVariant(variants, "category", "other")
+              {hasVariant(variants, "activity", "other")
                 ? "その他"
-                : hasVariant(variants, "category", "culture")
+                : hasVariant(variants, "activity", "culture")
                 ? "文化系"
-                : hasVariant(variants, "category", "art")
+                : hasVariant(variants, "activity", "art")
                 ? "芸術系"
-                : hasVariant(variants, "category", "sports")
+                : hasVariant(variants, "activity", "sports")
                 ? "体育系"
+                : "なんとか系"}
+            </div>
+
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__e1DR
+              )}
+            >
+              {"・"}
+            </div>
+
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box___1OPd2,
+                {
+                  [sty.box__activity_art___1OPd2LhErp]: hasVariant(
+                    variants,
+                    "activity",
+                    "art"
+                  ),
+                  [sty.box__activity_culture___1OPd2LHrU6]: hasVariant(
+                    variants,
+                    "activity",
+                    "culture"
+                  ),
+                  [sty.box__activity_sports___1OPd26TPp1]: hasVariant(
+                    variants,
+                    "activity",
+                    "sports"
+                  ),
+                  [sty.box__orgType_ippan___1OPd2FytRu]: hasVariant(
+                    variants,
+                    "orgType",
+                    "ippan"
+                  ),
+                  [sty.box__orgType_kagai___1OPd2Efjyw]: hasVariant(
+                    variants,
+                    "orgType",
+                    "kagai"
+                  ),
+                  [sty.box__orgType_other___1OPd2Cn0BT]: hasVariant(
+                    variants,
+                    "orgType",
+                    "other"
+                  )
+                }
+              )}
+            >
+              {hasVariant(variants, "orgType", "other")
+                ? "その他"
+                : hasVariant(variants, "orgType", "kagai")
+                ? "課外活動団体"
+                : hasVariant(variants, "orgType", "ippan")
+                ? "一般学生団体"
                 : "なんとか学生団体"}
             </div>
           </div>

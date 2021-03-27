@@ -13,6 +13,7 @@ import Page from "../../components/Page";
 import { Plasmic_404 } from "../../components/plasmic/shinkan_next/Plasmic_404";
 import SocialLink from "../../components/SocialLink";
 import { WPCarousel } from "../../components/WPCarousel";
+import { activityType, organizationType } from "../../utils/categoryTable";
 export const getStaticPaths: GetStaticPaths = async () => {
   const pages = await wpFetch("/v2/pages");
 
@@ -103,6 +104,8 @@ function Orgid({ initialData }: Props) {
         <link rel="canonical" href={url} />
       </Head>
       <PlasmicOrgid
+        orgType={organizationType[data.organizationtype[0]].name as any}
+        activity={activityType[data.activitytype[0]].name as any}
         image={
           <WPCarousel
             mainImage={data.event.mainImage[0]}

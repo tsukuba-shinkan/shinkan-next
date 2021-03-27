@@ -41,18 +41,18 @@ import ExpandLess24PxsvgIcon from "./icons/PlasmicIcon__ExpandLess24Pxsvg"; // p
 
 export type PlasmicEventListItem2__VariantMembers = {
   expand: "expand";
-  category: "sports" | "art" | "culture" | "other";
+  activity: "sports" | "art" | "culture" | "other";
 };
 
 export type PlasmicEventListItem2__VariantsArgs = {
   expand?: SingleBooleanChoiceArg<"expand">;
-  category?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
 };
 
 type VariantPropType = keyof PlasmicEventListItem2__VariantsArgs;
 export const PlasmicEventListItem2__VariantProps = new Array<VariantPropType>(
   "expand",
-  "category"
+  "activity"
 );
 
 export type PlasmicEventListItem2__ArgsType = {};
@@ -66,7 +66,7 @@ export type PlasmicEventListItem2__OverridesType = {
 
 export interface DefaultEventListItem2Props {
   expand?: SingleBooleanChoiceArg<"expand">;
-  category?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
   className?: string;
 }
 
@@ -88,38 +88,39 @@ function PlasmicEventListItem2__RenderFunc(props: {
     >
       <div
         className={classNames(defaultcss.all, sty.box__luIu, {
-          [sty.box__category_art__luIuBzkut]: hasVariant(
+          [sty.box__activity_art__luIuBzkut]: hasVariant(
             variants,
-            "category",
+            "activity",
             "art"
           ),
-          [sty.box__category_culture__luIuBcQjz]: hasVariant(
+          [sty.box__activity_culture__luIuBcQjz]: hasVariant(
             variants,
-            "category",
+            "activity",
             "culture"
           ),
-          [sty.box__category_other__luIu3V2CT]: hasVariant(
+          [sty.box__activity_other__luIu3V2CT]: hasVariant(
             variants,
-            "category",
+            "activity",
             "other"
           ),
-          [sty.box__category_sports__luIuVLebt]: hasVariant(
+          [sty.box__activity_sports__luIuVLebt]: hasVariant(
             variants,
-            "category",
+            "activity",
             "sports"
-          )
+          ),
+          [sty.box__expand__luIuVeGt]: hasVariant(variants, "expand", "expand")
         })}
       >
         <div
           className={classNames(defaultcss.all, sty.box__cAelG, {
-            [sty.box__category_other__cAelG3V2CT]: hasVariant(
+            [sty.box__activity_other__cAelG3V2CT]: hasVariant(
               variants,
-              "category",
+              "activity",
               "other"
             ),
-            [sty.box__category_sports__cAelGvLebt]: hasVariant(
+            [sty.box__activity_sports__cAelGvLebt]: hasVariant(
               variants,
-              "category",
+              "activity",
               "sports"
             ),
             [sty.box__expand__cAelGveGt]: hasVariant(
@@ -135,9 +136,9 @@ function PlasmicEventListItem2__RenderFunc(props: {
               defaultcss.__wab_text,
               sty.box__wkg,
               {
-                [sty.box__category_other__wkg3V2CT]: hasVariant(
+                [sty.box__activity_other__wkg3V2CT]: hasVariant(
                   variants,
-                  "category",
+                  "activity",
                   "other"
                 )
               }
@@ -180,9 +181,9 @@ function PlasmicEventListItem2__RenderFunc(props: {
                 defaultcss.__wab_text,
                 sty.box___2DfeI,
                 {
-                  [sty.box__category_other___2DfeI3V2CT]: hasVariant(
+                  [sty.box__activity_other___2DfeI3V2CT]: hasVariant(
                     variants,
-                    "category",
+                    "activity",
                     "other"
                   )
                 }

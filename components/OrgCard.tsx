@@ -25,7 +25,8 @@ interface OrgCardProps extends DefaultOrgCardProps {
   src?: string;
   wpsrc?: string;
   name: string;
-  category: "sports" | "art" | "culture" | "other";
+  activity: "sports" | "art" | "culture" | "other";
+  orgType: "ippan" | "kagai" | "other";
   description: string;
 }
 
@@ -46,7 +47,8 @@ function OrgCard(props: OrgCardProps) {
   // to do whatever works for you.
   const transProps = {
     name: props.name,
-    category: props.category,
+    activity: props.activity,
+    orgType: props.orgType,
     src: props.src,
   };
   let src;
