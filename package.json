@@ -12,6 +12,7 @@
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-image-gallery": "^1.0.9",
     "reset.css": "^2.0.2",
     "sass": "^1.32.8",
     "swr": "^0.5.4"
@@ -21,6 +22,7 @@
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@types/react-image-gallery": "^1.0.2",
     "typescript": "4.0"
   },
   "license": "MIT"

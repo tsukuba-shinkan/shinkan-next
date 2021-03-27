@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  padding: 5px;
+}
+.link {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px;
+  background: rgb(255, 255, 255);
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  margin: 14px 18px;
+}
+.slotLabel {
+  color: rgb(83, 83, 83) /* plasmic-token: 4creIjO1T */;
+}

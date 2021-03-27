@@ -101,6 +101,22 @@
 .box__xOko3 {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
+.box__m5Af8 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.socialLink__ko4Gq:global(.__wab_instance) {
+  position: relative;
+}
+.socialLink__js84E:global(.__wab_instance) {
+  position: relative;
+}
+.socialLink__cpOrQ:global(.__wab_instance) {
+  position: relative;
+}
 .column__geaVn {
   display: flex;
   position: relative;

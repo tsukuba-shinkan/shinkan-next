@@ -233,6 +233,19 @@
           "cssFilePath": "plasmic/shinkan_next/PlasmicPager.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "8FZzPTX83m",
+          "name": "SocialLink",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicSocialLink.tsx",
+          "importSpec": {
+            "modulePath": "SocialLink.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicSocialLink.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -260,6 +273,11 @@
           "id": "4ceokTvl9I",
           "name": "NavigateNextBlack18DpsvgIcon",
           "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__NavigateNextBlack18Dpsvg.tsx"
+        },
+        {
+          "id": "Tv0SGpDtW8",
+          "name": "Link24PxsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__Link24Pxsvg.tsx"
         }
       ],
       "images": [
@@ -282,6 +300,21 @@
           "id": "TEi4DHxtD",
           "name": "MicrosoftTeams-image.png",
           "filePath": "../public/plasmic/shinkan_next/images/microsoftTeamsImagepng.png"
+        },
+        {
+          "id": "74_IjZt8Xn",
+          "name": "link-24px.svg 2",
+          "filePath": "../public/plasmic/shinkan_next/images/link24Pxsvg2.svg"
+        },
+        {
+          "id": "3T1TkZ_Ww",
+          "name": "image 3",
+          "filePath": "../public/plasmic/shinkan_next/images/image3.png"
+        },
+        {
+          "id": "eMWK3yk2C",
+          "name": "image 4",
+          "filePath": "../public/plasmic/shinkan_next/images/image4.png"
         }
       ],
       "projectApiToken": "j0utquL80KpwtAdsl0AXlZ6jOm3WUeDMkahIMeUoaiyC51SJZRxQ432Vjl5SCGw19w3LreVyBj2T6HL94hQ"

@@ -11,6 +11,8 @@ import useSWR from "swr";
 import { useWPImage } from "../../hooks/useWPImage";
 import Page from "../../components/Page";
 import { Plasmic_404 } from "../../components/plasmic/shinkan_next/Plasmic_404";
+import SocialLink from "../../components/SocialLink";
+import { WPCarousel } from "../../components/WPCarousel";
 export const getStaticPaths: GetStaticPaths = async () => {
   const pages = await wpFetch("/v2/pages");
 
@@ -82,7 +84,6 @@ function Orgid({ initialData }: Props) {
     }
     return arr;
   })();
-
   return (
     <>
       <Head>
@@ -102,16 +103,48 @@ function Orgid({ initialData }: Props) {
         <link rel="canonical" href={url} />
       </Head>
       <PlasmicOrgid
-        image={<img src={useWPImage(data.event.mainImage[0], "full")} />}
-        events={events.map((e: any) => (
+        image={
+          <WPCarousel
+            mainImage={data.event.mainImage[0]}
+            otherImages={data.event.otherImages}
+            youtubeLinks={data.event.youtubeLinks}
+          ></WPCarousel>
+        }
+        events={events.map((e: any, i: number) => (
           <EventListItem
             eventTitle={e.title}
             dateTime={`${e.start} - ${e.end}`}
+            key={i}
           >
             {e.description}
           </EventListItem>
         ))}
         title={title}
+        socialLinks={
+          <>
+            {data.event.url?.[0] && (
+              <SocialLink
+                label={data.event.url[0]}
+                type="url"
+                href={data.event.url[0]}
+              />
+            )}
+            {data.event.twitter?.[0] && (
+              <SocialLink
+                label={"@" + data.event.twitter[0]}
+                type="twitter"
+                href={"https://twitter.com/" + data.event.twitter[0]}
+              />
+            )}
+            {data.event.instagram?.[0] && (
+              <SocialLink
+                label={data.event.instagram[0]}
+                type="twitter"
+                href={"https://www.instagram.com/" + data.event.instagram[0]}
+              />
+            )}
+          </>
+        }
       >
         <div
           dangerouslySetInnerHTML={{

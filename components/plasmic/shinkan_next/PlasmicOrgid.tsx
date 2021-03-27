@@ -32,6 +32,7 @@ import {
 } from "@plasmicapp/react-web";
 import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
 import EventListItem from "../../EventListItem"; // plasmic-import: GMIuDj3rjM/component
+import SocialLink from "../../SocialLink"; // plasmic-import: 8FZzPTX83m/component
 
 import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: rGlYl5prqxJP/globalVariant
 
@@ -52,6 +53,7 @@ export type PlasmicOrgid__ArgsType = {
   events?: React.ReactNode;
   children?: React.ReactNode;
   image?: React.ReactNode;
+  socialLinks?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicOrgid__ArgsType;
@@ -60,7 +62,8 @@ export const PlasmicOrgid__ArgProps = new Array<ArgPropType>(
   "title",
   "events",
   "children",
-  "image"
+  "image",
+  "socialLinks"
 );
 
 export type PlasmicOrgid__OverridesType = {
@@ -77,6 +80,7 @@ export interface DefaultOrgidProps {
   events?: React.ReactNode;
   children?: React.ReactNode;
   image?: React.ReactNode;
+  socialLinks?: React.ReactNode;
   className?: string;
 }
 
@@ -187,6 +191,41 @@ function PlasmicOrgid__RenderFunc(props: {
                         </React.Fragment>
                       }
                       value={args.events}
+                    />
+                  </div>
+
+                  <div className={classNames(defaultcss.all, sty.box__m5Af8)}>
+                    <p.PlasmicSlot
+                      defaultContents={
+                        <React.Fragment>
+                          <SocialLink
+                            className={classNames(
+                              "__wab_instance",
+                              sty.socialLink__ko4Gq
+                            )}
+                            type={"url" as const}
+                          />
+
+                          <SocialLink
+                            className={classNames(
+                              "__wab_instance",
+                              sty.socialLink__js84E
+                            )}
+                            label={"@tsukuba_shinkan"}
+                            type={"twitter" as const}
+                          />
+
+                          <SocialLink
+                            className={classNames(
+                              "__wab_instance",
+                              sty.socialLink__cpOrQ
+                            )}
+                            label={"instagram_account"}
+                            type={"instagram" as const}
+                          />
+                        </React.Fragment>
+                      }
+                      value={args.socialLinks}
                     />
                   </div>
                 </div>
