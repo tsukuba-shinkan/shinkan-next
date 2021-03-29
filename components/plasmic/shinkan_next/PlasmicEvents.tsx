@@ -53,6 +53,7 @@ export const PlasmicEvents__ArgProps = new Array<ArgPropType>();
 export type PlasmicEvents__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
+  h1?: p.Flex<"h1">;
   searchBox?: p.Flex<"div">;
   searchButton?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
@@ -94,15 +95,17 @@ function PlasmicEvents__RenderFunc(props: {
             className={classNames("__wab_instance", sty.page)}
           >
             <div className={classNames(defaultcss.all, sty.box__h057B)}>
-              <div
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
                 className={classNames(
-                  defaultcss.all,
+                  defaultcss.h1,
                   defaultcss.__wab_text,
-                  sty.box__fyiow
+                  sty.h1
                 )}
               >
                 {"イベント検索"}
-              </div>
+              </h1>
 
               <div
                 data-plasmic-name={"searchBox"}
@@ -263,8 +266,9 @@ function PlasmicEvents__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "page", "searchBox", "searchButton", "svg"],
-  page: ["page", "searchBox", "searchButton", "svg"],
+  root: ["root", "page", "h1", "searchBox", "searchButton", "svg"],
+  page: ["page", "h1", "searchBox", "searchButton", "svg"],
+  h1: ["h1"],
   searchBox: ["searchBox", "searchButton", "svg"],
   searchButton: ["searchButton", "svg"],
   svg: ["svg"]
@@ -276,6 +280,7 @@ type DescendantsType<
 type NodeDefaultElementType = {
   root: "div";
   page: typeof Page;
+  h1: "h1";
   searchBox: "div";
   searchButton: "div";
   svg: "svg";
@@ -337,6 +342,7 @@ export const PlasmicEvents = Object.assign(
   {
     // Helper components rendering sub-elements
     page: makeNodeComponent("page"),
+    h1: makeNodeComponent("h1"),
     searchBox: makeNodeComponent("searchBox"),
     searchButton: makeNodeComponent("searchButton"),
     svg: makeNodeComponent("svg"),

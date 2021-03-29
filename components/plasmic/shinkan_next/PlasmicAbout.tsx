@@ -43,16 +43,21 @@ export type PlasmicAbout__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAbout__VariantsArgs;
 export const PlasmicAbout__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAbout__ArgsType = {};
+export type PlasmicAbout__ArgsType = {
+  children?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicAbout__ArgsType;
-export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
+export const PlasmicAbout__ArgProps = new Array<ArgPropType>("children");
 
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
+  h1?: p.Flex<"h1">;
 };
 
 export interface DefaultAboutProps {
+  children?: React.ReactNode;
   className?: string;
 }
 
@@ -87,25 +92,25 @@ function PlasmicAbout__RenderFunc(props: {
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
           >
-            <div
+            <h1
+              data-plasmic-name={"h1"}
+              data-plasmic-override={overrides.h1}
               className={classNames(
-                defaultcss.all,
+                defaultcss.h1,
                 defaultcss.__wab_text,
-                sty.box__xRv4D
+                sty.h1
               )}
             >
               {"このサイトについて"}
-            </div>
+            </h1>
 
             <div className={classNames(defaultcss.all, sty.box___8Irta)}>
-              <div
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__sgg3G
-                )}
-              >
-                {"リッチなテキストがWordPressからきます"}
+              <div className={classNames(defaultcss.all, sty.box__sgg3G)}>
+                <p.PlasmicSlot
+                  defaultContents={"リッチなテキストがWordPressからきます"}
+                  value={args.children}
+                  className={classNames(sty.slotChildren)}
+                />
               </div>
             </div>
           </Page>
@@ -116,8 +121,9 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "page"],
-  page: ["page"]
+  root: ["root", "page", "h1"],
+  page: ["page", "h1"],
+  h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<
@@ -126,6 +132,7 @@ type DescendantsType<
 type NodeDefaultElementType = {
   root: "div";
   page: typeof Page;
+  h1: "h1";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -184,6 +191,7 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     page: makeNodeComponent("page"),
+    h1: makeNodeComponent("h1"),
 
     // Metadata about props expected for PlasmicAbout
     internalVariantProps: PlasmicAbout__VariantProps,

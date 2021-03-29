@@ -59,6 +59,7 @@ export const PlasmicNewsid__ArgProps = new Array<ArgPropType>(
 export type PlasmicNewsid__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
+  h1?: p.Flex<"h1">;
 };
 
 export interface DefaultNewsidProps {
@@ -99,15 +100,17 @@ function PlasmicNewsid__RenderFunc(props: {
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
           >
-            <div
+            <h1
+              data-plasmic-name={"h1"}
+              data-plasmic-override={overrides.h1}
               className={classNames(
-                defaultcss.all,
+                defaultcss.h1,
                 defaultcss.__wab_text,
-                sty.box__gyFq8
+                sty.h1
               )}
             >
               {"お知らせ"}
-            </div>
+            </h1>
 
             <div className={classNames(defaultcss.all, sty.box__fjhVu)}>
               <p.PlasmicSlot
@@ -140,8 +143,9 @@ function PlasmicNewsid__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "page"],
-  page: ["page"]
+  root: ["root", "page", "h1"],
+  page: ["page", "h1"],
+  h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<
@@ -150,6 +154,7 @@ type DescendantsType<
 type NodeDefaultElementType = {
   root: "div";
   page: typeof Page;
+  h1: "h1";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -208,6 +213,7 @@ export const PlasmicNewsid = Object.assign(
   {
     // Helper components rendering sub-elements
     page: makeNodeComponent("page"),
+    h1: makeNodeComponent("h1"),
 
     // Metadata about props expected for PlasmicNewsid
     internalVariantProps: PlasmicNewsid__VariantProps,

@@ -15,7 +15,7 @@
   min-width: 0;
   min-height: 0;
 }
-.box__xRv4D {
+.h1 {
   position: relative;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   font-size: 24px;
@@ -32,7 +32,11 @@
   margin: 12px;
 }
 .box__sgg3G {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  display: flex;
+  flex-direction: column;
   padding: 15px;
   background: #ffffff;
+}
+.slotChildren {
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }

@@ -63,6 +63,7 @@ export const PlasmicOrg__ArgProps = new Array<ArgPropType>(
 export type PlasmicOrg__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
+  h1?: p.Flex<"h1">;
   searchBox?: p.Flex<"div">;
   searchInput?: p.Flex<"input">;
   searchButton?: p.Flex<"div">;
@@ -110,15 +111,17 @@ function PlasmicOrg__RenderFunc(props: {
             className={classNames("__wab_instance", sty.page)}
           >
             <div className={classNames(defaultcss.all, sty.box___41A8P)}>
-              <div
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
                 className={classNames(
-                  defaultcss.all,
+                  defaultcss.h1,
                   defaultcss.__wab_text,
-                  sty.box___1Xgp3
+                  sty.h1
                 )}
               >
                 {"団体検索"}
-              </div>
+              </h1>
 
               <div
                 data-plasmic-name={"searchBox"}
@@ -291,6 +294,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "page",
+    "h1",
     "searchBox",
     "searchInput",
     "searchButton",
@@ -300,6 +304,7 @@ const PlasmicDescendants = {
   ],
   page: [
     "page",
+    "h1",
     "searchBox",
     "searchInput",
     "searchButton",
@@ -307,6 +312,7 @@ const PlasmicDescendants = {
     "orgList",
     "pager"
   ],
+  h1: ["h1"],
   searchBox: ["searchBox", "searchInput", "searchButton", "svg"],
   searchInput: ["searchInput"],
   searchButton: ["searchButton", "svg"],
@@ -321,6 +327,7 @@ type DescendantsType<
 type NodeDefaultElementType = {
   root: "div";
   page: typeof Page;
+  h1: "h1";
   searchBox: "div";
   searchInput: "input";
   searchButton: "div";
@@ -385,6 +392,7 @@ export const PlasmicOrg = Object.assign(
   {
     // Helper components rendering sub-elements
     page: makeNodeComponent("page"),
+    h1: makeNodeComponent("h1"),
     searchBox: makeNodeComponent("searchBox"),
     searchInput: makeNodeComponent("searchInput"),
     searchButton: makeNodeComponent("searchButton"),
