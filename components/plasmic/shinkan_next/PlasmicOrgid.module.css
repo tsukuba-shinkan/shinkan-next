@@ -174,4 +174,5 @@
   position: relative;
   flex-direction: column;
   height: auto;
+  overflow: auto;
 }

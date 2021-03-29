@@ -120,7 +120,11 @@ function Orgid({ initialData }: Props) {
             dateTime={`${e.start} - ${e.end}`}
             key={i}
           >
-            {e.description}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: e.description, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
+              }}
+            />
           </EventListItem>
         ))}
         title={title}
