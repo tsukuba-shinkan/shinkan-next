@@ -51,6 +51,16 @@
       }
     },
     {
+      "name": "transparentwhite",
+      "type": "color",
+      "value": "rgba(255,255,255,0.95)",
+      "category": "color",
+      "meta": {
+        "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+        "id": "_19xYoSCM"
+      }
+    },
+    {
       "name": "tsukuba-light-purple",
       "type": "color",
       "value": "rgba(73,32,110,0.42)",

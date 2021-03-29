@@ -315,6 +315,21 @@
           "id": "eMWK3yk2C",
           "name": "image 4",
           "filePath": "../public/plasmic/shinkan_next/images/image4.png"
+        },
+        {
+          "id": "xnWnLh6XvN",
+          "name": "楕円形 1.svg",
+          "filePath": "../public/plasmic/shinkan_next/images/楕円形1Svg.svg"
+        },
+        {
+          "id": "SGRGGWsxc",
+          "name": "MicrosoftTeams-image.png 2",
+          "filePath": "../public/plasmic/shinkan_next/images/microsoftTeamsImagepng2.png"
+        },
+        {
+          "id": "xeMrekdDZc",
+          "name": "Web 1920 – 4.svg",
+          "filePath": "../public/plasmic/shinkan_next/images/web19204Svg.svg"
         }
       ],
       "projectApiToken": "j0utquL80KpwtAdsl0AXlZ6jOm3WUeDMkahIMeUoaiyC51SJZRxQ432Vjl5SCGw19w3LreVyBj2T6HL94hQ"

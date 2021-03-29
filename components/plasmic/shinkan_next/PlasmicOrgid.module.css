@@ -21,8 +21,9 @@
   min-width: 0;
 }
 .slotTitle {
-  font-size: 32px;
+  font-size: 24px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-weight: 700;
 }
 .box__b7NZx {
   display: flex;
@@ -109,7 +110,10 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  padding: 7px;
+  padding: 0px;
+  margin: 7px;
+  border-bottom: 2px solid rgba(73, 32, 110, 0.42)
+    /* plasmic-token: 2CTAtOo0u */;
 }
 .eventListItem__gqe6M:global(.__wab_instance) {
   position: relative;

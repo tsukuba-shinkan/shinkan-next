@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 2497">
+  <defs>
+    <linearGradient id="P9YILIl05b" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".141" stop-color="#ededed"/>
+      <stop offset="1" stop-color="#ededed"/>
+    </linearGradient>
+    <clipPath id="P9YILIl05a">
+      <path d="M0 0h1280v2497H0z"/>
+    </clipPath>
+  </defs>
+  <g data-name="Web 1920 – 4" clip-path="url(#P9YILIl05a)">
+    <path fill="#fff" d="M0 0h1280v2497H0z"/>
+    <path data-name="長方形 16" transform="translate(0 611)" fill="url(#P9YILIl05b)" d="M0 0h1280v1886H0z"/>
+    <ellipse data-name="楕円形 14" cx="272.676" cy="201.714" rx="272.676" ry="201.714" transform="rotate(-14.98 7036.639 2341.427)" fill="#cccaca"/>
+    <ellipse data-name="楕円形 13" cx="272.676" cy="201.714" rx="272.676" ry="201.714" transform="rotate(-14.98 4811.637 -3225.5)" fill="#7de5e8"/>
+    <ellipse data-name="楕円形 2" cx="272.676" cy="201.714" rx="272.676" ry="201.714" transform="rotate(-5 3989.241 521.828)" fill="#f88ba2"/>
+    <ellipse data-name="楕円形 1" cx="434.893" cy="127.075" rx="434.893" ry="127.075" transform="rotate(-4.01 -1377.62 -7781.14)" fill="#fdd572"/>
+  </g>
+</svg>

@@ -87,197 +87,199 @@ function PlasmicPage__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
     >
-      <div
-        data-plasmic-name={"header"}
-        data-plasmic-override={overrides.header}
-        className={classNames(defaultcss.all, sty.header)}
-      >
-        <p.PlasmicLink
-          data-plasmic-name={"title"}
-          data-plasmic-override={overrides.title}
-          className={classNames(defaultcss.all, sty.title)}
-          component={__PlatformLink}
-          href={"/" as const}
-          platform={"nextjs"}
-        >
-          <img
-            alt={""}
-            className={classNames(defaultcss.img, sty.img__e1Q90)}
-            role={"img"}
-            src={"/plasmic/shinkan_next/images/microsoftTeamsImagepng.png"}
-          />
-
-          <div
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.box__enS97
-            )}
-          >
-            {"筑波大学新歓Web"}
-          </div>
-        </p.PlasmicLink>
-
+      <div className={classNames(defaultcss.all, sty.box__i8QZa)}>
         <div
-          data-plasmic-name={"links"}
-          data-plasmic-override={overrides.links}
-          className={classNames(defaultcss.all, sty.links)}
+          data-plasmic-name={"header"}
+          data-plasmic-override={overrides.header}
+          className={classNames(defaultcss.all, sty.header)}
         >
-          <HeaderLink
-            className={classNames("__wab_instance", sty.headerLink___2GQ6)}
-            to={"/events" as const}
+          <p.PlasmicLink
+            data-plasmic-name={"title"}
+            data-plasmic-override={overrides.title}
+            className={classNames(defaultcss.all, sty.title)}
+            component={__PlatformLink}
+            href={"/" as const}
+            platform={"nextjs"}
           >
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__wyzrt
-              )}
-            >
-              {"イベントを探す"}
-            </div>
-          </HeaderLink>
-
-          <HeaderLink
-            className={classNames("__wab_instance", sty.headerLink__lle4C)}
-            to={"/org" as const}
-          >
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__wyBgt
-              )}
-            >
-              {"団体を探す"}
-            </div>
-          </HeaderLink>
-        </div>
-      </div>
-
-      <div
-        data-plasmic-name={"container"}
-        data-plasmic-override={overrides.container}
-        className={classNames(defaultcss.all, sty.container)}
-      >
-        <p.PlasmicSlot defaultContents={null} value={args.children} />
-      </div>
-
-      <div
-        data-plasmic-name={"footer"}
-        data-plasmic-override={overrides.footer}
-        className={classNames(defaultcss.all, sty.footer)}
-      >
-        <p.Stack
-          as={"div"}
-          data-plasmic-name={"columns"}
-          data-plasmic-override={overrides.columns}
-          hasGap={true}
-          className={classNames(defaultcss.all, sty.columns)}
-        >
-          <div className={classNames(defaultcss.all, sty.column__swH9F)}>
-            <div className={classNames(defaultcss.all, sty.box__uj51S)}>
-              <p.PlasmicLink
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.link__oM7U
-                )}
-                component={__PlatformLink}
-                href={"/about" as const}
-                platform={"nextjs"}
-              >
-                {"このサイトについて"}
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.link__ur8FT
-                )}
-                component={__PlatformLink}
-                href={"/404" as const}
-                platform={"nextjs"}
-              >
-                {"新歓祭について"}
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.link___8Ay0F
-                )}
-                component={__PlatformLink}
-                href={"/404" as const}
-                platform={"nextjs"}
-              >
-                {"団体用システムログイン"}
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.link__xFwV
-                )}
-                component={__PlatformLink}
-                href={
-                  "http://www.stb.tsukuba.ac.jp/~bunsa/wiki/doku.php" as const
-                }
-                platform={"nextjs"}
-              >
-                {"文化系サークル連合会"}
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.link__ilNgt
-                )}
-                component={__PlatformLink}
-                href={"http://www.stb.tsukuba.ac.jp/~geisa/" as const}
-                platform={"nextjs"}
-              >
-                {"芸術系サークル連合会"}
-              </p.PlasmicLink>
-
-              <p.PlasmicLink
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.link__qr0Va
-                )}
-                component={__PlatformLink}
-                href={"https://www.stb.tsukuba.ac.jp/~taiikukai/" as const}
-                platform={"nextjs"}
-              >
-                {"体育会"}
-              </p.PlasmicLink>
-            </div>
-          </div>
-
-          <div className={classNames(defaultcss.all, sty.column__yXJr8)}>
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__l1A9M
-              )}
-            >
-              {"©\u00012021\u0001筑波大学新歓Webプロジェクトチーム"}
-            </div>
-
             <img
               alt={""}
-              className={classNames(defaultcss.img, sty.img__jxcc1)}
+              className={classNames(defaultcss.img, sty.img__e1Q90)}
               role={"img"}
-              src={"/plasmic/shinkan_next/images/schoollogopng.png"}
+              src={"/plasmic/shinkan_next/images/microsoftTeamsImagepng.png"}
             />
+
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__enS97
+              )}
+            >
+              {"筑波大学新歓Web"}
+            </div>
+          </p.PlasmicLink>
+
+          <div
+            data-plasmic-name={"links"}
+            data-plasmic-override={overrides.links}
+            className={classNames(defaultcss.all, sty.links)}
+          >
+            <HeaderLink
+              className={classNames("__wab_instance", sty.headerLink___2GQ6)}
+              to={"/events" as const}
+            >
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__wyzrt
+                )}
+              >
+                {"イベントを探す"}
+              </div>
+            </HeaderLink>
+
+            <HeaderLink
+              className={classNames("__wab_instance", sty.headerLink__lle4C)}
+              to={"/org" as const}
+            >
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__wyBgt
+                )}
+              >
+                {"団体を探す"}
+              </div>
+            </HeaderLink>
           </div>
-        </p.Stack>
+        </div>
+
+        <div
+          data-plasmic-name={"container"}
+          data-plasmic-override={overrides.container}
+          className={classNames(defaultcss.all, sty.container)}
+        >
+          <p.PlasmicSlot defaultContents={null} value={args.children} />
+        </div>
+
+        <div
+          data-plasmic-name={"footer"}
+          data-plasmic-override={overrides.footer}
+          className={classNames(defaultcss.all, sty.footer)}
+        >
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"columns"}
+            data-plasmic-override={overrides.columns}
+            hasGap={true}
+            className={classNames(defaultcss.all, sty.columns)}
+          >
+            <div className={classNames(defaultcss.all, sty.column__swH9F)}>
+              <div className={classNames(defaultcss.all, sty.box__uj51S)}>
+                <p.PlasmicLink
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.link__oM7U
+                  )}
+                  component={__PlatformLink}
+                  href={"/about" as const}
+                  platform={"nextjs"}
+                >
+                  {"このサイトについて"}
+                </p.PlasmicLink>
+
+                <p.PlasmicLink
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.link__ur8FT
+                  )}
+                  component={__PlatformLink}
+                  href={"/404" as const}
+                  platform={"nextjs"}
+                >
+                  {"新歓祭について"}
+                </p.PlasmicLink>
+
+                <p.PlasmicLink
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.link___8Ay0F
+                  )}
+                  component={__PlatformLink}
+                  href={"/404" as const}
+                  platform={"nextjs"}
+                >
+                  {"団体用システムログイン"}
+                </p.PlasmicLink>
+
+                <p.PlasmicLink
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.link__xFwV
+                  )}
+                  component={__PlatformLink}
+                  href={
+                    "http://www.stb.tsukuba.ac.jp/~bunsa/wiki/doku.php" as const
+                  }
+                  platform={"nextjs"}
+                >
+                  {"文化系サークル連合会"}
+                </p.PlasmicLink>
+
+                <p.PlasmicLink
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.link__ilNgt
+                  )}
+                  component={__PlatformLink}
+                  href={"http://www.stb.tsukuba.ac.jp/~geisa/" as const}
+                  platform={"nextjs"}
+                >
+                  {"芸術系サークル連合会"}
+                </p.PlasmicLink>
+
+                <p.PlasmicLink
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.link__qr0Va
+                  )}
+                  component={__PlatformLink}
+                  href={"https://www.stb.tsukuba.ac.jp/~taiikukai/" as const}
+                  platform={"nextjs"}
+                >
+                  {"体育会"}
+                </p.PlasmicLink>
+              </div>
+            </div>
+
+            <div className={classNames(defaultcss.all, sty.column__yXJr8)}>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__l1A9M
+                )}
+              >
+                {"©\u00012021\u0001筑波大学新歓Webプロジェクトチーム"}
+              </div>
+
+              <img
+                alt={""}
+                className={classNames(defaultcss.img, sty.img__jxcc1)}
+                role={"img"}
+                src={"/plasmic/shinkan_next/images/schoollogopng.png"}
+              />
+            </div>
+          </p.Stack>
+        </div>
       </div>
     </div>
   ) as React.ReactElement | null;

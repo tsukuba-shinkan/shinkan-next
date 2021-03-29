@@ -1,19 +1,24 @@
 .root {
   display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.box__i8QZa {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  position: relative;
   min-width: 0;
   min-height: 0;
-  background: linear-gradient(
-    181deg,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 10%,
-    rgb(208, 208, 208) 100%
-  );
+  background: url("/plasmic/shinkan_next/images/web19204Svg.svg") 0% 0% / cover;
 }
 .header {
   display: flex;
