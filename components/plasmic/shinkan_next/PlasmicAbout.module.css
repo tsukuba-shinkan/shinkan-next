@@ -34,6 +34,7 @@
 .box__sgg3G {
   display: flex;
   flex-direction: column;
+  border-radius: 12px;
   padding: 15px;
   background: #ffffff;
 }

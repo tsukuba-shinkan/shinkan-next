@@ -6,5 +6,13 @@ img {
 blockquote {
   background-color: rgba($color: #a8a8a8, $alpha: 0.1);
   color: #333;
-  padding: 20px 20px 20px 60px;
+  padding: 20px 20px 20px 20px;
+}
+.wpRendered * {
+  max-width: 100% !important;
+}
+.wp-caption-text {
+  font-size: small;
+  text-align: center;
+  color: #333;
 }

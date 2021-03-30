@@ -179,11 +179,34 @@
   bottom: auto;
   flex-grow: 1;
   flex-shrink: 0;
+  overflow: auto;
+  max-width: 100%;
+}
+.box___4Coe3 {
+  display: inline-flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: auto;
+  overflow: auto;
 }
 .categoryRadio__l6S0E:global(.__wab_instance) {
   position: relative;
 }
 .categoryRadio__soEt:global(.__wab_instance) {
+  position: relative;
+}
+.categoryRadio__bFw1X:global(.__wab_instance) {
+  position: relative;
+}
+.categoryRadio__fWiFb:global(.__wab_instance) {
+  position: relative;
+}
+.categoryRadio__wqPyK:global(.__wab_instance) {
+  position: relative;
+}
+.categoryRadio__rEtQa:global(.__wab_instance) {
   position: relative;
 }
 .categoryRadio___2VI6B:global(.__wab_instance) {

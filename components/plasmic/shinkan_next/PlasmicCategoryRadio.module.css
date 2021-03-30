@@ -35,6 +35,7 @@
   font-weight: 700;
   width: auto;
   height: auto;
+  white-space: pre;
   display: inline-block;
 }
 .box__selected_other {

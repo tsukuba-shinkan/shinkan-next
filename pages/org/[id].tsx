@@ -124,6 +124,7 @@ function Orgid({ initialData }: Props) {
               dangerouslySetInnerHTML={{
                 __html: e.description, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
               }}
+              className="wpRendered"
             />
           </EventListItem>
         ))}
@@ -158,6 +159,7 @@ function Orgid({ initialData }: Props) {
           dangerouslySetInnerHTML={{
             __html: data.content.rendered, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
           }}
+          className="wpRendered"
         />
       </PlasmicOrgid>
     </>

@@ -254,33 +254,63 @@ function PlasmicHome__RenderFunc(props: {
                 </div>
 
                 <div className={classNames(defaultcss.all, sty.box__bkJeC)}>
-                  <p.PlasmicSlot
-                    defaultContents={
-                      <React.Fragment>
-                        <CategoryRadio
-                          className={classNames(
-                            "__wab_instance",
-                            sty.categoryRadio__l6S0E
-                          )}
-                        />
+                  <div className={classNames(defaultcss.all, sty.box___4Coe3)}>
+                    <p.PlasmicSlot
+                      defaultContents={
+                        <React.Fragment>
+                          <CategoryRadio
+                            className={classNames(
+                              "__wab_instance",
+                              sty.categoryRadio__l6S0E
+                            )}
+                          />
 
-                        <CategoryRadio
-                          className={classNames(
-                            "__wab_instance",
-                            sty.categoryRadio__soEt
-                          )}
-                        />
+                          <CategoryRadio
+                            className={classNames(
+                              "__wab_instance",
+                              sty.categoryRadio__soEt
+                            )}
+                          />
 
-                        <CategoryRadio
-                          className={classNames(
-                            "__wab_instance",
-                            sty.categoryRadio___2VI6B
-                          )}
-                        />
-                      </React.Fragment>
-                    }
-                    value={args.categoryRadio}
-                  />
+                          <CategoryRadio
+                            className={classNames(
+                              "__wab_instance",
+                              sty.categoryRadio__bFw1X
+                            )}
+                          />
+
+                          <CategoryRadio
+                            className={classNames(
+                              "__wab_instance",
+                              sty.categoryRadio__fWiFb
+                            )}
+                          />
+
+                          <CategoryRadio
+                            className={classNames(
+                              "__wab_instance",
+                              sty.categoryRadio__wqPyK
+                            )}
+                          />
+
+                          <CategoryRadio
+                            className={classNames(
+                              "__wab_instance",
+                              sty.categoryRadio__rEtQa
+                            )}
+                          />
+
+                          <CategoryRadio
+                            className={classNames(
+                              "__wab_instance",
+                              sty.categoryRadio___2VI6B
+                            )}
+                          />
+                        </React.Fragment>
+                      }
+                      value={args.categoryRadio}
+                    />
+                  </div>
                 </div>
               </div>
 
