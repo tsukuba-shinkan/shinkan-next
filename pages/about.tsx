@@ -23,7 +23,7 @@ function About() {
   return (
     <PlasmicAbout>
       <p>
-        このサイトは2020年度の新歓活動が新型コロナウイルスの影響により大幅に制限されることを受け、筑波大学Webページ学生委員会が中心となって製作しました。
+        このサイトは2021年度の新歓活動が新型コロナウイルスの影響により大幅に制限されることを受け、筑波大学Webページ学生委員会が中心となって製作しました。
         筑波大学内のサークル等の団体のポータルサイトとしてご活用いただければ幸いです。
       </p>
       <h2>オープンソース</h2>
@@ -32,7 +32,7 @@ function About() {
         <br />
         GitHubリポジトリは
         <a
-          href="https://github.com/tsukuba-shinkan/shinkan-web"
+          href="https://github.com/tsukuba-shinkan/shinkan-next"
           target="_blank"
           rel="noopener noreferrer"
         >
