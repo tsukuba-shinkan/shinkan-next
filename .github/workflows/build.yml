@@ -23,7 +23,7 @@ jobs:
       - name: replace path
         run: sed -ri 's/\/plasmic\/shinkan_next\/images/\/\~shinkan-web\/plasmic\/shinkan_next\/images/g' $(find components -type f)
       - name: set .env file
-        run: echo -ne "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=UA-162922927-1\nNEXT_PUBLIC_BASEPATH=/~shinkan-web"
+        run: echo -ne "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=UA-162922927-1\nNEXT_PUBLIC_BASEPATH=/~shinkan-web" > .env.local
       - name: build & export
         run: npx next build && npx next export
       - name: upload artifact
