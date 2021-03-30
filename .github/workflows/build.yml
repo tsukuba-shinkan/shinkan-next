@@ -1,0 +1,33 @@
+name: Build Exported
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v1
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - name: Install deps
+        run: npm ci
+      - name: replace path
+        run: sed -ri 's/\/plasmic\/shinkan_next\/images/\/\~shinkan-web\/plasmic\/shinkan_next\/images/g' $(find components -type f)
+      - name: set .env file
+        run: echo -ne "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=UA-162922927-1\nNEXT_PUBLIC_BASEPATH=/~shinkan-web" > .env.local
+      - name: build & export
+        run: npx next build && npx next export
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: out
+          path: out
