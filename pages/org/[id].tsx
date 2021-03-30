@@ -6,7 +6,7 @@ import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { PlasmicOrgid } from "../../components/plasmic/shinkan_next/PlasmicOrgid";
 import EventListItem from "../../components/EventListItem";
-import { wpFetch } from "../../utils/wpFetch";
+import { buildPathWithWPQuery, login, wpFetch } from "../../utils/wpFetch";
 import useSWR from "swr";
 import { useWPImage } from "../../hooks/useWPImage";
 import Page from "../../components/Page";
@@ -16,7 +16,15 @@ import { WPCarousel } from "../../components/WPCarousel";
 import { activityType, organizationType } from "../../utils/categoryTable";
 import { fallback } from "../../utils/config";
 export const getStaticPaths: GetStaticPaths = async () => {
-  const pages = await wpFetch("/v2/pages");
+  const isLogin = await login();
+  // GH Actionは下書きも取得しますが、下書きの場合、SSGには「読み込み中」と出るだけで終わります。
+  console.info(isLogin && "Logging in");
+
+  const pages = await wpFetch(
+    buildPathWithWPQuery("/v2/pages", {
+      status: isLogin ? "draft,publish" : "publish",
+    })
+  );
 
   const paths = pages.map((it: any) => ({
     params: {
@@ -63,6 +71,7 @@ function Orgid({ initialData }: Props) {
     );
   }
   if (!data?.title) {
+    // 下書きの場合、その他の理由でinitialPropsがnullの時、読み込み中の時
     return (
       <Page>
         <>読み込み中</>

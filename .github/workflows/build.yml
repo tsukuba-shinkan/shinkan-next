@@ -26,6 +26,9 @@ jobs:
         run: echo -ne "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=UA-162922927-1\nNEXT_PUBLIC_BASEPATH=/~shinkan-web" > .env.local
       - name: build & export
         run: npx next build && npx next export
+        env:
+          WP_USERID: ${{ secrets.WP_USERID }}
+          WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
