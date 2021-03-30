@@ -18,7 +18,6 @@ import { fallback } from "../../utils/config";
 export const getStaticPaths: GetStaticPaths = async () => {
   const isLogin = await login();
   // GH Actionは下書きも取得しますが、下書きの場合、SSGには「読み込み中」と出るだけで終わります。
-  console.info(isLogin && "Logging in");
 
   const pages = await wpFetch(
     buildPathWithWPQuery("/v2/pages", {

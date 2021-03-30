@@ -1,7 +1,18 @@
+let basic = "";
 export const wpFetch = (url: string) => {
   url =
     "https://www.stb.tsukuba.ac.jp/~shinkan-web/orgadmin/?rest_route=/wp" + url;
-  return fetch(url).then((res) => res.json());
+  let f;
+  if (basic) {
+    f = fetch(url, {
+      headers: {
+        Authentication: basic,
+      },
+    });
+  } else {
+    f = fetch(url);
+  }
+  return f.then((res) => res.json());
 };
 export function buildPathWithWPQuery(
   url: string,
@@ -18,17 +29,6 @@ export const login = async () => {
   if (!userId || !password) {
     return false;
   }
-  const result = await fetch(
-    "https://www.stb.tsukuba.ac.jp/~shinkan-web/orgadmin/wp-login.php",
-    {
-      method: "POST",
-      body: `log=${userId}&pwd=${password}&rememberme=forever&testcookie=1`,
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    }
-  );
-  console.log(result);
-
-  return result.redirected;
+  basic = `Basic ` + Buffer.from(`${userId}:${password}`).toString("base64");
+  return true;
 };
