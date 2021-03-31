@@ -20,6 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const pages = await wpFetch(
     buildPathWithWPQuery("/v2/pages", {
       status: "publish",
+      _fields: "id",
     })
   );
   const publicPageIds: string[] = pages.map((it: any) => it.id.toString());
@@ -34,10 +35,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: fallback,
   };
 };
-
+const pageUrl = (pageId: string) =>
+  buildPathWithWPQuery(`/v2/pages/${pageId}`, {
+    _fields:
+      "id,date,modified,title,title,content,excerpt,author,activitytype,organizationtype,event",
+  });
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const pageId = params?.id;
-  const post = await wpFetch(`/v2/pages/${pageId}`);
+  const pageId = params?.id! + "";
+  const post = await wpFetch(pageUrl(pageId));
   if (post.data?.status != 200) {
     return {
       props: {
@@ -60,8 +65,8 @@ function Orgid({ initialData }: Props) {
   if (router.isFallback) {
     console.log("フォールバックにつきフェッチします");
   }
-  const pageId = router.query.id;
-  const { data, error } = useSWR(`/v2/pages/${pageId}`, wpFetch, {
+  const pageId = router.query.id + "";
+  const { data, error } = useSWR(pageUrl(pageId), wpFetch, {
     initialData,
   });
   if (data?.data?.status === 404) {

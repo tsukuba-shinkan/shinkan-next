@@ -51,6 +51,8 @@ function Org() {
         search: keyword,
         per_page: PER_PAGE.toString(),
         page: page.toString(),
+        _fields:
+          "id,date,modified,title,title,content,excerpt,author,activitytype,organizationtype,event",
       })
     );
     if (result.code === "rest_post_invalid_page_number") {
