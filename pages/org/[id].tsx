@@ -45,29 +45,41 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = await wpFetch(pageUrl(pageId));
   if (post.data?.status != 200) {
     return {
-      props: {
-        initialData: null,
-      },
+      props: {},
     };
   }
 
+  if (post.event?.mainImage?.[0]) {
+    const mainImage = await wpFetch(
+      buildPathWithWPQuery(`/v2/media/${post.event.mainImage[0]}`, {
+        _fields: "media_details",
+      })
+    );
+    return {
+      props: {
+        initialPostData: post,
+        initialMainImageData: mainImage,
+      } as Props,
+    };
+  }
   return {
     props: {
-      initialData: post,
-    } as Props,
+      initialPostData: post,
+    },
   };
 };
 type Props = {
-  initialData: any;
+  initialPostData?: any;
+  initialMainImageData?: any;
 };
-function Orgid({ initialData }: Props) {
+function Orgid({ initialPostData, initialMainImageData }: Props) {
   const router = useRouter();
   if (router.isFallback) {
     console.log("フォールバックにつきフェッチします");
   }
   const pageId = router.query.id + "";
   const { data, error } = useSWR(pageUrl(pageId), wpFetch, {
-    initialData,
+    initialData: initialPostData,
   });
   if (data?.data?.status === 404) {
     return <Plasmic_404 />;
@@ -91,7 +103,11 @@ function Orgid({ initialData }: Props) {
   const title = data.title.rendered;
   const description = data.excerpt.rendered.replace(/<[^>]*>?/gm, "");
   const url = `/org/${pageId}`;
-  const mainImage = useWPImage(data.event.mainImage[0], "medium");
+  const mainImage = useWPImage(
+    data.event.mainImage[0],
+    "medium",
+    initialMainImageData
+  );
   const events = (() => {
     const arr = [];
     const len = data.event.title.length;
