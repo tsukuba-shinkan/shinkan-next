@@ -87,17 +87,27 @@ function Orgid({ initialPostData, initialMainImageData }: Props) {
   if (error) {
     console.error("page error", error);
     return (
-      <Page>
-        <>エラー</>
-      </Page>
+      <>
+        <Head>
+          <title>筑波大学新歓Web</title>
+        </Head>
+        <Page>
+          <>申し訳ございません。エラーが発生しました。</>
+        </Page>
+      </>
     );
   }
   if (!data?.title) {
     // 下書きの場合、その他の理由でinitialPropsがnullの時、読み込み中の時
     return (
-      <Page>
-        <>読み込み中</>
-      </Page>
+      <>
+        <Head>
+          <title>筑波大学新歓Web</title>
+        </Head>
+        <Page>
+          <>読み込み中</>
+        </Page>
+      </>
     );
   }
   const title = data.title.rendered;
@@ -124,7 +134,7 @@ function Orgid({ initialPostData, initialMainImageData }: Props) {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title || "筑波大学新歓Web"}</title>
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="blog" />
