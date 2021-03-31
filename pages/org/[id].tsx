@@ -43,7 +43,7 @@ const pageUrl = (pageId: string) =>
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageId = params?.id! + "";
   const post = await wpFetch(pageUrl(pageId));
-  if (post.data?.status != 200) {
+  if (post.data?.status == 401) {
     return {
       props: {},
     };
