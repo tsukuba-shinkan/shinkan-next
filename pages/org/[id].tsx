@@ -6,7 +6,7 @@ import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { PlasmicOrgid } from "../../components/plasmic/shinkan_next/PlasmicOrgid";
 import EventListItem from "../../components/EventListItem";
-import { buildPathWithWPQuery, login, wpFetch } from "../../utils/wpFetch";
+import { buildPathWithWPQuery, wpFetch } from "../../utils/wpFetch";
 import useSWR from "swr";
 import { useWPImage } from "../../hooks/useWPImage";
 import Page from "../../components/Page";
@@ -15,19 +15,18 @@ import SocialLink from "../../components/SocialLink";
 import { WPCarousel } from "../../components/WPCarousel";
 import { activityType, organizationType } from "../../utils/categoryTable";
 import { fallback } from "../../utils/config";
+import { orgPageIds } from "../../utils/orgPageIds";
 export const getStaticPaths: GetStaticPaths = async () => {
-  const isLogin = await login();
-  // GH Actionは下書きも取得しますが、下書きの場合、SSGには「読み込み中」と出るだけで終わります。
-
   const pages = await wpFetch(
     buildPathWithWPQuery("/v2/pages", {
-      status: isLogin ? "draft,publish" : "publish",
+      status: "publish",
     })
   );
-
-  const paths = pages.map((it: any) => ({
+  const publicPageIds: string[] = pages.map((it: any) => it.id.toString());
+  const allPageIds = Array.from(new Set([...publicPageIds, ...orgPageIds]));
+  const paths = allPageIds.map((id: any) => ({
     params: {
-      id: it.id.toString(),
+      id,
     },
   }));
   return {
@@ -39,6 +38,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageId = params?.id;
   const post = await wpFetch(`/v2/pages/${pageId}`);
+  if (post.data?.status != 200) {
+    return {
+      props: {
+        initialData: null,
+      },
+    };
+  }
 
   return {
     props: {
