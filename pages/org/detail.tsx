@@ -36,6 +36,6 @@ export function Detail() {
       </Page>
     );
   }
-  return <Orgid initialData={initialData} />;
+  return <Orgid initialPageData={initialData} />;
 }
 export default Detail;

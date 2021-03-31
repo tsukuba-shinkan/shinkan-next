@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     );
     return {
       props: {
-        initialPostData: post,
+        initialPageData: post,
         initialMainImageData: mainImage,
       } as Props,
     };
@@ -69,17 +69,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 type Props = {
-  initialPostData?: any;
+  initialPageData?: any;
   initialMainImageData?: any;
 };
-function Orgid({ initialPostData, initialMainImageData }: Props) {
+function Orgid({ initialPageData, initialMainImageData }: Props) {
   const router = useRouter();
   if (router.isFallback) {
     console.log("フォールバックにつきフェッチします");
   }
   const pageId = router.query.id + "";
   const { data, error } = useSWR(pageUrl(pageId), wpFetch, {
-    initialData: initialPostData,
+    initialData: initialPageData,
   });
   if (data?.data?.status === 404) {
     return <Plasmic_404 />;
