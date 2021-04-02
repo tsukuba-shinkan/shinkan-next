@@ -53,8 +53,8 @@
   bottom: 0px;
   width: 100%;
   min-width: 0;
-  padding: 8px;
-  background: rgba(255, 255, 255, 0.71);
+  padding: 3px 7px;
+  background: #ffffff99;
   border-bottom: 5px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
 .box__activity_sports___6WKxl6TPp1 {
@@ -73,13 +73,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  max-height: 75px;
+  max-height: 65px;
   height: auto;
   overflow: hidden;
 }
 .slotDescription {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
-  font-size: 12px;
+  font-size: 11px;
   white-space: pre-wrap;
   text-transform: none;
   line-height: 1.7;
@@ -93,8 +93,8 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .slotName {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
@@ -111,7 +111,7 @@
   justify-content: flex-start;
 }
 .box__k4V {
-  font-size: 14px;
+  font-size: 12px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   position: relative;
 }
@@ -127,12 +127,12 @@
   height: auto;
 }
 .box__e1DR {
-  font-size: 14px;
+  font-size: 12px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   position: relative;
 }
 .box___1OPd2 {
-  font-size: 14px;
+  font-size: 12px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   position: relative;
 }
