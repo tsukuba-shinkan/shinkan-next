@@ -271,12 +271,14 @@ function PlasmicPage__RenderFunc(props: {
                 {"©\u00012021\u0001筑波大学新歓Webプロジェクトチーム"}
               </div>
 
-              <img
-                alt={""}
-                className={classNames(defaultcss.img, sty.img__jxcc1)}
-                role={"img"}
-                src={"/plasmic/shinkan_next/images/schoollogopng.png"}
-              />
+              {false ? (
+                <img
+                  alt={""}
+                  className={classNames(defaultcss.img, sty.img__jxcc1)}
+                  role={"img"}
+                  src={"/plasmic/shinkan_next/images/schoollogopng.png"}
+                />
+              ) : null}
             </div>
           </p.Stack>
         </div>
