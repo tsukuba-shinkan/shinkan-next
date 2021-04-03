@@ -198,7 +198,9 @@ function PlasmicPage__RenderFunc(props: {
                     sty.link__ur8FT
                   )}
                   component={__PlatformLink}
-                  href={"/404" as const}
+                  href={
+                    "https://www.stb.tsukuba.ac.jp/~shinkan-web/news/1437" as const
+                  }
                   platform={"nextjs"}
                 >
                   {"新歓祭について"}
