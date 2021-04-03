@@ -45,27 +45,40 @@
 }
 .box__wkg {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
-  font-size: 15px;
   width: 15%;
+  display: flex;
+  flex-direction: row;
   padding: 5px;
   margin: 0px;
 }
+.slotDateTime {
+  font-size: 15px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
 .box__aTUjn {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
-  font-size: 15px;
   width: 30%;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
   padding: 4px;
   margin: 0px;
 }
+.slotTitle {
+  font-size: 15px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
 .box__epzFf {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
-  font-size: 15px;
   width: 15%;
+  display: flex;
+  flex-direction: row;
   padding: 4px;
   margin: 0px;
+}
+.slotPlace {
+  font-size: 15px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
 .box___46Hq2 {
   display: flex;
@@ -77,16 +90,37 @@
   margin: 0px;
 }
 .box___2DfeI {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  display: flex;
+  flex-direction: column;
+  margin: 2px 0px;
+}
+.slotOrgName {
   font-size: 15px;
   font-weight: 700;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__v4I50 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
   margin: 2px 0px;
 }
 .box__keKdP {
-  position: relative;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   font-size: 11px;
-  margin: 2px 0px;
+}
+.box__activity_art__keKdPBzkut {
+  height: auto;
+}
+.box__dp6W {
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 11px;
+}
+.box___6KSj {
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 11px;
 }
 .svg {
   position: relative;
@@ -107,7 +141,11 @@
 }
 .box___3Kcnf {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
   padding: 8px;
+}
+.slotChildren {
+  font-size: 14px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }

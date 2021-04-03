@@ -42,22 +42,38 @@ import ExpandLess24PxsvgIcon from "./icons/PlasmicIcon__ExpandLess24Pxsvg"; // p
 export type PlasmicEventListItem2__VariantMembers = {
   expand: "expand";
   activity: "sports" | "art" | "culture" | "other";
+  organization: "ippan" | "kagai" | "other";
 };
 
 export type PlasmicEventListItem2__VariantsArgs = {
   expand?: SingleBooleanChoiceArg<"expand">;
   activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  organization?: SingleChoiceArg<"ippan" | "kagai" | "other">;
 };
 
 type VariantPropType = keyof PlasmicEventListItem2__VariantsArgs;
 export const PlasmicEventListItem2__VariantProps = new Array<VariantPropType>(
   "expand",
-  "activity"
+  "activity",
+  "organization"
 );
 
-export type PlasmicEventListItem2__ArgsType = {};
+export type PlasmicEventListItem2__ArgsType = {
+  dateTime?: React.ReactNode;
+  place?: React.ReactNode;
+  orgName?: React.ReactNode;
+  children?: React.ReactNode;
+  title?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicEventListItem2__ArgsType;
-export const PlasmicEventListItem2__ArgProps = new Array<ArgPropType>();
+export const PlasmicEventListItem2__ArgProps = new Array<ArgPropType>(
+  "dateTime",
+  "place",
+  "orgName",
+  "children",
+  "title"
+);
 
 export type PlasmicEventListItem2__OverridesType = {
   root?: p.Flex<"div">;
@@ -65,8 +81,14 @@ export type PlasmicEventListItem2__OverridesType = {
 };
 
 export interface DefaultEventListItem2Props {
+  dateTime?: React.ReactNode;
+  place?: React.ReactNode;
+  orgName?: React.ReactNode;
+  children?: React.ReactNode;
+  title?: React.ReactNode;
   expand?: SingleBooleanChoiceArg<"expand">;
   activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
+  organization?: SingleChoiceArg<"ippan" | "kagai" | "other">;
   className?: string;
 }
 
@@ -131,75 +153,271 @@ function PlasmicEventListItem2__RenderFunc(props: {
           })}
         >
           <div
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.box__wkg,
-              {
-                [sty.box__activity_other__wkg3V2CT]: hasVariant(
+            className={classNames(defaultcss.all, sty.box__wkg, {
+              [sty.box__activity_other__wkg3V2CT]: hasVariant(
+                variants,
+                "activity",
+                "other"
+              ),
+              [sty.box__expand__wkgVeGt]: hasVariant(
+                variants,
+                "expand",
+                "expand"
+              )
+            })}
+          >
+            <p.PlasmicSlot
+              defaultContents={"4/4 18:00"}
+              value={args.dateTime}
+              className={classNames(sty.slotDateTime, {
+                [sty.slotDateTime__activity_other]: hasVariant(
                   variants,
                   "activity",
                   "other"
-                )
-              }
-            )}
-          >
-            {"4/4 18:00"}
-          </div>
-
-          <div
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.box__aTUjn,
-              {
-                [sty.box__expand__aTUjnVeGt]: hasVariant(
+                ),
+                [sty.slotDateTime__expand]: hasVariant(
                   variants,
                   "expand",
                   "expand"
                 )
-              }
-            )}
-          >
-            {"ご飯会"}
+              })}
+            />
           </div>
 
           <div
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.box__epzFf
-            )}
+            className={classNames(defaultcss.all, sty.box__aTUjn, {
+              [sty.box__activity_sports__aTUjnvLebt]: hasVariant(
+                variants,
+                "activity",
+                "sports"
+              ),
+              [sty.box__expand__aTUjnVeGt]: hasVariant(
+                variants,
+                "expand",
+                "expand"
+              )
+            })}
           >
-            {"Zoom"}
+            <p.PlasmicSlot
+              defaultContents={"ご飯会"}
+              value={args.title}
+              className={classNames(sty.slotTitle, {
+                [sty.slotTitle__activity_sports]: hasVariant(
+                  variants,
+                  "activity",
+                  "sports"
+                ),
+                [sty.slotTitle__expand]: hasVariant(
+                  variants,
+                  "expand",
+                  "expand"
+                )
+              })}
+            />
           </div>
+
+          {false ? (
+            <div
+              className={classNames(defaultcss.all, sty.box__epzFf, {
+                [sty.box__activity_art__epzFfBzkut]: hasVariant(
+                  variants,
+                  "activity",
+                  "art"
+                ),
+                [sty.box__activity_culture__epzFfBcQjz]: hasVariant(
+                  variants,
+                  "activity",
+                  "culture"
+                ),
+                [sty.box__activity_other__epzFf3V2CT]: hasVariant(
+                  variants,
+                  "activity",
+                  "other"
+                ),
+                [sty.box__activity_sports__epzFfvLebt]: hasVariant(
+                  variants,
+                  "activity",
+                  "sports"
+                )
+              })}
+            >
+              <p.PlasmicSlot
+                defaultContents={"Zoom"}
+                value={args.place}
+                className={classNames(sty.slotPlace, {
+                  [sty.slotPlace__activity_sports]: hasVariant(
+                    variants,
+                    "activity",
+                    "sports"
+                  )
+                })}
+              />
+            </div>
+          ) : null}
 
           <div className={classNames(defaultcss.all, sty.box___46Hq2)}>
             <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box___2DfeI,
-                {
-                  [sty.box__activity_other___2DfeI3V2CT]: hasVariant(
+              className={classNames(defaultcss.all, sty.box___2DfeI, {
+                [sty.box__activity_other___2DfeI3V2CT]: hasVariant(
+                  variants,
+                  "activity",
+                  "other"
+                ),
+                [sty.box__activity_sports___2DfeIvLebt]: hasVariant(
+                  variants,
+                  "activity",
+                  "sports"
+                )
+              })}
+            >
+              <p.PlasmicSlot
+                defaultContents={"ちょっと長めの団体名を入れてみます"}
+                value={args.orgName}
+                className={classNames(sty.slotOrgName, {
+                  [sty.slotOrgName__activity_other]: hasVariant(
                     variants,
                     "activity",
                     "other"
                   )
-                }
-              )}
-            >
-              {"ちょっと長めの団体名を入れてみます"}
+                })}
+              />
             </div>
 
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__keKdP
-              )}
-            >
-              {"体育系・一般学生団体"}
+            <div className={classNames(defaultcss.all, sty.box__v4I50)}>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__keKdP,
+                  {
+                    [sty.box__activity_art__keKdPBzkut]: hasVariant(
+                      variants,
+                      "activity",
+                      "art"
+                    ),
+                    [sty.box__activity_culture__keKdPBcQjz]: hasVariant(
+                      variants,
+                      "activity",
+                      "culture"
+                    ),
+                    [sty.box__activity_other__keKdP3V2CT]: hasVariant(
+                      variants,
+                      "activity",
+                      "other"
+                    ),
+                    [sty.box__activity_sports__keKdPvLebt]: hasVariant(
+                      variants,
+                      "activity",
+                      "sports"
+                    ),
+                    [sty.box__organization_ippan__keKdPj5Ay7]: hasVariant(
+                      variants,
+                      "organization",
+                      "ippan"
+                    )
+                  }
+                )}
+              >
+                {hasVariant(variants, "activity", "other")
+                  ? "その他"
+                  : hasVariant(variants, "activity", "culture")
+                  ? "文化系"
+                  : hasVariant(variants, "activity", "art")
+                  ? "芸術系"
+                  : hasVariant(variants, "activity", "sports")
+                  ? "体育系"
+                  : "なんとか系"}
+              </div>
+
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__dp6W,
+                  {
+                    [sty.box__activity_art__dp6WBzkut]: hasVariant(
+                      variants,
+                      "activity",
+                      "art"
+                    ),
+                    [sty.box__activity_culture__dp6WBcQjz]: hasVariant(
+                      variants,
+                      "activity",
+                      "culture"
+                    ),
+                    [sty.box__activity_other__dp6W3V2CT]: hasVariant(
+                      variants,
+                      "activity",
+                      "other"
+                    ),
+                    [sty.box__activity_sports__dp6WVLebt]: hasVariant(
+                      variants,
+                      "activity",
+                      "sports"
+                    )
+                  }
+                )}
+              >
+                {"・"}
+              </div>
+
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box___6KSj,
+                  {
+                    [sty.box__activity_art___6KSjBzkut]: hasVariant(
+                      variants,
+                      "activity",
+                      "art"
+                    ),
+                    [sty.box__activity_culture___6KSjBcQjz]: hasVariant(
+                      variants,
+                      "activity",
+                      "culture"
+                    ),
+                    [sty.box__activity_other___6KSj3V2CT]: hasVariant(
+                      variants,
+                      "activity",
+                      "other"
+                    ),
+                    [sty.box__activity_sports___6KSjVLebt]: hasVariant(
+                      variants,
+                      "activity",
+                      "sports"
+                    ),
+                    [sty.box__expand___6KSjVeGt]: hasVariant(
+                      variants,
+                      "expand",
+                      "expand"
+                    ),
+                    [sty.box__organization_ippan___6KSjJ5Ay7]: hasVariant(
+                      variants,
+                      "organization",
+                      "ippan"
+                    ),
+                    [sty.box__organization_kagai___6KSjDe9XZ]: hasVariant(
+                      variants,
+                      "organization",
+                      "kagai"
+                    ),
+                    [sty.box__organization_other___6KSjEmHf]: hasVariant(
+                      variants,
+                      "organization",
+                      "other"
+                    )
+                  }
+                )}
+              >
+                {hasVariant(variants, "organization", "other")
+                  ? "その他"
+                  : hasVariant(variants, "organization", "kagai")
+                  ? "課外活動団体"
+                  : hasVariant(variants, "organization", "ippan")
+                  ? "一般学生団体"
+                  : "なんとか学生団体"}
+              </div>
             </div>
           </div>
 
@@ -229,20 +447,35 @@ function PlasmicEventListItem2__RenderFunc(props: {
             })}
           >
             <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box___3Kcnf,
-                {
-                  [sty.box__expand___3KcnfVeGt]: hasVariant(
+              className={classNames(defaultcss.all, sty.box___3Kcnf, {
+                [sty.box__activity_sports___3KcnfvLebt]: hasVariant(
+                  variants,
+                  "activity",
+                  "sports"
+                ),
+                [sty.box__expand___3KcnfVeGt]: hasVariant(
+                  variants,
+                  "expand",
+                  "expand"
+                )
+              })}
+            >
+              <p.PlasmicSlot
+                defaultContents={"詳細情報がここに書いてあります"}
+                value={args.children}
+                className={classNames(sty.slotChildren, {
+                  [sty.slotChildren__activity_sports]: hasVariant(
+                    variants,
+                    "activity",
+                    "sports"
+                  ),
+                  [sty.slotChildren__expand]: hasVariant(
                     variants,
                     "expand",
                     "expand"
                   )
-                }
-              )}
-            >
-              {"詳細情報がここに書いてあります"}
+                })}
+              />
             </div>
           </div>
         ) : null}

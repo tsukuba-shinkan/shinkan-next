@@ -207,7 +207,7 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
             {data.event.instagram?.[0] && (
               <SocialLink
                 label={data.event.instagram[0]}
-                type="twitter"
+                type="instagram"
                 href={"https://www.instagram.com/" + data.event.instagram[0]}
               />
             )}

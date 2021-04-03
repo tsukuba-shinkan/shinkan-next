@@ -46,20 +46,32 @@ export type PlasmicEvents__VariantsArgs = {};
 type VariantPropType = keyof PlasmicEvents__VariantsArgs;
 export const PlasmicEvents__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicEvents__ArgsType = {};
+export type PlasmicEvents__ArgsType = {
+  resultLength?: React.ReactNode;
+  children?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicEvents__ArgsType;
-export const PlasmicEvents__ArgProps = new Array<ArgPropType>();
+export const PlasmicEvents__ArgProps = new Array<ArgPropType>(
+  "resultLength",
+  "children"
+);
 
 export type PlasmicEvents__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
   h1?: p.Flex<"h1">;
   searchBox?: p.Flex<"div">;
+  rangestart?: p.Flex<"input">;
+  rangeend?: p.Flex<"input">;
+  keyword?: p.Flex<"input">;
   searchButton?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
 };
 
 export interface DefaultEventsProps {
+  resultLength?: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 }
 
@@ -125,14 +137,13 @@ function PlasmicEvents__RenderFunc(props: {
                     </div>
 
                     <input
-                      className={classNames(
-                        defaultcss.input,
-                        sty.textbox__h17Zg
-                      )}
-                      placeholder={"2021/03/22" as const}
+                      data-plasmic-name={"rangestart"}
+                      data-plasmic-override={overrides.rangestart}
+                      className={classNames(defaultcss.input, sty.rangestart)}
+                      placeholder={"2021-04-01" as const}
                       size={1 as const}
                       type={"text" as const}
-                      value={"2021/03/22" as const}
+                      value={"2021-04-01" as const}
                     />
 
                     <div
@@ -146,14 +157,13 @@ function PlasmicEvents__RenderFunc(props: {
                     </div>
 
                     <input
-                      className={classNames(
-                        defaultcss.input,
-                        sty.textbox___3Ngi3
-                      )}
-                      placeholder={"2021/03/22" as const}
+                      data-plasmic-name={"rangeend"}
+                      data-plasmic-override={overrides.rangeend}
+                      className={classNames(defaultcss.input, sty.rangeend)}
+                      placeholder={"2021-04-01" as const}
                       size={1 as const}
                       type={"text" as const}
-                      value={"2021/03/22" as const}
+                      value={"2021-04-01" as const}
                     />
                   </div>
 
@@ -169,14 +179,13 @@ function PlasmicEvents__RenderFunc(props: {
                     </div>
 
                     <input
-                      className={classNames(
-                        defaultcss.input,
-                        sty.textbox__m1Aer
-                      )}
-                      placeholder={"2021/03/22" as const}
+                      data-plasmic-name={"keyword"}
+                      data-plasmic-override={overrides.keyword}
+                      className={classNames(defaultcss.input, sty.keyword)}
+                      placeholder={"キーワードを入力…" as const}
                       size={1 as const}
                       type={"text" as const}
-                      value={"2021/03/22" as const}
+                      value={"" as const}
                     />
                   </div>
                 </div>
@@ -209,52 +218,65 @@ function PlasmicEvents__RenderFunc(props: {
                 </div>
 
                 <div className={classNames(defaultcss.all, sty.box__xOcYl)}>
+                  <p.PlasmicSlot
+                    defaultContents={"0"}
+                    value={args.resultLength}
+                    className={classNames(sty.slotResultLength)}
+                  />
+
                   <div
                     className={classNames(
                       defaultcss.all,
                       defaultcss.__wab_text,
-                      sty.box___4690
+                      sty.box__ymTcg
                     )}
                   >
-                    {"4件"}
+                    {"件"}
                   </div>
                 </div>
               </div>
 
               <div className={classNames(defaultcss.all, sty.box__tInj)}>
-                <EventListItem2
-                  className={classNames(
-                    "__wab_instance",
-                    sty.eventListItem2__eMU1
-                  )}
-                />
+                <p.PlasmicSlot
+                  defaultContents={
+                    <React.Fragment>
+                      <EventListItem2
+                        className={classNames(
+                          "__wab_instance",
+                          sty.eventListItem2__m0KKv
+                        )}
+                      />
 
-                <EventListItem2
-                  className={classNames(
-                    "__wab_instance",
-                    sty.eventListItem2__gwpIg
-                  )}
-                />
+                      <EventListItem2
+                        className={classNames(
+                          "__wab_instance",
+                          sty.eventListItem2__v6HRd
+                        )}
+                      />
 
-                <EventListItem2
-                  className={classNames(
-                    "__wab_instance",
-                    sty.eventListItem2__scLsl
-                  )}
-                />
+                      <EventListItem2
+                        className={classNames(
+                          "__wab_instance",
+                          sty.eventListItem2__tg0EF
+                        )}
+                      />
 
-                <EventListItem2
-                  className={classNames(
-                    "__wab_instance",
-                    sty.eventListItem2__zc5Ak
-                  )}
-                />
+                      <EventListItem2
+                        className={classNames(
+                          "__wab_instance",
+                          sty.eventListItem2___6PQtD
+                        )}
+                      />
 
-                <EventListItem2
-                  className={classNames(
-                    "__wab_instance",
-                    sty.eventListItem2__nAqkf
-                  )}
+                      <EventListItem2
+                        className={classNames(
+                          "__wab_instance",
+                          sty.eventListItem2__bYprV
+                        )}
+                      />
+                    </React.Fragment>
+                  }
+                  value={args.children}
                 />
               </div>
             </div>
@@ -266,10 +288,39 @@ function PlasmicEvents__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "page", "h1", "searchBox", "searchButton", "svg"],
-  page: ["page", "h1", "searchBox", "searchButton", "svg"],
+  root: [
+    "root",
+    "page",
+    "h1",
+    "searchBox",
+    "rangestart",
+    "rangeend",
+    "keyword",
+    "searchButton",
+    "svg"
+  ],
+  page: [
+    "page",
+    "h1",
+    "searchBox",
+    "rangestart",
+    "rangeend",
+    "keyword",
+    "searchButton",
+    "svg"
+  ],
   h1: ["h1"],
-  searchBox: ["searchBox", "searchButton", "svg"],
+  searchBox: [
+    "searchBox",
+    "rangestart",
+    "rangeend",
+    "keyword",
+    "searchButton",
+    "svg"
+  ],
+  rangestart: ["rangestart"],
+  rangeend: ["rangeend"],
+  keyword: ["keyword"],
   searchButton: ["searchButton", "svg"],
   svg: ["svg"]
 } as const;
@@ -282,6 +333,9 @@ type NodeDefaultElementType = {
   page: typeof Page;
   h1: "h1";
   searchBox: "div";
+  rangestart: "input";
+  rangeend: "input";
+  keyword: "input";
   searchButton: "div";
   svg: "svg";
 };
@@ -344,6 +398,9 @@ export const PlasmicEvents = Object.assign(
     page: makeNodeComponent("page"),
     h1: makeNodeComponent("h1"),
     searchBox: makeNodeComponent("searchBox"),
+    rangestart: makeNodeComponent("rangestart"),
+    rangeend: makeNodeComponent("rangeend"),
+    keyword: makeNodeComponent("keyword"),
     searchButton: makeNodeComponent("searchButton"),
     svg: makeNodeComponent("svg"),
 

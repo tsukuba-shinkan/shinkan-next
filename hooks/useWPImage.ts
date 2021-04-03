@@ -16,8 +16,9 @@ export function useWPImage(id: string, size: string, initialData?: any) {
   );
   if (data?.media_details?.sizes) {
     return (
-      data.media_details.sizes?.[size].source_url ||
-      data.media_details.sizes?.full.source_url
+      data.media_details.sizes?.[size]?.source_url ||
+      data.media_details.sizes?.full?.source_url ||
+      "noimage"
     );
   } else {
     return "loadingimage here";

@@ -8,6 +8,8 @@ import CategoryRadio from "../components/CategoryRadio";
 import EventListItem from "../components/EventListItem";
 import OrgCard from "../components/OrgCard";
 import { PlasmicHome } from "../components/plasmic/shinkan_next/PlasmicHome";
+import { activityType, organizationType } from "../utils/categoryTable";
+import { s3Fetch } from "../utils/s3Fetch";
 import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 
 type CatUnion = "all" | "sports" | "art" | "culture" | "other";
@@ -35,19 +37,23 @@ function Homepage() {
     orgId: e.organizationID,
   }));
 
-  const [orgs, setOrgs] = useState<
-    {
-      src: string;
-      description: string;
-      name: string;
-      activity: "sports" | "art" | "culture" | "other";
-      orgType: "ippan" | "kagai" | "other";
-      orgId: number;
-    }[]
-  >([]);
-  useEffect(() => {
-    setOrgs([]);
-  }, []);
+  const { data: orgData } = useSWR("/random/org", s3Fetch);
+  const orgs: {
+    wpsrc: string;
+    description: string;
+    name: string;
+    activity: "sports" | "art" | "culture" | "other";
+    orgType: "ippan" | "kagai" | "other";
+    orgId: number;
+  }[] =
+    orgData?.map((o: any) => ({
+      wpsrc: o.event.mainImage?.[0],
+      description: o.excerpt.rendered,
+      name: o.title.rendered,
+      activity: activityType[o.activitytype[0]].name,
+      orgType: organizationType[o.organizationtype[0]].name,
+      orgId: o.id,
+    })) || [];
 
   const { data: newsData } = useSWR(
     buildPathWithWPQuery("/v2/posts", { tags: /*news=2*/ "2" }),

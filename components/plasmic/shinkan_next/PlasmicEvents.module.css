@@ -64,7 +64,7 @@
   padding-left: 16px;
   padding-right: 16px;
 }
-.textbox__h17Zg {
+.rangestart {
   position: relative;
   width: 100px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
@@ -79,7 +79,7 @@
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   margin: 2px 8px;
 }
-.textbox___3Ngi3 {
+.rangeend {
   position: relative;
   width: 100px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
@@ -103,7 +103,7 @@
   padding-right: 16px;
   padding-left: 16px;
 }
-.textbox__m1Aer {
+.keyword {
   position: relative;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   font-weight: 700;
@@ -164,7 +164,12 @@
   bottom: auto;
   flex-grow: 1;
 }
-.box___4690 {
+.slotResultLength {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__ymTcg {
   position: relative;
   font-size: 22px;
   font-weight: 700;
@@ -178,23 +183,23 @@
   justify-content: flex-start;
   height: auto;
 }
-.eventListItem2__eMU1:global(.__wab_instance) {
+.eventListItem2__m0KKv:global(.__wab_instance) {
   position: relative;
   margin: 0px;
 }
-.eventListItem2__gwpIg:global(.__wab_instance) {
+.eventListItem2__v6HRd:global(.__wab_instance) {
   position: relative;
   margin: 0px;
 }
-.eventListItem2__scLsl:global(.__wab_instance) {
+.eventListItem2__tg0EF:global(.__wab_instance) {
   position: relative;
   margin: 0px;
 }
-.eventListItem2__zc5Ak:global(.__wab_instance) {
+.eventListItem2___6PQtD:global(.__wab_instance) {
   position: relative;
   margin: 0px;
 }
-.eventListItem2__nAqkf:global(.__wab_instance) {
+.eventListItem2__bYprV:global(.__wab_instance) {
   position: relative;
   margin: 0px;
 }
