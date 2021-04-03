@@ -11,31 +11,30 @@ import { PlasmicHome } from "../components/plasmic/shinkan_next/PlasmicHome";
 import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 
 type CatUnion = "all" | "sports" | "art" | "culture" | "other";
+function getCurrentDate() {
+  const date = new Date();
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+}
 function Homepage() {
-  // Use PlasmicHomepage to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicHomepage are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, PlasmicHomepage is wrapped by your project's global
-  // variant context providers. These wrappers may be moved to
-  // Next.js Custom App component
-  // (https://nextjs.org/docs/advanced-features/custom-app).
   const [category, selectCategory] = useState<CatUnion>("all");
-  const [events, setEvents] = useState<
-    {
-      eventTitle: string;
-      dateTime: string;
-      orgId: string;
-    }[]
-  >([]);
+
+  const { data: eventData } = useSWR(
+    buildPathWithWPQuery("/custom/events", {
+      fromdate: getCurrentDate(),
+      todate: getCurrentDate(),
+    }),
+    wpFetch
+  );
+  const events: {
+    eventTitle: string;
+    dateTime: string;
+    orgId: string;
+  }[] = eventData?.map((e: any) => ({
+    dateTime: `${e.start}`,
+    eventTitle: e.title,
+    orgId: e.organizationID,
+  }));
+
   const [orgs, setOrgs] = useState<
     {
       src: string;
@@ -47,8 +46,9 @@ function Homepage() {
     }[]
   >([]);
   useEffect(() => {
-    setEvents([]);
+    setOrgs([]);
   }, []);
+
   const { data: newsData } = useSWR(
     buildPathWithWPQuery("/v2/posts", { tags: /*news=2*/ "2" }),
     wpFetch
@@ -59,9 +59,6 @@ function Homepage() {
       title: n.title.rendered,
       newsId: n.id,
     })) || [];
-  useEffect(() => {
-    setOrgs([]);
-  }, []);
 
   return (
     <>
@@ -71,14 +68,14 @@ function Homepage() {
       <PlasmicHome
         eventList={
           <>
-            {events.map((ev) => (
+            {events?.map((ev) => (
               <EventListItem eventTitle={ev.eventTitle} dateTime={ev.dateTime}>
                 <Link href={`/org/${ev.orgId}`}>詳細を表示</Link>
               </EventListItem>
             ))}
           </>
         }
-        eventCount={events.length}
+        eventCount={events?.length || "0"}
         categoryRadio={
           <>
             {["all", "sports", "art", "culture", "other"].map((c) => (
