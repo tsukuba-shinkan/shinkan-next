@@ -232,7 +232,14 @@ function PlasmicEventListItem2__RenderFunc(props: {
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box___3Kcnf
+                sty.box___3Kcnf,
+                {
+                  [sty.box__expand___3KcnfVeGt]: hasVariant(
+                    variants,
+                    "expand",
+                    "expand"
+                  )
+                }
               )}
             >
               {"詳細情報がここに書いてあります"}
