@@ -14,8 +14,11 @@ export function useWPImage(id: string, size: string, initialData?: any) {
       initialData,
     }
   );
-  if (data) {
-    return data.media_details.sizes[size].source_url;
+  if (data?.media_details?.sizes) {
+    return (
+      data.media_details.sizes?.[size].source_url ||
+      data.media_details.sizes?.full.source_url
+    );
   } else {
     return "loadingimage here";
   }
