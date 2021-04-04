@@ -39,6 +39,6 @@ jobs:
       - name: install sshpass
         run: sudo apt-get -y install sshpass
       - name: upload to server
-        run: sshpass -e scp -o StrictHostKeyChecking=no -r out/* shinkan-web@www.stb.tsukuba.ac.jp:testenv
+        run: sshpass -e scp -o StrictHostKeyChecking=no -r out/* shinkan-web@www.stb.tsukuba.ac.jp:.
         env:
           SSHPASS: ${{ secrets.SFTP_PASSWORD }}
