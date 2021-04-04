@@ -119,12 +119,14 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
     const arr = [];
     const len = data.event.title.length;
     for (let i = 0; i < len; i++) {
-      arr.push({
-        start: data.event.start[i],
-        end: data.event.end[i],
-        title: data.event.title[i],
-        description: data.event.description[i],
-      });
+      if (new Date(data.event.end[i] || "2021-12-31") >= new Date()) {
+        arr.push({
+          start: data.event.start[i],
+          end: data.event.end[i],
+          title: data.event.title[i],
+          description: data.event.description[i],
+        });
+      }
     }
     return arr;
   })();
