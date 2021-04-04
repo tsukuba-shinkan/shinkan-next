@@ -81,6 +81,18 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
   if (data?.data?.status === 404) {
     return <Plasmic_404 />;
   }
+  if (data?.data?.status === 401) {
+    return (
+      <>
+        <Head>
+          <title>筑波大学新歓Web</title>
+        </Head>
+        <Page>
+          <>この団体はまだページを公開していません。</>
+        </Page>
+      </>
+    );
+  }
   if (error) {
     console.error("page error", error);
     return (
