@@ -25,7 +25,10 @@ function Homepage() {
       fromdate: getCurrentDate(),
       todate: getCurrentDate(),
     }),
-    wpFetch
+    wpFetch,
+    {
+      revalidateOnMount: false,
+    }
   );
   const events: {
     eventTitle: string;
@@ -37,7 +40,13 @@ function Homepage() {
     orgId: e.organizationID,
   }));
 
-  const { data: orgData } = useSWR("/random/org", s3Fetch);
+  const { data: orgData } = useSWR(
+    "/random/org?category=" + category,
+    s3Fetch,
+    {
+      revalidateOnMount: false,
+    }
+  );
   const orgs: {
     wpsrc: string;
     description: string;
@@ -57,7 +66,10 @@ function Homepage() {
 
   const { data: newsData } = useSWR(
     buildPathWithWPQuery("/v2/posts", { tags: /*news=2*/ "2" }),
-    wpFetch
+    wpFetch,
+    {
+      revalidateOnMount: false,
+    }
   );
   const news: { date: string; title: string; newsId: string }[] =
     newsData?.map((n: any) => ({
