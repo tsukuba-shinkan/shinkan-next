@@ -2,7 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import Head from "next/head";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useSWR from "swr";
 import CategoryRadio from "../components/CategoryRadio";
 import EventListItem from "../components/EventListItem";

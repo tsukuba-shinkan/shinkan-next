@@ -5,7 +5,7 @@ import OrgCard from "../components/OrgCard";
 import Pager from "../components/Pager";
 import { PlasmicOrg } from "../components/plasmic/shinkan_next/PlasmicOrg";
 import { activityType, organizationType } from "../utils/categoryTable";
-import { s3Fetch } from "../utils/s3Fetch";
+//import { s3Fetch } from "../utils/s3Fetch";
 import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 
 const PER_PAGE = 10;
@@ -57,9 +57,8 @@ function Org() {
       })
     );
 
-    if (false) {
-      const result = await s3Fetch("/search/org?q=" + keyword);
-    }
+    // const result = await s3Fetch("/search/org?q=" + keyword);
+
     if (result.code === "rest_post_invalid_page_number") {
       return setOrgs([]);
     }
