@@ -17,9 +17,9 @@ import { activityType, organizationType } from "../../utils/categoryTable";
 import { fallback } from "../../utils/config";
 import { orgPageIds } from "../../utils/orgPageIds";
 import { s3Fetch } from "../../utils/s3Fetch";
-
+let pages: any[];
 export const getStaticPaths: GetStaticPaths = async () => {
-  const pages: any[] = await s3Fetch("/all");
+  pages = await s3Fetch("/all");
   const publicPageIds: string[] = pages.map((it: any) => it.id.toString());
   const allPageIds = Array.from(new Set([...publicPageIds, ...orgPageIds]));
   const paths = allPageIds.map((id: any) => ({
@@ -39,7 +39,9 @@ const pageUrl = (pageId: string) =>
   });
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageId = params?.id! + "";
-  const post = await wpFetch(pageUrl(pageId));
+
+  pages = pages || (await s3Fetch("/all"));
+  const post = pages.filter((p) => p.id.toString() === pageId)[0];
   if (post.data?.status == 401) {
     return {
       props: {},
