@@ -39,6 +39,7 @@ const pageUrl = (pageId: string) =>
   });
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageId = params?.id! + "";
+  console.log(pageId);
 
   pages = pages || (await s3Fetch("/all"));
   const post = pages.filter((p) => p.id.toString() === pageId)[0];
@@ -80,6 +81,12 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
   const { data, error } = useSWR(pageUrl(pageId), wpFetch, {
     initialData: initialPageData,
   });
+
+  const mainImage = useWPImage(
+    data?.event?.mainImage?.[0],
+    "medium",
+    initialMainImageData
+  );
   if (data?.data?.status === 404) {
     return <Plasmic_404 />;
   }
@@ -124,11 +131,6 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
   const title = data.title.rendered;
   const description = data.excerpt.rendered.replace(/<[^>]*>?/gm, "");
   const url = `/org/${pageId}`;
-  const mainImage = useWPImage(
-    data.event.mainImage[0],
-    "medium",
-    initialMainImageData
-  );
   const events = (() => {
     const arr = [];
     const len = data.event.title.length;
