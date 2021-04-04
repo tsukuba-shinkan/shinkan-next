@@ -1,5 +1,6 @@
-import { useWPImage } from "../hooks/useWPImage";
 import ImageGallery from "react-image-gallery";
+import { useEffect, useState } from "react";
+import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 
 type Props = {
   mainImage: string;
@@ -22,36 +23,59 @@ function extractVideoId(url: string) {
   var match = url.match(regExp);
   return match && match[7].length == 11 ? match[7] : null;
 }
+
+const getDetail = async (id: string) =>
+  (
+    await wpFetch(
+      buildPathWithWPQuery(`/v2/media/${id}`, {
+        _fields: "media_details",
+      })
+    )
+  )?.media_details.sizes;
 export function WPCarousel({ mainImage, otherImages, youtubeLinks }: Props) {
-  const ytids: string[] = youtubeLinks.reduce((prev, url) => {
-    const id = extractVideoId(url);
-    id && prev.push(id);
-    return prev;
-  }, [] as string[]);
-  const images = [
-    {
-      original: useWPImage(mainImage, "large"),
-      thumbnail: useWPImage(mainImage, "thumbnail"),
-      fullscreen: useWPImage(mainImage, "full"),
-    },
-    ...otherImages.map((im) => ({
-      original: useWPImage(im, "large"),
-      thumbnail: useWPImage(im, "thumbnail"),
-      fullscreen: useWPImage(im, "full"),
-    })),
-    ...ytids.map((id) => ({
-      thumbnail: `https://img.youtube.com/vi/${id}/0.jpg`,
-      original: `https://img.youtube.com/vi/${id}/0.jpg`,
-      id,
-      renderItem: ytIframe,
-    })),
-  ];
-  return (
-    <ImageGallery
-      items={images}
-      lazyLoad
-      showPlayButton={false}
-      useBrowserFullscreen={false}
-    />
-  );
+  const [items, setItems] = useState<any>([]);
+  useEffect(() => {
+    (async () => {
+      const ytids: string[] = youtubeLinks.reduce((prev, url) => {
+        const id = extractVideoId(url);
+        id && prev.push(id);
+        return prev;
+      }, [] as string[]);
+
+      const mainDetail = await getDetail(mainImage);
+      const otherDetail = await Promise.all(
+        otherImages.map(async (im) => await getDetail(im))
+      );
+      setItems([
+        {
+          original:
+            mainDetail?.large?.source_url || mainDetail?.medium?.source_url,
+          thumbnail: mainDetail?.thumbnail?.source_url,
+          fullscreen: mainDetail?.full?.source_url,
+        },
+        ...otherDetail.map((im) => ({
+          original: im?.large?.source_url || mainDetail?.medium?.source_url,
+          thumbnail: im?.thumbnail?.source_url,
+          fullscreen: im?.full?.source_url,
+        })),
+        ...ytids.map((id) => ({
+          thumbnail: `https://img.youtube.com/vi/${id}/0.jpg`,
+          original: `https://img.youtube.com/vi/${id}/0.jpg`,
+          id,
+          renderItem: ytIframe,
+        })),
+      ]);
+    })();
+  }, [mainImage, otherImages, youtubeLinks]);
+  if (items.length) {
+    return (
+      <ImageGallery
+        items={items}
+        lazyLoad
+        showPlayButton={false}
+        useBrowserFullscreen={false}
+      />
+    );
+  }
+  return <></>;
 }

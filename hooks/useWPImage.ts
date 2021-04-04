@@ -17,18 +17,23 @@ export function useWPImage(id: string, size: string, initialData?: any) {
 
   useEffect(() => {
     (async () => {
-      const data = await wpFetch(
-        buildPathWithWPQuery(`/v2/media/${id}`, {
-          _fields: "media_details",
-        })
-      );
+      const data = await getWPImage(id, size);
 
-      setSrc(
-        data?.media_details?.sizes?.[size]?.source_url ||
-          data?.media_details?.sizes?.full?.source_url ||
-          noimage
-      );
+      setSrc(data);
     })();
   }, [id, size]);
   return src;
+}
+export async function getWPImage(id: string, size: string) {
+  const data = await wpFetch(
+    buildPathWithWPQuery(`/v2/media/${id}`, {
+      _fields: "media_details",
+    })
+  );
+
+  return (
+    data?.media_details?.sizes?.[size]?.source_url ||
+    data?.media_details?.sizes?.full?.source_url ||
+    noimage
+  );
 }
