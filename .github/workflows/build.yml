@@ -1,6 +1,7 @@
 name: Build Exported
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   build:
