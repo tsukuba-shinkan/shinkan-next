@@ -16,3 +16,12 @@ blockquote {
   text-align: center;
   color: #333;
 }
+.org-card-bg {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 0.5s ease 0s;
+  opacity: 0;
+}

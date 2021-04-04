@@ -70,13 +70,10 @@ function OrgCard(props: OrgCardProps) {
       }
     >
       <div
+        className="org-card-bg"
         style={{
           backgroundImage: `url(${src})`,
-          width: "100%",
-          height: "100%",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          opacity: src ? 1 : 0,
         }}
       ></div>
     </PlasmicOrgCard>

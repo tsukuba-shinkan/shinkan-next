@@ -30,8 +30,8 @@
   overflow: hidden;
   min-width: 0;
   min-height: 0;
-  background: linear-gradient(327.76742827104636deg, #ae609e 0%, #f2d599 100%),
-    #ffffff;
+  background: url("/plasmic/shinkan_next/images/gradientjpeg.jpeg") 0% 0% / 100% 100%,
+    #ffffff 0% 0% / 100% 100%;
 }
 .box___7AuY {
   display: block;
@@ -42,7 +42,7 @@
   height: 100%;
   min-width: 0;
   min-height: 0;
-  background: #ffffff;
+  background: transparent;
 }
 .box___6WKxl {
   display: flex;
@@ -56,7 +56,7 @@
   width: 100%;
   min-width: 0;
   padding: 3px 7px;
-  background: #ffffff99;
+  background: #ffffffcc;
   border-bottom: 5px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
 .box__activity_sports___6WKxl6TPp1 {
