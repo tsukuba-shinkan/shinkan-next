@@ -11,22 +11,6 @@ import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 const PER_PAGE = 10;
 
 function Org() {
-  // Use PlasmicOrg to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicOrg are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, PlasmicOrg is wrapped by your project's global
-  // variant context providers. These wrappers may be moved to
-  // Next.js Custom App component
-  // (https://nextjs.org/docs/advanced-features/custom-app).
   const [orgs, setOrgs] = useState<
     {
       wpsrc: string;
@@ -47,6 +31,7 @@ function Org() {
     if (keyword.length === 0) {
       return setOrgs([]);
     }
+
     const result = await wpFetch(
       buildPathWithWPQuery("/v2/pages", {
         search: keyword,
@@ -57,7 +42,7 @@ function Org() {
       })
     );
 
-    // const result = await s3Fetch("/search/org?q=" + keyword);
+    //const result = await s3Fetch("/search/org?q=" + keyword);
 
     if (result.code === "rest_post_invalid_page_number") {
       return setOrgs([]);
@@ -67,12 +52,16 @@ function Org() {
         description: p.excerpt.rendered,
         name: p.title.rendered,
         orgId: p.id as number,
-        activity: activityType[p.activitytype[0]].name,
-        orgType: organizationType[p.organizationtype[0]].name,
+        activity: activityType[p.activitytype[0]]?.name,
+        orgType: organizationType[p.organizationtype[0]]?.name,
         wpsrc: p.event.mainImage?.[0],
       }))
     );
   };
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) =>
+    e.code === "Enter" && search();
+
   return (
     <PlasmicOrg
       orgs={
@@ -87,9 +76,7 @@ function Org() {
         onChange(e) {
           setKeyword(e.target.value);
         },
-        onSubmit() {
-          search();
-        },
+        onKeyDown,
       }}
       searchButton={{
         onClick() {

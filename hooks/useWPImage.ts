@@ -12,7 +12,7 @@ export function useWPImage(id: string, size: string, initialData?: any) {
     wpFetch,
     {
       initialData,
-      revalidateOnMount: false,
+      dedupingInterval: 300000,
     }
   );
   if (data?.media_details?.sizes) {

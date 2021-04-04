@@ -34,6 +34,9 @@ function Events() {
     }
     setResult(await s3Fetch(url));
   };
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) =>
+    e.code === "Enter" && search();
+
   return (
     <PlasmicEvents
       keyword={{
@@ -41,18 +44,21 @@ function Events() {
         onChange(e) {
           setKeyword(e.target.value);
         },
+        onKeyDown,
       }}
       rangeend={{
         value: rangeend,
         onChange(e) {
           setRangeend(e.target.value);
         },
+        onKeyDown,
       }}
       rangestart={{
         value: rangestart,
         onChange(e) {
           setRangestart(e.target.value);
         },
+        onKeyDown,
       }}
       resultLength={result.length.toString()}
       searchButton={{
@@ -66,9 +72,9 @@ function Events() {
           dateTime={it.start}
           title={it.title}
           orgName={it.page.title.rendered}
-          activity={activityType[it.page.activitytype[0]].name as any}
+          activity={activityType[it.page.activitytype[0]]?.name as any}
           organization={
-            organizationType[it.page.organizationtype[0]].name as any
+            organizationType[it.page.organizationtype[0]]?.name as any
           }
         >
           {it.description}
