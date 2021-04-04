@@ -16,28 +16,11 @@ import { WPCarousel } from "../../components/WPCarousel";
 import { activityType, organizationType } from "../../utils/categoryTable";
 import { fallback } from "../../utils/config";
 import { orgPageIds } from "../../utils/orgPageIds";
-
-async function pageFetch(page: number): Promise<{ id: number }[]> {
-  const result = await wpFetch(
-    buildPathWithWPQuery("/v2/pages", {
-      status: "publish",
-      _fields: "id",
-      page: page + "",
-      per_page: "100",
-    })
-  );
-  if (result?.code === "rest_post_invalid_page_number") {
-    return [];
-  }
-  return result;
-}
+import { s3Fetch } from "../../utils/s3Fetch";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const pages = await Promise.all([pageFetch(1), pageFetch(2), pageFetch(3)]);
-  const publicPageIds: string[] = pages
-    .reduce((acc, val) => acc.concat(val), [])
-    .map((it: any) => it.id.toString());
-
+  const pages: any[] = await s3Fetch("/all");
+  const publicPageIds: string[] = pages.map((it: any) => it.id.toString());
   const allPageIds = Array.from(new Set([...publicPageIds, ...orgPageIds]));
   const paths = allPageIds.map((id: any) => ({
     params: {
