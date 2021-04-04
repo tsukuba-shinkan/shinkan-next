@@ -5,9 +5,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    continue-on-error: true
-    strategy:
-      fail-fast: false
     steps:
       - uses: actions/checkout@v1
       - name: Cache Node.js modules
@@ -28,6 +25,7 @@ jobs:
         run: npx next build && npx next export
       - name: duplicate dirs
         run: |
+          cd out/org
           for id in ./*.html; do
             mkdir ${id:2:-5}
             cp $id ${id:2:-5}/index.html
