@@ -39,7 +39,6 @@ const pageUrl = (pageId: string) =>
   });
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageId = params?.id! + "";
-  console.log(pageId);
 
   pages = pages || (await s3Fetch("/all"));
   const post = pages.filter((p) => p.id.toString() === pageId)[0];
