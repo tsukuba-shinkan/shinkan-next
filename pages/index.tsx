@@ -34,10 +34,12 @@ function Homepage() {
     eventTitle: string;
     dateTime: string;
     orgId: string;
+    orgName: string;
   }[] = eventData?.map((e: any) => ({
     dateTime: `${e.start}`,
     eventTitle: e.title,
     orgId: e.organizationID,
+    orgName: e.organizationName,
   }));
 
   const { data: orgData } = useSWR(
@@ -87,7 +89,11 @@ function Homepage() {
         eventList={
           <>
             {events?.map((ev) => (
-              <EventListItem eventTitle={ev.eventTitle} dateTime={ev.dateTime}>
+              <EventListItem
+                eventTitle={ev.eventTitle}
+                dateTime={ev.dateTime.slice(5)}
+                orgName={ev.orgName}
+              >
                 <Link href={`/org/${ev.orgId}`}>詳細を表示</Link>
               </EventListItem>
             ))}

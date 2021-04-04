@@ -56,13 +56,15 @@ export type PlasmicEventListItem__ArgsType = {
   eventTitle?: React.ReactNode;
   dateTime?: React.ReactNode;
   children?: React.ReactNode;
+  orgName?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicEventListItem__ArgsType;
 export const PlasmicEventListItem__ArgProps = new Array<ArgPropType>(
   "eventTitle",
   "dateTime",
-  "children"
+  "children",
+  "orgName"
 );
 
 export type PlasmicEventListItem__OverridesType = {
@@ -74,6 +76,7 @@ export interface DefaultEventListItemProps {
   eventTitle?: React.ReactNode;
   dateTime?: React.ReactNode;
   children?: React.ReactNode;
+  orgName?: React.ReactNode;
   expand?: SingleBooleanChoiceArg<"expand">;
   className?: string;
 }
@@ -126,6 +129,14 @@ function PlasmicEventListItem__RenderFunc(props: {
             role={"img"}
           />
         </div>
+      </div>
+
+      <div className={classNames(defaultcss.all, sty.box__quGeg)}>
+        <p.PlasmicSlot
+          defaultContents={""}
+          value={args.orgName}
+          className={classNames(sty.slotOrgName)}
+        />
       </div>
 
       {(hasVariant(variants, "expand", "expand") ? true : false) ? (
