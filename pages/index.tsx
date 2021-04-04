@@ -41,7 +41,7 @@ function Homepage() {
   }));
 
   const { data: orgData } = useSWR(
-    "/random/org?category=" + category,
+    "/random/org?activity=" + category,
     s3Fetch,
     {
       revalidateOnMount: false,
