@@ -15,7 +15,10 @@ import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
 type CatUnion = "all" | "sports" | "art" | "culture" | "other";
 function getCurrentDate() {
   const date = new Date();
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+  return `${date.getFullYear()}-${("0" + (date.getMonth() + 1)).slice(-2)}-${(
+    "0" +
+    (date.getDate() + 1)
+  ).slice(-2)}`;
 }
 function Homepage() {
   const [category, selectCategory] = useState<CatUnion>("all");
