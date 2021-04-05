@@ -134,6 +134,9 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
     const arr = [];
     const len = data.event.title.length;
     for (let i = 0; i < len; i++) {
+      if (data.event.title[i].length == 0) {
+        continue;
+      }
       if (new Date(data.event.end[i] || "2021-12-31") >= new Date()) {
         arr.push({
           start: data.event.start[i],
@@ -173,22 +176,20 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
             youtubeLinks={data.event.youtubeLinks}
           ></WPCarousel>
         }
-        events={events
-          .filter((e: any) => e.title)
-          .map((e: any, i: number) => (
-            <EventListItem
-              eventTitle={e.title}
-              dateTime={`${e.start.slice(5)} - ${e.end.slice(5)}`}
-              key={i}
-            >
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: e.description, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
-                }}
-                className="wpRendered"
-              />
-            </EventListItem>
-          ))}
+        events={events.map((e: any, i: number) => (
+          <EventListItem
+            eventTitle={e.title}
+            dateTime={`${e.start.slice(5)} - ${e.end.slice(5)}`}
+            key={i}
+          >
+            <div
+              dangerouslySetInnerHTML={{
+                __html: e.description, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
+              }}
+              className="wpRendered"
+            />
+          </EventListItem>
+        ))}
         title={title}
         socialLinks={
           <>
