@@ -87,11 +87,12 @@ function Homepage() {
       <PlasmicHome
         eventList={
           <>
-            {events?.map((ev) => (
+            {events?.map((ev, i) => (
               <EventListItem
                 eventTitle={ev.eventTitle}
                 dateTime={ev.dateTime.slice(5)}
                 orgName={ev.orgName}
+                key={i}
               >
                 <Link href={`/org/${ev.orgId}`}>詳細を表示</Link>
               </EventListItem>
@@ -106,6 +107,7 @@ function Homepage() {
                 variant={c as CatUnion}
                 selected={category === c}
                 onClick={() => selectCategory(c as CatUnion)}
+                key={c}
               />
             ))}
           </>
@@ -113,14 +115,14 @@ function Homepage() {
         orgs={
           <>
             {orgs.map((o) => (
-              <OrgCard {...o} />
+              <OrgCard {...o} key={o.orgId} />
             ))}
           </>
         }
         news={
           <>
-            {news.map((ev) => (
-              <EventListItem eventTitle={ev.title} dateTime={ev.date}>
+            {news.map((ev, i) => (
+              <EventListItem eventTitle={ev.title} dateTime={ev.date} key={i}>
                 <Link href={`/news/${ev.newsId}`}>詳細を表示</Link>
               </EventListItem>
             ))}

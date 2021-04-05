@@ -54,7 +54,7 @@ export function WPCarousel({ mainImage, otherImages, youtubeLinks }: Props) {
           fullscreen: mainDetail?.full?.source_url,
         },
         ...otherDetail.map((im) => ({
-          original: im?.large?.source_url || mainDetail?.medium?.source_url,
+          original: im?.large?.source_url || im?.medium?.source_url,
           thumbnail: im?.thumbnail?.source_url,
           fullscreen: im?.full?.source_url,
         })),

@@ -173,20 +173,22 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
             youtubeLinks={data.event.youtubeLinks}
           ></WPCarousel>
         }
-        events={events.map((e: any, i: number) => (
-          <EventListItem
-            eventTitle={e.title}
-            dateTime={`${e.start} - ${e.end}`}
-            key={i}
-          >
-            <div
-              dangerouslySetInnerHTML={{
-                __html: e.description, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
-              }}
-              className="wpRendered"
-            />
-          </EventListItem>
-        ))}
+        events={events
+          .filter((e: any) => e.title)
+          .map((e: any, i: number) => (
+            <EventListItem
+              eventTitle={e.title}
+              dateTime={`${e.start.slice(5)} - ${e.end.slice(5)}`}
+              key={i}
+            >
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: e.description, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
+                }}
+                className="wpRendered"
+              />
+            </EventListItem>
+          ))}
         title={title}
         socialLinks={
           <>
