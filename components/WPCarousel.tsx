@@ -31,7 +31,7 @@ const getDetail = async (id: string) =>
         _fields: "media_details",
       })
     )
-  )?.media_details.sizes;
+  )?.media_details?.sizes;
 export function WPCarousel({ mainImage, otherImages, youtubeLinks }: Props) {
   const [items, setItems] = useState<any>([]);
   useEffect(() => {
@@ -42,17 +42,22 @@ export function WPCarousel({ mainImage, otherImages, youtubeLinks }: Props) {
         return prev;
       }, [] as string[]);
 
-      const mainDetail = await getDetail(mainImage);
+      const mainDetail = mainImage && (await getDetail(mainImage));
+      const mainImageObj = mainDetail
+        ? [
+            {
+              original:
+                mainDetail?.large?.source_url || mainDetail?.medium?.source_url,
+              thumbnail: mainDetail?.thumbnail?.source_url,
+              fullscreen: mainDetail?.full?.source_url,
+            },
+          ]
+        : [];
       const otherDetail = await Promise.all(
         otherImages.map(async (im) => await getDetail(im))
       );
       setItems([
-        {
-          original:
-            mainDetail?.large?.source_url || mainDetail?.medium?.source_url,
-          thumbnail: mainDetail?.thumbnail?.source_url,
-          fullscreen: mainDetail?.full?.source_url,
-        },
+        ...mainImageObj,
         ...otherDetail.map((im) => ({
           original: im?.large?.source_url || im?.medium?.source_url,
           thumbnail: im?.thumbnail?.source_url,
