@@ -1,7 +1,8 @@
 name: Build Exported
 on:
   push:
-    - "release"
+    branches:
+      - "release"
   workflow_dispatch:
 
 jobs:
