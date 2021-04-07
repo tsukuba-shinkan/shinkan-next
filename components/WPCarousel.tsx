@@ -1,6 +1,7 @@
 import ImageGallery from "react-image-gallery";
 import { useEffect, useState } from "react";
 import { buildPathWithWPQuery, wpFetch } from "../utils/wpFetch";
+import { rewriteToCdn } from "../utils/rewriteCdn";
 
 type Props = {
   mainImage: string;
@@ -46,10 +47,11 @@ export function WPCarousel({ mainImage, otherImages, youtubeLinks }: Props) {
       const mainImageObj = mainDetail
         ? [
             {
-              original:
-                mainDetail?.large?.source_url || mainDetail?.medium?.source_url,
-              thumbnail: mainDetail?.thumbnail?.source_url,
-              fullscreen: mainDetail?.full?.source_url,
+              original: rewriteToCdn(
+                mainDetail?.large?.source_url || mainDetail?.medium?.source_url
+              ),
+              thumbnail: rewriteToCdn(mainDetail?.thumbnail?.source_url),
+              fullscreen: rewriteToCdn(mainDetail?.full?.source_url),
             },
           ]
         : [];
@@ -59,9 +61,11 @@ export function WPCarousel({ mainImage, otherImages, youtubeLinks }: Props) {
       setItems([
         ...mainImageObj,
         ...otherDetail.map((im) => ({
-          original: im?.large?.source_url || im?.medium?.source_url,
-          thumbnail: im?.thumbnail?.source_url,
-          fullscreen: im?.full?.source_url,
+          original: rewriteToCdn(
+            im?.large?.source_url || im?.medium?.source_url
+          ),
+          thumbnail: rewriteToCdn(im?.thumbnail?.source_url),
+          fullscreen: rewriteToCdn(im?.full?.source_url),
         })),
         ...ytids.map((id) => ({
           thumbnail: `https://img.youtube.com/vi/${id}/0.jpg`,
