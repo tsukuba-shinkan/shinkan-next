@@ -134,7 +134,7 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
     const arr = [];
     const len = data.event.title.length;
     for (let i = 0; i < len; i++) {
-      if (data.event.title[i].length == 0) {
+      if (data.event.title[i].length == 0 && data.event.start[i].length == 0) {
         continue;
       }
       if (new Date(data.event.end[i] || "2021-12-31") >= new Date()) {
