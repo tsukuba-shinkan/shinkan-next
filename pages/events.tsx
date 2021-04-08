@@ -77,7 +77,13 @@ function Events() {
             organizationType[it.page.organizationtype[0]]?.name as any
           }
         >
-          {it.description}
+          {it.description && (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: it.description, // WordPressが無害化してくれると期待しているので危ないことしても許されると思っています。
+              }}
+            ></div>
+          )}
           <Link href={`/org/${it.page.id}`}>詳細を表示</Link>
         </EventListItem2>
       ))}

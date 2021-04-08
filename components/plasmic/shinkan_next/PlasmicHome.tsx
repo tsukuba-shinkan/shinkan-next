@@ -33,6 +33,7 @@ import {
 import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
 import EventListItem from "../../EventListItem"; // plasmic-import: GMIuDj3rjM/component
 import CategoryRadio from "../../CategoryRadio"; // plasmic-import: s14nWegQm7/component
+import OrgList from "../../OrgList"; // plasmic-import: LzatSZ7oBYe/component
 import OrgCard from "../../OrgCard"; // plasmic-import: hH2h_5Dtgs/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -71,7 +72,7 @@ export type PlasmicHome__OverridesType = {
   button?: p.Flex<"div">;
   eventList?: p.Flex<"div">;
   orgsContainer?: p.Flex<"div">;
-  orgList?: p.Flex<"div">;
+  orgList?: p.Flex<typeof OrgList>;
   announcements?: p.Flex<"div">;
   eventList2?: p.Flex<"div">;
 };
@@ -314,10 +315,10 @@ function PlasmicHome__RenderFunc(props: {
                 </div>
               </div>
 
-              <div
+              <OrgList
                 data-plasmic-name={"orgList"}
                 data-plasmic-override={overrides.orgList}
-                className={classNames(defaultcss.all, sty.orgList)}
+                className={classNames("__wab_instance", sty.orgList)}
               >
                 <p.PlasmicSlot
                   defaultContents={
@@ -325,78 +326,99 @@ function PlasmicHome__RenderFunc(props: {
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard___5D3PU
+                          sty.orgCard__tFQfL
                         )}
+                        list={"list" as const}
                         name={"橋本環奈同好会"}
                       />
 
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard__pgQCd
+                          sty.orgCard__kHx23
                         )}
                         description={"アクセスするたび変わります"}
+                        list={"list" as const}
                         name={"女装同好会"}
                       />
 
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard__tnADu
+                          sty.orgCard__gSKea
                         )}
                         description={"ランダムに変わります"}
+                        list={"list" as const}
                         name={"橋本環奈同好会"}
                       />
 
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard__z2CI
+                          sty.orgCard__dw2EO
                         )}
                         description={
                           "ランダムに選ぶ機能はWordPressの機能を使いたいところですが"
                         }
+                        list={"list" as const}
                         name={"橋本環奈同好会"}
                       />
 
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard__f8LUy
+                          sty.orgCard__nyZ9J
                         )}
                         description={
                           "おそらくフロントエンドでシャッフルしないといけない"
                         }
+                        list={"list" as const}
                         name={"橋本環奈同好会"}
                       />
 
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard__o1P8X
+                          sty.orgCard__k2DJn
                         )}
+                        description={
+                          <div
+                            className={classNames(
+                              defaultcss.all,
+                              defaultcss.__wab_text,
+                              sty.box___6Dhj
+                            )}
+                          >
+                            {
+                              "長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れ長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみようてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう長い文字を入れてみよう"
+                            }
+                          </div>
+                        }
+                        list={"list" as const}
                         name={"橋本環奈同好会"}
                       />
 
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard__jG91M
+                          sty.orgCard___7IDo0
                         )}
+                        list={"list" as const}
                         name={"橋本環奈同好会"}
                       />
 
                       <OrgCard
                         className={classNames(
                           "__wab_instance",
-                          sty.orgCard__jdCC
+                          sty.orgCard__jXEn
                         )}
+                        list={"list" as const}
                       />
                     </React.Fragment>
                   }
                   value={args.orgs}
                 />
-              </div>
+              </OrgList>
 
               <div className={classNames(defaultcss.all, sty.box__c6Wud)}>
                 <p.PlasmicLink
@@ -502,7 +524,7 @@ type NodeDefaultElementType = {
   button: "div";
   eventList: "div";
   orgsContainer: "div";
-  orgList: "div";
+  orgList: typeof OrgList;
   announcements: "div";
   eventList2: "div";
 };

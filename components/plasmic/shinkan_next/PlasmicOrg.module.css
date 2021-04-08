@@ -65,7 +65,7 @@
   color: rgb(255, 255, 255);
   flex-shrink: 0;
 }
-.orgList {
+.box__lCbjS {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -110,14 +110,8 @@
   font-weight: 700;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
-.box__dzb5F {
-  display: flex;
+.orgList___52RKy:global(.__wab_instance) {
   position: relative;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: flex-start;
 }
 .orgCard__uw1Nc:global(.__wab_instance) {
   position: relative;

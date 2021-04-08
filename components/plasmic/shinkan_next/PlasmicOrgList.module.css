@@ -1,0 +1,67 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.box__psGc {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+.toggleBtn {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 5px;
+  border: 2px none rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__wWoB {
+  position: relative;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+}
+.box__we4V {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.orgCard__bp3AN:global(.__wab_instance) {
+  position: relative;
+}
+.orgCard__jsKye:global(.__wab_instance) {
+  position: relative;
+}
+.orgCard__iHbSt:global(.__wab_instance) {
+  position: relative;
+}
+.orgCard__j2G:global(.__wab_instance) {
+  position: relative;
+}
+.orgCard__trp4P:global(.__wab_instance) {
+  position: relative;
+}
+.orgCard__tsqi9:global(.__wab_instance) {
+  position: relative;
+}
+.box__puyXv {
+  height: auto;
+}
+.orgCard__jo5Be:global(.__wab_instance) {
+  position: relative;
+}
+.orgCard___17FaN:global(.__wab_instance) {
+  position: relative;
+}

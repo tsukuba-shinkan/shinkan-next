@@ -39,17 +39,20 @@ import * as sty from "./PlasmicOrgCard.module.css"; // plasmic-import: hH2h_5Dtg
 export type PlasmicOrgCard__VariantMembers = {
   activity: "sports" | "art" | "culture" | "other";
   orgType: "ippan" | "kagai" | "other";
+  list: "list";
 };
 
 export type PlasmicOrgCard__VariantsArgs = {
   activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
   orgType?: SingleChoiceArg<"ippan" | "kagai" | "other">;
+  list?: SingleBooleanChoiceArg<"list">;
 };
 
 type VariantPropType = keyof PlasmicOrgCard__VariantsArgs;
 export const PlasmicOrgCard__VariantProps = new Array<VariantPropType>(
   "activity",
-  "orgType"
+  "orgType",
+  "list"
 );
 
 export type PlasmicOrgCard__ArgsType = {
@@ -81,6 +84,7 @@ export interface DefaultOrgCardProps {
   to?: string | PageHref;
   activity?: SingleChoiceArg<"sports" | "art" | "culture" | "other">;
   orgType?: SingleChoiceArg<"ippan" | "kagai" | "other">;
+  list?: SingleBooleanChoiceArg<"list">;
   className?: string;
 }
 
@@ -106,14 +110,25 @@ function PlasmicOrgCard__RenderFunc(props: {
           "culture"
         ),
         [sty.root__activity_other]: hasVariant(variants, "activity", "other"),
-        [sty.root__activity_sports]: hasVariant(variants, "activity", "sports")
+        [sty.root__activity_sports]: hasVariant(variants, "activity", "sports"),
+        [sty.root__list]: hasVariant(variants, "list", "list")
       })}
       component={__PlatformLink}
       href={args.to}
       platform={"nextjs"}
     >
-      <div className={classNames(defaultcss.all, sty.box__oxQw3)}>
-        <div className={classNames(defaultcss.all, sty.box__egDkZ)}>
+      <p.Stack
+        as={"div"}
+        hasGap={hasVariant(variants, "list", "list") ? true : false}
+        className={classNames(defaultcss.all, sty.box__oxQw3, {
+          [sty.box__list__oxQw3WiGv6]: hasVariant(variants, "list", "list")
+        })}
+      >
+        <div
+          className={classNames(defaultcss.all, sty.box__egDkZ, {
+            [sty.box__list__egDkZwiGv6]: hasVariant(variants, "list", "list")
+          })}
+        >
           <p.PlasmicSlot
             defaultContents={
               <div className={classNames(defaultcss.all, sty.box___7AuY)} />
@@ -143,7 +158,8 @@ function PlasmicOrgCard__RenderFunc(props: {
               variants,
               "activity",
               "sports"
-            )
+            ),
+            [sty.box__list___6WKxlwiGv6]: hasVariant(variants, "list", "list")
           })}
         >
           <div
@@ -152,13 +168,24 @@ function PlasmicOrgCard__RenderFunc(props: {
                 variants,
                 "activity",
                 "culture"
-              )
+              ),
+              [sty.box__list___8In5TwiGv6]: hasVariant(variants, "list", "list")
             })}
           >
             <p.PlasmicSlot
-              defaultContents={"文字"}
+              defaultContents={
+                hasVariant(variants, "list", "list")
+                  ? "文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさ文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいうんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう文字がたくさんはいう"
+                  : "文字"
+              }
               value={args.description}
-              className={classNames(sty.slotDescription)}
+              className={classNames(sty.slotDescription, {
+                [sty.slotDescription__list]: hasVariant(
+                  variants,
+                  "list",
+                  "list"
+                )
+              })}
             />
           </div>
 
@@ -174,7 +201,9 @@ function PlasmicOrgCard__RenderFunc(props: {
             <p.PlasmicSlot
               defaultContents={"橋本環奈同好会"}
               value={args.name}
-              className={classNames(sty.slotName)}
+              className={classNames(sty.slotName, {
+                [sty.slotName__list]: hasVariant(variants, "list", "list")
+              })}
             />
           </div>
 
@@ -189,7 +218,8 @@ function PlasmicOrgCard__RenderFunc(props: {
                 variants,
                 "activity",
                 "sports"
-              )
+              ),
+              [sty.box__list__ekaccwiGv6]: hasVariant(variants, "list", "list")
             })}
           >
             <div
@@ -263,6 +293,11 @@ function PlasmicOrgCard__RenderFunc(props: {
                     "activity",
                     "sports"
                   ),
+                  [sty.box__list___1OPd2WiGv6]: hasVariant(
+                    variants,
+                    "list",
+                    "list"
+                  ),
                   [sty.box__orgType_ippan___1OPd2FytRu]: hasVariant(
                     variants,
                     "orgType",
@@ -291,7 +326,7 @@ function PlasmicOrgCard__RenderFunc(props: {
             </div>
           </div>
         </div>
-      </div>
+      </p.Stack>
     </p.PlasmicLink>
   ) as React.ReactElement | null;
 }

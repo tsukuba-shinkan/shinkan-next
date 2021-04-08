@@ -3,12 +3,9 @@
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 import OrgCard from "../components/OrgCard";
-import Pager from "../components/Pager";
 import { PlasmicOrg } from "../components/plasmic/shinkan_next/PlasmicOrg";
 import { activityType, organizationType } from "../utils/categoryTable";
 import { s3Fetch } from "../utils/s3Fetch";
-
-const PER_PAGE = 10;
 
 function Org() {
   const [orgs, setOrgs] = useState<

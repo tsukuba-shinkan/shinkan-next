@@ -5,20 +5,48 @@
   align-items: stretch;
   justify-content: flex-start;
 }
+.root__list {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
 .box__oxQw3 {
   display: block;
   flex-direction: column;
   width: 300px;
   height: 300px;
   justify-content: flex-end;
-  transition-property: all;
-  transition-duration: 1s;
   cursor: pointer;
   overflow: hidden;
   flex-shrink: 0;
   border-radius: 17px;
-  margin: 7px;
+  margin: 4px;
   border: 0px none rgb(73, 32, 110);
+}
+.box__list__oxQw3WiGv6 {
+  width: 100%;
+  height: 120px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  flex-shrink: 0;
+  border-radius: 0px;
+  margin: 0px;
+  background: #ffffff;
+}
+.box__list__oxQw3WiGv6 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.box__list__oxQw3WiGv6 > :global(.__wab_flex-container) > *,
+.box__list__oxQw3WiGv6
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > * {
+  margin-top: 0px;
 }
 .box__egDkZ {
   display: block;
@@ -32,6 +60,19 @@
   min-height: 0;
   background: url("/plasmic/shinkan_next/images/gradientjpeg.jpeg") 0% 0% / 100% 100%,
     #ffffff 0% 0% / 100% 100%;
+}
+.box__list__egDkZwiGv6 {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100px;
+  height: 100px;
+  margin-top: calc(10px + 0px) !important;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  border-radius: 6px;
 }
 .box___7AuY {
   display: block;
@@ -71,6 +112,19 @@
 .box__activity_other___6WKxlpqEoh {
   border-bottom-color: rgb(189, 189, 189) /* plasmic-token: P6COEcurd */;
 }
+.box__list___6WKxlwiGv6 {
+  position: relative;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  align-self: auto;
+  justify-content: center;
+  min-height: 0;
+  background: none;
+}
 .box___8In5T {
   position: relative;
   display: flex;
@@ -78,6 +132,9 @@
   max-height: 65px;
   height: auto;
   overflow: hidden;
+}
+.box__list___8In5TwiGv6 {
+  max-height: 40px;
 }
 .slotDescription {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;

@@ -31,6 +31,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
+import OrgList from "../../OrgList"; // plasmic-import: LzatSZ7oBYe/component
 import OrgCard from "../../OrgCard"; // plasmic-import: hH2h_5Dtgs/component
 import Pager from "../../Pager"; // plasmic-import: v0V4QrK8UW/component
 
@@ -68,7 +69,6 @@ export type PlasmicOrg__OverridesType = {
   searchInput?: p.Flex<"input">;
   searchButton?: p.Flex<"div">;
   svg?: p.Flex<"svg">;
-  orgList?: p.Flex<"div">;
   pager?: p.Flex<typeof Pager>;
 };
 
@@ -153,11 +153,7 @@ function PlasmicOrg__RenderFunc(props: {
               </div>
             </div>
 
-            <div
-              data-plasmic-name={"orgList"}
-              data-plasmic-override={overrides.orgList}
-              className={classNames(defaultcss.all, sty.orgList)}
-            >
+            <div className={classNames(defaultcss.all, sty.box__lCbjS)}>
               <div className={classNames(defaultcss.all, sty.box__mxtRq)}>
                 <div
                   className={classNames(
@@ -188,7 +184,9 @@ function PlasmicOrg__RenderFunc(props: {
                 </div>
               </div>
 
-              <div className={classNames(defaultcss.all, sty.box__dzb5F)}>
+              <OrgList
+                className={classNames("__wab_instance", sty.orgList___52RKy)}
+              >
                 <p.PlasmicSlot
                   defaultContents={
                     <React.Fragment>
@@ -266,7 +264,7 @@ function PlasmicOrg__RenderFunc(props: {
                   }
                   value={args.orgs}
                 />
-              </div>
+              </OrgList>
 
               <div className={classNames(defaultcss.all, sty.box__a7EEb)}>
                 <p.PlasmicSlot
@@ -299,7 +297,6 @@ const PlasmicDescendants = {
     "searchInput",
     "searchButton",
     "svg",
-    "orgList",
     "pager"
   ],
   page: [
@@ -309,7 +306,6 @@ const PlasmicDescendants = {
     "searchInput",
     "searchButton",
     "svg",
-    "orgList",
     "pager"
   ],
   h1: ["h1"],
@@ -317,7 +313,6 @@ const PlasmicDescendants = {
   searchInput: ["searchInput"],
   searchButton: ["searchButton", "svg"],
   svg: ["svg"],
-  orgList: ["orgList", "pager"],
   pager: ["pager"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -332,7 +327,6 @@ type NodeDefaultElementType = {
   searchInput: "input";
   searchButton: "div";
   svg: "svg";
-  orgList: "div";
   pager: typeof Pager;
 };
 
@@ -397,7 +391,6 @@ export const PlasmicOrg = Object.assign(
     searchInput: makeNodeComponent("searchInput"),
     searchButton: makeNodeComponent("searchButton"),
     svg: makeNodeComponent("svg"),
-    orgList: makeNodeComponent("orgList"),
     pager: makeNodeComponent("pager"),
 
     // Metadata about props expected for PlasmicOrg

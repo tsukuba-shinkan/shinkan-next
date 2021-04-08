@@ -246,6 +246,19 @@
           "cssFilePath": "plasmic/shinkan_next/PlasmicSocialLink.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "LzatSZ7oBYe",
+          "name": "OrgList",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOrgList.tsx",
+          "importSpec": {
+            "modulePath": "OrgList.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOrgList.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
