@@ -5,9 +5,10 @@
 import React from "react";
 import { classNames } from "@plasmicapp/react-web";
 
-export type NavigateBeforeBlack18DpsvgIconProps = React.ComponentProps<"svg"> & {
-  title?: string;
-};
+export type NavigateBeforeBlack18DpsvgIconProps =
+  React.ComponentProps<"svg"> & {
+    title?: string;
+  };
 
 export function NavigateBeforeBlack18DpsvgIcon(
   props: NavigateBeforeBlack18DpsvgIconProps
