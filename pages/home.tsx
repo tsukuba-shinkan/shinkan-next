@@ -4,7 +4,7 @@ import * as React from "react";
 import { PlasmicHome } from "../components/plasmic/shinkan_next/PlasmicHome";
 
 function Home() {
-  return <PlasmicHome opencampus />; // OC用フラグ立ててる
+  return <PlasmicHome />;
 }
 
 export default Home;
