@@ -2,7 +2,7 @@ name: Build Exported
 on:
   push:
     branches:
-      - "release"
+      - "release-opencampus"
   workflow_dispatch:
 
 jobs:
@@ -21,9 +21,9 @@ jobs:
       - name: Install deps
         run: npm ci
       - name: replace path
-        run: sed -ri 's/\/plasmic\/shinkan_next\/images/\/\~shinkan-web\/plasmic\/shinkan_next\/images/g' $(find components -type f)
+        run: sed -ri 's/\/plasmic\/shinkan_next\/images/\/\~shinkan-web\/opencampus\/plasmic\/shinkan_next\/images/g' $(find components -type f)
       - name: set .env file
-        run: echo -ne "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=UA-162922927-1\nNEXT_PUBLIC_BASEPATH=/~shinkan-web" > .env.local
+        run: echo -ne "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=UA-162922927-1\nNEXT_PUBLIC_BASEPATH=/~shinkan-web/opencampus" > .env.local
       - name: build & export
         run: npx next build && npx next export
       - name: duplicate dirs
@@ -43,6 +43,6 @@ jobs:
       - name: install sshpass
         run: sudo apt-get -y install sshpass
       - name: upload to server
-        run: sshpass -e scp -o StrictHostKeyChecking=no -r out/* shinkan-web@www.stb.tsukuba.ac.jp:.
+        run: sshpass -e scp -o StrictHostKeyChecking=no -r out/* shinkan-web@www.stb.tsukuba.ac.jp:opencampus
         env:
           SSHPASS: ${{ secrets.SFTP_PASSWORD }}
