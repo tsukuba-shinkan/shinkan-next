@@ -50,6 +50,23 @@
   flex-shrink: 0;
   min-height: 0;
 }
+.onlyOpencampus:global(.__wab_instance) {
+  position: relative;
+}
+.box__gyEx {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+  letter-spacing: 1.1px;
+  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  font-size: 20px;
+  display: inline-block;
+}
+.onlyShinkan:global(.__wab_instance) {
+  position: relative;
+}
 .box__enS97 {
   position: relative;
   left: auto;

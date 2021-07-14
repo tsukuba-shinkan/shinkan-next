@@ -260,6 +260,32 @@
           "cssFilePath": "plasmic/shinkan_next/PlasmicOrgList.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "x1nR8p_T71",
+          "name": "OnlyOpencampus",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOnlyOpencampus.tsx",
+          "importSpec": {
+            "modulePath": "OnlyOpencampus.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOnlyOpencampus.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "wOiDfdBxT1",
+          "name": "OnlyShinkan",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOnlyShinkan.tsx",
+          "importSpec": {
+            "modulePath": "OnlyShinkan.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOnlyShinkan.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

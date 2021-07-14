@@ -33,6 +33,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
+import OnlyOpencampus from "../../OnlyOpencampus"; // plasmic-import: x1nR8p_T71/component
 import EventListItem from "../../EventListItem"; // plasmic-import: GMIuDj3rjM/component
 import CategoryRadio from "../../CategoryRadio"; // plasmic-import: s14nWegQm7/component
 import OrgList from "../../OrgList"; // plasmic-import: LzatSZ7oBYe/component
@@ -55,7 +56,6 @@ export type PlasmicHome__ArgsType = {
   eventList?: React.ReactNode;
   news?: React.ReactNode;
   eventCount?: React.ReactNode;
-  text?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicHome__ArgsType;
@@ -64,14 +64,15 @@ export const PlasmicHome__ArgProps = new Array<ArgPropType>(
   "categoryRadio",
   "eventList",
   "news",
-  "eventCount",
-  "text"
+  "eventCount"
 );
 
 export type PlasmicHome__OverridesType = {
   root?: p.Flex<"div">;
   page?: p.Flex<typeof Page>;
   hero?: p.Flex<"div">;
+  onlyOpencampus?: p.Flex<typeof OnlyOpencampus>;
+  description?: p.Flex<"div">;
   events?: p.Flex<"div">;
   button?: p.Flex<"div">;
   eventList?: p.Flex<"div">;
@@ -140,21 +141,29 @@ function PlasmicHome__RenderFunc(props: {
               <div className={classNames(defaultcss.all, sty.box__ykPs0)} />
             </div>
 
-            {p.renderPlasmicSlot({
-              defaultContents: (
+            <OnlyOpencampus
+              data-plasmic-name={"onlyOpencampus"}
+              data-plasmic-override={overrides.onlyOpencampus}
+              className={classNames("__wab_instance", sty.onlyOpencampus)}
+            >
+              {true ? (
                 <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.box__p3NjP
-                  )}
+                  data-plasmic-name={"description"}
+                  data-plasmic-override={overrides.description}
+                  className={classNames(defaultcss.all, sty.description)}
                 >
-                  {""}
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.box__jdzaq
+                    )}
+                  >
+                    {"ようこそ筑波大学へ"}
+                  </div>
                 </div>
-              ),
-
-              value: args.text
-            })}
+              ) : null}
+            </OnlyOpencampus>
 
             <div
               data-plasmic-name={"events"}
@@ -514,6 +523,8 @@ const PlasmicDescendants = {
     "root",
     "page",
     "hero",
+    "onlyOpencampus",
+    "description",
     "events",
     "button",
     "eventList",
@@ -525,6 +536,8 @@ const PlasmicDescendants = {
   page: [
     "page",
     "hero",
+    "onlyOpencampus",
+    "description",
     "events",
     "button",
     "eventList",
@@ -534,6 +547,8 @@ const PlasmicDescendants = {
     "eventList2"
   ],
   hero: ["hero"],
+  onlyOpencampus: ["onlyOpencampus", "description"],
+  description: ["description"],
   events: ["events", "button", "eventList"],
   button: ["button"],
   eventList: ["eventList"],
@@ -549,6 +564,8 @@ type NodeDefaultElementType = {
   root: "div";
   page: typeof Page;
   hero: "div";
+  onlyOpencampus: typeof OnlyOpencampus;
+  description: "div";
   events: "div";
   button: "div";
   eventList: "div";
@@ -621,6 +638,8 @@ export const PlasmicHome = Object.assign(
     // Helper components rendering sub-elements
     page: makeNodeComponent("page"),
     hero: makeNodeComponent("hero"),
+    onlyOpencampus: makeNodeComponent("onlyOpencampus"),
+    description: makeNodeComponent("description"),
     events: makeNodeComponent("events"),
     button: makeNodeComponent("button"),
     eventList: makeNodeComponent("eventList"),

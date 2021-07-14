@@ -32,6 +32,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import OnlyOpencampus from "../../OnlyOpencampus"; // plasmic-import: x1nR8p_T71/component
+import OnlyShinkan from "../../OnlyShinkan"; // plasmic-import: wOiDfdBxT1/component
 import HeaderLink from "../../HeaderLink"; // plasmic-import: gugJhCOlow/component
 
 import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: rGlYl5prqxJP/globalVariant
@@ -41,18 +43,11 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
 import * as sty from "./PlasmicPage.module.css"; // plasmic-import: tdmoFHXXat7/css
 
-export type PlasmicPage__VariantMembers = {
-  opencampus: "opencampus";
-};
+export type PlasmicPage__VariantMembers = {};
 
-export type PlasmicPage__VariantsArgs = {
-  opencampus?: SingleBooleanChoiceArg<"opencampus">;
-};
-
+export type PlasmicPage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicPage__VariantsArgs;
-export const PlasmicPage__VariantProps = new Array<VariantPropType>(
-  "opencampus"
-);
+export const PlasmicPage__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicPage__ArgsType = {
   children?: React.ReactNode;
@@ -65,6 +60,8 @@ export type PlasmicPage__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<"div">;
   title?: p.Flex<"a"> & Partial<LinkProps>;
+  onlyOpencampus?: p.Flex<typeof OnlyOpencampus>;
+  onlyShinkan?: p.Flex<typeof OnlyShinkan>;
   links?: p.Flex<"div">;
   container?: p.Flex<"div">;
   footer?: p.Flex<"div">;
@@ -73,7 +70,6 @@ export type PlasmicPage__OverridesType = {
 
 export interface DefaultPageProps {
   children?: React.ReactNode;
-  opencampus?: SingleBooleanChoiceArg<"opencampus">;
   className?: string;
 }
 
@@ -119,24 +115,37 @@ function PlasmicPage__RenderFunc(props: {
               src={"/plasmic/shinkan_next/images/microsoftTeamsImagepng.png"}
             />
 
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__enS97,
-                {
-                  [sty.box__opencampus__enS97Do71Q]: hasVariant(
-                    variants,
-                    "opencampus",
-                    "opencampus"
-                  )
-                }
-              )}
+            <OnlyOpencampus
+              data-plasmic-name={"onlyOpencampus"}
+              data-plasmic-override={overrides.onlyOpencampus}
+              className={classNames("__wab_instance", sty.onlyOpencampus)}
             >
-              {hasVariant(variants, "opencampus", "opencampus")
-                ? "筑波大学 サークル・部活動紹介"
-                : "筑波大学新歓Web"}
-            </div>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__gyEx
+                )}
+              >
+                {"筑波大学 サークル・部活動紹介"}
+              </div>
+            </OnlyOpencampus>
+
+            <OnlyShinkan
+              data-plasmic-name={"onlyShinkan"}
+              data-plasmic-override={overrides.onlyShinkan}
+              className={classNames("__wab_instance", sty.onlyShinkan)}
+            >
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__enS97
+                )}
+              >
+                {"筑波大学新歓Web"}
+              </div>
+            </OnlyShinkan>
           </p.PlasmicLink>
 
           <div
@@ -313,9 +322,21 @@ function PlasmicPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "title", "links", "container", "footer", "columns"],
-  header: ["header", "title", "links"],
-  title: ["title"],
+  root: [
+    "root",
+    "header",
+    "title",
+    "onlyOpencampus",
+    "onlyShinkan",
+    "links",
+    "container",
+    "footer",
+    "columns"
+  ],
+  header: ["header", "title", "onlyOpencampus", "onlyShinkan", "links"],
+  title: ["title", "onlyOpencampus", "onlyShinkan"],
+  onlyOpencampus: ["onlyOpencampus"],
+  onlyShinkan: ["onlyShinkan"],
   links: ["links"],
   container: ["container"],
   footer: ["footer", "columns"],
@@ -328,6 +349,8 @@ type NodeDefaultElementType = {
   root: "div";
   header: "div";
   title: "a";
+  onlyOpencampus: typeof OnlyOpencampus;
+  onlyShinkan: typeof OnlyShinkan;
   links: "div";
   container: "div";
   footer: "div";
@@ -397,6 +420,8 @@ export const PlasmicPage = Object.assign(
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
     title: makeNodeComponent("title"),
+    onlyOpencampus: makeNodeComponent("onlyOpencampus"),
+    onlyShinkan: makeNodeComponent("onlyShinkan"),
     links: makeNodeComponent("links"),
     container: makeNodeComponent("container"),
     footer: makeNodeComponent("footer"),
