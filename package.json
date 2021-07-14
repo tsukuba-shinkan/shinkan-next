@@ -8,7 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@plasmicapp/react-web": "^0.2.24",
+    "@plasmicapp/react-web": "^0.2.63",
     "modern-css-reset": "^1.4.0",
     "next": "^11.0.1",
     "react": "^17.0.1",

@@ -44,6 +44,12 @@
   right: 0px;
   background: rgb(73, 32, 110);
 }
+.box__p3NjP {
+  position: relative;
+  left: auto;
+  top: auto;
+  height: auto;
+}
 .events {
   display: flex;
   position: relative;
@@ -218,17 +224,72 @@
 .orgCard__tFQfL:global(.__wab_instance) {
   position: relative;
 }
+.box__es3PY {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
 .orgCard__kHx23:global(.__wab_instance) {
   position: relative;
+}
+.box__tkPxx {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
 }
 .orgCard__gSKea:global(.__wab_instance) {
   position: relative;
 }
+.box___7SBZ {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
 .orgCard__dw2EO:global(.__wab_instance) {
   position: relative;
 }
+.box__a6FNh {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
 .orgCard__nyZ9J:global(.__wab_instance) {
   position: relative;
+}
+.box__yQcJs {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
 }
 .orgCard__k2DJn:global(.__wab_instance) {
   position: relative;
@@ -236,11 +297,44 @@
 .box___6Dhj {
   height: auto;
 }
+.box___2Ckw5 {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
 .orgCard___7IDo0:global(.__wab_instance) {
   position: relative;
 }
+.box__raktT {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
+}
 .orgCard__jXEn:global(.__wab_instance) {
   position: relative;
+}
+.box__qEl3L {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  background: transparent;
 }
 .box__c6Wud {
   display: flex;

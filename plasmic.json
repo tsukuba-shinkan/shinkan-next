@@ -2,7 +2,8 @@
   "platform": "nextjs",
   "code": {
     "lang": "ts",
-    "scheme": "blackbox"
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
   },
   "style": {
     "scheme": "css-modules",
@@ -350,7 +351,8 @@
           "filePath": "../public/plasmic/shinkan_next/images/gradientjpeg.jpeg"
         }
       ],
-      "projectApiToken": "j0utquL80KpwtAdsl0AXlZ6jOm3WUeDMkahIMeUoaiyC51SJZRxQ432Vjl5SCGw19w3LreVyBj2T6HL94hQ"
+      "projectApiToken": "j0utquL80KpwtAdsl0AXlZ6jOm3WUeDMkahIMeUoaiyC51SJZRxQ432Vjl5SCGw19w3LreVyBj2T6HL94hQ",
+      "codeComponents": []
     }
   ],
   "globalVariants": {
@@ -366,6 +368,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.127",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.127/dist/plasmic.schema.json"
+  "cliVersion": "0.1.157",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.157/dist/plasmic.schema.json"
 }

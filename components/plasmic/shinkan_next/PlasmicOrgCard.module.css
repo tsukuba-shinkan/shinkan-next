@@ -29,24 +29,13 @@
   min-height: 100px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  flex-row-gap: 0px;
   min-width: 0;
   flex-shrink: 0;
   border-radius: 0px;
   margin: 0px;
   background: #ffffff;
-}
-.box__list__oxQw3WiGv6 > :global(.__wab_flex-container) {
-  flex-direction: row;
-  align-items: center;
-  margin-top: calc(0px - 0px);
-  height: calc(100% + 0px);
-}
-.box__list__oxQw3WiGv6 > :global(.__wab_flex-container) > *,
-.box__list__oxQw3WiGv6
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > * {
-  margin-top: 0px;
 }
 .box__egDkZ {
   display: block;
@@ -67,12 +56,9 @@
   top: auto;
   width: 100px;
   height: 100px;
-  margin-top: calc(10px + 0px) !important;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
   flex-shrink: 0;
   border-radius: 6px;
+  margin: 10px;
 }
 .box___7AuY {
   display: block;
@@ -143,7 +129,10 @@
   text-transform: none;
   line-height: 1.7;
 }
-.slotDescription > * {
+.slotDescription > *,
+.slotDescription > .__wab_slot > *,
+.slotDescription > .__wab_slot > .__wab_slot > *,
+.slotDescription > .__wab_slot > .__wab_slot > .__wab_slot > * {
   text-decoration-line: underline;
 }
 .box__jSjep {
