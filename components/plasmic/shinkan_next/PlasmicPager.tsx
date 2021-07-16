@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -93,7 +94,7 @@ function PlasmicPager__RenderFunc(props: {
         [sty.root__hasPrev]: hasVariant(variants, "hasPrev", "hasPrev")
       })}
     >
-      <div className={classNames(defaultcss.all, sty.box__efUkH)}>
+      <div className={classNames(defaultcss.all, sty.freeBox__efUkH)}>
         {(hasVariant(variants, "hasPrev", "hasPrev") ? true : false) ? (
           <div
             data-plasmic-name={"prev"}
@@ -111,7 +112,7 @@ function PlasmicPager__RenderFunc(props: {
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box__rx4E
+                sty.freeBox__rx4E
               )}
             >
               {"前のページ"}
@@ -130,7 +131,7 @@ function PlasmicPager__RenderFunc(props: {
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box__hlQzX
+                sty.freeBox__hlQzX
               )}
             >
               {"次のページ"}

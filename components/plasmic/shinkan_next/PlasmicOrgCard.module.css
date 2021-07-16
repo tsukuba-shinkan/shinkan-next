@@ -10,7 +10,7 @@
   height: auto;
   min-width: 0;
 }
-.box__oxQw3 {
+.freeBox__oxQw3 {
   display: block;
   flex-direction: column;
   width: 300px;
@@ -23,21 +23,21 @@
   margin: 4px;
   border: 0px none rgb(73, 32, 110);
 }
-.box__list__oxQw3WiGv6 {
+.freeBox__list__oxQw3WiGv6 {
   width: 100%;
   height: 120px;
   min-height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  background: #ffffff;
   flex-row-gap: 0px;
   min-width: 0;
   flex-shrink: 0;
   border-radius: 0px;
   margin: 0px;
-  background: #ffffff;
 }
-.box__egDkZ {
+.freeBox__egDkZ {
   display: block;
   position: absolute;
   left: 0px;
@@ -45,12 +45,11 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: url("/plasmic/shinkan_next/images/gradientjpeg.jpeg") 0% 0% / 100% 100%, #ffffff;
   min-width: 0;
   min-height: 0;
-  background: url("/plasmic/shinkan_next/images/gradientjpeg.jpeg") 0% 0% / 100% 100%,
-    #ffffff 0% 0% / 100% 100%;
 }
-.box__list__egDkZwiGv6 {
+.freeBox__list__egDkZwiGv6 {
   position: relative;
   left: auto;
   top: auto;
@@ -60,18 +59,18 @@
   border-radius: 6px;
   margin: 10px;
 }
-.box___7AuY {
+.freeBox___7AuY {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
-.box___6WKxl {
+.freeBox___6WKxl {
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -81,24 +80,24 @@
   top: auto;
   bottom: 0px;
   width: 100%;
+  background: #ffffffcc;
   min-width: 0;
   padding: 3px 7px;
-  background: #ffffffcc;
   border-bottom: 5px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
-.box__activity_sports___6WKxl6TPp1 {
+.freeBox__activity_sports___6WKxl6TPp1 {
   border-bottom-color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
 }
-.box__activity_art___6WKxlLhErp {
+.freeBox__activity_art___6WKxlLhErp {
   border-bottom-color: rgb(237, 182, 46) /* plasmic-token: Ab_kcq5-K */;
 }
-.box__activity_culture___6WKxllHrU6 {
+.freeBox__activity_culture___6WKxllHrU6 {
   border-bottom-color: rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
 }
-.box__activity_other___6WKxlpqEoh {
+.freeBox__activity_other___6WKxlpqEoh {
   border-bottom-color: rgb(189, 189, 189) /* plasmic-token: P6COEcurd */;
 }
-.box__list___6WKxlwiGv6 {
+.freeBox__list___6WKxlwiGv6 {
   position: relative;
   left: auto;
   top: auto;
@@ -108,10 +107,10 @@
   flex-shrink: 1;
   align-self: auto;
   justify-content: center;
-  min-height: 0;
   background: none;
+  min-height: 0;
 }
-.box___8In5T {
+.freeBox___8In5T {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -119,7 +118,7 @@
   height: auto;
   overflow: hidden;
 }
-.box__list___8In5TwiGv6 {
+.freeBox__list___8In5TwiGv6 {
   max-height: 40px;
 }
 .slotDescription {
@@ -135,7 +134,7 @@
 .slotDescription > .__wab_slot > .__wab_slot > .__wab_slot > * {
   text-decoration-line: underline;
 }
-.box__jSjep {
+.freeBox__jSjep {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -151,35 +150,35 @@
   line-height: 1.5em;
   white-space: pre-wrap;
 }
-.box__ekacc {
+.freeBox__ekacc {
   display: flex;
   position: relative;
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
 }
-.box__k4V {
+.freeBox__k4V {
   font-size: 12px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   position: relative;
 }
-.box__activity_sports__k4V6TPp1 {
+.freeBox__activity_sports__k4V6TPp1 {
   font-size: 14px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   height: auto;
 }
-.box__activity_art__k4VLhErp {
+.freeBox__activity_art__k4VLhErp {
   height: auto;
 }
-.box__activity_other__k4VPqEoh {
+.freeBox__activity_other__k4VPqEoh {
   height: auto;
 }
-.box__e1DR {
+.freeBox__e1DR {
   font-size: 12px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   position: relative;
 }
-.box___1OPd2 {
+.freeBox___1OPd2 {
   font-size: 12px;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   position: relative;

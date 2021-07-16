@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -120,7 +121,7 @@ function PlasmicEvents__RenderFunc(props: {
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
           >
-            <div className={classNames(defaultcss.all, sty.box__h057B)}>
+            <div className={classNames(defaultcss.all, sty.freeBox__h057B)}>
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
@@ -138,13 +139,15 @@ function PlasmicEvents__RenderFunc(props: {
                 data-plasmic-override={overrides.searchBox}
                 className={classNames(defaultcss.all, sty.searchBox)}
               >
-                <div className={classNames(defaultcss.all, sty.box__s3Ufq)}>
-                  <div className={classNames(defaultcss.all, sty.box___0P6Py)}>
+                <div className={classNames(defaultcss.all, sty.freeBox__s3Ufq)}>
+                  <div
+                    className={classNames(defaultcss.all, sty.freeBox___0P6Py)}
+                  >
                     <div
                       className={classNames(
                         defaultcss.all,
                         defaultcss.__wab_text,
-                        sty.box__myI5B
+                        sty.freeBox__myI5B
                       )}
                     >
                       {"日時"}
@@ -164,7 +167,7 @@ function PlasmicEvents__RenderFunc(props: {
                       className={classNames(
                         defaultcss.all,
                         defaultcss.__wab_text,
-                        sty.box__blOde
+                        sty.freeBox__blOde
                       )}
                     >
                       {"〜"}
@@ -181,12 +184,14 @@ function PlasmicEvents__RenderFunc(props: {
                     />
                   </div>
 
-                  <div className={classNames(defaultcss.all, sty.box__yeUuy)}>
+                  <div
+                    className={classNames(defaultcss.all, sty.freeBox__yeUuy)}
+                  >
                     <div
                       className={classNames(
                         defaultcss.all,
                         defaultcss.__wab_text,
-                        sty.box__vQh62
+                        sty.freeBox__vQh62
                       )}
                     >
                       {"キーワード"}
@@ -219,19 +224,19 @@ function PlasmicEvents__RenderFunc(props: {
               </div>
             </div>
 
-            <div className={classNames(defaultcss.all, sty.box__ymDwU)}>
-              <div className={classNames(defaultcss.all, sty.box__dOAhW)}>
+            <div className={classNames(defaultcss.all, sty.freeBox__ymDwU)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__dOAhW)}>
                 <div
                   className={classNames(
                     defaultcss.all,
                     defaultcss.__wab_text,
-                    sty.box__vKghT
+                    sty.freeBox__vKghT
                   )}
                 >
                   {"検索結果"}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.box__xOcYl)}>
+                <div className={classNames(defaultcss.all, sty.freeBox__xOcYl)}>
                   {p.renderPlasmicSlot({
                     defaultContents: "0",
                     value: args.resultLength,
@@ -242,7 +247,7 @@ function PlasmicEvents__RenderFunc(props: {
                     className={classNames(
                       defaultcss.all,
                       defaultcss.__wab_text,
-                      sty.box__ymTcg
+                      sty.freeBox__ymTcg
                     )}
                   >
                     {"件"}
@@ -250,7 +255,7 @@ function PlasmicEvents__RenderFunc(props: {
                 </div>
               </div>
 
-              <div className={classNames(defaultcss.all, sty.box__tInj)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__tInj)}>
                 {p.renderPlasmicSlot({
                   defaultContents: (
                     <React.Fragment>

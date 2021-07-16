@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -86,8 +87,8 @@ function PlasmicOrgList__RenderFunc(props: {
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
     >
       <div
-        className={classNames(defaultcss.all, sty.box__psGc, {
-          [sty.box__list__psGCg02S4]: hasVariant(variants, "list", "list")
+        className={classNames(defaultcss.all, sty.freeBox__psGc, {
+          [sty.freeBox__list__psGCg02S4]: hasVariant(variants, "list", "list")
         })}
       >
         <div
@@ -101,9 +102,13 @@ function PlasmicOrgList__RenderFunc(props: {
             className={classNames(
               defaultcss.all,
               defaultcss.__wab_text,
-              sty.box__wWoB,
+              sty.freeBox__wWoB,
               {
-                [sty.box__list__wWoBg02S4]: hasVariant(variants, "list", "list")
+                [sty.freeBox__list__wWoBg02S4]: hasVariant(
+                  variants,
+                  "list",
+                  "list"
+                )
               }
             )}
           >
@@ -114,7 +119,7 @@ function PlasmicOrgList__RenderFunc(props: {
         </div>
       </div>
 
-      <div className={classNames(defaultcss.all, sty.box__we4V)}>
+      <div className={classNames(defaultcss.all, sty.freeBox__we4V)}>
         {p.renderPlasmicSlot({
           defaultContents: (
             <React.Fragment>
@@ -163,7 +168,7 @@ function PlasmicOrgList__RenderFunc(props: {
                     className={classNames(
                       defaultcss.all,
                       defaultcss.__wab_text,
-                      sty.box__puyXv
+                      sty.freeBox__puyXv
                     )}
                   >
                     {

@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -121,18 +122,22 @@ function PlasmicOrgCard__RenderFunc(props: {
       platform={"nextjs"}
     >
       <div
-        className={classNames(defaultcss.all, sty.box__oxQw3, {
-          [sty.box__list__oxQw3WiGv6]: hasVariant(variants, "list", "list")
+        className={classNames(defaultcss.all, sty.freeBox__oxQw3, {
+          [sty.freeBox__list__oxQw3WiGv6]: hasVariant(variants, "list", "list")
         })}
       >
         <div
-          className={classNames(defaultcss.all, sty.box__egDkZ, {
-            [sty.box__list__egDkZwiGv6]: hasVariant(variants, "list", "list")
+          className={classNames(defaultcss.all, sty.freeBox__egDkZ, {
+            [sty.freeBox__list__egDkZwiGv6]: hasVariant(
+              variants,
+              "list",
+              "list"
+            )
           })}
         >
           {p.renderPlasmicSlot({
             defaultContents: (
-              <div className={classNames(defaultcss.all, sty.box___7AuY)} />
+              <div className={classNames(defaultcss.all, sty.freeBox___7AuY)} />
             ),
 
             value: args.children
@@ -140,38 +145,46 @@ function PlasmicOrgCard__RenderFunc(props: {
         </div>
 
         <div
-          className={classNames(defaultcss.all, sty.box___6WKxl, {
-            [sty.box__activity_art___6WKxlLhErp]: hasVariant(
+          className={classNames(defaultcss.all, sty.freeBox___6WKxl, {
+            [sty.freeBox__activity_art___6WKxlLhErp]: hasVariant(
               variants,
               "activity",
               "art"
             ),
-            [sty.box__activity_culture___6WKxllHrU6]: hasVariant(
+            [sty.freeBox__activity_culture___6WKxllHrU6]: hasVariant(
               variants,
               "activity",
               "culture"
             ),
-            [sty.box__activity_other___6WKxlpqEoh]: hasVariant(
+            [sty.freeBox__activity_other___6WKxlpqEoh]: hasVariant(
               variants,
               "activity",
               "other"
             ),
-            [sty.box__activity_sports___6WKxl6TPp1]: hasVariant(
+            [sty.freeBox__activity_sports___6WKxl6TPp1]: hasVariant(
               variants,
               "activity",
               "sports"
             ),
-            [sty.box__list___6WKxlwiGv6]: hasVariant(variants, "list", "list")
+            [sty.freeBox__list___6WKxlwiGv6]: hasVariant(
+              variants,
+              "list",
+              "list"
+            )
           })}
         >
           <div
-            className={classNames(defaultcss.all, sty.box___8In5T, {
-              [sty.box__activity_culture___8In5TlHrU6]: hasVariant(
+            className={classNames(defaultcss.all, sty.freeBox___8In5T, {
+              [sty.freeBox__activity_culture___8In5TlHrU6]: hasVariant(
                 variants,
                 "activity",
                 "culture"
               ),
-              [sty.box__list___8In5TwiGv6]: hasVariant(variants, "list", "list")
+              [sty.freeBox__list___8In5TwiGv6]: hasVariant(
+                variants,
+                "list",
+                "list"
+              )
             })}
           >
             {p.renderPlasmicSlot({
@@ -190,8 +203,8 @@ function PlasmicOrgCard__RenderFunc(props: {
           </div>
 
           <div
-            className={classNames(defaultcss.all, sty.box__jSjep, {
-              [sty.box__activity_other__jSjeppqEoh]: hasVariant(
+            className={classNames(defaultcss.all, sty.freeBox__jSjep, {
+              [sty.freeBox__activity_other__jSjeppqEoh]: hasVariant(
                 variants,
                 "activity",
                 "other"
@@ -208,42 +221,46 @@ function PlasmicOrgCard__RenderFunc(props: {
           </div>
 
           <div
-            className={classNames(defaultcss.all, sty.box__ekacc, {
-              [sty.box__activity_art__ekaccLhErp]: hasVariant(
+            className={classNames(defaultcss.all, sty.freeBox__ekacc, {
+              [sty.freeBox__activity_art__ekaccLhErp]: hasVariant(
                 variants,
                 "activity",
                 "art"
               ),
-              [sty.box__activity_sports__ekacc6TPp1]: hasVariant(
+              [sty.freeBox__activity_sports__ekacc6TPp1]: hasVariant(
                 variants,
                 "activity",
                 "sports"
               ),
-              [sty.box__list__ekaccwiGv6]: hasVariant(variants, "list", "list")
+              [sty.freeBox__list__ekaccwiGv6]: hasVariant(
+                variants,
+                "list",
+                "list"
+              )
             })}
           >
             <div
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box__k4V,
+                sty.freeBox__k4V,
                 {
-                  [sty.box__activity_art__k4VLhErp]: hasVariant(
+                  [sty.freeBox__activity_art__k4VLhErp]: hasVariant(
                     variants,
                     "activity",
                     "art"
                   ),
-                  [sty.box__activity_culture__k4VLHrU6]: hasVariant(
+                  [sty.freeBox__activity_culture__k4VLHrU6]: hasVariant(
                     variants,
                     "activity",
                     "culture"
                   ),
-                  [sty.box__activity_other__k4VPqEoh]: hasVariant(
+                  [sty.freeBox__activity_other__k4VPqEoh]: hasVariant(
                     variants,
                     "activity",
                     "other"
                   ),
-                  [sty.box__activity_sports__k4V6TPp1]: hasVariant(
+                  [sty.freeBox__activity_sports__k4V6TPp1]: hasVariant(
                     variants,
                     "activity",
                     "sports"
@@ -266,7 +283,7 @@ function PlasmicOrgCard__RenderFunc(props: {
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box__e1DR
+                sty.freeBox__e1DR
               )}
             >
               {"・"}
@@ -276,39 +293,39 @@ function PlasmicOrgCard__RenderFunc(props: {
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box___1OPd2,
+                sty.freeBox___1OPd2,
                 {
-                  [sty.box__activity_art___1OPd2LhErp]: hasVariant(
+                  [sty.freeBox__activity_art___1OPd2LhErp]: hasVariant(
                     variants,
                     "activity",
                     "art"
                   ),
-                  [sty.box__activity_culture___1OPd2LHrU6]: hasVariant(
+                  [sty.freeBox__activity_culture___1OPd2LHrU6]: hasVariant(
                     variants,
                     "activity",
                     "culture"
                   ),
-                  [sty.box__activity_sports___1OPd26TPp1]: hasVariant(
+                  [sty.freeBox__activity_sports___1OPd26TPp1]: hasVariant(
                     variants,
                     "activity",
                     "sports"
                   ),
-                  [sty.box__list___1OPd2WiGv6]: hasVariant(
+                  [sty.freeBox__list___1OPd2WiGv6]: hasVariant(
                     variants,
                     "list",
                     "list"
                   ),
-                  [sty.box__orgType_ippan___1OPd2FytRu]: hasVariant(
+                  [sty.freeBox__orgType_ippan___1OPd2FytRu]: hasVariant(
                     variants,
                     "orgType",
                     "ippan"
                   ),
-                  [sty.box__orgType_kagai___1OPd2Efjyw]: hasVariant(
+                  [sty.freeBox__orgType_kagai___1OPd2Efjyw]: hasVariant(
                     variants,
                     "orgType",
                     "kagai"
                   ),
-                  [sty.box__orgType_other___1OPd2Cn0BT]: hasVariant(
+                  [sty.freeBox__orgType_other___1OPd2Cn0BT]: hasVariant(
                     variants,
                     "orgType",
                     "other"

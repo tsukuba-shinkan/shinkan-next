@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -122,7 +123,7 @@ function PlasmicOrg__RenderFunc(props: {
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
           >
-            <div className={classNames(defaultcss.all, sty.box___41A8P)}>
+            <div className={classNames(defaultcss.all, sty.freeBox___41A8P)}>
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
@@ -165,19 +166,19 @@ function PlasmicOrg__RenderFunc(props: {
               </div>
             </div>
 
-            <div className={classNames(defaultcss.all, sty.box__lCbjS)}>
-              <div className={classNames(defaultcss.all, sty.box__mxtRq)}>
+            <div className={classNames(defaultcss.all, sty.freeBox__lCbjS)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__mxtRq)}>
                 <div
                   className={classNames(
                     defaultcss.all,
                     defaultcss.__wab_text,
-                    sty.box__jOdXl
+                    sty.freeBox__jOdXl
                   )}
                 >
                   {"検索結果"}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.box__saii2)}>
+                <div className={classNames(defaultcss.all, sty.freeBox__saii2)}>
                   {p.renderPlasmicSlot({
                     defaultContents: "0",
                     value: args.resultLength,
@@ -188,7 +189,7 @@ function PlasmicOrg__RenderFunc(props: {
                     className={classNames(
                       defaultcss.all,
                       defaultcss.__wab_text,
-                      sty.box__gjBqq
+                      sty.freeBox__gjBqq
                     )}
                   >
                     {"件"}
@@ -278,7 +279,7 @@ function PlasmicOrg__RenderFunc(props: {
                 })}
               </OrgList>
 
-              <div className={classNames(defaultcss.all, sty.box__a7EEb)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__a7EEb)}>
                 {p.renderPlasmicSlot({
                   defaultContents: (
                     <Pager

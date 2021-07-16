@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -38,6 +39,7 @@ import EventListItem from "../../EventListItem"; // plasmic-import: GMIuDj3rjM/c
 import CategoryRadio from "../../CategoryRadio"; // plasmic-import: s14nWegQm7/component
 import OrgList from "../../OrgList"; // plasmic-import: LzatSZ7oBYe/component
 import OrgCard from "../../OrgCard"; // plasmic-import: hH2h_5Dtgs/component
+import OnlyShinkan from "../../OnlyShinkan"; // plasmic-import: wOiDfdBxT1/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
@@ -78,6 +80,7 @@ export type PlasmicHome__OverridesType = {
   eventList?: p.Flex<"div">;
   orgsContainer?: p.Flex<"div">;
   orgList?: p.Flex<typeof OrgList>;
+  onlyShinkan?: p.Flex<typeof OnlyShinkan>;
   announcements?: p.Flex<"div">;
   eventList2?: p.Flex<"div">;
 };
@@ -136,9 +139,9 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-override={overrides.hero}
               className={classNames(defaultcss.all, sty.hero)}
             >
-              <div className={classNames(defaultcss.all, sty.box__ig9Yl)} />
+              <div className={classNames(defaultcss.all, sty.freeBox__ig9Yl)} />
 
-              <div className={classNames(defaultcss.all, sty.box__ykPs0)} />
+              <div className={classNames(defaultcss.all, sty.freeBox__ykPs0)} />
             </div>
 
             <OnlyOpencampus
@@ -156,10 +159,12 @@ function PlasmicHome__RenderFunc(props: {
                     className={classNames(
                       defaultcss.all,
                       defaultcss.__wab_text,
-                      sty.box__jdzaq
+                      sty.freeBox__jdzaq
                     )}
                   >
-                    {"ようこそ筑波大学へ"}
+                    {
+                      "筑波大学のオンラインオープンキャンパスへようこそ！\nこのサイトは受験生のみなさんに、筑波大学のサークルや部活動など（課外活動団体・一般学生団体）を知っていただくために開設しました。筑波大学の雰囲気を知ることや、気になるサークル・部活探し、勉強の合間の息抜き…などにご活用ください！\n（掲載団体によっては、一部在学生向けの情報が含まれることがあります。ご注意ください。）"
+                    }
                   </div>
                 </div>
               ) : null}
@@ -170,18 +175,18 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-override={overrides.events}
               className={classNames(defaultcss.all, sty.events)}
             >
-              <div className={classNames(defaultcss.all, sty.box__p08Hk)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__p08Hk)}>
                 <div
                   className={classNames(
                     defaultcss.all,
                     defaultcss.__wab_text,
-                    sty.box__vzmTl
+                    sty.freeBox__vzmTl
                   )}
                 >
                   {"本日のイベント"}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.box__lxuSy)}>
+                <div className={classNames(defaultcss.all, sty.freeBox__lxuSy)}>
                   {p.renderPlasmicSlot({
                     defaultContents: "4",
                     value: args.eventCount,
@@ -189,7 +194,9 @@ function PlasmicHome__RenderFunc(props: {
                   })}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.box__kKcvo)} />
+                <div
+                  className={classNames(defaultcss.all, sty.freeBox__kKcvo)}
+                />
 
                 <div
                   data-plasmic-name={"button"}
@@ -229,7 +236,7 @@ function PlasmicHome__RenderFunc(props: {
                             className={classNames(
                               defaultcss.all,
                               defaultcss.__wab_text,
-                              sty.box___1Nq1
+                              sty.freeBox___1Nq1
                             )}
                           >
                             {"桜を見る会 @ 反町の森公園"}
@@ -247,7 +254,7 @@ function PlasmicHome__RenderFunc(props: {
                             className={classNames(
                               defaultcss.all,
                               defaultcss.__wab_text,
-                              sty.box__vcY8
+                              sty.freeBox__vcY8
                             )}
                           >
                             {"橋本環奈同好会オンライン説明会"}
@@ -281,19 +288,21 @@ function PlasmicHome__RenderFunc(props: {
               data-plasmic-override={overrides.orgsContainer}
               className={classNames(defaultcss.all, sty.orgsContainer)}
             >
-              <div className={classNames(defaultcss.all, sty.box__gJi0C)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__gJi0C)}>
                 <div
                   className={classNames(
                     defaultcss.all,
                     defaultcss.__wab_text,
-                    sty.box___7SGb5
+                    sty.freeBox___7SGb5
                   )}
                 >
                   {"おすすめの団体"}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.box__bkJeC)}>
-                  <div className={classNames(defaultcss.all, sty.box___4Coe3)}>
+                <div className={classNames(defaultcss.all, sty.freeBox__bkJeC)}>
+                  <div
+                    className={classNames(defaultcss.all, sty.freeBox___4Coe3)}
+                  >
                     {p.renderPlasmicSlot({
                       defaultContents: (
                         <React.Fragment>
@@ -424,7 +433,7 @@ function PlasmicHome__RenderFunc(props: {
                             className={classNames(
                               defaultcss.all,
                               defaultcss.__wab_text,
-                              sty.box___6Dhj
+                              sty.freeBox___6Dhj
                             )}
                           >
                             {
@@ -458,7 +467,7 @@ function PlasmicHome__RenderFunc(props: {
                 })}
               </OrgList>
 
-              <div className={classNames(defaultcss.all, sty.box__c6Wud)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__c6Wud)}>
                 <p.PlasmicLink
                   className={classNames(
                     defaultcss.all,
@@ -474,43 +483,49 @@ function PlasmicHome__RenderFunc(props: {
               </div>
             </div>
 
-            <div
-              data-plasmic-name={"announcements"}
-              data-plasmic-override={overrides.announcements}
-              className={classNames(defaultcss.all, sty.announcements)}
+            <OnlyShinkan
+              data-plasmic-name={"onlyShinkan"}
+              data-plasmic-override={overrides.onlyShinkan}
+              className={classNames("__wab_instance", sty.onlyShinkan)}
             >
-              <div className={classNames(defaultcss.all, sty.box__gLaDz)}>
+              <div
+                data-plasmic-name={"announcements"}
+                data-plasmic-override={overrides.announcements}
+                className={classNames(defaultcss.all, sty.announcements)}
+              >
+                <div className={classNames(defaultcss.all, sty.freeBox__gLaDz)}>
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.freeBox__ruukh
+                    )}
+                  >
+                    {"お知らせ"}
+                  </div>
+                </div>
+
                 <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.box__ruukh
-                  )}
+                  data-plasmic-name={"eventList2"}
+                  data-plasmic-override={overrides.eventList2}
+                  className={classNames(defaultcss.all, sty.eventList2)}
                 >
-                  {"お知らせ"}
+                  {p.renderPlasmicSlot({
+                    defaultContents: (
+                      <EventListItem
+                        className={classNames(
+                          "__wab_instance",
+                          sty.eventListItem__npZl
+                        )}
+                        eventTitle={"a"}
+                      />
+                    ),
+
+                    value: args.news
+                  })}
                 </div>
               </div>
-
-              <div
-                data-plasmic-name={"eventList2"}
-                data-plasmic-override={overrides.eventList2}
-                className={classNames(defaultcss.all, sty.eventList2)}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: (
-                    <EventListItem
-                      className={classNames(
-                        "__wab_instance",
-                        sty.eventListItem__npZl
-                      )}
-                      eventTitle={"a"}
-                    />
-                  ),
-
-                  value: args.news
-                })}
-              </div>
-            </div>
+            </OnlyShinkan>
           </Page>
         </div>
       </div>
@@ -530,6 +545,7 @@ const PlasmicDescendants = {
     "eventList",
     "orgsContainer",
     "orgList",
+    "onlyShinkan",
     "announcements",
     "eventList2"
   ],
@@ -543,6 +559,7 @@ const PlasmicDescendants = {
     "eventList",
     "orgsContainer",
     "orgList",
+    "onlyShinkan",
     "announcements",
     "eventList2"
   ],
@@ -554,6 +571,7 @@ const PlasmicDescendants = {
   eventList: ["eventList"],
   orgsContainer: ["orgsContainer", "orgList"],
   orgList: ["orgList"],
+  onlyShinkan: ["onlyShinkan", "announcements", "eventList2"],
   announcements: ["announcements", "eventList2"],
   eventList2: ["eventList2"]
 } as const;
@@ -571,6 +589,7 @@ type NodeDefaultElementType = {
   eventList: "div";
   orgsContainer: "div";
   orgList: typeof OrgList;
+  onlyShinkan: typeof OnlyShinkan;
   announcements: "div";
   eventList2: "div";
 };
@@ -645,6 +664,7 @@ export const PlasmicHome = Object.assign(
     eventList: makeNodeComponent("eventList"),
     orgsContainer: makeNodeComponent("orgsContainer"),
     orgList: makeNodeComponent("orgList"),
+    onlyShinkan: makeNodeComponent("onlyShinkan"),
     announcements: makeNodeComponent("announcements"),
     eventList2: makeNodeComponent("eventList2"),
 

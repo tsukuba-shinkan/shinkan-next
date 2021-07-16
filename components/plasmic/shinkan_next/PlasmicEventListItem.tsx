@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -100,8 +101,8 @@ function PlasmicEventListItem__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
     >
-      <div className={classNames(defaultcss.all, sty.box__bZxVn)}>
-        <div className={classNames(defaultcss.all, sty.box__sTAx8)}>
+      <div className={classNames(defaultcss.all, sty.freeBox__bZxVn)}>
+        <div className={classNames(defaultcss.all, sty.freeBox__sTAx8)}>
           {p.renderPlasmicSlot({
             defaultContents: "04/01 13:00",
             value: args.dateTime,
@@ -109,7 +110,7 @@ function PlasmicEventListItem__RenderFunc(props: {
           })}
         </div>
 
-        <div className={classNames(defaultcss.all, sty.box___9UZt9)}>
+        <div className={classNames(defaultcss.all, sty.freeBox___9UZt9)}>
           {p.renderPlasmicSlot({
             defaultContents: "橋本環奈を眺める会",
             value: args.eventTitle,
@@ -117,7 +118,7 @@ function PlasmicEventListItem__RenderFunc(props: {
           })}
         </div>
 
-        <div className={classNames(defaultcss.all, sty.box__bqpMw)}>
+        <div className={classNames(defaultcss.all, sty.freeBox__bqpMw)}>
           <p.PlasmicIcon
             data-plasmic-name={"svg"}
             data-plasmic-override={overrides.svg}
@@ -134,7 +135,7 @@ function PlasmicEventListItem__RenderFunc(props: {
         </div>
       </div>
 
-      <div className={classNames(defaultcss.all, sty.box__quGeg)}>
+      <div className={classNames(defaultcss.all, sty.freeBox__quGeg)}>
         {p.renderPlasmicSlot({
           defaultContents: "",
           value: args.orgName,
@@ -144,15 +145,15 @@ function PlasmicEventListItem__RenderFunc(props: {
 
       {(hasVariant(variants, "expand", "expand") ? true : false) ? (
         <div
-          className={classNames(defaultcss.all, sty.box__tEnfv, {
-            [sty.box__expand__tEnfvVcxC]: hasVariant(
+          className={classNames(defaultcss.all, sty.freeBox__tEnfv, {
+            [sty.freeBox__expand__tEnfvVcxC]: hasVariant(
               variants,
               "expand",
               "expand"
             )
           })}
         >
-          <div className={classNames(defaultcss.all, sty.box__jLNs)}>
+          <div className={classNames(defaultcss.all, sty.freeBox__jLNs)}>
             {p.renderPlasmicSlot({
               defaultContents: "イベントの説明が入る",
               value: args.children,

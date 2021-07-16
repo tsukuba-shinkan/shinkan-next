@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -125,7 +126,7 @@ function PlasmicNewsid__RenderFunc(props: {
               {"お知らせ"}
             </h1>
 
-            <div className={classNames(defaultcss.all, sty.box__fjhVu)}>
+            <div className={classNames(defaultcss.all, sty.freeBox__fjhVu)}>
               {p.renderPlasmicSlot({
                 defaultContents: "新歓Webを公開しました",
                 value: args.title,
@@ -133,7 +134,7 @@ function PlasmicNewsid__RenderFunc(props: {
               })}
             </div>
 
-            <div className={classNames(defaultcss.all, sty.box___97Osx)}>
+            <div className={classNames(defaultcss.all, sty.freeBox___97Osx)}>
               {p.renderPlasmicSlot({
                 defaultContents: "2020/4/1",
                 value: args.date,
@@ -141,7 +142,7 @@ function PlasmicNewsid__RenderFunc(props: {
               })}
             </div>
 
-            <div className={classNames(defaultcss.all, sty.box__bKa9P)}>
+            <div className={classNames(defaultcss.all, sty.freeBox__bKa9P)}>
               {p.renderPlasmicSlot({
                 defaultContents: "テキストがWordPressから取得されると思います",
                 value: args.children,

@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -94,7 +95,7 @@ function PlasmicPage__RenderFunc(props: {
       data-plasmic-for-node={forNode}
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
     >
-      <div className={classNames(defaultcss.all, sty.box__i8QZa)}>
+      <div className={classNames(defaultcss.all, sty.freeBox__i8QZa)}>
         <div
           data-plasmic-name={"header"}
           data-plasmic-override={overrides.header}
@@ -124,7 +125,7 @@ function PlasmicPage__RenderFunc(props: {
                 className={classNames(
                   defaultcss.all,
                   defaultcss.__wab_text,
-                  sty.box__gyEx
+                  sty.freeBox__gyEx
                 )}
               >
                 {"筑波大学 サークル・部活動紹介"}
@@ -140,7 +141,7 @@ function PlasmicPage__RenderFunc(props: {
                 className={classNames(
                   defaultcss.all,
                   defaultcss.__wab_text,
-                  sty.box__enS97
+                  sty.freeBox__enS97
                 )}
               >
                 {"筑波大学新歓Web"}
@@ -161,7 +162,7 @@ function PlasmicPage__RenderFunc(props: {
                 className={classNames(
                   defaultcss.all,
                   defaultcss.__wab_text,
-                  sty.box__wyzrt
+                  sty.freeBox__wyzrt
                 )}
               >
                 {"イベントを探す"}
@@ -176,7 +177,7 @@ function PlasmicPage__RenderFunc(props: {
                 className={classNames(
                   defaultcss.all,
                   defaultcss.__wab_text,
-                  sty.box__wyBgt
+                  sty.freeBox__wyBgt
                 )}
               >
                 {"団体を探す"}
@@ -209,7 +210,7 @@ function PlasmicPage__RenderFunc(props: {
             className={classNames(defaultcss.all, sty.columns)}
           >
             <div className={classNames(defaultcss.all, sty.column__swH9F)}>
-              <div className={classNames(defaultcss.all, sty.box__uj51S)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__uj51S)}>
                 <p.PlasmicLink
                   className={classNames(
                     defaultcss.all,
@@ -299,7 +300,7 @@ function PlasmicPage__RenderFunc(props: {
                 className={classNames(
                   defaultcss.all,
                   defaultcss.__wab_text,
-                  sty.box__l1A9M
+                  sty.freeBox__l1A9M
                 )}
               >
                 {"©\u00012021\u0001筑波大学新歓Webプロジェクトチーム"}

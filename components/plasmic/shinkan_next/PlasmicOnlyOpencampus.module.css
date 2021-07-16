@@ -5,7 +5,7 @@
   width: auto;
   height: auto;
 }
-.box {
+.freeBox {
   display: flex;
   position: relative;
   flex-direction: row;

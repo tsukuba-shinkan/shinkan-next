@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -107,7 +108,7 @@ function Plasmic_404__RenderFunc(props: {
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box__xpOkw
+                sty.freeBox__xpOkw
               )}
             >
               {"404"}
@@ -117,7 +118,7 @@ function Plasmic_404__RenderFunc(props: {
               className={classNames(
                 defaultcss.all,
                 defaultcss.__wab_text,
-                sty.box__htAjc
+                sty.freeBox__htAjc
               )}
             >
               {"お探しのページは見つかりませんでした"}

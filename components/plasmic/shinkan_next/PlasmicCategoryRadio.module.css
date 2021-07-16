@@ -5,9 +5,9 @@
   width: auto;
   height: auto;
   cursor: pointer;
+  background: #ffffff;
   border-radius: 61px;
   padding: 7px 13px;
-  background: #ffffff;
   border: 2px solid rgb(156, 156, 156);
 }
 .root__selected_other {
@@ -30,7 +30,7 @@
   background: rgb(37, 200, 204);
   border-style: none;
 }
-.box {
+.freeBox {
   position: relative;
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
   font-weight: 700;
@@ -39,36 +39,36 @@
   white-space: pre;
   display: inline-block;
 }
-.box__selected_other {
+.freeBox__selected_other {
   color: rgb(255, 255, 255);
 }
-.box__unselected_sports {
+.freeBox__unselected_sports {
   height: auto;
   color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
 }
-.box__unselected_art {
+.freeBox__unselected_art {
   color: rgb(237, 182, 46) /* plasmic-token: Ab_kcq5-K */;
 }
-.box__unselected_culture {
+.freeBox__unselected_culture {
   color: rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
   height: auto;
 }
-.box__unselected_other {
+.freeBox__unselected_other {
   color: rgb(189, 189, 189) /* plasmic-token: P6COEcurd */;
 }
-.box__selected_all {
+.freeBox__selected_all {
   color: rgb(255, 255, 255);
   height: auto;
 }
-.box__selected_sports {
+.freeBox__selected_sports {
   height: auto;
   color: rgb(255, 255, 255);
 }
-.box__selected_art {
+.freeBox__selected_art {
   color: rgb(255, 255, 255);
   height: auto;
 }
-.box__selected_culture {
+.freeBox__selected_culture {
   height: auto;
   width: auto;
   color: rgb(255, 255, 255);

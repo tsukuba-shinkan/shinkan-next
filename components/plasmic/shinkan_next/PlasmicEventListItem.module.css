@@ -7,13 +7,13 @@
   cursor: pointer;
   height: auto;
   width: 100%;
+  background: rgba(255, 255, 255, 0.95);
   min-width: 0;
   border-radius: 2px;
   padding: 9px;
-  background: rgba(255, 255, 255, 0.95);
   border-top: 2px solid rgba(73, 32, 110, 0.42) /* plasmic-token: 2CTAtOo0u */;
 }
-.box__bZxVn {
+.freeBox__bZxVn {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -22,7 +22,7 @@
   padding: 0px;
   margin: 0px;
 }
-.box__sTAx8 {
+.freeBox__sTAx8 {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -33,7 +33,7 @@
 .slotDateTime {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
-.box___9UZt9 {
+.freeBox___9UZt9 {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -46,7 +46,7 @@
 .slotEventTitle {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
 }
-.box__bqpMw {
+.freeBox__bqpMw {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -60,7 +60,7 @@
   flex-shrink: 0;
   height: 1em;
 }
-.box__quGeg {
+.freeBox__quGeg {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -73,7 +73,7 @@
   font-size: 13px;
   font-weight: 700;
 }
-.box__tEnfv {
+.freeBox__tEnfv {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -82,7 +82,7 @@
   width: 100%;
   min-width: 0;
 }
-.box__jLNs {
+.freeBox__jLNs {
   position: relative;
   display: flex;
   flex-direction: column;

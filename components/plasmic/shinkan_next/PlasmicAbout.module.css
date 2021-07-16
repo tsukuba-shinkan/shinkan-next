@@ -4,9 +4,9 @@
   position: relative;
   width: 100%;
   height: 100%;
+  background: #ffffff;
   min-width: 0;
   min-height: 0;
-  background: #ffffff;
 }
 .page:global(.__wab_instance) {
   position: relative;
@@ -23,7 +23,7 @@
   padding-top: 9px;
   padding-bottom: 9px;
 }
-.box___8Irta {
+.freeBox___8Irta {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -31,12 +31,12 @@
   justify-content: flex-start;
   margin: 12px;
 }
-.box__sgg3G {
+.freeBox__sgg3G {
   display: flex;
   flex-direction: column;
+  background: #ffffff;
   border-radius: 12px;
   padding: 15px;
-  background: #ffffff;
 }
 .slotChildren {
   color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;

@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -60,7 +61,7 @@ export const PlasmicCategoryRadio__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicCategoryRadio__OverridesType = {
   root?: p.Flex<"a"> & Partial<LinkProps>;
-  box?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultCategoryRadioProps {
@@ -116,40 +117,65 @@ function PlasmicCategoryRadio__RenderFunc(props: {
       platform={"nextjs"}
     >
       <div
-        data-plasmic-name={"box"}
-        data-plasmic-override={overrides.box}
-        className={classNames(defaultcss.all, defaultcss.__wab_text, sty.box, {
-          [sty.box__selected_all]: hasVariant(variants, "selected", "all"),
-          [sty.box__selected_art]: hasVariant(variants, "selected", "art"),
-          [sty.box__selected_culture]: hasVariant(
-            variants,
-            "selected",
-            "culture"
-          ),
-          [sty.box__selected_other]: hasVariant(variants, "selected", "other"),
-          [sty.box__selected_sports]: hasVariant(
-            variants,
-            "selected",
-            "sports"
-          ),
-          [sty.box__unselected_all]: hasVariant(variants, "unselected", "all"),
-          [sty.box__unselected_art]: hasVariant(variants, "unselected", "art"),
-          [sty.box__unselected_culture]: hasVariant(
-            variants,
-            "unselected",
-            "culture"
-          ),
-          [sty.box__unselected_other]: hasVariant(
-            variants,
-            "unselected",
-            "other"
-          ),
-          [sty.box__unselected_sports]: hasVariant(
-            variants,
-            "unselected",
-            "sports"
-          )
-        })}
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(
+          defaultcss.all,
+          defaultcss.__wab_text,
+          sty.freeBox,
+          {
+            [sty.freeBox__selected_all]: hasVariant(
+              variants,
+              "selected",
+              "all"
+            ),
+            [sty.freeBox__selected_art]: hasVariant(
+              variants,
+              "selected",
+              "art"
+            ),
+            [sty.freeBox__selected_culture]: hasVariant(
+              variants,
+              "selected",
+              "culture"
+            ),
+            [sty.freeBox__selected_other]: hasVariant(
+              variants,
+              "selected",
+              "other"
+            ),
+            [sty.freeBox__selected_sports]: hasVariant(
+              variants,
+              "selected",
+              "sports"
+            ),
+            [sty.freeBox__unselected_all]: hasVariant(
+              variants,
+              "unselected",
+              "all"
+            ),
+            [sty.freeBox__unselected_art]: hasVariant(
+              variants,
+              "unselected",
+              "art"
+            ),
+            [sty.freeBox__unselected_culture]: hasVariant(
+              variants,
+              "unselected",
+              "culture"
+            ),
+            [sty.freeBox__unselected_other]: hasVariant(
+              variants,
+              "unselected",
+              "other"
+            ),
+            [sty.freeBox__unselected_sports]: hasVariant(
+              variants,
+              "unselected",
+              "sports"
+            )
+          }
+        )}
       >
         {hasVariant(variants, "selected", "culture")
           ? "文化系"
@@ -174,15 +200,15 @@ function PlasmicCategoryRadio__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "box"],
-  box: ["box"]
+  root: ["root", "freeBox"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "a";
-  box: "div";
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -246,7 +272,7 @@ export const PlasmicCategoryRadio = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    box: makeNodeComponent("box"),
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicCategoryRadio
     internalVariantProps: PlasmicCategoryRadio__VariantProps,

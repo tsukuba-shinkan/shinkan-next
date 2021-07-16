@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -119,8 +120,8 @@ function PlasmicAbout__RenderFunc(props: {
               {"このサイトについて"}
             </h1>
 
-            <div className={classNames(defaultcss.all, sty.box___8Irta)}>
-              <div className={classNames(defaultcss.all, sty.box__sgg3G)}>
+            <div className={classNames(defaultcss.all, sty.freeBox___8Irta)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__sgg3G)}>
                 {p.renderPlasmicSlot({
                   defaultContents: "リッチなテキストがWordPressからきます",
                   value: args.children,
