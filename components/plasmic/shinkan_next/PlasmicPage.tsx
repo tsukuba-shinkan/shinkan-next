@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -32,27 +33,25 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import OnlyOpencampus from "../../OnlyOpencampus"; // plasmic-import: x1nR8p_T71/component
+import OnlyShinkan from "../../OnlyShinkan"; // plasmic-import: wOiDfdBxT1/component
 import HeaderLink from "../../HeaderLink"; // plasmic-import: gugJhCOlow/component
 
-import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: rGlYl5prqxJP/globalVariant
+import { useScreenVariants as useScreenVariantsrGlYl5PrqxJp } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: rGlYl5prqxJP/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicPage.module.css"; // plasmic-import: tdmoFHXXat7/css
 
-export type PlasmicPage__VariantMembers = {
-  opencampus: "opencampus";
-};
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicPage.module.css"; // plasmic-import: tdmoFHXXat7/css
 
-export type PlasmicPage__VariantsArgs = {
-  opencampus?: SingleBooleanChoiceArg<"opencampus">;
-};
+import EventNoteBlack24DpsvgIcon from "./icons/PlasmicIcon__EventNoteBlack24Dpsvg"; // plasmic-import: NP9EaMgoaE/icon
+import SearchBlack24DpsvgIcon from "./icons/PlasmicIcon__SearchBlack24Dpsvg"; // plasmic-import: C2oaTY0g2i/icon
 
+export type PlasmicPage__VariantMembers = {};
+
+export type PlasmicPage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicPage__VariantsArgs;
-export const PlasmicPage__VariantProps = new Array<VariantPropType>(
-  "opencampus"
-);
+export const PlasmicPage__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicPage__ArgsType = {
   children?: React.ReactNode;
@@ -65,6 +64,8 @@ export type PlasmicPage__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<"div">;
   title?: p.Flex<"a"> & Partial<LinkProps>;
+  onlyOpencampus?: p.Flex<typeof OnlyOpencampus>;
+  onlyShinkan?: p.Flex<typeof OnlyShinkan>;
   links?: p.Flex<"div">;
   container?: p.Flex<"div">;
   footer?: p.Flex<"div">;
@@ -73,7 +74,6 @@ export type PlasmicPage__OverridesType = {
 
 export interface DefaultPageProps {
   children?: React.ReactNode;
-  opencampus?: SingleBooleanChoiceArg<"opencampus">;
   className?: string;
 }
 
@@ -81,13 +81,13 @@ function PlasmicPage__RenderFunc(props: {
   variants: PlasmicPage__VariantsArgs;
   args: PlasmicPage__ArgsType;
   overrides: PlasmicPage__OverridesType;
-  dataFetches?: PlasmicPage__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariants()
+    screen: useScreenVariantsrGlYl5PrqxJp()
   });
 
   return (
@@ -96,63 +96,90 @@ function PlasmicPage__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
     >
-      <div className={classNames(defaultcss.all, sty.box__i8QZa)}>
+      <div className={classNames(projectcss.all, sty.freeBox__i8QZa)}>
         <div
           data-plasmic-name={"header"}
           data-plasmic-override={overrides.header}
-          className={classNames(defaultcss.all, sty.header)}
+          className={classNames(projectcss.all, sty.header)}
         >
           <p.PlasmicLink
             data-plasmic-name={"title"}
             data-plasmic-override={overrides.title}
-            className={classNames(defaultcss.all, sty.title)}
+            className={classNames(projectcss.all, projectcss.a, sty.title)}
             component={Link}
             href={"/" as const}
             platform={"nextjs"}
           >
             <img
               alt={""}
-              className={classNames(defaultcss.img, sty.img__e1Q90)}
-              role={"img"}
+              className={classNames(
+                projectcss.all,
+                projectcss.img,
+                sty.img__e1Q90
+              )}
               src={"/plasmic/shinkan_next/images/microsoftTeamsImagepng.png"}
             />
 
-            <div
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__enS97,
-                {
-                  [sty.box__opencampus__enS97Do71Q]: hasVariant(
-                    variants,
-                    "opencampus",
-                    "opencampus"
-                  )
-                }
-              )}
+            <OnlyOpencampus
+              data-plasmic-name={"onlyOpencampus"}
+              data-plasmic-override={overrides.onlyOpencampus}
+              className={classNames("__wab_instance", sty.onlyOpencampus)}
             >
-              {hasVariant(variants, "opencampus", "opencampus")
-                ? "筑波大学 サークル・部活動紹介"
-                : "筑波大学新歓Web"}
-            </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gyEx
+                )}
+              >
+                {"筑波大学 サークル・部活動紹介"}
+              </div>
+            </OnlyOpencampus>
+
+            <OnlyShinkan
+              data-plasmic-name={"onlyShinkan"}
+              data-plasmic-override={overrides.onlyShinkan}
+              className={classNames("__wab_instance", sty.onlyShinkan)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__enS97
+                )}
+              >
+                {"筑波大学新歓Web"}
+              </div>
+            </OnlyShinkan>
           </p.PlasmicLink>
 
           <div
             data-plasmic-name={"links"}
             data-plasmic-override={overrides.links}
-            className={classNames(defaultcss.all, sty.links)}
+            className={classNames(projectcss.all, sty.links)}
           >
             <HeaderLink
               className={classNames("__wab_instance", sty.headerLink___2GQ6)}
               to={"/events" as const}
             >
+              <EventNoteBlack24DpsvgIcon
+                className={classNames(projectcss.all, sty.svg__aWkPc)}
+                role={"img"}
+              />
+
               <div
                 className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__wyzrt
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wyzrt
                 )}
               >
                 {"イベントを探す"}
@@ -163,11 +190,16 @@ function PlasmicPage__RenderFunc(props: {
               className={classNames("__wab_instance", sty.headerLink__lle4C)}
               to={"/org" as const}
             >
+              <SearchBlack24DpsvgIcon
+                className={classNames(projectcss.all, sty.svg___9RFzq)}
+                role={"img"}
+              />
+
               <div
                 className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__wyBgt
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__wyBgt
                 )}
               >
                 {"団体を探す"}
@@ -179,7 +211,7 @@ function PlasmicPage__RenderFunc(props: {
         <div
           data-plasmic-name={"container"}
           data-plasmic-override={overrides.container}
-          className={classNames(defaultcss.all, sty.container)}
+          className={classNames(projectcss.all, sty.container)}
         >
           {p.renderPlasmicSlot({
             defaultContents: null,
@@ -190,21 +222,22 @@ function PlasmicPage__RenderFunc(props: {
         <div
           data-plasmic-name={"footer"}
           data-plasmic-override={overrides.footer}
-          className={classNames(defaultcss.all, sty.footer)}
+          className={classNames(projectcss.all, sty.footer)}
         >
           <p.Stack
             as={"div"}
             data-plasmic-name={"columns"}
             data-plasmic-override={overrides.columns}
             hasGap={true}
-            className={classNames(defaultcss.all, sty.columns)}
+            className={classNames(projectcss.all, sty.columns)}
           >
-            <div className={classNames(defaultcss.all, sty.column__swH9F)}>
-              <div className={classNames(defaultcss.all, sty.box__uj51S)}>
+            <div className={classNames(projectcss.all, sty.column__swH9F)}>
+              <div className={classNames(projectcss.all, sty.freeBox__uj51S)}>
                 <p.PlasmicLink
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link__oM7U
                   )}
                   component={Link}
@@ -216,8 +249,9 @@ function PlasmicPage__RenderFunc(props: {
 
                 <p.PlasmicLink
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link__ur8FT
                   )}
                   component={Link}
@@ -231,8 +265,9 @@ function PlasmicPage__RenderFunc(props: {
 
                 <p.PlasmicLink
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link___8Ay0F
                   )}
                   component={Link}
@@ -244,8 +279,9 @@ function PlasmicPage__RenderFunc(props: {
 
                 <p.PlasmicLink
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link__xFwV
                   )}
                   component={Link}
@@ -259,8 +295,9 @@ function PlasmicPage__RenderFunc(props: {
 
                 <p.PlasmicLink
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link__ilNgt
                   )}
                   component={Link}
@@ -272,8 +309,9 @@ function PlasmicPage__RenderFunc(props: {
 
                 <p.PlasmicLink
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link__qr0Va
                   )}
                   component={Link}
@@ -285,12 +323,12 @@ function PlasmicPage__RenderFunc(props: {
               </div>
             </div>
 
-            <div className={classNames(defaultcss.all, sty.column__yXJr8)}>
+            <div className={classNames(projectcss.all, sty.column__yXJr8)}>
               <div
                 className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__l1A9M
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__l1A9M
                 )}
               >
                 {"©\u00012021\u0001筑波大学新歓Webプロジェクトチーム"}
@@ -299,8 +337,11 @@ function PlasmicPage__RenderFunc(props: {
               {false ? (
                 <img
                   alt={""}
-                  className={classNames(defaultcss.img, sty.img__jxcc1)}
-                  role={"img"}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.img,
+                    sty.img__jxcc1
+                  )}
                   src={"/plasmic/shinkan_next/images/schoollogopng.png"}
                 />
               ) : null}
@@ -313,9 +354,21 @@ function PlasmicPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "title", "links", "container", "footer", "columns"],
-  header: ["header", "title", "links"],
-  title: ["title"],
+  root: [
+    "root",
+    "header",
+    "title",
+    "onlyOpencampus",
+    "onlyShinkan",
+    "links",
+    "container",
+    "footer",
+    "columns"
+  ],
+  header: ["header", "title", "onlyOpencampus", "onlyShinkan", "links"],
+  title: ["title", "onlyOpencampus", "onlyShinkan"],
+  onlyOpencampus: ["onlyOpencampus"],
+  onlyShinkan: ["onlyShinkan"],
   links: ["links"],
   container: ["container"],
   footer: ["footer", "columns"],
@@ -328,6 +381,8 @@ type NodeDefaultElementType = {
   root: "div";
   header: "div";
   title: "a";
+  onlyOpencampus: typeof OnlyOpencampus;
+  onlyShinkan: typeof OnlyShinkan;
   links: "div";
   container: "div";
   footer: "div";
@@ -345,7 +400,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPage__VariantsArgs;
     args?: PlasmicPage__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicPage__Fetches;
   } & Omit<PlasmicPage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicPage__ArgsType, ReservedPropsType> &
@@ -372,13 +426,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicPage__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicPage__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
@@ -397,6 +448,8 @@ export const PlasmicPage = Object.assign(
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
     title: makeNodeComponent("title"),
+    onlyOpencampus: makeNodeComponent("onlyOpencampus"),
+    onlyShinkan: makeNodeComponent("onlyShinkan"),
     links: makeNodeComponent("links"),
     container: makeNodeComponent("container"),
     footer: makeNodeComponent("footer"),

@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -34,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicEventListItem2.module.css"; // plasmic-import: g0BBn2-YWf/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicEventListItem2.module.css"; // plasmic-import: g0BBn2-YWf/css
 
 import ExpandMoreBlack24DpsvgIcon from "./icons/PlasmicIcon__ExpandMoreBlack24Dpsvg"; // plasmic-import: nktDh0ThKG/icon
 import ExpandLess24PxsvgIcon from "./icons/PlasmicIcon__ExpandLess24Pxsvg"; // plasmic-import: PYIjxKxUq0/icon
@@ -98,10 +99,10 @@ function PlasmicEventListItem2__RenderFunc(props: {
   variants: PlasmicEventListItem2__VariantsArgs;
   args: PlasmicEventListItem2__ArgsType;
   overrides: PlasmicEventListItem2__OverridesType;
-  dataFetches?: PlasmicEventListItem2__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -109,46 +110,56 @@ function PlasmicEventListItem2__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
     >
       <div
-        className={classNames(defaultcss.all, sty.box__luIu, {
-          [sty.box__activity_art__luIuBzkut]: hasVariant(
+        className={classNames(projectcss.all, sty.freeBox__luIu, {
+          [sty.freeBoxactivity_art__luIuBzkut]: hasVariant(
             variants,
             "activity",
             "art"
           ),
-          [sty.box__activity_culture__luIuBcQjz]: hasVariant(
+          [sty.freeBoxactivity_culture__luIuBcQjz]: hasVariant(
             variants,
             "activity",
             "culture"
           ),
-          [sty.box__activity_other__luIu3V2CT]: hasVariant(
+          [sty.freeBoxactivity_other__luIu3V2CT]: hasVariant(
             variants,
             "activity",
             "other"
           ),
-          [sty.box__activity_sports__luIuVLebt]: hasVariant(
+          [sty.freeBoxactivity_sports__luIuVLebt]: hasVariant(
             variants,
             "activity",
             "sports"
           ),
-          [sty.box__expand__luIuVeGt]: hasVariant(variants, "expand", "expand")
+          [sty.freeBoxexpand__luIuVeGt]: hasVariant(
+            variants,
+            "expand",
+            "expand"
+          )
         })}
       >
         <div
-          className={classNames(defaultcss.all, sty.box__cAelG, {
-            [sty.box__activity_other__cAelG3V2CT]: hasVariant(
+          className={classNames(projectcss.all, sty.freeBox__cAelG, {
+            [sty.freeBoxactivity_other__cAelG3V2CT]: hasVariant(
               variants,
               "activity",
               "other"
             ),
-            [sty.box__activity_sports__cAelGvLebt]: hasVariant(
+            [sty.freeBoxactivity_sports__cAelGvLebt]: hasVariant(
               variants,
               "activity",
               "sports"
             ),
-            [sty.box__expand__cAelGveGt]: hasVariant(
+            [sty.freeBoxexpand__cAelGveGt]: hasVariant(
               variants,
               "expand",
               "expand"
@@ -156,13 +167,13 @@ function PlasmicEventListItem2__RenderFunc(props: {
           })}
         >
           <div
-            className={classNames(defaultcss.all, sty.box__wkg, {
-              [sty.box__activity_other__wkg3V2CT]: hasVariant(
+            className={classNames(projectcss.all, sty.freeBox__wkg, {
+              [sty.freeBoxactivity_other__wkg3V2CT]: hasVariant(
                 variants,
                 "activity",
                 "other"
               ),
-              [sty.box__expand__wkgVeGt]: hasVariant(
+              [sty.freeBoxexpand__wkgVeGt]: hasVariant(
                 variants,
                 "expand",
                 "expand"
@@ -172,13 +183,13 @@ function PlasmicEventListItem2__RenderFunc(props: {
             {p.renderPlasmicSlot({
               defaultContents: "4/4 18:00",
               value: args.dateTime,
-              className: classNames(sty.slotDateTime, {
-                [sty.slotDateTime__activity_other]: hasVariant(
+              className: classNames(sty.slotTargetDateTime, {
+                [sty.slotTargetDateTimeactivity_other]: hasVariant(
                   variants,
                   "activity",
                   "other"
                 ),
-                [sty.slotDateTime__expand]: hasVariant(
+                [sty.slotTargetDateTimeexpand]: hasVariant(
                   variants,
                   "expand",
                   "expand"
@@ -188,13 +199,13 @@ function PlasmicEventListItem2__RenderFunc(props: {
           </div>
 
           <div
-            className={classNames(defaultcss.all, sty.box__aTUjn, {
-              [sty.box__activity_sports__aTUjnvLebt]: hasVariant(
+            className={classNames(projectcss.all, sty.freeBox__aTUjn, {
+              [sty.freeBoxactivity_sports__aTUjnvLebt]: hasVariant(
                 variants,
                 "activity",
                 "sports"
               ),
-              [sty.box__expand__aTUjnVeGt]: hasVariant(
+              [sty.freeBoxexpand__aTUjnVeGt]: hasVariant(
                 variants,
                 "expand",
                 "expand"
@@ -204,13 +215,13 @@ function PlasmicEventListItem2__RenderFunc(props: {
             {p.renderPlasmicSlot({
               defaultContents: "ご飯会",
               value: args.title,
-              className: classNames(sty.slotTitle, {
-                [sty.slotTitle__activity_sports]: hasVariant(
+              className: classNames(sty.slotTargetTitle, {
+                [sty.slotTargetTitleactivity_sports]: hasVariant(
                   variants,
                   "activity",
                   "sports"
                 ),
-                [sty.slotTitle__expand]: hasVariant(
+                [sty.slotTargetTitleexpand]: hasVariant(
                   variants,
                   "expand",
                   "expand"
@@ -221,23 +232,23 @@ function PlasmicEventListItem2__RenderFunc(props: {
 
           {false ? (
             <div
-              className={classNames(defaultcss.all, sty.box__epzFf, {
-                [sty.box__activity_art__epzFfBzkut]: hasVariant(
+              className={classNames(projectcss.all, sty.freeBox__epzFf, {
+                [sty.freeBoxactivity_art__epzFfBzkut]: hasVariant(
                   variants,
                   "activity",
                   "art"
                 ),
-                [sty.box__activity_culture__epzFfBcQjz]: hasVariant(
+                [sty.freeBoxactivity_culture__epzFfBcQjz]: hasVariant(
                   variants,
                   "activity",
                   "culture"
                 ),
-                [sty.box__activity_other__epzFf3V2CT]: hasVariant(
+                [sty.freeBoxactivity_other__epzFf3V2CT]: hasVariant(
                   variants,
                   "activity",
                   "other"
                 ),
-                [sty.box__activity_sports__epzFfvLebt]: hasVariant(
+                [sty.freeBoxactivity_sports__epzFfvLebt]: hasVariant(
                   variants,
                   "activity",
                   "sports"
@@ -247,8 +258,8 @@ function PlasmicEventListItem2__RenderFunc(props: {
               {p.renderPlasmicSlot({
                 defaultContents: "Zoom",
                 value: args.place,
-                className: classNames(sty.slotPlace, {
-                  [sty.slotPlace__activity_sports]: hasVariant(
+                className: classNames(sty.slotTargetPlace, {
+                  [sty.slotTargetPlaceactivity_sports]: hasVariant(
                     variants,
                     "activity",
                     "sports"
@@ -258,15 +269,15 @@ function PlasmicEventListItem2__RenderFunc(props: {
             </div>
           ) : null}
 
-          <div className={classNames(defaultcss.all, sty.box___46Hq2)}>
+          <div className={classNames(projectcss.all, sty.freeBox___46Hq2)}>
             <div
-              className={classNames(defaultcss.all, sty.box___2DfeI, {
-                [sty.box__activity_other___2DfeI3V2CT]: hasVariant(
+              className={classNames(projectcss.all, sty.freeBox___2DfeI, {
+                [sty.freeBoxactivity_other___2DfeI3V2CT]: hasVariant(
                   variants,
                   "activity",
                   "other"
                 ),
-                [sty.box__activity_sports___2DfeIvLebt]: hasVariant(
+                [sty.freeBoxactivity_sports___2DfeIvLebt]: hasVariant(
                   variants,
                   "activity",
                   "sports"
@@ -276,8 +287,8 @@ function PlasmicEventListItem2__RenderFunc(props: {
               {p.renderPlasmicSlot({
                 defaultContents: "ちょっと長めの団体名を入れてみます",
                 value: args.orgName,
-                className: classNames(sty.slotOrgName, {
-                  [sty.slotOrgName__activity_other]: hasVariant(
+                className: classNames(sty.slotTargetOrgName, {
+                  [sty.slotTargetOrgNameactivity_other]: hasVariant(
                     variants,
                     "activity",
                     "other"
@@ -286,34 +297,34 @@ function PlasmicEventListItem2__RenderFunc(props: {
               })}
             </div>
 
-            <div className={classNames(defaultcss.all, sty.box__v4I50)}>
+            <div className={classNames(projectcss.all, sty.freeBox__v4I50)}>
               <div
                 className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__keKdP,
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__keKdP,
                   {
-                    [sty.box__activity_art__keKdPBzkut]: hasVariant(
+                    [sty.textactivity_art__keKdPBzkut]: hasVariant(
                       variants,
                       "activity",
                       "art"
                     ),
-                    [sty.box__activity_culture__keKdPBcQjz]: hasVariant(
+                    [sty.textactivity_culture__keKdPBcQjz]: hasVariant(
                       variants,
                       "activity",
                       "culture"
                     ),
-                    [sty.box__activity_other__keKdP3V2CT]: hasVariant(
+                    [sty.textactivity_other__keKdP3V2CT]: hasVariant(
                       variants,
                       "activity",
                       "other"
                     ),
-                    [sty.box__activity_sports__keKdPvLebt]: hasVariant(
+                    [sty.textactivity_sports__keKdPvLebt]: hasVariant(
                       variants,
                       "activity",
                       "sports"
                     ),
-                    [sty.box__organization_ippan__keKdPj5Ay7]: hasVariant(
+                    [sty.textorganization_ippan__keKdPj5Ay7]: hasVariant(
                       variants,
                       "organization",
                       "ippan"
@@ -334,26 +345,26 @@ function PlasmicEventListItem2__RenderFunc(props: {
 
               <div
                 className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__dp6W,
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dp6W,
                   {
-                    [sty.box__activity_art__dp6WBzkut]: hasVariant(
+                    [sty.textactivity_art__dp6WBzkut]: hasVariant(
                       variants,
                       "activity",
                       "art"
                     ),
-                    [sty.box__activity_culture__dp6WBcQjz]: hasVariant(
+                    [sty.textactivity_culture__dp6WBcQjz]: hasVariant(
                       variants,
                       "activity",
                       "culture"
                     ),
-                    [sty.box__activity_other__dp6W3V2CT]: hasVariant(
+                    [sty.textactivity_other__dp6W3V2CT]: hasVariant(
                       variants,
                       "activity",
                       "other"
                     ),
-                    [sty.box__activity_sports__dp6WVLebt]: hasVariant(
+                    [sty.textactivity_sports__dp6WVLebt]: hasVariant(
                       variants,
                       "activity",
                       "sports"
@@ -366,46 +377,46 @@ function PlasmicEventListItem2__RenderFunc(props: {
 
               <div
                 className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box___6KSj,
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___6KSj,
                   {
-                    [sty.box__activity_art___6KSjBzkut]: hasVariant(
+                    [sty.textactivity_art___6KSjBzkut]: hasVariant(
                       variants,
                       "activity",
                       "art"
                     ),
-                    [sty.box__activity_culture___6KSjBcQjz]: hasVariant(
+                    [sty.textactivity_culture___6KSjBcQjz]: hasVariant(
                       variants,
                       "activity",
                       "culture"
                     ),
-                    [sty.box__activity_other___6KSj3V2CT]: hasVariant(
+                    [sty.textactivity_other___6KSj3V2CT]: hasVariant(
                       variants,
                       "activity",
                       "other"
                     ),
-                    [sty.box__activity_sports___6KSjVLebt]: hasVariant(
+                    [sty.textactivity_sports___6KSjVLebt]: hasVariant(
                       variants,
                       "activity",
                       "sports"
                     ),
-                    [sty.box__expand___6KSjVeGt]: hasVariant(
+                    [sty.textexpand___6KSjVeGt]: hasVariant(
                       variants,
                       "expand",
                       "expand"
                     ),
-                    [sty.box__organization_ippan___6KSjJ5Ay7]: hasVariant(
+                    [sty.textorganization_ippan___6KSjJ5Ay7]: hasVariant(
                       variants,
                       "organization",
                       "ippan"
                     ),
-                    [sty.box__organization_kagai___6KSjDe9XZ]: hasVariant(
+                    [sty.textorganization_kagai___6KSjDe9XZ]: hasVariant(
                       variants,
                       "organization",
                       "kagai"
                     ),
-                    [sty.box__organization_other___6KSjEmHf]: hasVariant(
+                    [sty.textorganization_other___6KSjEmHf]: hasVariant(
                       variants,
                       "organization",
                       "other"
@@ -432,8 +443,8 @@ function PlasmicEventListItem2__RenderFunc(props: {
                 ? ExpandLess24PxsvgIcon
                 : ExpandMoreBlack24DpsvgIcon
             }
-            className={classNames(defaultcss.all, sty.svg, {
-              [sty.svg__expand]: hasVariant(variants, "expand", "expand")
+            className={classNames(projectcss.all, sty.svg, {
+              [sty.svgexpand]: hasVariant(variants, "expand", "expand")
             })}
             role={"img"}
           />
@@ -441,8 +452,8 @@ function PlasmicEventListItem2__RenderFunc(props: {
 
         {(hasVariant(variants, "expand", "expand") ? true : false) ? (
           <div
-            className={classNames(defaultcss.all, sty.box__n0Ou2, {
-              [sty.box__expand__n0Ou2VeGt]: hasVariant(
+            className={classNames(projectcss.all, sty.freeBox__n0Ou2, {
+              [sty.freeBoxexpand__n0Ou2VeGt]: hasVariant(
                 variants,
                 "expand",
                 "expand"
@@ -450,13 +461,13 @@ function PlasmicEventListItem2__RenderFunc(props: {
             })}
           >
             <div
-              className={classNames(defaultcss.all, sty.box___3Kcnf, {
-                [sty.box__activity_sports___3KcnfvLebt]: hasVariant(
+              className={classNames(projectcss.all, sty.freeBox___3Kcnf, {
+                [sty.freeBoxactivity_sports___3KcnfvLebt]: hasVariant(
                   variants,
                   "activity",
                   "sports"
                 ),
-                [sty.box__expand___3KcnfVeGt]: hasVariant(
+                [sty.freeBoxexpand___3KcnfVeGt]: hasVariant(
                   variants,
                   "expand",
                   "expand"
@@ -466,13 +477,13 @@ function PlasmicEventListItem2__RenderFunc(props: {
               {p.renderPlasmicSlot({
                 defaultContents: "詳細情報がここに書いてあります",
                 value: args.children,
-                className: classNames(sty.slotChildren, {
-                  [sty.slotChildren__activity_sports]: hasVariant(
+                className: classNames(sty.slotTargetChildren, {
+                  [sty.slotTargetChildrenactivity_sports]: hasVariant(
                     variants,
                     "activity",
                     "sports"
                   ),
-                  [sty.slotChildren__expand]: hasVariant(
+                  [sty.slotTargetChildrenexpand]: hasVariant(
                     variants,
                     "expand",
                     "expand"
@@ -510,7 +521,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicEventListItem2__VariantsArgs;
     args?: PlasmicEventListItem2__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicEventListItem2__Fetches;
   } & Omit<PlasmicEventListItem2__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicEventListItem2__ArgsType, ReservedPropsType> &
@@ -537,13 +547,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicEventListItem2__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicEventListItem2__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

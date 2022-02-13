@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -34,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicCategoryRadio.module.css"; // plasmic-import: s14nWegQm7/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicCategoryRadio.module.css"; // plasmic-import: s14nWegQm7/css
 
 export type PlasmicCategoryRadio__VariantMembers = {
   unselected: "all" | "sports" | "art" | "culture" | "other";
@@ -60,7 +61,7 @@ export const PlasmicCategoryRadio__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicCategoryRadio__OverridesType = {
   root?: p.Flex<"a"> & Partial<LinkProps>;
-  box?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultCategoryRadioProps {
@@ -73,10 +74,10 @@ function PlasmicCategoryRadio__RenderFunc(props: {
   variants: PlasmicCategoryRadio__VariantsArgs;
   args: PlasmicCategoryRadio__ArgsType;
   overrides: PlasmicCategoryRadio__OverridesType;
-  dataFetches?: PlasmicCategoryRadio__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <p.PlasmicLink
@@ -84,67 +85,71 @@ function PlasmicCategoryRadio__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
-        [sty.root__selected_all]: hasVariant(variants, "selected", "all"),
-        [sty.root__selected_art]: hasVariant(variants, "selected", "art"),
-        [sty.root__selected_culture]: hasVariant(
-          variants,
-          "selected",
-          "culture"
-        ),
-        [sty.root__selected_other]: hasVariant(variants, "selected", "other"),
-        [sty.root__selected_sports]: hasVariant(variants, "selected", "sports"),
-        [sty.root__unselected_all]: hasVariant(variants, "unselected", "all"),
-        [sty.root__unselected_art]: hasVariant(variants, "unselected", "art"),
-        [sty.root__unselected_culture]: hasVariant(
-          variants,
-          "unselected",
-          "culture"
-        ),
-        [sty.root__unselected_other]: hasVariant(
-          variants,
-          "unselected",
-          "other"
-        ),
-        [sty.root__unselected_sports]: hasVariant(
-          variants,
-          "unselected",
-          "sports"
-        )
-      })}
-      component={Link}
-      platform={"nextjs"}
-    >
-      <div
-        data-plasmic-name={"box"}
-        data-plasmic-override={overrides.box}
-        className={classNames(defaultcss.all, defaultcss.__wab_text, sty.box, {
-          [sty.box__selected_all]: hasVariant(variants, "selected", "all"),
-          [sty.box__selected_art]: hasVariant(variants, "selected", "art"),
-          [sty.box__selected_culture]: hasVariant(
+      className={classNames(
+        projectcss.all,
+        projectcss.a,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root,
+        {
+          [sty.rootselected_all]: hasVariant(variants, "selected", "all"),
+          [sty.rootselected_art]: hasVariant(variants, "selected", "art"),
+          [sty.rootselected_culture]: hasVariant(
             variants,
             "selected",
             "culture"
           ),
-          [sty.box__selected_other]: hasVariant(variants, "selected", "other"),
-          [sty.box__selected_sports]: hasVariant(
-            variants,
-            "selected",
-            "sports"
-          ),
-          [sty.box__unselected_all]: hasVariant(variants, "unselected", "all"),
-          [sty.box__unselected_art]: hasVariant(variants, "unselected", "art"),
-          [sty.box__unselected_culture]: hasVariant(
+          [sty.rootselected_other]: hasVariant(variants, "selected", "other"),
+          [sty.rootselected_sports]: hasVariant(variants, "selected", "sports"),
+          [sty.rootunselected_all]: hasVariant(variants, "unselected", "all"),
+          [sty.rootunselected_art]: hasVariant(variants, "unselected", "art"),
+          [sty.rootunselected_culture]: hasVariant(
             variants,
             "unselected",
             "culture"
           ),
-          [sty.box__unselected_other]: hasVariant(
+          [sty.rootunselected_other]: hasVariant(
             variants,
             "unselected",
             "other"
           ),
-          [sty.box__unselected_sports]: hasVariant(
+          [sty.rootunselected_sports]: hasVariant(
+            variants,
+            "unselected",
+            "sports"
+          )
+        }
+      )}
+      component={Link}
+      platform={"nextjs"}
+    >
+      <div
+        data-plasmic-name={"text"}
+        data-plasmic-override={overrides.text}
+        className={classNames(projectcss.all, projectcss.__wab_text, sty.text, {
+          [sty.textselected_all]: hasVariant(variants, "selected", "all"),
+          [sty.textselected_art]: hasVariant(variants, "selected", "art"),
+          [sty.textselected_culture]: hasVariant(
+            variants,
+            "selected",
+            "culture"
+          ),
+          [sty.textselected_other]: hasVariant(variants, "selected", "other"),
+          [sty.textselected_sports]: hasVariant(variants, "selected", "sports"),
+          [sty.textunselected_all]: hasVariant(variants, "unselected", "all"),
+          [sty.textunselected_art]: hasVariant(variants, "unselected", "art"),
+          [sty.textunselected_culture]: hasVariant(
+            variants,
+            "unselected",
+            "culture"
+          ),
+          [sty.textunselected_other]: hasVariant(
+            variants,
+            "unselected",
+            "other"
+          ),
+          [sty.textunselected_sports]: hasVariant(
             variants,
             "unselected",
             "sports"
@@ -174,15 +179,15 @@ function PlasmicCategoryRadio__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "box"],
-  box: ["box"]
+  root: ["root", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "a";
-  box: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -196,7 +201,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicCategoryRadio__VariantsArgs;
     args?: PlasmicCategoryRadio__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicCategoryRadio__Fetches;
   } & Omit<PlasmicCategoryRadio__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicCategoryRadio__ArgsType, ReservedPropsType> &
@@ -223,13 +227,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicCategoryRadio__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicCategoryRadio__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
@@ -246,7 +247,7 @@ export const PlasmicCategoryRadio = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    box: makeNodeComponent("box"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicCategoryRadio
     internalVariantProps: PlasmicCategoryRadio__VariantProps,

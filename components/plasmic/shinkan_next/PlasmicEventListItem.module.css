@@ -7,13 +7,13 @@
   cursor: pointer;
   height: auto;
   width: 100%;
+  background: var(--token-_19xYoSCM);
   min-width: 0;
   border-radius: 2px;
   padding: 9px;
-  background: rgba(255, 255, 255, 0.95);
-  border-top: 2px solid rgba(73, 32, 110, 0.42) /* plasmic-token: 2CTAtOo0u */;
+  border-top: 2px solid var(--token-2CTAtOo0u);
 }
-.box__bZxVn {
+.freeBox__bZxVn {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -22,7 +22,7 @@
   padding: 0px;
   margin: 0px;
 }
-.box__sTAx8 {
+.freeBox__sTAx8 {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -30,10 +30,10 @@
   justify-content: flex-start;
   margin: 2px;
 }
-.slotDateTime {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.slotTargetDateTime {
+  color: var(--token-Kftb_9z5u);
 }
-.box___9UZt9 {
+.freeBox___9UZt9 {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -43,10 +43,10 @@
   align-self: center;
   margin: 2px;
 }
-.slotEventTitle {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.slotTargetEventTitle {
+  color: var(--token-Kftb_9z5u);
 }
-.box__bqpMw {
+.freeBox__bqpMw {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -60,7 +60,7 @@
   flex-shrink: 0;
   height: 1em;
 }
-.box__quGeg {
+.freeBox__quGeg {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -68,12 +68,12 @@
   justify-content: flex-start;
   align-self: flex-end;
 }
-.slotOrgName {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.slotTargetOrgName {
+  color: var(--token-Kftb_9z5u);
   font-size: 13px;
   font-weight: 700;
 }
-.box__tEnfv {
+.freeBox__tEnfv {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -82,14 +82,14 @@
   width: 100%;
   min-width: 0;
 }
-.box__jLNs {
+.freeBox__jLNs {
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: auto;
   padding: 4px;
 }
-.slotChildren {
+.slotTargetChildren {
   font-size: 14px;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }

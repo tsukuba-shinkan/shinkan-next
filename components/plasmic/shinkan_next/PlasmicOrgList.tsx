@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -35,9 +36,12 @@ import {
 import OrgCard from "../../OrgCard"; // plasmic-import: hH2h_5Dtgs/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicOrgList.module.css"; // plasmic-import: LzatSZ7oBYe/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicOrgList.module.css"; // plasmic-import: LzatSZ7oBYe/css
+
+import FormatListBulletedBlack24DpsvgIcon from "./icons/PlasmicIcon__FormatListBulletedBlack24Dpsvg"; // plasmic-import: Iq1m1JJ7I8/icon
+import GridViewBlack24DpsvgIcon from "./icons/PlasmicIcon__GridViewBlack24Dpsvg"; // plasmic-import: Bh_ZOVdxIy/icon
 
 export type PlasmicOrgList__VariantMembers = {
   list: "list";
@@ -72,10 +76,10 @@ function PlasmicOrgList__RenderFunc(props: {
   variants: PlasmicOrgList__VariantsArgs;
   args: PlasmicOrgList__ArgsType;
   overrides: PlasmicOrgList__OverridesType;
-  dataFetches?: PlasmicOrgList__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -83,58 +87,61 @@ function PlasmicOrgList__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
     >
       <div
-        className={classNames(defaultcss.all, sty.box__psGc, {
-          [sty.box__list__psGCg02S4]: hasVariant(variants, "list", "list")
+        className={classNames(projectcss.all, sty.freeBox__psGc, {
+          [sty.freeBoxlist__psGCg02S4]: hasVariant(variants, "list", "list")
         })}
       >
-        <div
+        <p.Stack
+          as={"div"}
           data-plasmic-name={"toggleBtn"}
           data-plasmic-override={overrides.toggleBtn}
-          className={classNames(defaultcss.all, sty.toggleBtn, {
-            [sty.toggleBtn__list]: hasVariant(variants, "list", "list")
+          hasGap={true}
+          className={classNames(projectcss.all, sty.toggleBtn, {
+            [sty.toggleBtnlist]: hasVariant(variants, "list", "list")
           })}
         >
-          <div
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.box__wWoB,
-              {
-                [sty.box__list__wWoBg02S4]: hasVariant(variants, "list", "list")
-              }
-            )}
-          >
-            {hasVariant(variants, "list", "list")
-              ? "カード表示に切り替え"
-              : "リスト表示に切り替え"}
-          </div>
-        </div>
+          <FormatListBulletedBlack24DpsvgIcon
+            className={classNames(projectcss.all, sty.svg__ojiWa)}
+            role={"img"}
+          />
+
+          <GridViewBlack24DpsvgIcon
+            className={classNames(projectcss.all, sty.svg___8FAZa)}
+            role={"img"}
+          />
+        </p.Stack>
       </div>
 
-      <div className={classNames(defaultcss.all, sty.box__we4V)}>
+      <div className={classNames(projectcss.all, sty.freeBox__we4V)}>
         {p.renderPlasmicSlot({
           defaultContents: (
             <React.Fragment>
               <OrgCard
                 className={classNames("__wab_instance", sty.orgCard__bp3AN)}
-                list={"list" as const}
+                list={true}
                 name={"橋本環奈同好会"}
               />
 
               <OrgCard
                 className={classNames("__wab_instance", sty.orgCard__jsKye)}
                 description={"アクセスするたび変わります"}
-                list={"list" as const}
+                list={true}
                 name={"女装同好会"}
               />
 
               <OrgCard
                 className={classNames("__wab_instance", sty.orgCard__iHbSt)}
                 description={"ランダムに変わります"}
-                list={"list" as const}
+                list={true}
                 name={"橋本環奈同好会"}
               />
 
@@ -143,7 +150,7 @@ function PlasmicOrgList__RenderFunc(props: {
                 description={
                   "ランダムに選ぶ機能はWordPressの機能を使いたいところですが"
                 }
-                list={"list" as const}
+                list={true}
                 name={"橋本環奈同好会"}
               />
 
@@ -152,7 +159,7 @@ function PlasmicOrgList__RenderFunc(props: {
                 description={
                   "おそらくフロントエンドでシャッフルしないといけない"
                 }
-                list={"list" as const}
+                list={true}
                 name={"橋本環奈同好会"}
               />
 
@@ -161,9 +168,9 @@ function PlasmicOrgList__RenderFunc(props: {
                 description={
                   <div
                     className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box__puyXv
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__puyXv
                     )}
                   >
                     {
@@ -171,19 +178,19 @@ function PlasmicOrgList__RenderFunc(props: {
                     }
                   </div>
                 }
-                list={"list" as const}
+                list={true}
                 name={"橋本環奈同好会"}
               />
 
               <OrgCard
                 className={classNames("__wab_instance", sty.orgCard__jo5Be)}
-                list={"list" as const}
+                list={true}
                 name={"橋本環奈同好会"}
               />
 
               <OrgCard
                 className={classNames("__wab_instance", sty.orgCard___17FaN)}
-                list={"list" as const}
+                list={true}
               />
             </React.Fragment>
           ),
@@ -217,7 +224,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicOrgList__VariantsArgs;
     args?: PlasmicOrgList__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicOrgList__Fetches;
   } & Omit<PlasmicOrgList__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicOrgList__ArgsType, ReservedPropsType> &
@@ -244,13 +250,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicOrgList__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicOrgList__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

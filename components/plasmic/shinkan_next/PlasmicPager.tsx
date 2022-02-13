@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -34,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicPager.module.css"; // plasmic-import: v0V4QrK8UW/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicPager.module.css"; // plasmic-import: v0V4QrK8UW/css
 
 import NavigateBeforeBlack18DpsvgIcon from "./icons/PlasmicIcon__NavigateBeforeBlack18Dpsvg"; // plasmic-import: r4LI--POIP/icon
 import NavigateNextBlack18DpsvgIcon from "./icons/PlasmicIcon__NavigateNextBlack18Dpsvg"; // plasmic-import: 4ceokTvl9I/icon
@@ -63,6 +64,7 @@ export const PlasmicPager__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPager__OverridesType = {
   root?: p.Flex<"div">;
+  freeBox?: p.Flex<"div">;
   prev?: p.Flex<"div">;
   next?: p.Flex<"div">;
 };
@@ -77,10 +79,10 @@ function PlasmicPager__RenderFunc(props: {
   variants: PlasmicPager__VariantsArgs;
   args: PlasmicPager__ArgsType;
   overrides: PlasmicPager__OverridesType;
-  dataFetches?: PlasmicPager__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -88,30 +90,41 @@ function PlasmicPager__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
-        [sty.root__hasNext]: hasVariant(variants, "hasNext", "hasNext"),
-        [sty.root__hasPrev]: hasVariant(variants, "hasPrev", "hasPrev")
-      })}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root,
+        {
+          [sty.roothasNext]: hasVariant(variants, "hasNext", "hasNext"),
+          [sty.roothasPrev]: hasVariant(variants, "hasPrev", "hasPrev")
+        }
+      )}
     >
-      <div className={classNames(defaultcss.all, sty.box__efUkH)}>
+      <div
+        data-plasmic-name={"freeBox"}
+        data-plasmic-override={overrides.freeBox}
+        className={classNames(projectcss.all, sty.freeBox)}
+      >
         {(hasVariant(variants, "hasPrev", "hasPrev") ? true : false) ? (
           <div
             data-plasmic-name={"prev"}
             data-plasmic-override={overrides.prev}
-            className={classNames(defaultcss.all, sty.prev, {
-              [sty.prev__hasPrev]: hasVariant(variants, "hasPrev", "hasPrev")
+            className={classNames(projectcss.all, sty.prev, {
+              [sty.prevhasPrev]: hasVariant(variants, "hasPrev", "hasPrev")
             })}
           >
             <NavigateBeforeBlack18DpsvgIcon
-              className={classNames(defaultcss.all, sty.svg__zgKyb)}
+              className={classNames(projectcss.all, sty.svg__zgKyb)}
               role={"img"}
             />
 
             <div
               className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__rx4E
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__rx4E
               )}
             >
               {"前のページ"}
@@ -122,22 +135,22 @@ function PlasmicPager__RenderFunc(props: {
           <div
             data-plasmic-name={"next"}
             data-plasmic-override={overrides.next}
-            className={classNames(defaultcss.all, sty.next, {
-              [sty.next__hasNext]: hasVariant(variants, "hasNext", "hasNext")
+            className={classNames(projectcss.all, sty.next, {
+              [sty.nexthasNext]: hasVariant(variants, "hasNext", "hasNext")
             })}
           >
             <div
               className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.box__hlQzX
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__hlQzX
               )}
             >
               {"次のページ"}
             </div>
 
             <NavigateNextBlack18DpsvgIcon
-              className={classNames(defaultcss.all, sty.svg__miHZ)}
+              className={classNames(projectcss.all, sty.svg__miHZ)}
               role={"img"}
             />
           </div>
@@ -148,7 +161,8 @@ function PlasmicPager__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "prev", "next"],
+  root: ["root", "freeBox", "prev", "next"],
+  freeBox: ["freeBox", "prev", "next"],
   prev: ["prev"],
   next: ["next"]
 } as const;
@@ -157,6 +171,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  freeBox: "div";
   prev: "div";
   next: "div";
 };
@@ -172,7 +187,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicPager__VariantsArgs;
     args?: PlasmicPager__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicPager__Fetches;
   } & Omit<PlasmicPager__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicPager__ArgsType, ReservedPropsType> &
@@ -199,13 +213,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicPager__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicPager__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
@@ -222,6 +233,7 @@ export const PlasmicPager = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    freeBox: makeNodeComponent("freeBox"),
     prev: makeNodeComponent("prev"),
     next: makeNodeComponent("next"),
 

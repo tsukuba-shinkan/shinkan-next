@@ -5,12 +5,12 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc", 
+    "type-check": "tsc",
     "sync": "plasmic sync",
     "sync:watch": "plasmic watch"
   },
   "dependencies": {
-    "@plasmicapp/react-web": "^0.2.63",
+    "@plasmicapp/react-web": "^0.2.91",
     "modern-css-reset": "^1.4.0",
     "next": "^11.0.1",
     "react": "^17.0.1",
@@ -20,7 +20,7 @@
     "swr": "^0.5.4"
   },
   "devDependencies": {
-    "@plasmicapp/cli": "^0.1.127",
+    "@plasmicapp/cli": "^0.1.170",
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",

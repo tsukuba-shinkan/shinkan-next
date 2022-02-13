@@ -7,7 +7,7 @@
   align-items: center;
   padding: 13px;
 }
-.box__efUkH {
+.freeBox {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -31,9 +31,9 @@
   position: relative;
   margin-left: 1px;
   margin-right: 1px;
+  background: rgb(255, 255, 255);
   flex-row-gap: 0px;
   padding: 13px;
-  background: rgb(255, 255, 255);
 }
 .svg__zgKyb {
   position: relative;
@@ -42,7 +42,7 @@
   flex-shrink: 0;
   height: 1em;
 }
-.box__rx4E {
+.text__rx4E {
   position: relative;
 }
 .next {
@@ -58,11 +58,11 @@
   position: relative;
   margin-left: 1px;
   margin-right: 1px;
+  background: rgb(255, 255, 255);
   flex-row-gap: 0px;
   padding: 13px;
-  background: rgb(255, 255, 255);
 }
-.box__hlQzX {
+.text__hlQzX {
   position: relative;
 }
 .svg__miHZ {

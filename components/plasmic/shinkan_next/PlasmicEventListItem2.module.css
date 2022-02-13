@@ -8,7 +8,7 @@
   min-width: 0;
   padding: 5px;
 }
-.box__luIu {
+.freeBox__luIu {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -17,33 +17,33 @@
   width: 100%;
   padding-top: 6px;
   padding-bottom: 6px;
-  min-width: 0;
   background: rgb(255, 255, 255);
-  border-left: 9px solid rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  min-width: 0;
+  border-left: 9px solid var(--token-Kftb_9z5u);
 }
-.box__activity_sports__luIuVLebt {
-  border-left-color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
+.freeBoxactivity_sports__luIuVLebt {
+  border-left-color: var(--token-E4AV8Sb0R);
 }
-.box__activity_art__luIuBzkut {
-  border-left-color: rgb(237, 182, 46) /* plasmic-token: Ab_kcq5-K */;
+.freeBoxactivity_art__luIuBzkut {
+  border-left-color: var(--token-Ab_kcq5-K);
 }
-.box__activity_culture__luIuBcQjz {
-  border-left-color: rgb(37, 200, 204) /* plasmic-token: -TDQpFL4P */;
+.freeBoxactivity_culture__luIuBcQjz {
+  border-left-color: var(--token--TDQpFL4P);
 }
-.box__activity_other__luIu3V2CT {
-  border-left-color: rgb(189, 189, 189) /* plasmic-token: P6COEcurd */;
+.freeBoxactivity_other__luIu3V2CT {
+  border-left-color: var(--token-P6COEcurd);
 }
-.box__cAelG {
+.freeBox__cAelG {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  border-left-color: rgb(234, 110, 137) /* plasmic-token: E4AV8Sb0R */;
+  border-left-color: var(--token-E4AV8Sb0R);
   width: 100%;
   min-width: 0;
   border-style: none;
 }
-.box__wkg {
+.freeBox__wkg {
   position: relative;
   width: 15%;
   display: flex;
@@ -51,11 +51,11 @@
   padding: 5px;
   margin: 0px;
 }
-.slotDateTime {
+.slotTargetDateTime {
   font-size: 15px;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
-.box__aTUjn {
+.freeBox__aTUjn {
   position: relative;
   width: 30%;
   display: flex;
@@ -64,11 +64,11 @@
   padding: 4px;
   margin: 0px;
 }
-.slotTitle {
+.slotTargetTitle {
   font-size: 15px;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
-.box__epzFf {
+.freeBox__epzFf {
   position: relative;
   width: 15%;
   display: flex;
@@ -76,11 +76,11 @@
   padding: 4px;
   margin: 0px;
 }
-.slotPlace {
+.slotTargetPlace {
   font-size: 15px;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
-.box___46Hq2 {
+.freeBox___46Hq2 {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -89,17 +89,17 @@
   width: 35%;
   margin: 0px;
 }
-.box___2DfeI {
+.freeBox___2DfeI {
   display: flex;
   flex-direction: column;
   margin: 2px 0px;
 }
-.slotOrgName {
+.slotTargetOrgName {
   font-size: 15px;
   font-weight: 700;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
-.box__v4I50 {
+.freeBox__v4I50 {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -107,19 +107,19 @@
   justify-content: flex-start;
   margin: 2px 0px;
 }
-.box__keKdP {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.text__keKdP {
+  color: var(--token-Kftb_9z5u);
   font-size: 11px;
 }
-.box__activity_art__keKdPBzkut {
+.textactivity_art__keKdPBzkut {
   height: auto;
 }
-.box__dp6W {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.text__dp6W {
+  color: var(--token-Kftb_9z5u);
   font-size: 11px;
 }
-.box___6KSj {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.text___6KSj {
+  color: var(--token-Kftb_9z5u);
   font-size: 11px;
 }
 .svg {
@@ -129,23 +129,23 @@
   height: 30px;
   cursor: pointer;
 }
-.box__n0Ou2 {
+.freeBox__n0Ou2 {
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
 }
-.box__expand__n0Ou2VeGt {
+.freeBoxexpand__n0Ou2VeGt {
   overflow: auto;
 }
-.box___3Kcnf {
+.freeBox___3Kcnf {
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 8px;
 }
-.slotChildren {
+.slotTargetChildren {
   font-size: 14px;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }

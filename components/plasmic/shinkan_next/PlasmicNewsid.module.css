@@ -4,53 +4,53 @@
   position: relative;
   width: 100%;
   height: 100%;
+  background: #ffffff;
   min-width: 0;
   min-height: 0;
-  background: #ffffff;
 }
 .page:global(.__wab_instance) {
   position: relative;
 }
 .h1 {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
   font-size: 24px;
   font-weight: 700;
   padding-top: 9px;
   padding-bottom: 9px;
 }
-.box__fjhVu {
+.freeBox__fjhVu {
   position: relative;
   padding-top: 5px;
   padding-bottom: 5px;
   display: flex;
   flex-direction: row;
 }
-.slotTitle {
+.slotTargetTitle {
   font-size: 20px;
   font-weight: 400;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
-.box___97Osx {
+.freeBox___97Osx {
   position: relative;
   display: flex;
   flex-direction: row;
   padding: 2px 0px;
 }
-.slotDate {
+.slotTargetDate {
   font-size: 15px;
   font-weight: 400;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
-.box__bKa9P {
+.freeBox__bKa9P {
   position: relative;
   display: flex;
   flex-direction: row;
+  background: #ffffff;
   border-radius: 13px;
   padding: 15px;
   margin: 12px;
-  background: #ffffff;
 }
-.slotChildren {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.slotTargetChildren {
+  color: var(--token-Kftb_9z5u);
 }

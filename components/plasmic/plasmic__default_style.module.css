@@ -1,27 +1,48 @@
-.all {
+:where(.all) {
   display: block;
   white-space: inherit;
   grid-row: auto;
   grid-column: auto;
   position: relative;
+  background: none;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   box-shadow: none;
   box-sizing: border-box;
   text-decoration-line: none;
-  transition-property: all;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  transition-duration: 0s;
   margin: 0;
   border-width: 0px;
 }
-.img {
-  composes: all;
+:where(.img) {
   display: inline-block;
 }
-.input {
-  composes: all;
+:where(.li) {
+  display: list-item;
+}
+:where(.span) {
+  display: inline;
+  position: static;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-transform: inherit;
+}
+:where(.input) {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-transform: inherit;
+  background-image: linear-gradient(#ffffff, #ffffff);
+  padding: 2px;
+  border: 1px solid lightgray;
+}
+:where(.textarea) {
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
@@ -30,11 +51,9 @@
   color: inherit;
   text-transform: inherit;
   padding: 2px;
-  background: #ffffff;
   border: 1px solid lightgray;
 }
-.textarea {
-  composes: all;
+:where(.button) {
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
@@ -42,11 +61,21 @@
   font-weight: inherit;
   color: inherit;
   text-transform: inherit;
-  padding: 2px;
+  background-image: none;
+  align-items: flex-start;
+  text-align: center;
+  padding: 2px 6px;
   border: 1px solid lightgray;
 }
-.button {
-  composes: all;
+:where(.code) {
+  font-family: inherit;
+  line-height: inherit;
+}
+:where(.pre) {
+  font-family: inherit;
+  line-height: inherit;
+}
+:where(.p) {
   font-family: inherit;
   line-height: inherit;
   font-size: inherit;
@@ -54,77 +83,53 @@
   font-weight: inherit;
   color: inherit;
   text-transform: inherit;
-  padding: 2px 6px;
-  background: none;
-  border: 1px solid lightgray;
 }
-.code {
-  composes: all;
-  font-family: inherit;
-  line-height: inherit;
-}
-.pre {
-  composes: all;
-  font-family: inherit;
-  line-height: inherit;
-}
-.h1 {
-  composes: all;
+:where(.h1) {
   font-size: inherit;
   font-weight: inherit;
 }
-.h2 {
-  composes: all;
+:where(.h2) {
   font-size: inherit;
   font-weight: inherit;
 }
-.h3 {
-  composes: all;
+:where(.h3) {
   font-size: inherit;
   font-weight: inherit;
 }
-.h4 {
-  composes: all;
+:where(.h4) {
   font-size: inherit;
   font-weight: inherit;
 }
-.h5 {
-  composes: all;
+:where(.h5) {
   font-size: inherit;
   font-weight: inherit;
 }
-.h6 {
-  composes: all;
+:where(.h6) {
   font-size: inherit;
   font-weight: inherit;
 }
-.address {
-  composes: all;
+:where(.address) {
   font-style: inherit;
 }
-.ol {
-  composes: all;
+:where(.a) {
+  color: inherit;
+}
+:where(.ol) {
   list-style-type: none;
   padding: 0;
 }
-.ul {
-  composes: all;
+:where(.ul) {
   list-style-type: none;
   padding: 0;
 }
-.select {
-  composes: all;
+:where(.select) {
   padding: 2px 6px;
-}
-.li {
-  composes: all;
-  list-style-type: none;
 }
 .plasmic_default__component_wrapper {
   display: grid;
 }
-.__wab_text {
-  display: inline-block;
+.plasmic_default__inline {
+  display: inline;
 }
 .plasmic_page_wrapper {
   display: flex;

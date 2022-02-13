@@ -260,6 +260,32 @@
           "cssFilePath": "plasmic/shinkan_next/PlasmicOrgList.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "x1nR8p_T71",
+          "name": "OnlyOpencampus",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOnlyOpencampus.tsx",
+          "importSpec": {
+            "modulePath": "OnlyOpencampus.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOnlyOpencampus.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "wOiDfdBxT1",
+          "name": "OnlyShinkan",
+          "type": "managed",
+          "projectId": "4oWAtwkSeL4ciDYEekjxG9",
+          "renderModuleFilePath": "plasmic/shinkan_next/PlasmicOnlyShinkan.tsx",
+          "importSpec": {
+            "modulePath": "OnlyShinkan.tsx"
+          },
+          "cssFilePath": "plasmic/shinkan_next/PlasmicOnlyShinkan.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -292,6 +318,21 @@
           "id": "Tv0SGpDtW8",
           "name": "Link24PxsvgIcon",
           "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__Link24Pxsvg.tsx"
+        },
+        {
+          "id": "NP9EaMgoaE",
+          "name": "EventNoteBlack24DpsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__EventNoteBlack24Dpsvg.tsx"
+        },
+        {
+          "id": "Bh_ZOVdxIy",
+          "name": "GridViewBlack24DpsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__GridViewBlack24Dpsvg.tsx"
+        },
+        {
+          "id": "Iq1m1JJ7I8",
+          "name": "FormatListBulletedBlack24DpsvgIcon",
+          "moduleFilePath": "plasmic/shinkan_next/icons/PlasmicIcon__FormatListBulletedBlack24Dpsvg.tsx"
         }
       ],
       "images": [
@@ -352,7 +393,9 @@
         }
       ],
       "projectApiToken": "j0utquL80KpwtAdsl0AXlZ6jOm3WUeDMkahIMeUoaiyC51SJZRxQ432Vjl5SCGw19w3LreVyBj2T6HL94hQ",
-      "codeComponents": []
+      "codeComponents": [],
+      "indirect": false,
+      "globalContextsFilePath": ""
     }
   ],
   "globalVariants": {
@@ -368,6 +411,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.157",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.157/dist/plasmic.schema.json"
+  "cliVersion": "0.1.170",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.170/dist/plasmic.schema.json"
 }

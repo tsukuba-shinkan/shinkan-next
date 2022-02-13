@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -34,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicHomepage.module.css"; // plasmic-import: AkxEYTA_hZWI/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicHomepage.module.css"; // plasmic-import: AkxEYTA_hZWI/css
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -50,33 +51,24 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  box?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
-export interface DefaultHomepageProps {
-  dataFetches: PlasmicHomepage__Fetches;
-}
+export interface DefaultHomepageProps {}
 
 function PlasmicHomepage__RenderFunc(props: {
   variants: PlasmicHomepage__VariantsArgs;
   args: PlasmicHomepage__ArgsType;
   overrides: PlasmicHomepage__OverridesType;
-  dataFetches?: PlasmicHomepage__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <React.Fragment>
       <Head>
-        <title key="title">{""}</title>
-        <meta key="og:title" property="og:title" content={""} />
-        <meta
-          key="description"
-          name="description"
-          property="og:description"
-          content={""}
-        />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <style>{`
@@ -85,25 +77,27 @@ function PlasmicHomepage__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={defaultcss.plasmic_page_wrapper}>
+      <div className={projectcss.plasmic_page_wrapper}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            defaultcss.all,
+            projectcss.all,
             projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_tokens,
             sty.root
           )}
         >
           <div
-            data-plasmic-name={"box"}
-            data-plasmic-override={overrides.box}
+            data-plasmic-name={"text"}
+            data-plasmic-override={overrides.text}
             className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.box
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text
             )}
           >
             {"Welcome to your first page."}
@@ -115,15 +109,15 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "box"],
-  box: ["box"]
+  root: ["root", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  box: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -137,7 +131,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHomepage__VariantsArgs;
     args?: PlasmicHomepage__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicHomepage__Fetches;
   } & Omit<PlasmicHomepage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicHomepage__ArgsType, ReservedPropsType> &
@@ -164,13 +157,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicHomepage__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicHomepage__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
@@ -187,7 +177,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    box: makeNodeComponent("box"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

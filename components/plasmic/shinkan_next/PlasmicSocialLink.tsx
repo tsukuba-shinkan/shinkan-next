@@ -16,6 +16,7 @@ import Head from "next/head";
 import Link, { LinkProps } from "next/link";
 
 import * as p from "@plasmicapp/react-web";
+
 import {
   hasVariant,
   classNames,
@@ -34,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicSocialLink.module.css"; // plasmic-import: 8FZzPTX83m/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicSocialLink.module.css"; // plasmic-import: 8FZzPTX83m/css
 
 export type PlasmicSocialLink__VariantMembers = {
   type: "url" | "twitter" | "instagram";
@@ -52,7 +53,7 @@ export const PlasmicSocialLink__VariantProps = new Array<VariantPropType>(
 );
 
 export type PlasmicSocialLink__ArgsType = {
-  href?: string | PageHref;
+  href?: string;
   label?: React.ReactNode;
 };
 
@@ -69,7 +70,7 @@ export type PlasmicSocialLink__OverridesType = {
 };
 
 export interface DefaultSocialLinkProps {
-  href?: string | PageHref;
+  href?: string;
   label?: React.ReactNode;
   type?: SingleChoiceArg<"url" | "twitter" | "instagram">;
   className?: string;
@@ -79,10 +80,10 @@ function PlasmicSocialLink__RenderFunc(props: {
   variants: PlasmicSocialLink__VariantsArgs;
   args: PlasmicSocialLink__ArgsType;
   overrides: PlasmicSocialLink__OverridesType;
-  dataFetches?: PlasmicSocialLink__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -90,13 +91,19 @@ function PlasmicSocialLink__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
     >
       <p.PlasmicLink
         data-plasmic-name={"link"}
         data-plasmic-override={overrides.link}
-        className={classNames(defaultcss.all, sty.link, {
-          [sty.link__type_twitter]: hasVariant(variants, "type", "twitter")
+        className={classNames(projectcss.all, projectcss.a, sty.link, {
+          [sty.linktype_twitter]: hasVariant(variants, "type", "twitter")
         })}
         component={Link}
         href={args.href}
@@ -106,16 +113,11 @@ function PlasmicSocialLink__RenderFunc(props: {
           data-plasmic-name={"img"}
           data-plasmic-override={overrides.img}
           alt={""}
-          className={classNames(defaultcss.img, sty.img, {
-            [sty.img__type_instagram]: hasVariant(
-              variants,
-              "type",
-              "instagram"
-            ),
-            [sty.img__type_twitter]: hasVariant(variants, "type", "twitter"),
-            [sty.img__type_url]: hasVariant(variants, "type", "url")
+          className={classNames(projectcss.all, projectcss.img, sty.img, {
+            [sty.imgtype_instagram]: hasVariant(variants, "type", "instagram"),
+            [sty.imgtype_twitter]: hasVariant(variants, "type", "twitter"),
+            [sty.imgtype_url]: hasVariant(variants, "type", "url")
           })}
-          role={"img"}
           src={
             hasVariant(variants, "type", "instagram")
               ? "/plasmic/shinkan_next/images/image4.png"
@@ -130,18 +132,18 @@ function PlasmicSocialLink__RenderFunc(props: {
         {p.renderPlasmicSlot({
           defaultContents: "https://example.com",
           value: args.label,
-          className: classNames(sty.slotLabel, {
-            [sty.slotLabel__type_instagram]: hasVariant(
+          className: classNames(sty.slotTargetLabel, {
+            [sty.slotTargetLabeltype_instagram]: hasVariant(
               variants,
               "type",
               "instagram"
             ),
-            [sty.slotLabel__type_twitter]: hasVariant(
+            [sty.slotTargetLabeltype_twitter]: hasVariant(
               variants,
               "type",
               "twitter"
             ),
-            [sty.slotLabel__type_url]: hasVariant(variants, "type", "url")
+            [sty.slotTargetLabeltype_url]: hasVariant(variants, "type", "url")
           })
         })}
       </p.PlasmicLink>
@@ -174,7 +176,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicSocialLink__VariantsArgs;
     args?: PlasmicSocialLink__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicSocialLink__Fetches;
   } & Omit<PlasmicSocialLink__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicSocialLink__ArgsType, ReservedPropsType> &
@@ -201,13 +202,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicSocialLink__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicSocialLink__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

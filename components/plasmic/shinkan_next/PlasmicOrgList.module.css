@@ -9,7 +9,7 @@
   width: 100%;
   min-width: 0;
 }
-.box__psGc {
+.freeBox__psGc {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -17,19 +17,49 @@
   justify-content: flex-end;
 }
 .toggleBtn {
+  flex-direction: row;
   display: flex;
   position: relative;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
   padding: 5px;
-  border: 2px none rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  border: 2px none var(--token-Kftb_9z5u);
 }
-.box__wWoB {
+.toggleBtn > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-left: calc(0px - 24px);
+  width: calc(100% + 24px);
+}
+.toggleBtn > :global(.__wab_flex-container) > *,
+.toggleBtn > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.toggleBtn > :global(.__wab_flex-container) > picture > img,
+.toggleBtn
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 24px;
+}
+.svg__ojiWa {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  object-fit: cover;
+  max-width: 100%;
+  color: var(--token-Kftb_9z5u);
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
-.box__we4V {
+.svg___8FAZa {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: var(--token-2CTAtOo0u);
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+.freeBox__we4V {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -41,115 +71,115 @@
 .orgCard__bp3AN:global(.__wab_instance) {
   position: relative;
 }
-.box___36RbF {
+.freeBox___36RbF {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
 .orgCard__jsKye:global(.__wab_instance) {
   position: relative;
 }
-.box__i4Rhe {
+.freeBox__i4Rhe {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
 .orgCard__iHbSt:global(.__wab_instance) {
   position: relative;
 }
-.box___8Lcl3 {
+.freeBox___8Lcl3 {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
 .orgCard__j2G:global(.__wab_instance) {
   position: relative;
 }
-.box__tUjNz {
+.freeBox__tUjNz {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
 .orgCard__trp4P:global(.__wab_instance) {
   position: relative;
 }
-.box__bEw0C {
+.freeBox__bEw0C {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
 .orgCard__tsqi9:global(.__wab_instance) {
   position: relative;
 }
-.box__puyXv {
+.text__puyXv {
   height: auto;
 }
-.box__irWy0 {
+.freeBox__irWy0 {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
 .orgCard__jo5Be:global(.__wab_instance) {
   position: relative;
 }
-.box___3Ouj {
+.freeBox___3Ouj {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
 .orgCard___17FaN:global(.__wab_instance) {
   position: relative;
 }
-.box__iLd7V {
+.freeBox__iLd7V {
   display: block;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
+  background: transparent;
   min-width: 0;
   min-height: 0;
-  background: transparent;
 }
