@@ -12,20 +12,20 @@
   "dependencies": {
     "@plasmicapp/react-web": "^0.2.91",
     "modern-css-reset": "^1.4.0",
-    "next": "^11.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-image-gallery": "^1.0.9",
-    "sass": "^1.32.8",
-    "swr": "^0.5.4"
+    "next": "^12.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-image-gallery": "^1.2.7",
+    "sass": "^1.49.7",
+    "swr": "^1.2.1"
   },
   "devDependencies": {
     "@plasmicapp/cli": "^0.1.170",
-    "@types/node": "^12.12.21",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
-    "@types/react-image-gallery": "^1.0.2",
-    "typescript": "4.0"
+    "@types/node": "^17.0.17",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-image-gallery": "^1.0.5",
+    "typescript": "4.5"
   },
   "license": "MIT"
 }
