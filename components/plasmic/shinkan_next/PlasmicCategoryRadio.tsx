@@ -109,7 +109,6 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "selected",
             "culture"
           ),
-
           [sty.rootselected_other]: hasVariant(variants, "selected", "other"),
           [sty.rootselected_sports]: hasVariant(variants, "selected", "sports"),
           [sty.rootunselected_all]: hasVariant(variants, "unselected", "all"),
@@ -119,13 +118,11 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "unselected",
             "culture"
           ),
-
           [sty.rootunselected_other]: hasVariant(
             variants,
             "unselected",
             "other"
           ),
-
           [sty.rootunselected_sports]: hasVariant(
             variants,
             "unselected",
@@ -144,6 +141,8 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             ? MenuBookBlack24DpsvgIcon
             : hasVariant(variants, "selected", "art")
             ? BrushBlack24DpsvgIcon
+            : hasVariant(variants, "selected", "sports")
+            ? SportsMartialArtsBlack24DpsvgIcon
             : hasVariant(variants, "unselected", "other")
             ? MoreHorizBlack24DpsvgIcon
             : hasVariant(variants, "unselected", "culture")
@@ -164,7 +163,6 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "selected",
             "culture"
           ),
-
           [sty.svgselected_other]: hasVariant(variants, "selected", "other"),
           [sty.svgselected_sports]: hasVariant(variants, "selected", "sports"),
           [sty.svgunselected_art]: hasVariant(variants, "unselected", "art"),
@@ -173,13 +171,11 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "unselected",
             "culture"
           ),
-
           [sty.svgunselected_other]: hasVariant(
             variants,
             "unselected",
             "other"
           ),
-
           [sty.svgunselected_sports]: hasVariant(
             variants,
             "unselected",
@@ -200,7 +196,6 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "selected",
             "culture"
           ),
-
           [sty.textselected_other]: hasVariant(variants, "selected", "other"),
           [sty.textselected_sports]: hasVariant(variants, "selected", "sports"),
           [sty.textunselected_all]: hasVariant(variants, "unselected", "all"),
@@ -210,13 +205,11 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "unselected",
             "culture"
           ),
-
           [sty.textunselected_other]: hasVariant(
             variants,
             "unselected",
             "other"
           ),
-
           [sty.textunselected_sports]: hasVariant(
             variants,
             "unselected",
@@ -265,7 +258,6 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicCategoryRadio__OverridesType,
   DescendantsType<T>
 >;
-
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {

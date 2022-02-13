@@ -315,8 +315,14 @@ function PlasmicHome__RenderFunc(props: {
                   {"おすすめの団体"}
                 </div>
 
-                <div className={classNames(projectcss.all, sty.freeBox__bkJeC)}>
-                  <div
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__bkJeC)}
+                >
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox___4Coe3)}
                   >
                     {p.renderPlasmicSlot({
@@ -374,8 +380,8 @@ function PlasmicHome__RenderFunc(props: {
                       ),
                       value: args.categoryRadio
                     })}
-                  </div>
-                </div>
+                  </p.Stack>
+                </p.Stack>
               </div>
 
               <OrgList
