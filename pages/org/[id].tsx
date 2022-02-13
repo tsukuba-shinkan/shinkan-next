@@ -78,7 +78,7 @@ function Orgid({ initialPageData, initialMainImageData }: Props) {
   }
   const pageId = router.query.id + "";
   const { data, error } = useSWR(pageUrl(pageId), wpFetch, {
-    initialData: initialPageData,
+    fallbackData: initialPageData,
   });
 
   const mainImage = useWPImage(
