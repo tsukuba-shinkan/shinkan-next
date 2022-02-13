@@ -37,9 +37,9 @@ import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
 import EventListItem2 from "../../EventListItem2"; // plasmic-import: g0BBn2-YWf/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicEvents.module.css"; // plasmic-import: 22CMj1wbxr/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicEvents.module.css"; // plasmic-import: 22CMj1wbxr/css
 
 import SearchBlack24DpsvgIcon from "./icons/PlasmicIcon__SearchBlack24Dpsvg"; // plasmic-import: C2oaTY0g2i/icon
 
@@ -68,34 +68,25 @@ export type PlasmicEvents__OverridesType = {
   rangestart?: p.Flex<"input">;
   rangeend?: p.Flex<"input">;
   keyword?: p.Flex<"input">;
-  searchButton?: p.Flex<"div">;
+  searchButton?: p.Flex<"button">;
   svg?: p.Flex<"svg">;
 };
 
-export interface DefaultEventsProps {
-  dataFetches: PlasmicEvents__Fetches;
-}
+export interface DefaultEventsProps {}
 
 function PlasmicEvents__RenderFunc(props: {
   variants: PlasmicEvents__VariantsArgs;
   args: PlasmicEvents__ArgsType;
   overrides: PlasmicEvents__OverridesType;
-  dataFetches?: PlasmicEvents__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <React.Fragment>
       <Head>
-        <title key="title">{""}</title>
-        <meta key="og:title" property="og:title" content={""} />
-        <meta
-          key="description"
-          name="description"
-          property="og:description"
-          content={""}
-        />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <style>{`
@@ -104,15 +95,17 @@ function PlasmicEvents__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={defaultcss.plasmic_page_wrapper}>
+      <div className={projectcss.plasmic_page_wrapper}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            defaultcss.all,
+            projectcss.all,
             projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_tokens,
             sty.root
           )}
         >
@@ -121,13 +114,14 @@ function PlasmicEvents__RenderFunc(props: {
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
           >
-            <div className={classNames(defaultcss.all, sty.freeBox__h057B)}>
+            <div className={classNames(projectcss.all, sty.freeBox__h057B)}>
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
                 className={classNames(
-                  defaultcss.h1,
-                  defaultcss.__wab_text,
+                  projectcss.all,
+                  projectcss.h1,
+                  projectcss.__wab_text,
                   sty.h1
                 )}
               >
@@ -137,17 +131,17 @@ function PlasmicEvents__RenderFunc(props: {
               <div
                 data-plasmic-name={"searchBox"}
                 data-plasmic-override={overrides.searchBox}
-                className={classNames(defaultcss.all, sty.searchBox)}
+                className={classNames(projectcss.all, sty.searchBox)}
               >
-                <div className={classNames(defaultcss.all, sty.freeBox__s3Ufq)}>
+                <div className={classNames(projectcss.all, sty.freeBox__s3Ufq)}>
                   <div
-                    className={classNames(defaultcss.all, sty.freeBox___0P6Py)}
+                    className={classNames(projectcss.all, sty.freeBox___0P6Py)}
                   >
                     <div
                       className={classNames(
-                        defaultcss.all,
-                        defaultcss.__wab_text,
-                        sty.freeBox__myI5B
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__myI5B
                       )}
                     >
                       {"日時"}
@@ -156,7 +150,11 @@ function PlasmicEvents__RenderFunc(props: {
                     <input
                       data-plasmic-name={"rangestart"}
                       data-plasmic-override={overrides.rangestart}
-                      className={classNames(defaultcss.input, sty.rangestart)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.input,
+                        sty.rangestart
+                      )}
                       placeholder={"2021-04-01" as const}
                       size={1 as const}
                       type={"text" as const}
@@ -165,9 +163,9 @@ function PlasmicEvents__RenderFunc(props: {
 
                     <div
                       className={classNames(
-                        defaultcss.all,
-                        defaultcss.__wab_text,
-                        sty.freeBox__blOde
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__blOde
                       )}
                     >
                       {"〜"}
@@ -176,7 +174,11 @@ function PlasmicEvents__RenderFunc(props: {
                     <input
                       data-plasmic-name={"rangeend"}
                       data-plasmic-override={overrides.rangeend}
-                      className={classNames(defaultcss.input, sty.rangeend)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.input,
+                        sty.rangeend
+                      )}
                       placeholder={"2021-04-01" as const}
                       size={1 as const}
                       type={"text" as const}
@@ -185,13 +187,13 @@ function PlasmicEvents__RenderFunc(props: {
                   </div>
 
                   <div
-                    className={classNames(defaultcss.all, sty.freeBox__yeUuy)}
+                    className={classNames(projectcss.all, sty.freeBox__yeUuy)}
                   >
                     <div
                       className={classNames(
-                        defaultcss.all,
-                        defaultcss.__wab_text,
-                        sty.freeBox__vQh62
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__vQh62
                       )}
                     >
                       {"キーワード"}
@@ -200,7 +202,11 @@ function PlasmicEvents__RenderFunc(props: {
                     <input
                       data-plasmic-name={"keyword"}
                       data-plasmic-override={overrides.keyword}
-                      className={classNames(defaultcss.input, sty.keyword)}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.input,
+                        sty.keyword
+                      )}
                       placeholder={"キーワードを入力…" as const}
                       size={1 as const}
                       type={"text" as const}
@@ -209,45 +215,50 @@ function PlasmicEvents__RenderFunc(props: {
                   </div>
                 </div>
 
-                <div
+                <button
                   data-plasmic-name={"searchButton"}
                   data-plasmic-override={overrides.searchButton}
-                  className={classNames(defaultcss.all, sty.searchButton)}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.button,
+                    sty.searchButton
+                  )}
                 >
                   <SearchBlack24DpsvgIcon
                     data-plasmic-name={"svg"}
                     data-plasmic-override={overrides.svg}
-                    className={classNames(defaultcss.all, sty.svg)}
+                    aria-describedby={"" as const}
+                    className={classNames(projectcss.all, sty.svg)}
                     role={"img"}
                   />
-                </div>
+                </button>
               </div>
             </div>
 
-            <div className={classNames(defaultcss.all, sty.freeBox__ymDwU)}>
-              <div className={classNames(defaultcss.all, sty.freeBox__dOAhW)}>
+            <div className={classNames(projectcss.all, sty.freeBox__ymDwU)}>
+              <div className={classNames(projectcss.all, sty.freeBox__dOAhW)}>
                 <div
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.freeBox__vKghT
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vKghT
                   )}
                 >
                   {"検索結果"}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.freeBox__xOcYl)}>
+                <div className={classNames(projectcss.all, sty.freeBox__xOcYl)}>
                   {p.renderPlasmicSlot({
                     defaultContents: "0",
                     value: args.resultLength,
-                    className: classNames(sty.slotResultLength)
+                    className: classNames(sty.slotTargetResultLength)
                   })}
 
                   <div
                     className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.freeBox__ymTcg
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ymTcg
                     )}
                   >
                     {"件"}
@@ -255,7 +266,7 @@ function PlasmicEvents__RenderFunc(props: {
                 </div>
               </div>
 
-              <div className={classNames(defaultcss.all, sty.freeBox__tInj)}>
+              <div className={classNames(projectcss.all, sty.freeBox__tInj)}>
                 {p.renderPlasmicSlot({
                   defaultContents: (
                     <React.Fragment>
@@ -354,7 +365,7 @@ type NodeDefaultElementType = {
   rangestart: "input";
   rangeend: "input";
   keyword: "input";
-  searchButton: "div";
+  searchButton: "button";
   svg: "svg";
 };
 
@@ -369,7 +380,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicEvents__VariantsArgs;
     args?: PlasmicEvents__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicEvents__Fetches;
   } & Omit<PlasmicEvents__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicEvents__ArgsType, ReservedPropsType> &
@@ -396,13 +406,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicEvents__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicEvents__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

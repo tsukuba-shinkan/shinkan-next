@@ -35,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicFooterLink.module.css"; // plasmic-import: mfIEP8VL9n/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicFooterLink.module.css"; // plasmic-import: mfIEP8VL9n/css
 
 export type PlasmicFooterLink__VariantMembers = {};
 
@@ -46,7 +46,7 @@ type VariantPropType = keyof PlasmicFooterLink__VariantsArgs;
 export const PlasmicFooterLink__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicFooterLink__ArgsType = {
-  to?: string | PageHref;
+  to?: string;
 };
 
 type ArgPropType = keyof PlasmicFooterLink__ArgsType;
@@ -57,7 +57,7 @@ export type PlasmicFooterLink__OverridesType = {
 };
 
 export interface DefaultFooterLinkProps {
-  to?: string | PageHref;
+  to?: string;
   className?: string;
 }
 
@@ -65,10 +65,10 @@ function PlasmicFooterLink__RenderFunc(props: {
   variants: PlasmicFooterLink__VariantsArgs;
   args: PlasmicFooterLink__ArgsType;
   overrides: PlasmicFooterLink__OverridesType;
-  dataFetches?: PlasmicFooterLink__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <p.PlasmicLink
@@ -77,9 +77,12 @@ function PlasmicFooterLink__RenderFunc(props: {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
-        defaultcss.all,
-        defaultcss.__wab_text,
+        projectcss.all,
+        projectcss.a,
+        projectcss.__wab_text,
         projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
         sty.root
       )}
       component={Link}
@@ -112,7 +115,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicFooterLink__VariantsArgs;
     args?: PlasmicFooterLink__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicFooterLink__Fetches;
   } & Omit<PlasmicFooterLink__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicFooterLink__ArgsType, ReservedPropsType> &
@@ -139,13 +141,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicFooterLink__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicFooterLink__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

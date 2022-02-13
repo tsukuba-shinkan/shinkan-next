@@ -13,7 +13,7 @@
   flex-direction: row;
   align-items: center;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--token-_19xYoSCM);
   margin: 0px;
 }
 .img {
@@ -24,6 +24,12 @@
   flex-shrink: 0;
   margin: 14px 18px;
 }
-.slotLabel {
-  color: rgb(83, 83, 83) /* plasmic-token: 4creIjO1T */;
+.img > picture > img {
+  object-fit: cover;
+}
+.img > .__wab_img-spacer > img {
+  object-fit: cover;
+}
+.slotTargetLabel {
+  color: var(--token-4creIjO1T);
 }

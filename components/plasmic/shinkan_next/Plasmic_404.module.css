@@ -11,16 +11,16 @@
 .page:global(.__wab_instance) {
   position: relative;
 }
-.freeBox__xpOkw {
+.text__xpOkw {
   position: relative;
   height: auto;
   font-weight: 700;
   font-size: 47px;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
   text-align: center;
 }
-.freeBox__htAjc {
+.text__htAjc {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
   text-align: center;
 }

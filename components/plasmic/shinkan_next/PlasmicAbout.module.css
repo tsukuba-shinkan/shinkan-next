@@ -17,7 +17,7 @@
 }
 .h1 {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
   font-size: 24px;
   font-weight: 700;
   padding-top: 9px;
@@ -38,6 +38,6 @@
   border-radius: 12px;
   padding: 15px;
 }
-.slotChildren {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.slotTargetChildren {
+  color: var(--token-Kftb_9z5u);
 }

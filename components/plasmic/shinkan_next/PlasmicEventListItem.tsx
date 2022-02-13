@@ -35,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicEventListItem.module.css"; // plasmic-import: GMIuDj3rjM/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicEventListItem.module.css"; // plasmic-import: GMIuDj3rjM/css
 
 import ExpandMoreBlack24DpsvgIcon from "./icons/PlasmicIcon__ExpandMoreBlack24Dpsvg"; // plasmic-import: nktDh0ThKG/icon
 import ExpandLess24PxsvgIcon from "./icons/PlasmicIcon__ExpandLess24Pxsvg"; // plasmic-import: PYIjxKxUq0/icon
@@ -88,10 +88,10 @@ function PlasmicEventListItem__RenderFunc(props: {
   variants: PlasmicEventListItem__VariantsArgs;
   args: PlasmicEventListItem__ArgsType;
   overrides: PlasmicEventListItem__OverridesType;
-  dataFetches?: PlasmicEventListItem__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -99,26 +99,32 @@ function PlasmicEventListItem__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
     >
-      <div className={classNames(defaultcss.all, sty.freeBox__bZxVn)}>
-        <div className={classNames(defaultcss.all, sty.freeBox__sTAx8)}>
+      <div className={classNames(projectcss.all, sty.freeBox__bZxVn)}>
+        <div className={classNames(projectcss.all, sty.freeBox__sTAx8)}>
           {p.renderPlasmicSlot({
             defaultContents: "04/01 13:00",
             value: args.dateTime,
-            className: classNames(sty.slotDateTime)
+            className: classNames(sty.slotTargetDateTime)
           })}
         </div>
 
-        <div className={classNames(defaultcss.all, sty.freeBox___9UZt9)}>
+        <div className={classNames(projectcss.all, sty.freeBox___9UZt9)}>
           {p.renderPlasmicSlot({
             defaultContents: "橋本環奈を眺める会",
             value: args.eventTitle,
-            className: classNames(sty.slotEventTitle)
+            className: classNames(sty.slotTargetEventTitle)
           })}
         </div>
 
-        <div className={classNames(defaultcss.all, sty.freeBox__bqpMw)}>
+        <div className={classNames(projectcss.all, sty.freeBox__bqpMw)}>
           <p.PlasmicIcon
             data-plasmic-name={"svg"}
             data-plasmic-override={overrides.svg}
@@ -127,37 +133,39 @@ function PlasmicEventListItem__RenderFunc(props: {
                 ? ExpandLess24PxsvgIcon
                 : ExpandMoreBlack24DpsvgIcon
             }
-            className={classNames(defaultcss.all, sty.svg, {
-              [sty.svg__expand]: hasVariant(variants, "expand", "expand")
+            aria-describedby={"" as const}
+            aria-label={"もっと見る" as const}
+            className={classNames(projectcss.all, sty.svg, {
+              [sty.svgexpand]: hasVariant(variants, "expand", "expand")
             })}
             role={"img"}
           />
         </div>
       </div>
 
-      <div className={classNames(defaultcss.all, sty.freeBox__quGeg)}>
+      <div className={classNames(projectcss.all, sty.freeBox__quGeg)}>
         {p.renderPlasmicSlot({
           defaultContents: "",
           value: args.orgName,
-          className: classNames(sty.slotOrgName)
+          className: classNames(sty.slotTargetOrgName)
         })}
       </div>
 
       {(hasVariant(variants, "expand", "expand") ? true : false) ? (
         <div
-          className={classNames(defaultcss.all, sty.freeBox__tEnfv, {
-            [sty.freeBox__expand__tEnfvVcxC]: hasVariant(
+          className={classNames(projectcss.all, sty.freeBox__tEnfv, {
+            [sty.freeBoxexpand__tEnfvVcxC]: hasVariant(
               variants,
               "expand",
               "expand"
             )
           })}
         >
-          <div className={classNames(defaultcss.all, sty.freeBox__jLNs)}>
+          <div className={classNames(projectcss.all, sty.freeBox__jLNs)}>
             {p.renderPlasmicSlot({
               defaultContents: "イベントの説明が入る",
               value: args.children,
-              className: classNames(sty.slotChildren)
+              className: classNames(sty.slotTargetChildren)
             })}
           </div>
         </div>
@@ -189,7 +197,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicEventListItem__VariantsArgs;
     args?: PlasmicEventListItem__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicEventListItem__Fetches;
   } & Omit<PlasmicEventListItem__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicEventListItem__ArgsType, ReservedPropsType> &
@@ -216,13 +223,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicEventListItem__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicEventListItem__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

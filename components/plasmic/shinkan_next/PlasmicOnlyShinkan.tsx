@@ -35,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicOnlyShinkan.module.css"; // plasmic-import: wOiDfdBxT1/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicOnlyShinkan.module.css"; // plasmic-import: wOiDfdBxT1/css
 
 export type PlasmicOnlyShinkan__VariantMembers = {
   opencampus: "opencampus";
@@ -74,10 +74,10 @@ function PlasmicOnlyShinkan__RenderFunc(props: {
   variants: PlasmicOnlyShinkan__VariantsArgs;
   args: PlasmicOnlyShinkan__ArgsType;
   overrides: PlasmicOnlyShinkan__OverridesType;
-  dataFetches?: PlasmicOnlyShinkan__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -85,14 +85,20 @@ function PlasmicOnlyShinkan__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
     >
       {(hasVariant(variants, "opencampus", "opencampus") ? false : true) ? (
         <div
           data-plasmic-name={"freeBox"}
           data-plasmic-override={overrides.freeBox}
-          className={classNames(defaultcss.all, sty.freeBox, {
-            [sty.freeBox__opencampus]: hasVariant(
+          className={classNames(projectcss.all, sty.freeBox, {
+            [sty.freeBoxopencampus]: hasVariant(
               variants,
               "opencampus",
               "opencampus"
@@ -132,7 +138,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicOnlyShinkan__VariantsArgs;
     args?: PlasmicOnlyShinkan__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicOnlyShinkan__Fetches;
   } & Omit<PlasmicOnlyShinkan__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicOnlyShinkan__ArgsType, ReservedPropsType> &
@@ -159,13 +164,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicOnlyShinkan__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicOnlyShinkan__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

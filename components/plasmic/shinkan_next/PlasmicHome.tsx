@@ -42,9 +42,12 @@ import OrgCard from "../../OrgCard"; // plasmic-import: hH2h_5Dtgs/component
 import OnlyShinkan from "../../OnlyShinkan"; // plasmic-import: wOiDfdBxT1/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicHome.module.css"; // plasmic-import: eUF7R_7Fga/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicHome.module.css"; // plasmic-import: eUF7R_7Fga/css
+
+import EventNoteBlack24DpsvgIcon from "./icons/PlasmicIcon__EventNoteBlack24Dpsvg"; // plasmic-import: NP9EaMgoaE/icon
+import SearchBlack24DpsvgIcon from "./icons/PlasmicIcon__SearchBlack24Dpsvg"; // plasmic-import: C2oaTY0g2i/icon
 
 export type PlasmicHome__VariantMembers = {};
 
@@ -85,30 +88,21 @@ export type PlasmicHome__OverridesType = {
   eventList2?: p.Flex<"div">;
 };
 
-export interface DefaultHomeProps {
-  dataFetches: PlasmicHome__Fetches;
-}
+export interface DefaultHomeProps {}
 
 function PlasmicHome__RenderFunc(props: {
   variants: PlasmicHome__VariantsArgs;
   args: PlasmicHome__ArgsType;
   overrides: PlasmicHome__OverridesType;
-  dataFetches?: PlasmicHome__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <React.Fragment>
       <Head>
-        <title key="title">{""}</title>
-        <meta key="og:title" property="og:title" content={""} />
-        <meta
-          key="description"
-          name="description"
-          property="og:description"
-          content={""}
-        />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <style>{`
@@ -117,15 +111,17 @@ function PlasmicHome__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={defaultcss.plasmic_page_wrapper}>
+      <div className={projectcss.plasmic_page_wrapper}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            defaultcss.all,
+            projectcss.all,
             projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_tokens,
             sty.root
           )}
         >
@@ -137,11 +133,13 @@ function PlasmicHome__RenderFunc(props: {
             <div
               data-plasmic-name={"hero"}
               data-plasmic-override={overrides.hero}
-              className={classNames(defaultcss.all, sty.hero)}
+              aria-label={"ようこそ、筑波大学へ。" as const}
+              className={classNames(projectcss.all, sty.hero)}
+              role={"banner" as const}
             >
-              <div className={classNames(defaultcss.all, sty.freeBox__ig9Yl)} />
+              <div className={classNames(projectcss.all, sty.freeBox__ig9Yl)} />
 
-              <div className={classNames(defaultcss.all, sty.freeBox__ykPs0)} />
+              <div className={classNames(projectcss.all, sty.freeBox__ykPs0)} />
             </div>
 
             <OnlyOpencampus
@@ -153,13 +151,13 @@ function PlasmicHome__RenderFunc(props: {
                 <div
                   data-plasmic-name={"description"}
                   data-plasmic-override={overrides.description}
-                  className={classNames(defaultcss.all, sty.description)}
+                  className={classNames(projectcss.all, sty.description)}
                 >
                   <div
                     className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.freeBox__jdzaq
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__jdzaq
                     )}
                   >
                     {
@@ -173,47 +171,65 @@ function PlasmicHome__RenderFunc(props: {
             <div
               data-plasmic-name={"events"}
               data-plasmic-override={overrides.events}
-              className={classNames(defaultcss.all, sty.events)}
+              className={classNames(projectcss.all, sty.events)}
             >
-              <div className={classNames(defaultcss.all, sty.freeBox__p08Hk)}>
+              <div className={classNames(projectcss.all, sty.freeBox__p08Hk)}>
+                <EventNoteBlack24DpsvgIcon
+                  className={classNames(projectcss.all, sty.svg__r5Oqd)}
+                  role={"img"}
+                />
+
                 <div
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.freeBox__vzmTl
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__vzmTl
                   )}
                 >
                   {"本日のイベント"}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.freeBox__lxuSy)}>
+                <div className={classNames(projectcss.all, sty.freeBox__lxuSy)}>
                   {p.renderPlasmicSlot({
                     defaultContents: "4",
                     value: args.eventCount,
-                    className: classNames(sty.slotEventCount)
+                    className: classNames(sty.slotTargetEventCount)
                   })}
                 </div>
 
                 <div
-                  className={classNames(defaultcss.all, sty.freeBox__kKcvo)}
+                  className={classNames(projectcss.all, sty.freeBox__kKcvo)}
                 />
 
                 <div
                   data-plasmic-name={"button"}
                   data-plasmic-override={overrides.button}
-                  className={classNames(defaultcss.all, sty.button)}
+                  className={classNames(projectcss.all, sty.button)}
                 >
                   <p.PlasmicLink
                     className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
+                      projectcss.all,
+                      projectcss.a,
                       sty.link__mV3YJ
                     )}
                     component={Link}
                     href={"/events" as const}
                     platform={"nextjs"}
                   >
-                    {"イベント検索へ"}
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__dUeh5
+                      )}
+                    >
+                      {"イベント検索へ"}
+                    </div>
+
+                    <SearchBlack24DpsvgIcon
+                      className={classNames(projectcss.all, sty.svg__uJgVa)}
+                      role={"img"}
+                    />
                   </p.PlasmicLink>
                 </div>
               </div>
@@ -221,7 +237,7 @@ function PlasmicHome__RenderFunc(props: {
               <div
                 data-plasmic-name={"eventList"}
                 data-plasmic-override={overrides.eventList}
-                className={classNames(defaultcss.all, sty.eventList)}
+                className={classNames(projectcss.all, sty.eventList)}
               >
                 {p.renderPlasmicSlot({
                   defaultContents: (
@@ -234,9 +250,9 @@ function PlasmicHome__RenderFunc(props: {
                         eventTitle={
                           <div
                             className={classNames(
-                              defaultcss.all,
-                              defaultcss.__wab_text,
-                              sty.freeBox___1Nq1
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___1Nq1
                             )}
                           >
                             {"桜を見る会 @ 反町の森公園"}
@@ -252,9 +268,9 @@ function PlasmicHome__RenderFunc(props: {
                         eventTitle={
                           <div
                             className={classNames(
-                              defaultcss.all,
-                              defaultcss.__wab_text,
-                              sty.freeBox__vcY8
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__vcY8
                             )}
                           >
                             {"橋本環奈同好会オンライン説明会"}
@@ -286,22 +302,28 @@ function PlasmicHome__RenderFunc(props: {
             <div
               data-plasmic-name={"orgsContainer"}
               data-plasmic-override={overrides.orgsContainer}
-              className={classNames(defaultcss.all, sty.orgsContainer)}
+              className={classNames(projectcss.all, sty.orgsContainer)}
             >
-              <div className={classNames(defaultcss.all, sty.freeBox__gJi0C)}>
+              <div className={classNames(projectcss.all, sty.freeBox__gJi0C)}>
                 <div
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.freeBox___7SGb5
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___7SGb5
                   )}
                 >
                   {"おすすめの団体"}
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.freeBox__bkJeC)}>
-                  <div
-                    className={classNames(defaultcss.all, sty.freeBox___4Coe3)}
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__bkJeC)}
+                >
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox___4Coe3)}
                   >
                     {p.renderPlasmicSlot({
                       defaultContents: (
@@ -358,8 +380,8 @@ function PlasmicHome__RenderFunc(props: {
                       ),
                       value: args.categoryRadio
                     })}
-                  </div>
-                </div>
+                  </p.Stack>
+                </p.Stack>
               </div>
 
               <OrgList
@@ -375,7 +397,7 @@ function PlasmicHome__RenderFunc(props: {
                           "__wab_instance",
                           sty.orgCard__tFQfL
                         )}
-                        list={"list" as const}
+                        list={true}
                         name={"橋本環奈同好会"}
                       />
 
@@ -385,7 +407,7 @@ function PlasmicHome__RenderFunc(props: {
                           sty.orgCard__kHx23
                         )}
                         description={"アクセスするたび変わります"}
-                        list={"list" as const}
+                        list={true}
                         name={"女装同好会"}
                       />
 
@@ -395,7 +417,7 @@ function PlasmicHome__RenderFunc(props: {
                           sty.orgCard__gSKea
                         )}
                         description={"ランダムに変わります"}
-                        list={"list" as const}
+                        list={true}
                         name={"橋本環奈同好会"}
                       />
 
@@ -407,7 +429,7 @@ function PlasmicHome__RenderFunc(props: {
                         description={
                           "ランダムに選ぶ機能はWordPressの機能を使いたいところですが"
                         }
-                        list={"list" as const}
+                        list={true}
                         name={"橋本環奈同好会"}
                       />
 
@@ -419,7 +441,7 @@ function PlasmicHome__RenderFunc(props: {
                         description={
                           "おそらくフロントエンドでシャッフルしないといけない"
                         }
-                        list={"list" as const}
+                        list={true}
                         name={"橋本環奈同好会"}
                       />
 
@@ -431,9 +453,9 @@ function PlasmicHome__RenderFunc(props: {
                         description={
                           <div
                             className={classNames(
-                              defaultcss.all,
-                              defaultcss.__wab_text,
-                              sty.freeBox___6Dhj
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___6Dhj
                             )}
                           >
                             {
@@ -441,7 +463,7 @@ function PlasmicHome__RenderFunc(props: {
                             }
                           </div>
                         }
-                        list={"list" as const}
+                        list={true}
                         name={"橋本環奈同好会"}
                       />
 
@@ -450,7 +472,7 @@ function PlasmicHome__RenderFunc(props: {
                           "__wab_instance",
                           sty.orgCard___7IDo0
                         )}
-                        list={"list" as const}
+                        list={true}
                         name={"橋本環奈同好会"}
                       />
 
@@ -459,7 +481,7 @@ function PlasmicHome__RenderFunc(props: {
                           "__wab_instance",
                           sty.orgCard__jXEn
                         )}
-                        list={"list" as const}
+                        list={true}
                       />
                     </React.Fragment>
                   ),
@@ -467,11 +489,12 @@ function PlasmicHome__RenderFunc(props: {
                 })}
               </OrgList>
 
-              <div className={classNames(defaultcss.all, sty.freeBox__c6Wud)}>
+              <div className={classNames(projectcss.all, sty.freeBox__c6Wud)}>
                 <p.PlasmicLink
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
                     sty.link__xXnx
                   )}
                   component={Link}
@@ -491,14 +514,14 @@ function PlasmicHome__RenderFunc(props: {
               <div
                 data-plasmic-name={"announcements"}
                 data-plasmic-override={overrides.announcements}
-                className={classNames(defaultcss.all, sty.announcements)}
+                className={classNames(projectcss.all, sty.announcements)}
               >
-                <div className={classNames(defaultcss.all, sty.freeBox__gLaDz)}>
+                <div className={classNames(projectcss.all, sty.freeBox__gLaDz)}>
                   <div
                     className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.freeBox__ruukh
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ruukh
                     )}
                   >
                     {"お知らせ"}
@@ -508,7 +531,7 @@ function PlasmicHome__RenderFunc(props: {
                 <div
                   data-plasmic-name={"eventList2"}
                   data-plasmic-override={overrides.eventList2}
-                  className={classNames(defaultcss.all, sty.eventList2)}
+                  className={classNames(projectcss.all, sty.eventList2)}
                 >
                   {p.renderPlasmicSlot({
                     defaultContents: (
@@ -605,7 +628,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHome__VariantsArgs;
     args?: PlasmicHome__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicHome__Fetches;
   } & Omit<PlasmicHome__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicHome__ArgsType, ReservedPropsType> &
@@ -632,13 +654,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicHome__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicHome__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

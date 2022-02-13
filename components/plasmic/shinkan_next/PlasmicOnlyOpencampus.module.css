@@ -12,3 +12,6 @@
   align-items: stretch;
   justify-content: flex-start;
 }
+.freeBoxopencampus {
+  display: flex;
+}

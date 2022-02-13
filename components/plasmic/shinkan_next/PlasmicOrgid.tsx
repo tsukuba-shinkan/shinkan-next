@@ -37,12 +37,12 @@ import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
 import EventListItem from "../../EventListItem"; // plasmic-import: GMIuDj3rjM/component
 import SocialLink from "../../SocialLink"; // plasmic-import: 8FZzPTX83m/component
 
-import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: rGlYl5prqxJP/globalVariant
+import { useScreenVariants as useScreenVariantsrGlYl5PrqxJp } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: rGlYl5prqxJP/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicOrgid.module.css"; // plasmic-import: BVU0MRRo9W/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicOrgid.module.css"; // plasmic-import: BVU0MRRo9W/css
 
 export type PlasmicOrgid__VariantMembers = {
   activity: "sports" | "culture" | "art" | "other";
@@ -86,34 +86,25 @@ export type PlasmicOrgid__OverridesType = {
   eventList?: p.Flex<"div">;
 };
 
-export interface DefaultOrgidProps {
-  dataFetches: PlasmicOrgid__Fetches;
-}
+export interface DefaultOrgidProps {}
 
 function PlasmicOrgid__RenderFunc(props: {
   variants: PlasmicOrgid__VariantsArgs;
   args: PlasmicOrgid__ArgsType;
   overrides: PlasmicOrgid__OverridesType;
-  dataFetches?: PlasmicOrgid__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariants()
+    screen: useScreenVariantsrGlYl5PrqxJp()
   });
 
   return (
     <React.Fragment>
       <Head>
-        <title key="title">{""}</title>
-        <meta key="og:title" property="og:title" content={""} />
-        <meta
-          key="description"
-          name="description"
-          property="og:description"
-          content={""}
-        />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <style>{`
@@ -122,22 +113,20 @@ function PlasmicOrgid__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={defaultcss.plasmic_page_wrapper}>
+      <div className={projectcss.plasmic_page_wrapper}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            defaultcss.all,
+            projectcss.all,
             projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_tokens,
             sty.root,
             {
-              [sty.root__orgType_other]: hasVariant(
-                variants,
-                "orgType",
-                "other"
-              )
+              [sty.rootorgType_other]: hasVariant(variants, "orgType", "other")
             }
           )}
         >
@@ -146,51 +135,51 @@ function PlasmicOrgid__RenderFunc(props: {
             data-plasmic-override={overrides.page}
             className={classNames("__wab_instance", sty.page)}
           >
-            <div className={classNames(defaultcss.all, sty.freeBox__cnIo)}>
+            <div className={classNames(projectcss.all, sty.freeBox__cnIo)}>
               {p.renderPlasmicSlot({
                 defaultContents: "団体の名前が入る",
                 value: args.title,
-                className: classNames(sty.slotTitle)
+                className: classNames(sty.slotTargetTitle)
               })}
 
-              <div className={classNames(defaultcss.all, sty.freeBox__b7NZx)}>
+              <div className={classNames(projectcss.all, sty.freeBox__b7NZx)}>
                 <div
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.freeBox___8DdUu,
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___8DdUu,
                     {
-                      [sty.freeBox__activity_art___8DdUuyPZfK]: hasVariant(
+                      [sty.textactivity_art___8DdUuyPZfK]: hasVariant(
                         variants,
                         "activity",
                         "art"
                       ),
-                      [sty.freeBox__activity_culture___8DdUuM2QMg]: hasVariant(
+                      [sty.textactivity_culture___8DdUuM2QMg]: hasVariant(
                         variants,
                         "activity",
                         "culture"
                       ),
-                      [sty.freeBox__activity_other___8DdUuicU8N]: hasVariant(
+                      [sty.textactivity_other___8DdUuicU8N]: hasVariant(
                         variants,
                         "activity",
                         "other"
                       ),
-                      [sty.freeBox__activity_sports___8DdUuCQzR6]: hasVariant(
+                      [sty.textactivity_sports___8DdUuCQzR6]: hasVariant(
                         variants,
                         "activity",
                         "sports"
                       ),
-                      [sty.freeBox__orgType_ippan___8DdUuVz8Uu]: hasVariant(
+                      [sty.textorgType_ippan___8DdUuVz8Uu]: hasVariant(
                         variants,
                         "orgType",
                         "ippan"
                       ),
-                      [sty.freeBox__orgType_kagai___8DdUuTsuzY]: hasVariant(
+                      [sty.textorgType_kagai___8DdUuTsuzY]: hasVariant(
                         variants,
                         "orgType",
                         "kagai"
                       ),
-                      [sty.freeBox__orgType_other___8DdUuOkS11]: hasVariant(
+                      [sty.textorgType_other___8DdUuOkS11]: hasVariant(
                         variants,
                         "orgType",
                         "other"
@@ -211,9 +200,9 @@ function PlasmicOrgid__RenderFunc(props: {
 
                 <div
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.freeBox__yBxk1
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__yBxk1
                   )}
                 >
                   {"・"}
@@ -221,41 +210,41 @@ function PlasmicOrgid__RenderFunc(props: {
 
                 <div
                   className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.freeBox__kDhS,
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kDhS,
                     {
-                      [sty.freeBox__activity_art__kDhSyPZfK]: hasVariant(
+                      [sty.textactivity_art__kDhSyPZfK]: hasVariant(
                         variants,
                         "activity",
                         "art"
                       ),
-                      [sty.freeBox__activity_culture__kDhSM2QMg]: hasVariant(
+                      [sty.textactivity_culture__kDhSM2QMg]: hasVariant(
                         variants,
                         "activity",
                         "culture"
                       ),
-                      [sty.freeBox__activity_other__kDhSicU8N]: hasVariant(
+                      [sty.textactivity_other__kDhSicU8N]: hasVariant(
                         variants,
                         "activity",
                         "other"
                       ),
-                      [sty.freeBox__activity_sports__kDhSCQzR6]: hasVariant(
+                      [sty.textactivity_sports__kDhSCQzR6]: hasVariant(
                         variants,
                         "activity",
                         "sports"
                       ),
-                      [sty.freeBox__orgType_ippan__kDhSVz8Uu]: hasVariant(
+                      [sty.textorgType_ippan__kDhSVz8Uu]: hasVariant(
                         variants,
                         "orgType",
                         "ippan"
                       ),
-                      [sty.freeBox__orgType_kagai__kDhSTsuzY]: hasVariant(
+                      [sty.textorgType_kagai__kDhSTsuzY]: hasVariant(
                         variants,
                         "orgType",
                         "kagai"
                       ),
-                      [sty.freeBox__orgType_other__kDhSOkS11]: hasVariant(
+                      [sty.textorgType_other__kDhSOkS11]: hasVariant(
                         variants,
                         "orgType",
                         "other"
@@ -278,16 +267,19 @@ function PlasmicOrgid__RenderFunc(props: {
                 data-plasmic-name={"columns"}
                 data-plasmic-override={overrides.columns}
                 hasGap={true}
-                className={classNames(defaultcss.all, sty.columns)}
+                className={classNames(projectcss.all, sty.columns)}
               >
-                <div className={classNames(defaultcss.all, sty.column__f8AlD)}>
+                <div className={classNames(projectcss.all, sty.column__f8AlD)}>
                   {p.renderPlasmicSlot({
                     defaultContents: (
                       <img
                         alt={""}
-                        className={classNames(defaultcss.img, sty.img__pwzSo)}
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.img,
+                          sty.img__pwzSo
+                        )}
                         loading={"lazy" as const}
-                        role={"img"}
                         src={"/plasmic/shinkan_next/images/image2.png"}
                       />
                     ),
@@ -298,7 +290,7 @@ function PlasmicOrgid__RenderFunc(props: {
                   <div
                     data-plasmic-name={"eventList"}
                     data-plasmic-override={overrides.eventList}
-                    className={classNames(defaultcss.all, sty.eventList)}
+                    className={classNames(projectcss.all, sty.eventList)}
                   >
                     {p.renderPlasmicSlot({
                       defaultContents: (
@@ -325,9 +317,9 @@ function PlasmicOrgid__RenderFunc(props: {
                             eventTitle={
                               <div
                                 className={classNames(
-                                  defaultcss.all,
-                                  defaultcss.__wab_text,
-                                  sty.freeBox__xOko3
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__xOko3
                                 )}
                               >
                                 {"橋本環奈を眺める会"}
@@ -341,7 +333,7 @@ function PlasmicOrgid__RenderFunc(props: {
                   </div>
 
                   <div
-                    className={classNames(defaultcss.all, sty.freeBox__m5Af8)}
+                    className={classNames(projectcss.all, sty.freeBox__m5Af8)}
                   >
                     {p.renderPlasmicSlot({
                       defaultContents: (
@@ -378,12 +370,12 @@ function PlasmicOrgid__RenderFunc(props: {
                   </div>
                 </div>
 
-                <div className={classNames(defaultcss.all, sty.column__geaVn)}>
+                <div className={classNames(projectcss.all, sty.column__geaVn)}>
                   <div
-                    className={classNames(defaultcss.all, sty.freeBox__vZu7)}
+                    className={classNames(projectcss.all, sty.freeBox__vZu7)}
                   >
                     <div
-                      className={classNames(defaultcss.all, sty.freeBox__u6L2B)}
+                      className={classNames(projectcss.all, sty.freeBox__u6L2B)}
                     >
                       {p.renderPlasmicSlot({
                         defaultContents:
@@ -429,7 +421,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicOrgid__VariantsArgs;
     args?: PlasmicOrgid__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicOrgid__Fetches;
   } & Omit<PlasmicOrgid__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicOrgid__ArgsType, ReservedPropsType> &
@@ -456,13 +447,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicOrgid__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicOrgid__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

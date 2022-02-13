@@ -13,7 +13,7 @@
 }
 .h1 {
   position: relative;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
   font-size: 24px;
   font-weight: 700;
   padding-top: 9px;
@@ -26,10 +26,10 @@
   display: flex;
   flex-direction: row;
 }
-.slotTitle {
+.slotTargetTitle {
   font-size: 20px;
   font-weight: 400;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
 .freeBox___97Osx {
   position: relative;
@@ -37,10 +37,10 @@
   flex-direction: row;
   padding: 2px 0px;
 }
-.slotDate {
+.slotTargetDate {
   font-size: 15px;
   font-weight: 400;
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+  color: var(--token-Kftb_9z5u);
 }
 .freeBox__bKa9P {
   position: relative;
@@ -51,6 +51,6 @@
   padding: 15px;
   margin: 12px;
 }
-.slotChildren {
-  color: rgb(73, 32, 110) /* plasmic-token: Kftb_9z5u */;
+.slotTargetChildren {
+  color: var(--token-Kftb_9z5u);
 }

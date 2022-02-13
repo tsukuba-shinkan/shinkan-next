@@ -7,7 +7,7 @@
   align-items: center;
   padding: 13px;
 }
-.freeBox__efUkH {
+.freeBox {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -42,7 +42,7 @@
   flex-shrink: 0;
   height: 1em;
 }
-.freeBox__rx4E {
+.text__rx4E {
   position: relative;
 }
 .next {
@@ -62,7 +62,7 @@
   flex-row-gap: 0px;
   padding: 13px;
 }
-.freeBox__hlQzX {
+.text__hlQzX {
   position: relative;
 }
 .svg__miHZ {

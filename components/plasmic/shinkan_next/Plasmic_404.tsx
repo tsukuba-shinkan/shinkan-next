@@ -36,9 +36,9 @@ import {
 import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./Plasmic_404.module.css"; // plasmic-import: 3Ag6mdjdwk/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./Plasmic_404.module.css"; // plasmic-import: 3Ag6mdjdwk/css
 
 export type Plasmic_404__VariantMembers = {};
 
@@ -55,30 +55,21 @@ export type Plasmic_404__OverridesType = {
   page?: p.Flex<typeof Page>;
 };
 
-export interface Default_404Props {
-  dataFetches: Plasmic_404__Fetches;
-}
+export interface Default_404Props {}
 
 function Plasmic_404__RenderFunc(props: {
   variants: Plasmic_404__VariantsArgs;
   args: Plasmic_404__ArgsType;
   overrides: Plasmic_404__OverridesType;
-  dataFetches?: Plasmic_404__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <React.Fragment>
       <Head>
-        <title key="title">{""}</title>
-        <meta key="og:title" property="og:title" content={""} />
-        <meta
-          key="description"
-          name="description"
-          property="og:description"
-          content={""}
-        />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <style>{`
@@ -87,15 +78,17 @@ function Plasmic_404__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={defaultcss.plasmic_page_wrapper}>
+      <div className={projectcss.plasmic_page_wrapper}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            defaultcss.all,
+            projectcss.all,
             projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_tokens,
             sty.root
           )}
         >
@@ -106,9 +99,9 @@ function Plasmic_404__RenderFunc(props: {
           >
             <div
               className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.freeBox__xpOkw
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__xpOkw
               )}
             >
               {"404"}
@@ -116,9 +109,9 @@ function Plasmic_404__RenderFunc(props: {
 
             <div
               className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.freeBox__htAjc
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__htAjc
               )}
             >
               {"お探しのページは見つかりませんでした"}
@@ -153,7 +146,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: Plasmic_404__VariantsArgs;
     args?: Plasmic_404__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: Plasmic_404__Fetches;
   } & Omit<Plasmic_404__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<Plasmic_404__ArgsType, ReservedPropsType> &
@@ -180,13 +172,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: Plasmic_404__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return Plasmic_404__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

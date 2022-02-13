@@ -36,9 +36,9 @@ import {
 import Page from "../../Page"; // plasmic-import: tdmoFHXXat7/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicNewsid.module.css"; // plasmic-import: ErjPU3ASyU/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicNewsid.module.css"; // plasmic-import: ErjPU3ASyU/css
 
 export type PlasmicNewsid__VariantMembers = {};
 
@@ -65,30 +65,21 @@ export type PlasmicNewsid__OverridesType = {
   h1?: p.Flex<"h1">;
 };
 
-export interface DefaultNewsidProps {
-  dataFetches: PlasmicNewsid__Fetches;
-}
+export interface DefaultNewsidProps {}
 
 function PlasmicNewsid__RenderFunc(props: {
   variants: PlasmicNewsid__VariantsArgs;
   args: PlasmicNewsid__ArgsType;
   overrides: PlasmicNewsid__OverridesType;
-  dataFetches?: PlasmicNewsid__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <React.Fragment>
       <Head>
-        <title key="title">{""}</title>
-        <meta key="og:title" property="og:title" content={""} />
-        <meta
-          key="description"
-          name="description"
-          property="og:description"
-          content={""}
-        />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <style>{`
@@ -97,15 +88,17 @@ function PlasmicNewsid__RenderFunc(props: {
         }
       `}</style>
 
-      <div className={defaultcss.plasmic_page_wrapper}>
+      <div className={projectcss.plasmic_page_wrapper}>
         <div
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
           data-plasmic-for-node={forNode}
           className={classNames(
-            defaultcss.all,
+            projectcss.all,
             projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_tokens,
             sty.root
           )}
         >
@@ -118,35 +111,36 @@ function PlasmicNewsid__RenderFunc(props: {
               data-plasmic-name={"h1"}
               data-plasmic-override={overrides.h1}
               className={classNames(
-                defaultcss.h1,
-                defaultcss.__wab_text,
+                projectcss.all,
+                projectcss.h1,
+                projectcss.__wab_text,
                 sty.h1
               )}
             >
               {"お知らせ"}
             </h1>
 
-            <div className={classNames(defaultcss.all, sty.freeBox__fjhVu)}>
+            <div className={classNames(projectcss.all, sty.freeBox__fjhVu)}>
               {p.renderPlasmicSlot({
                 defaultContents: "新歓Webを公開しました",
                 value: args.title,
-                className: classNames(sty.slotTitle)
+                className: classNames(sty.slotTargetTitle)
               })}
             </div>
 
-            <div className={classNames(defaultcss.all, sty.freeBox___97Osx)}>
+            <div className={classNames(projectcss.all, sty.freeBox___97Osx)}>
               {p.renderPlasmicSlot({
                 defaultContents: "2020/4/1",
                 value: args.date,
-                className: classNames(sty.slotDate)
+                className: classNames(sty.slotTargetDate)
               })}
             </div>
 
-            <div className={classNames(defaultcss.all, sty.freeBox__bKa9P)}>
+            <div className={classNames(projectcss.all, sty.freeBox__bKa9P)}>
               {p.renderPlasmicSlot({
                 defaultContents: "テキストがWordPressから取得されると思います",
                 value: args.children,
-                className: classNames(sty.slotChildren)
+                className: classNames(sty.slotTargetChildren)
               })}
             </div>
           </Page>
@@ -181,7 +175,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicNewsid__VariantsArgs;
     args?: PlasmicNewsid__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicNewsid__Fetches;
   } & Omit<PlasmicNewsid__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicNewsid__ArgsType, ReservedPropsType> &
@@ -208,13 +201,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicNewsid__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicNewsid__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };

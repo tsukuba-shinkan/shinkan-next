@@ -35,9 +35,9 @@ import {
 } from "@plasmicapp/react-web";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
-import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
-import * as projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
-import * as sty from "./PlasmicHeaderLink.module.css"; // plasmic-import: gugJhCOlow/css
+
+import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
+import sty from "./PlasmicHeaderLink.module.css"; // plasmic-import: gugJhCOlow/css
 
 export type PlasmicHeaderLink__VariantMembers = {};
 
@@ -47,7 +47,7 @@ export const PlasmicHeaderLink__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicHeaderLink__ArgsType = {
   children?: React.ReactNode;
-  to?: string | PageHref;
+  to?: string;
 };
 
 type ArgPropType = keyof PlasmicHeaderLink__ArgsType;
@@ -63,7 +63,7 @@ export type PlasmicHeaderLink__OverridesType = {
 
 export interface DefaultHeaderLinkProps {
   children?: React.ReactNode;
-  to?: string | PageHref;
+  to?: string;
   className?: string;
 }
 
@@ -71,10 +71,10 @@ function PlasmicHeaderLink__RenderFunc(props: {
   variants: PlasmicHeaderLink__VariantsArgs;
   args: PlasmicHeaderLink__ArgsType;
   overrides: PlasmicHeaderLink__OverridesType;
-  dataFetches?: PlasmicHeaderLink__Fetches;
+
   forNode?: string;
 }) {
-  const { variants, args, overrides, forNode, dataFetches } = props;
+  const { variants, args, overrides, forNode } = props;
 
   return (
     <div
@@ -82,12 +82,18 @@ function PlasmicHeaderLink__RenderFunc(props: {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
     >
       <p.PlasmicLink
         data-plasmic-name={"link"}
         data-plasmic-override={overrides.link}
-        className={classNames(defaultcss.all, sty.link)}
+        className={classNames(projectcss.all, projectcss.a, sty.link)}
         component={Link}
         href={args.to}
         platform={"nextjs"}
@@ -95,7 +101,7 @@ function PlasmicHeaderLink__RenderFunc(props: {
         {p.renderPlasmicSlot({
           defaultContents: "団体を探す",
           value: args.children,
-          className: classNames(sty.slotChildren)
+          className: classNames(sty.slotTargetChildren)
         })}
       </p.PlasmicLink>
     </div>
@@ -125,7 +131,6 @@ type NodeComponentProps<T extends NodeNameType> =
     variants?: PlasmicHeaderLink__VariantsArgs;
     args?: PlasmicHeaderLink__ArgsType;
     overrides?: NodeOverridesType<T>;
-    dataFetches?: PlasmicHeaderLink__Fetches;
   } & Omit<PlasmicHeaderLink__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     // Specify args directly as props
     Omit<PlasmicHeaderLink__ArgsType, ReservedPropsType> &
@@ -152,13 +157,10 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       internalVariantPropNames: PlasmicHeaderLink__VariantProps
     });
 
-    const { dataFetches } = props;
-
     return PlasmicHeaderLink__RenderFunc({
       variants,
       args,
       overrides,
-      dataFetches,
       forNode: nodeName
     });
   };
