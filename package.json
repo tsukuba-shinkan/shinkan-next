@@ -5,7 +5,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc", 
+    "sync": "plasmic sync",
+    "sync:watch": "plasmic watch"
   },
   "dependencies": {
     "@plasmicapp/react-web": "^0.2.63",
