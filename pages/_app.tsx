@@ -1,4 +1,4 @@
-import { AppProps } from "next/dist/next-server/lib/router/router";
+import { AppProps } from "next/app";
 import { SWRConfig } from "swr";
 import * as gtag from "../utils/gtag";
 import "../styles/index.scss";

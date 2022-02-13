@@ -44,7 +44,7 @@ function Newsid({ initialData }: Props) {
   }
   const pageId = router.query.id;
   const { data, error } = useSWR(`/v2/posts/${pageId}`, wpFetch, {
-    initialData,
+    fallbackData: initialData,
   });
   if (data?.data?.status === 404) {
     return <Plasmic_404 />;
