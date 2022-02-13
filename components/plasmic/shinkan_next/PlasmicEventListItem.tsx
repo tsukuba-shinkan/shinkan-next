@@ -133,6 +133,8 @@ function PlasmicEventListItem__RenderFunc(props: {
                 ? ExpandLess24PxsvgIcon
                 : ExpandMoreBlack24DpsvgIcon
             }
+            aria-describedby={"" as const}
+            aria-label={"もっと見る" as const}
             className={classNames(projectcss.all, sty.svg, {
               [sty.svgexpand]: hasVariant(variants, "expand", "expand")
             })}

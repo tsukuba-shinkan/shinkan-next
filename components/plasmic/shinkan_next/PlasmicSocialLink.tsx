@@ -102,8 +102,17 @@ function PlasmicSocialLink__RenderFunc(props: {
       <p.PlasmicLink
         data-plasmic-name={"link"}
         data-plasmic-override={overrides.link}
+        aria-label={
+          hasVariant(variants, "type", "instagram")
+            ? ("Instagram インスタグラム" as const)
+            : hasVariant(variants, "type", "twitter")
+            ? ("Twitter ツイッター" as const)
+            : ("外部リンク" as const)
+        }
         className={classNames(projectcss.all, projectcss.a, sty.link, {
-          [sty.linktype_twitter]: hasVariant(variants, "type", "twitter")
+          [sty.linktype_instagram]: hasVariant(variants, "type", "instagram"),
+          [sty.linktype_twitter]: hasVariant(variants, "type", "twitter"),
+          [sty.linktype_url]: hasVariant(variants, "type", "url")
         })}
         component={Link}
         href={args.href}

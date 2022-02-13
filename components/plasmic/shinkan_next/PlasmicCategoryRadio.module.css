@@ -1,6 +1,6 @@
 .root {
+  flex-direction: row;
   display: inline-flex;
-  flex-direction: column;
   position: relative;
   width: auto;
   height: auto;
@@ -9,6 +9,18 @@
   border-radius: 61px;
   padding: 7px 13px;
   border: 2px solid rgb(156, 156, 156);
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  margin-left: calc(0px - 6px);
+  width: calc(100% + 6px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-left: 6px;
 }
 .rootselected_other {
   background: var(--token-P6COEcurd);
@@ -29,6 +41,42 @@
 .rootselected_culture {
   background: var(--token--TDQpFL4P);
   border-style: none;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  color: var(--token-Kftb_9z5u);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.svgselected_other {
+  color: var(--token-_19xYoSCM);
+}
+.svgunselected_sports {
+  color: var(--token-E4AV8Sb0R);
+}
+.svgunselected_art {
+  color: var(--token-Ab_kcq5-K);
+}
+.svgunselected_culture {
+  color: var(--token--TDQpFL4P);
+}
+.svgunselected_other {
+  color: var(--token-P6COEcurd);
+}
+.svgselected_all {
+  color: var(--token-_19xYoSCM);
+}
+.svgselected_sports {
+  color: var(--token-_19xYoSCM);
+}
+.svgselected_art {
+  color: var(--token-_19xYoSCM);
+}
+.svgselected_culture {
+  color: var(--token-_19xYoSCM);
 }
 .text {
   position: relative;

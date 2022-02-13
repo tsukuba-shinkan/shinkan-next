@@ -110,12 +110,17 @@ function PlasmicOrgList__RenderFunc(props: {
           })}
         >
           <FormatListBulletedBlack24DpsvgIcon
-            className={classNames(projectcss.all, sty.svg__ojiWa)}
+            className={classNames(projectcss.all, sty.svg__ojiWa, {
+              [sty.svglist__ojiWag02S4]: hasVariant(variants, "list", "list")
+            })}
             role={"img"}
           />
 
           <GridViewBlack24DpsvgIcon
-            className={classNames(projectcss.all, sty.svg___8FAZa)}
+            aria-label={"Grid View グリッドビュー" as const}
+            className={classNames(projectcss.all, sty.svg___8FAZa, {
+              [sty.svglist___8FAZag02S4]: hasVariant(variants, "list", "list")
+            })}
             role={"img"}
           />
         </p.Stack>
@@ -194,6 +199,7 @@ function PlasmicOrgList__RenderFunc(props: {
               />
             </React.Fragment>
           ),
+
           value: args.children
         })}
       </div>
@@ -218,6 +224,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicOrgList__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {

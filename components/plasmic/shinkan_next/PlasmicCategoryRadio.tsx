@@ -39,6 +39,12 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_shinkan_next.module.css"; // plasmic-import: 4oWAtwkSeL4ciDYEekjxG9/projectcss
 import sty from "./PlasmicCategoryRadio.module.css"; // plasmic-import: s14nWegQm7/css
 
+import ShuffleBlack24DpsvgIcon from "./icons/PlasmicIcon__ShuffleBlack24Dpsvg"; // plasmic-import: 6lBtHODXM4/icon
+import SportsMartialArtsBlack24DpsvgIcon from "./icons/PlasmicIcon__SportsMartialArtsBlack24Dpsvg"; // plasmic-import: 9u-qlsAa9K/icon
+import BrushBlack24DpsvgIcon from "./icons/PlasmicIcon__BrushBlack24Dpsvg"; // plasmic-import: W5kg0yHs_/icon
+import MenuBookBlack24DpsvgIcon from "./icons/PlasmicIcon__MenuBookBlack24Dpsvg"; // plasmic-import: SjAUS-yWfB/icon
+import MoreHorizBlack24DpsvgIcon from "./icons/PlasmicIcon__MoreHorizBlack24Dpsvg"; // plasmic-import: -vZ9UmjePX/icon
+
 export type PlasmicCategoryRadio__VariantMembers = {
   unselected: "all" | "sports" | "art" | "culture" | "other";
   selected: "all" | "sports" | "art" | "culture" | "other";
@@ -61,6 +67,7 @@ export const PlasmicCategoryRadio__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicCategoryRadio__OverridesType = {
   root?: p.Flex<"a"> & Partial<LinkProps>;
+  svg?: p.Flex<"svg">;
   text?: p.Flex<"div">;
 };
 
@@ -80,11 +87,13 @@ function PlasmicCategoryRadio__RenderFunc(props: {
   const { variants, args, overrides, forNode } = props;
 
   return (
-    <p.PlasmicLink
+    <p.Stack
+      as={p.PlasmicLink}
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
+      hasGap={true}
       className={classNames(
         projectcss.all,
         projectcss.a,
@@ -100,6 +109,7 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "selected",
             "culture"
           ),
+
           [sty.rootselected_other]: hasVariant(variants, "selected", "other"),
           [sty.rootselected_sports]: hasVariant(variants, "selected", "sports"),
           [sty.rootunselected_all]: hasVariant(variants, "unselected", "all"),
@@ -109,11 +119,13 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "unselected",
             "culture"
           ),
+
           [sty.rootunselected_other]: hasVariant(
             variants,
             "unselected",
             "other"
           ),
+
           [sty.rootunselected_sports]: hasVariant(
             variants,
             "unselected",
@@ -124,6 +136,59 @@ function PlasmicCategoryRadio__RenderFunc(props: {
       component={Link}
       platform={"nextjs"}
     >
+      <p.PlasmicIcon
+        data-plasmic-name={"svg"}
+        data-plasmic-override={overrides.svg}
+        PlasmicIconType={
+          hasVariant(variants, "selected", "culture")
+            ? MenuBookBlack24DpsvgIcon
+            : hasVariant(variants, "selected", "art")
+            ? BrushBlack24DpsvgIcon
+            : hasVariant(variants, "unselected", "other")
+            ? MoreHorizBlack24DpsvgIcon
+            : hasVariant(variants, "unselected", "culture")
+            ? MenuBookBlack24DpsvgIcon
+            : hasVariant(variants, "unselected", "art")
+            ? BrushBlack24DpsvgIcon
+            : hasVariant(variants, "unselected", "sports")
+            ? SportsMartialArtsBlack24DpsvgIcon
+            : hasVariant(variants, "selected", "other")
+            ? MoreHorizBlack24DpsvgIcon
+            : ShuffleBlack24DpsvgIcon
+        }
+        className={classNames(projectcss.all, sty.svg, {
+          [sty.svgselected_all]: hasVariant(variants, "selected", "all"),
+          [sty.svgselected_art]: hasVariant(variants, "selected", "art"),
+          [sty.svgselected_culture]: hasVariant(
+            variants,
+            "selected",
+            "culture"
+          ),
+
+          [sty.svgselected_other]: hasVariant(variants, "selected", "other"),
+          [sty.svgselected_sports]: hasVariant(variants, "selected", "sports"),
+          [sty.svgunselected_art]: hasVariant(variants, "unselected", "art"),
+          [sty.svgunselected_culture]: hasVariant(
+            variants,
+            "unselected",
+            "culture"
+          ),
+
+          [sty.svgunselected_other]: hasVariant(
+            variants,
+            "unselected",
+            "other"
+          ),
+
+          [sty.svgunselected_sports]: hasVariant(
+            variants,
+            "unselected",
+            "sports"
+          )
+        })}
+        role={"img"}
+      />
+
       <div
         data-plasmic-name={"text"}
         data-plasmic-override={overrides.text}
@@ -135,6 +200,7 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "selected",
             "culture"
           ),
+
           [sty.textselected_other]: hasVariant(variants, "selected", "other"),
           [sty.textselected_sports]: hasVariant(variants, "selected", "sports"),
           [sty.textunselected_all]: hasVariant(variants, "unselected", "all"),
@@ -144,11 +210,13 @@ function PlasmicCategoryRadio__RenderFunc(props: {
             "unselected",
             "culture"
           ),
+
           [sty.textunselected_other]: hasVariant(
             variants,
             "unselected",
             "other"
           ),
+
           [sty.textunselected_sports]: hasVariant(
             variants,
             "unselected",
@@ -174,12 +242,13 @@ function PlasmicCategoryRadio__RenderFunc(props: {
           ? "その他"
           : "全て"}
       </div>
-    </p.PlasmicLink>
+    </p.Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text"],
+  root: ["root", "svg", "text"],
+  svg: ["svg"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -187,6 +256,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "a";
+  svg: "svg";
   text: "div";
 };
 
@@ -195,6 +265,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicCategoryRadio__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -247,6 +318,7 @@ export const PlasmicCategoryRadio = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    svg: makeNodeComponent("svg"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicCategoryRadio

@@ -133,7 +133,9 @@ function PlasmicHome__RenderFunc(props: {
             <div
               data-plasmic-name={"hero"}
               data-plasmic-override={overrides.hero}
+              aria-label={"ようこそ、筑波大学へ。" as const}
               className={classNames(projectcss.all, sty.hero)}
+              role={"banner" as const}
             >
               <div className={classNames(projectcss.all, sty.freeBox__ig9Yl)} />
 

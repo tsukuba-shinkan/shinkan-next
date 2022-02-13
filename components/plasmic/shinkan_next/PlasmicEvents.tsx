@@ -68,7 +68,7 @@ export type PlasmicEvents__OverridesType = {
   rangestart?: p.Flex<"input">;
   rangeend?: p.Flex<"input">;
   keyword?: p.Flex<"input">;
-  searchButton?: p.Flex<"div">;
+  searchButton?: p.Flex<"button">;
   svg?: p.Flex<"svg">;
 };
 
@@ -215,18 +215,23 @@ function PlasmicEvents__RenderFunc(props: {
                   </div>
                 </div>
 
-                <div
+                <button
                   data-plasmic-name={"searchButton"}
                   data-plasmic-override={overrides.searchButton}
-                  className={classNames(projectcss.all, sty.searchButton)}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.button,
+                    sty.searchButton
+                  )}
                 >
                   <SearchBlack24DpsvgIcon
                     data-plasmic-name={"svg"}
                     data-plasmic-override={overrides.svg}
+                    aria-describedby={"" as const}
                     className={classNames(projectcss.all, sty.svg)}
                     role={"img"}
                   />
-                </div>
+                </button>
               </div>
             </div>
 
@@ -360,7 +365,7 @@ type NodeDefaultElementType = {
   rangestart: "input";
   rangeend: "input";
   keyword: "input";
-  searchButton: "div";
+  searchButton: "button";
   svg: "svg";
 };
 

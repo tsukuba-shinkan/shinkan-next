@@ -44,20 +44,26 @@
   position: relative;
   object-fit: cover;
   max-width: 100%;
-  color: var(--token-Kftb_9z5u);
+  color: var(--token-2CTAtOo0u);
   width: 32px;
   height: 32px;
   flex-shrink: 0;
+}
+.svglist__ojiWag02S4 {
+  color: var(--token-Kftb_9z5u);
 }
 .svg___8FAZa {
   position: relative;
   object-fit: cover;
   max-width: 100%;
-  color: var(--token-2CTAtOo0u);
+  color: var(--token-Kftb_9z5u);
   height: 32px;
   width: 32px;
   flex-shrink: 0;
   border-radius: 6px;
+}
+.svglist___8FAZag02S4 {
+  color: var(--token-2CTAtOo0u);
 }
 .freeBox__we4V {
   display: flex;
